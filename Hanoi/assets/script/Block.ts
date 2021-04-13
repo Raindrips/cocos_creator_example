@@ -1,0 +1,66 @@
+const { ccclass, property } = cc._decorator;
+import GameHanoi from './GameHanoi'
+@ccclass
+export default class Block extends cc.Component {
+
+	@property(cc.SpriteAtlas)
+	colorAtlas: cc.SpriteAtlas = null
+
+	hanoi: cc.Node = null;
+
+	canMove: boolean = false;
+
+	onLoad() {
+		this.hanoi = cc.find('Canvas/han')
+	}
+
+	start() {
+		this.node.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);
+		this.node.on(cc.Node.EventType.TOUCH_MOVE, this.touchMove, this);
+		this.node.on(cc.Node.EventType.TOUCH_END, this.touchEnd, this);
+		this.node.on(cc.Node.EventType.TOUCH_CANCEL, this.touchEnd, this);
+	}
+
+	// update (dt) {}
+
+	init(n: number) {
+		let width = this.node.width;
+		for (let i = 0; i < n; i++) {
+			this.node.getComponent(cc.Sprite).spriteFrame = this.colorAtlas.getSpriteFrame(i.toString());
+			this.node.setContentSize(cc.size(width * (i + 1), width));
+		}
+	}
+	tempPos: cc.Vec3 = cc.v3();
+	touchStart(e: cc.Event.EventTouch) {
+		this.tempPos = this.node.position;
+
+		let comp = this.hanoi.getComponent('GameHanoi') as GameHanoi;
+		let index = comp.checkBlock(this.node.position);
+		if (comp.countArr[index][comp.countArr[index].length - 1] == 
+			this.node.width) {
+			this.canMove = true;
+			this.node.opacity=200;
+		}
+
+	}
+
+	touchMove(e: cc.Event.EventTouch) {
+		if (this.canMove) {
+			let detla = cc.v3(e.getDelta()).add(this.node.position);
+			this.node.position = detla;
+		}
+
+	}
+
+	touchEnd(e: cc.Event.EventTouch) {
+
+		let comp = this.hanoi.getComponent('GameHanoi') as GameHanoi;
+		if (!comp.placeBlock(this.tempPos, this.node)) {
+			this.node.position = this.tempPos;
+		}
+		this.node.opacity=255;
+		this.canMove = false;
+		//this->node
+	}
+
+}
