@@ -9,9 +9,15 @@ export default class Plane extends cc.Component {
     @property(cc.Prefab)
     bullet: cc.Prefab = null;
 
-    isGameOver:boolean=true;
+    isGameOver:boolean=false;
     gameover(){
-        this.node.removeFromParent(true);
+        this.node.opacity=0;
+        this.unschedule(this.spawnBullet);
+        this.scheduleOnce(()=>{
+            cc.log("load scene restart");
+            cc.director.loadScene('restart');
+            this.node.removeFromParent(true);            
+        },1);
     }
     onLoad () {}
 
@@ -29,6 +35,9 @@ export default class Plane extends cc.Component {
     
     onCollisionEnter (other:cc.Collider, self:cc.Collider) {
         if(other.node.group=='enemy'){
+            let collision=this.node.getComponent(cc.BoxCollider);
+            collision.enabled=false;
+            this.isGameOver=true;
             let animation=self.node.getComponent(cc.Animation)
             animation.play('player_down');
         }

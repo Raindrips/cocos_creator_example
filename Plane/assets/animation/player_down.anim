@@ -13,9 +13,7 @@
         "spriteFrame": [
           {
             "frame": 0,
-            "value": {
-              "__uuid__": "fcad1172-d3ec-4db9-97fe-e678c6525ba5"
-            }
+            "value": null
           },
           {
             "frame": 0.1,

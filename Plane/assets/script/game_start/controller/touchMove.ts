@@ -32,7 +32,7 @@ export default class MyTouchMove extends cc.Component {
         }
         let v2=e.getDelta();      
         if(this._isCanMove&&this.node){
-            cc.log(v2.x+" "+v2.y)
+            //cc.log(v2.x+" "+v2.y)
             this.node.x+=v2.x
             this.node.y+=v2.y
         }
