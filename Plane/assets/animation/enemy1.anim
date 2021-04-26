@@ -39,11 +39,5 @@
       }
     }
   },
-  "events": [
-    {
-      "frame": 0.4,
-      "func": "removeThis",
-      "params": []
-    }
-  ]
+  "events": []
 }

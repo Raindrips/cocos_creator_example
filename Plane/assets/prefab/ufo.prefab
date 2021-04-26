@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "enemy2",
+    "_name": "ufo",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -45,8 +45,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 165,
-      "height": 246
+      "width": 58,
+      "height": 88
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -78,8 +78,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 2,
-    "groupIndex": 2,
+    "_groupIndex": 3,
+    "groupIndex": 3,
     "_id": ""
   },
   {
@@ -98,7 +98,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "348cb43e-48e3-4c5a-90b7-a2e12a528f15"
+      "__uuid__": "0fbc3eb4-8dbc-4abb-b13c-70f87cea8a47"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -111,24 +111,25 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
-    "_atlas": null,
+    "_atlas": {
+      "__uuid__": "dab2eedc-a42f-4f70-98e8-c8833a8a1d45"
+    },
     "_id": ""
   },
   {
-    "__type__": "cc.Animation",
+    "__type__": "e9949v+LBJGJIhxx9VQ8cK6",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "_defaultClip": null,
-    "_clips": [
-      {
-        "__uuid__": "1123bcd3-cecd-44fc-960b-95e614929cd4"
-      }
-    ],
-    "playOnLoad": false,
+    "speed": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": -100,
+      "z": 0
+    },
     "_id": ""
   },
   {
@@ -147,23 +148,25 @@
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 165,
-      "height": 246
+      "width": 58,
+      "height": 88
     },
     "_id": ""
   },
   {
-    "__type__": "fddcdCIwVZAAaC5U1fD7Fdv",
+    "__type__": "b84ebFx7RlKbYqoOV0chy7/",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "speedMax": 300,
-    "speedMin": 150,
-    "life": 6,
-    "score": 2000,
+    "bomb": {
+      "__uuid__": "0a018331-639c-430a-af8e-8412d0aeacaa"
+    },
+    "fire": {
+      "__uuid__": "0fbc3eb4-8dbc-4abb-b13c-70f87cea8a47"
+    },
     "_id": ""
   },
   {
@@ -172,9 +175,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "127f9bcc-aae5-4f48-98f4-811b42b79e5f"
+      "__uuid__": "80c776bf-e5d8-4987-aaf2-c278b1a304c7"
     },
-    "fileId": "62Xx/dU4hEGZW+CS+eRVO7",
+    "fileId": "",
     "sync": false
   }
 ]

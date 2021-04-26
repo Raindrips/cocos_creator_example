@@ -14,10 +14,15 @@ export default class NewClass extends cc.Component {
 
     onLoad() {
         //读取最高分和这次的得分
-        var _topScore = cc.sys.localStorage.getItem('topScore');
+        let _topScore = cc.sys.localStorage.getItem('topScore');
         this.topScore.string = _topScore;
-        var _currentScore = cc.sys.localStorage.getItem('currentScore');
+        //当前成绩
+        let _currentScore = cc.sys.localStorage.getItem('currentScore');
         this.currentScore.string = _currentScore;
+
+        if(_topScore<_currentScore){
+            cc.sys.localStorage.setItem('topScore',_currentScore);
+        }
         //历史得分
         //cc.director.preloadScene('historyScore');
 

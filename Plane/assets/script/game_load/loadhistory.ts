@@ -5,10 +5,10 @@ const {ccclass, property} = cc._decorator;
 export default class NewClass extends cc.Component {
 
     @property(cc.Prefab)
-    itemPrefab: cc.Prefab
+    itemPrefab: cc.Prefab=null
 
     @property(cc.Node)
-    scrollContent: cc.Node
+    scrollContent: cc.Node=null
     onLoad () {
         var infoData = JSON.parse(cc.sys.localStorage.getItem('score'));
         for (var i = 0; i < infoData.length; ++i) {    

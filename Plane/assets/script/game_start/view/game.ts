@@ -1,5 +1,5 @@
-import {Global} from '../model/global'
-const {ccclass, property} = cc._decorator;
+import { Global } from '../model/global'
+const { ccclass, property } = cc._decorator;
 
 
 
@@ -9,20 +9,17 @@ export default class Game extends cc.Component {
     @property(cc.Node)
     play: cc.Node = null;
 
-    @property([cc.Prefab])
-    enemy: Array<cc.Prefab> = [];
+    @property(cc.Node)
+    bulletGroup: cc.Node = null
 
     @property(cc.Label)
-    label:cc.Label=null
+    scoreLabel: cc.Label = null;
 
-    @property(cc.Node)
-    enemyGroup:cc.Node=null
+    @property(cc.Label)
+    bombLabel: cc.Label = null
 
-    @property(cc.Node)
-    bulletGroup:cc.Node=null
-    
 
-    onLoad () {
+    onLoad() {
         let manager = cc.director.getCollisionManager();
         //默认碰撞检测系统是禁用的
         manager.enabled = true;
@@ -32,28 +29,17 @@ export default class Game extends cc.Component {
         //manager.enabledDrawBoundingBox = true;
     }
 
-    start () {
-       
-        this.schedule(this.spawnEnemy,1)
+    start() {
+
     }
 
-    update (dt) {
-        if(this.label){
-            let num=parseInt(this.label.string);
-            this.label.string=Global.score.toString();
+    update(dt) {
+        if (this.scoreLabel) {
+            this.scoreLabel.string = Global.score.toString();
         }
+        if (this.bombLabel){
+            this.bombLabel.string = Global.bombSize.toString();
+        }
+            
     }
-
-   
-    
-    //生成敌机
-    spawnEnemy(){       
-        let r:number= parseInt((Math.random()*this.enemy.length).toString())   
-        let enemy=cc.instantiate(this.enemy[r])
-        enemy.position=this.node.position
-        enemy.x=Math.random()*cc.winSize.width-(cc.winSize.width/2);
-		this.enemyGroup.addChild(enemy)
-    }
-
-   
 }

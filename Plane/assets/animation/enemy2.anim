@@ -1,6 +1,6 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "enemy22",
+  "_name": "enemy2",
   "_objFlags": 0,
   "_native": "",
   "_duration": 0.3,
@@ -51,11 +51,5 @@
       }
     }
   },
-  "events": [
-    {
-      "frame": 0.3,
-      "func": "removeThis",
-      "params": []
-    }
-  ]
+  "events": []
 }

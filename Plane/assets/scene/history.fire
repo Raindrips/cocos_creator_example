@@ -58,7 +58,7 @@
     "_groupIndex": 0,
     "groupIndex": 0,
     "autoReleaseAssets": false,
-    "_id": "aeqttYjw5Jd6kgjptuV42P"
+    "_id": "be3553c4-b86b-4dfa-aba0-63addf88d20c"
   },
   {
     "__type__": "cc.Node",
@@ -457,7 +457,7 @@
     "_groupIndex": 0,
     "groupIndex": 0,
     "showInEditor": false,
-    "_id": "c2xzTHvdlJYZBDpwD1Qx8p"
+    "_id": "cfdk4Jmv1GvKU1eWzPb/xI"
   },
   {
     "__type__": "cc.Label",
@@ -490,7 +490,7 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
-    "_id": "ffwK+HMzJJCbjRxrI9d+3B"
+    "_id": "9dS5z64sRFHJFxgbKudXor"
   },
   {
     "__type__": "cc.RichText",

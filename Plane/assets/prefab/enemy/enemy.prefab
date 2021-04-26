@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "enemy1",
+    "_name": "enemy",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -45,8 +45,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 69,
-      "height": 88
+      "width": 51,
+      "height": 38
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -98,7 +98,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "62e7f2f8-3a39-4e0b-8f44-303515ed18ae"
+      "__uuid__": "bb8a3d80-1e86-49d7-8e26-ab83f81fd74c"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -122,28 +122,10 @@
       "__id__": 1
     },
     "_enabled": true,
-    "speedMax": 300,
-    "speedMin": 200,
-    "life": 3,
-    "score": 600,
-    "label": null,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Animation",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "_defaultClip": null,
-    "_clips": [
-      {
-        "__uuid__": "987e4366-16d2-456c-80de-5e0f5ce976ee"
-      }
-    ],
-    "playOnLoad": false,
+    "speedMax": 500,
+    "speedMin": 100,
+    "life": 1,
+    "score": 100,
     "_id": ""
   },
   {
@@ -162,9 +144,26 @@
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 69,
-      "height": 88
+      "width": 51,
+      "height": 38
     },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Animation",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_defaultClip": null,
+    "_clips": [
+      {
+        "__uuid__": "ae700f34-7963-4901-9826-e3302a4c35bd"
+      }
+    ],
+    "playOnLoad": false,
     "_id": ""
   },
   {
@@ -173,9 +172,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "d3805044-6f9b-4346-8a9e-a2d94daafb85"
+      "__uuid__": "f58a814f-f355-40d8-a4a2-47163605bb8e"
     },
-    "fileId": "d6+Ifqet9MGKHmf5b92CbS",
+    "fileId": "",
     "sync": false
   }
 ]
