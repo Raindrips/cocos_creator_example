@@ -27,12 +27,17 @@ export default class CellNode extends cc.Component {
         switch (this.state) {
             case CellState.white:
                 this.colorNode.color = cc.color(255, 255, 255);
-                
+              
                 break;
             case CellState.black:
-                this.colorNode.color = cc.color(0, 0, 0);
+                // this.colorNode.color=this.randomColor();
+                this.colorNode.color=cc.Color.BLACK;
                 break
         }
+    }
+
+    randomColor(){
+        return cc.color(Math.random()*200,Math.random()*200,Math.random()*200)
     }
 
     changeState() {

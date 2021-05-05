@@ -18,9 +18,11 @@ export default class Main extends cc.Component {
 	@property(cc.Node)
 	cellLayer: cc.Node = null
 
-	isPause: boolean = true;
+	private isPause: boolean = true;
 
-	private maxSize = 20;
+	private speed = 0.25;
+
+	private maxSize: number;
 	private maxWCount: number;
 	private maxHCount: number;
 
@@ -28,6 +30,7 @@ export default class Main extends cc.Component {
 
 
 	onLoad() {
+		this.maxSize = this.cellPrefab.data.getContentSize().width;
 		this.maxWCount = this.cellLayer.width / this.maxSize;
 		this.maxHCount = this.cellLayer.height / this.maxSize;
 		for (let i = 0; i < this.maxHCount; i++) {
@@ -62,15 +65,15 @@ export default class Main extends cc.Component {
 		if (this.isPause) {
 			return;
 		}
-		this.next(dt, 20);
+		this.next(dt, this.speed);
 	}
 
 	timer: number = 0;
 	next(dt, frame) {
 		this.timer += dt;
-		if (this.timer >= 1.0*frame/60) {
+		if (this.timer >= this.speed) {
 			this.lifeChange();
-			this.timer=0;
+			this.timer = 0;
 		}
 	}
 	lifeChange() {
@@ -126,13 +129,17 @@ export default class Main extends cc.Component {
 		for (let g of gird) {
 			let x = g[1] + index.x
 			let y = g[0] + index.y
+			if(this.inAear(y,this.maxHCount)||this.inAear(x,this.maxWCount)){
+				continue;
+			}
 			x = this.clamp(x, 0, this.maxWCount - 1)
 			y = this.clamp(y, 0, this.maxHCount - 1)
-
 			let cellState = stateMap[y][x];
 			if (cellState == CellState.black) {
 				totalLife++;
 			}
+
+
 		}
 
 		if (totalLife == 3) {
@@ -153,8 +160,24 @@ export default class Main extends cc.Component {
 		}
 		return v;
 	}
-
+	inAear(v:number,m:number){
+		return v<0||v>=m;
+	}
+	
 	pauseClick() {
 		this.isPause = !this.isPause;
+	}
+
+	resetCell() {
+		for (let y = 0; y < this.maxHCount; y++) {
+			for (let x = 0; x < this.maxWCount; x++) {
+				let cellNode = this.cellNodeGroup[y][x].getComponent(CellNode);
+				cellNode.state = CellState.white;
+			}
+		}
+	}
+
+	motifySpeed(s: cc.Slider, e: cc.Event.EventCustom) {
+		this.speed = s.progress
 	}
 }
