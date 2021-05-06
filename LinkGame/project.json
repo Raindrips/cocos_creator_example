@@ -1,0 +1,8 @@
+{
+  "engine": "cocos-creator-js",
+  "packages": "packages",
+  "name": "LinkGame",
+  "id": "c2e3d669-e0a5-419e-913d-1de705c85cdc",
+  "version": "2.4.5",
+  "isNew": false
+}

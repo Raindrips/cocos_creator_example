@@ -8,10 +8,11 @@
 
 任意一个方格四周围绕的8个方格成为该方格的邻居（neighbours）
 
-**1.** **出生** | 当周围有3个存活细胞时，则迭代后该细胞变成存活状态（模拟繁殖）
+1. **出生** | 当周围有3个存活细胞时，则迭代后该细胞变成存活状态（模拟繁殖）
 
-**2.** **孤独而亡** | 当前细胞为存活状态时，当周围的邻居细胞低于两个(不包含两个)存活时，该细胞变成死亡状态. （模拟生命数量稀少）
+2. **孤独而亡** | 当前细胞为存活状态时，当周围的邻居细胞低于两个(不包含两个)存活时，该细胞变成死亡状态. （模拟生命数量稀少）
 
-**3.** **拥挤而亡**| Death by overcrowding: Each live cell with four or more live neighbours will die in the next generation. （模拟生命数量过多）
+3. **拥挤而亡**| 当周围有3个以上的存活细胞时，该细胞变成死亡状态. （模拟生命数量过多）
 
-\4. **生存** | Survival: Each live cell with either two or three live neighbours will remain alive for the next generation.
+4. **生存** | 当前细胞为存活状态时，当周围有两个或3个存活细胞时，该细胞保持原样
+
