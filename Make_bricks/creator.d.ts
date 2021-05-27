@@ -1172,6 +1172,8 @@ declare namespace cc {
 	/** !#en This is a Game instance.
 	!#zh 这是一个 Game 类的实例，包含游戏主体信息并负责驱动游戏的游戏对象。。 */
 	export var game: Game;	
+<<<<<<< HEAD
+=======
 	export var assetManager: AssetManager;	
 	/** !#en
 	cc.resources is a bundle and controls all asset under assets/resources
@@ -1179,6 +1181,7 @@ declare namespace cc {
 	!#zh
 	cc.resources 是一个 bundle，用于管理所有在 assets/resources 下的资源 */
 	export var resources: AssetManager.Bundle;	
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	/**
 	!#en
 	Rotates a Node object to a certain angle by modifying its quternion property. <br/>
@@ -1213,6 +1216,16 @@ declare namespace cc {
 	``` 
 	*/
 	export function rotate3DBy(duration: number, deltaAngleX: number|Vec3, deltaAngleY?: number, deltaAngleZ?: number): ActionInterval;	
+<<<<<<< HEAD
+	export var assetManager: AssetManager;	
+	/** !#en
+	cc.resources is a bundle and controls all asset under assets/resources
+	
+	!#zh
+	cc.resources 是一个 bundle，用于管理所有在 assets/resources 下的资源 */
+	export var resources: AssetManager.Bundle;	
+=======
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	/** !#en The System event singleton for global usage
 	!#zh 系统事件单例，方便全局使用 */
 	export var systemEvent: SystemEvent;	
@@ -1284,6 +1297,7 @@ declare namespace cc {
 	
 	@example 
 	```js
+<<<<<<< HEAD
 	// JavaScript:
 	
 	var WrapMode = cc.Enum({
@@ -1330,6 +1344,54 @@ declare namespace cc {
 	    })
 	    direction: Direction = Direction.Up;
 	}
+=======
+	// JavaScript:
+	
+	var WrapMode = cc.Enum({
+	    Repeat: -1,
+	    Clamp: -1
+	});
+	
+	// Texture.WrapMode.Repeat == 0
+	// Texture.WrapMode.Clamp == 1
+	// Texture.WrapMode[0] == "Repeat"
+	// Texture.WrapMode[1] == "Clamp"
+	
+	var FlagType = cc.Enum({
+	    Flag1: 1,
+	    Flag2: 2,
+	    Flag3: 4,
+	    Flag4: 8,
+	});
+	
+	var AtlasSizeList = cc.Enum({
+	    128: 128,
+	    256: 256,
+	    512: 512,
+	    1024: 1024,
+	});
+	
+	// TypeScript:
+	
+	// If used in TypeScript, just define a TypeScript enum:
+	enum Direction {
+	    Up,
+	    Down,
+	    Left,
+	    Right
+	}
+	
+	// If you need to inspect the enum in Properties panel, you can call cc.Enum:
+	const {ccclass, property} = cc._decorator;
+	
+	@ccclass
+	class NewScript extends cc.Component {
+	    @property({
+	        type: cc.Enum(Direction)    // call cc.Enum
+	    })
+	    direction: Direction = Direction.Up;
+	}
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	
 	``` 
 	*/
@@ -1475,6 +1537,8 @@ declare namespace cc {
 	export function instantiate(original: Prefab): Node;
 	export function instantiate<T>(original: T): T;	
 	/**
+<<<<<<< HEAD
+=======
 	Finds a node by hierarchy path, the path is case-sensitive.
 	It will traverse the hierarchy by splitting the path using '/' character.
 	This function will still returns the node even if it is inactive.
@@ -1484,6 +1548,7 @@ declare namespace cc {
 	*/
 	export function find(path: string, referenceNode?: Node): Node;	
 	/**
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	!#en
 	The convenience method to create a new {{#crossLink "Color/Color:method"}}cc.Color{{/crossLink}}
 	Alpha channel is optional. Default value is 255.
@@ -1498,6 +1563,7 @@ declare namespace cc {
 	
 	@example 
 	```js
+<<<<<<< HEAD
 	-----------------------
 	// 1. All channels seperately as parameters
 	var color1 = new cc.Color(255, 255, 255, 255);
@@ -1505,6 +1571,15 @@ declare namespace cc {
 	var color2 = new cc.Color("#000000");
 	// 3. An color object as parameter
 	var color3 = new cc.Color({r: 255, g: 255, b: 255, a: 255});
+=======
+	-----------------------
+	// 1. All channels seperately as parameters
+	var color1 = new cc.Color(255, 255, 255, 255);
+	// 2. Convert a hex string to a color
+	var color2 = new cc.Color("#000000");
+	// 3. An color object as parameter
+	var color3 = new cc.Color({r: 255, g: 255, b: 255, a: 255});
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	
 	``` 
 	*/
@@ -1541,6 +1616,8 @@ declare namespace cc {
 	export function quat(x?: number|any, y?: number, z?: number, w?: number): Quat;	
 	/**
 	!#en
+<<<<<<< HEAD
+=======
 	The convenience method to create a new Rect.
 	see {{#crossLink "Rect/Rect:method"}}cc.Rect{{/crossLink}}
 	!#zh
@@ -1558,6 +1635,7 @@ declare namespace cc {
 	export function rect(x?: number, y?: number, w?: number, h?: number): Rect;	
 	/**
 	!#en
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	Helper function that creates a cc.Size.<br/>
 	Please use cc.p or cc.v2 instead, it will soon replace cc.Size.
 	!#zh
@@ -1568,10 +1646,17 @@ declare namespace cc {
 	
 	@example 
 	```js
+<<<<<<< HEAD
 	var size1 = cc.size();
 	var size2 = cc.size(100,100);
 	var size3 = cc.size(size2);
 	var size4 = cc.size({width: 100, height: 100});
+=======
+	var size1 = cc.size();
+	var size2 = cc.size(100,100);
+	var size3 = cc.size(size2);
+	var size4 = cc.size({width: 100, height: 100});
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	
 	``` 
 	*/
@@ -1673,6 +1758,26 @@ declare namespace cc {
 	*/
 	export function v2(x?: number|any, y?: number): Vec2;	
 	/**
+<<<<<<< HEAD
+	!#en
+	The convenience method to create a new Rect.
+	see {{#crossLink "Rect/Rect:method"}}cc.Rect{{/crossLink}}
+	!#zh
+	该方法用来快速创建一个新的矩形。{{#crossLink "Rect/Rect:method"}}cc.Rect{{/crossLink}}
+	@param x x
+	@param y y
+	@param w w
+	@param h h
+	
+	@example 
+	```js
+	var a = new cc.Rect(0 , 0, 10, 0);
+	``` 
+	*/
+	export function rect(x?: number, y?: number, w?: number, h?: number): Rect;	
+	/**
+=======
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	!#en The convenience method to create a new {{#crossLink "Vec3"}}cc.Vec3{{/crossLink}}.
 	!#zh 通过该简便的函数进行创建 {{#crossLink "Vec3"}}cc.Vec3{{/crossLink}} 对象。
 	@param x x
@@ -1688,6 +1793,18 @@ declare namespace cc {
 	``` 
 	*/
 	export function v3(x?: number|any, y?: number, z?: number): Vec3;	
+<<<<<<< HEAD
+	/**
+	Finds a node by hierarchy path, the path is case-sensitive.
+	It will traverse the hierarchy by splitting the path using '/' character.
+	This function will still returns the node even if it is inactive.
+	It is recommended to not use this function every frame instead cache the result at startup.
+	@param path path
+	@param referenceNode referenceNode 
+	*/
+	export function find(path: string, referenceNode?: Node): Node;	
+=======
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	export var dynamicAtlasManager: DynamicAtlasManager;	
 	/** !#en The matrix storage */
 	export var matrix: any[];	
@@ -2098,7 +2215,11 @@ declare namespace cc {
 		@param props {scale: 2, position: cc.v3(100, 100, 100)}
 		@param opts opts 
 		*/
+<<<<<<< HEAD
+		to<OPTS extends Partial<{ progress: Function, easing: Function | String, onUpdate: Function }>>(duration: number, props: ConstructorType<T>, opts?: OPTS): Tween<T>;		
+=======
 		to <OPTS extends Partial<{progress: Function, easing: Function|String}>> (duration: number, props: ConstructorType<T>, opts?: OPTS) : Tween<T>;		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		/**
 		!#en
 		Add an action which calculate with relative value
@@ -2108,7 +2229,11 @@ declare namespace cc {
 		@param props {scale: 2, position: cc.v3(100, 100, 100)}
 		@param opts opts 
 		*/
+<<<<<<< HEAD
+		by<OPTS extends Partial<{ progress: Function, easing: Function | String, onUpdate: Function }>>(duration: number, props: ConstructorType<T>, opts?: OPTS): Tween<T>;		
+=======
 		by <OPTS extends Partial<{progress: Function, easing: Function|String}>> (duration: number, props: ConstructorType<T>, opts?: OPTS) : Tween<T>;		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		/**
 		!#en
 		Directly set target properties
@@ -2130,9 +2255,16 @@ declare namespace cc {
 		Add an callback action
 		!#zh
 		添加一个回调 action
+<<<<<<< HEAD
+		@param callback callback
+		@param selectTarget selectTarget 
+		*/
+		call(callback: Function, selectTarget?: object): Tween<T>;		
+=======
 		@param callback callback 
 		*/
 		call(callback: Function): Tween<T>;		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		/**
 		!#en
 		Add an hide action
@@ -2198,6 +2330,320 @@ declare namespace cc {
 		*/
 		reverseTime(action?: Action|Tween<T>): Tween<T>;	
 	}	
+<<<<<<< HEAD
+	/** !#en `cc.audioEngine` is the singleton object, it provide simple audio APIs.
+	!#zh
+	cc.audioengine是单例对象。<br/>
+	主要用来播放音频，播放的时候会返回一个 audioID，之后都可以通过这个 audioID 来操作这个音频对象。<br/>
+	不使用的时候，请使用 `cc.audioEngine.uncache(filePath);` 进行资源释放 <br/>
+	注意：<br/>
+	在 Android 系统浏览器上，不同浏览器，不同版本的效果不尽相同。<br/>
+	比如说：大多数浏览器都需要用户物理交互才可以开始播放音效，有一些不支持 WebAudio，有一些不支持多音轨播放。总之如果对音乐依赖比较强，请做尽可能多的测试。 */
+	export class audioEngine {		
+		/**
+		!#en Play audio.
+		!#zh 播放音频
+		@param clip The audio clip to play.
+		@param loop Whether the music loop or not.
+		@param volume Volume size.
+		
+		@example 
+		```js
+		cc.resources.load(path, cc.AudioClip, null, function (err, clip) {
+		    var audioID = cc.audioEngine.play(clip, false, 0.5);
+		});
+		``` 
+		*/
+		static play(clip: AudioClip, loop: boolean, volume: number): number;		
+		/**
+		!#en Set audio loop.
+		!#zh 设置音频是否循环。
+		@param audioID audio id.
+		@param loop Whether cycle.
+		
+		@example 
+		```js
+		cc.audioEngine.setLoop(id, true);
+		``` 
+		*/
+		static setLoop(audioID: number, loop: boolean): void;		
+		/**
+		!#en Get audio cycle state.
+		!#zh 获取音频的循环状态。
+		@param audioID audio id.
+		
+		@example 
+		```js
+		cc.audioEngine.isLoop(id);
+		``` 
+		*/
+		static isLoop(audioID: number): boolean;		
+		/**
+		!#en Set the volume of audio.
+		!#zh 设置音量（0.0 ~ 1.0）。
+		@param audioID audio id.
+		@param volume Volume must be in 0.0~1.0 .
+		
+		@example 
+		```js
+		cc.audioEngine.setVolume(id, 0.5);
+		``` 
+		*/
+		static setVolume(audioID: number, volume: number): void;		
+		/**
+		!#en The volume of the music max value is 1.0,the min value is 0.0 .
+		!#zh 获取音量（0.0 ~ 1.0）。
+		@param audioID audio id.
+		
+		@example 
+		```js
+		var volume = cc.audioEngine.getVolume(id);
+		``` 
+		*/
+		static getVolume(audioID: number): number;		
+		/**
+		!#en Set current time
+		!#zh 设置当前的音频时间。
+		@param audioID audio id.
+		@param sec current time.
+		
+		@example 
+		```js
+		cc.audioEngine.setCurrentTime(id, 2);
+		``` 
+		*/
+		static setCurrentTime(audioID: number, sec: number): boolean;		
+		/**
+		!#en Get current time
+		!#zh 获取当前的音频播放时间。
+		@param audioID audio id.
+		
+		@example 
+		```js
+		var time = cc.audioEngine.getCurrentTime(id);
+		``` 
+		*/
+		static getCurrentTime(audioID: number): number;		
+		/**
+		!#en Get audio duration
+		!#zh 获取音频总时长。
+		@param audioID audio id.
+		
+		@example 
+		```js
+		var time = cc.audioEngine.getDuration(id);
+		``` 
+		*/
+		static getDuration(audioID: number): number;		
+		/**
+		!#en Get audio state
+		!#zh 获取音频状态。
+		@param audioID audio id.
+		
+		@example 
+		```js
+		var state = cc.audioEngine.getState(id);
+		``` 
+		*/
+		static getState(audioID: number): audioEngine.AudioState;		
+		/**
+		!#en Set Audio finish callback
+		!#zh 设置一个音频结束后的回调
+		@param audioID audio id.
+		@param callback loaded callback.
+		
+		@example 
+		```js
+		cc.audioEngine.setFinishCallback(id, function () {});
+		``` 
+		*/
+		static setFinishCallback(audioID: number, callback: Function): void;		
+		/**
+		!#en Pause playing audio.
+		!#zh 暂停正在播放音频。
+		@param audioID The return value of function play.
+		
+		@example 
+		```js
+		cc.audioEngine.pause(audioID);
+		``` 
+		*/
+		static pause(audioID: number): void;		
+		/**
+		!#en Pause all playing audio
+		!#zh 暂停现在正在播放的所有音频。
+		
+		@example 
+		```js
+		cc.audioEngine.pauseAll();
+		``` 
+		*/
+		static pauseAll(): void;		
+		/**
+		!#en Resume playing audio.
+		!#zh 恢复播放指定的音频。
+		@param audioID The return value of function play.
+		
+		@example 
+		```js
+		cc.audioEngine.resume(audioID);
+		``` 
+		*/
+		static resume(audioID: number): void;		
+		/**
+		!#en Resume all playing audio.
+		!#zh 恢复播放所有之前暂停的所有音频。
+		
+		@example 
+		```js
+		cc.audioEngine.resumeAll();
+		``` 
+		*/
+		static resumeAll(): void;		
+		/**
+		!#en Stop playing audio.
+		!#zh 停止播放指定音频。
+		@param audioID The return value of function play.
+		
+		@example 
+		```js
+		cc.audioEngine.stop(audioID);
+		``` 
+		*/
+		static stop(audioID: number): void;		
+		/**
+		!#en Stop all playing audio.
+		!#zh 停止正在播放的所有音频。
+		
+		@example 
+		```js
+		cc.audioEngine.stopAll();
+		``` 
+		*/
+		static stopAll(): void;		
+		/**
+		!#en Set up an audio can generate a few examples.
+		!#zh 设置一个音频可以设置几个实例
+		@param num a number of instances to be created from within an audio
+		
+		@example 
+		```js
+		cc.audioEngine.setMaxAudioInstance(20);
+		``` 
+		*/
+		static setMaxAudioInstance(num: number): void;		
+		/**
+		!#en Getting audio can produce several examples.
+		!#zh 获取一个音频可以设置几个实例
+		
+		@example 
+		```js
+		cc.audioEngine.getMaxAudioInstance();
+		``` 
+		*/
+		static getMaxAudioInstance(): number;		
+		/**
+		!#en Unload the preloaded audio from internal buffer.
+		!#zh 卸载预加载的音频。
+		@param clip clip
+		
+		@example 
+		```js
+		cc.audioEngine.uncache(filePath);
+		``` 
+		*/
+		static uncache(clip: AudioClip): void;		
+		/**
+		!#en Unload all audio from internal buffer.
+		!#zh 卸载所有音频。
+		
+		@example 
+		```js
+		cc.audioEngine.uncacheAll();
+		``` 
+		*/
+		static uncacheAll(): void;		
+		/**
+		!#en Play background music
+		!#zh 播放背景音乐
+		@param clip The audio clip to play.
+		@param loop Whether the music loop or not.
+		
+		@example 
+		```js
+		cc.resources.load(path, cc.AudioClip, null, function (err, clip) {
+		    var audioID = cc.audioEngine.playMusic(clip, false);
+		});
+		``` 
+		*/
+		static playMusic(clip: AudioClip, loop: boolean): number;		
+		/**
+		!#en Stop background music.
+		!#zh 停止播放背景音乐。
+		
+		@example 
+		```js
+		cc.audioEngine.stopMusic();
+		``` 
+		*/
+		static stopMusic(): void;		
+		/**
+		!#en Pause the background music.
+		!#zh 暂停播放背景音乐。
+		
+		@example 
+		```js
+		cc.audioEngine.pauseMusic();
+		``` 
+		*/
+		static pauseMusic(): void;		
+		/**
+		!#en Resume playing background music.
+		!#zh 恢复播放背景音乐。
+		
+		@example 
+		```js
+		cc.audioEngine.resumeMusic();
+		``` 
+		*/
+		static resumeMusic(): void;		
+		/**
+		!#en Get the volume(0.0 ~ 1.0).
+		!#zh 获取音量（0.0 ~ 1.0）。
+		
+		@example 
+		```js
+		var volume = cc.audioEngine.getMusicVolume();
+		``` 
+		*/
+		static getMusicVolume(): number;		
+		/**
+		!#en Set the background music volume.
+		!#zh 设置背景音乐音量（0.0 ~ 1.0）。
+		@param volume Volume must be in 0.0~1.0.
+		
+		@example 
+		```js
+		cc.audioEngine.setMusicVolume(0.5);
+		``` 
+		*/
+		static setMusicVolume(volume: number): void;		
+		/**
+		!#en Background music playing state
+		!#zh 背景音乐是否正在播放
+		
+		@example 
+		```js
+		cc.audioEngine.isMusicPlaying();
+		``` 
+		*/
+		static isMusicPlaying(): boolean;		
+		/**
+		!#en Play effect audio.
+		!#zh 播放音效
+		@param clip The audio clip to play.
+		@param loop Whether the music loop or not.
+=======
 	/** !#en Class for animation data handling.
 	!#zh 动画剪辑，用于存储动画数据。 */
 	export class AnimationClip extends Asset {		
@@ -2545,10 +2991,84 @@ declare namespace cc {
 		@param clip The audio clip to play.
 		@param loop Whether the music loop or not.
 		@param volume Volume size.
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		
 		@example 
 		```js
 		cc.resources.load(path, cc.AudioClip, null, function (err, clip) {
+<<<<<<< HEAD
+		    var audioID = cc.audioEngine.playEffect(clip, false);
+		});
+		``` 
+		*/
+		static playEffect(clip: AudioClip, loop: boolean): number;		
+		/**
+		!#en Set the volume of effect audio.
+		!#zh 设置音效音量（0.0 ~ 1.0）。
+		@param volume Volume must be in 0.0~1.0.
+		
+		@example 
+		```js
+		cc.audioEngine.setEffectsVolume(0.5);
+		``` 
+		*/
+		static setEffectsVolume(volume: number): void;		
+		/**
+		!#en The volume of the effect audio max value is 1.0,the min value is 0.0 .
+		!#zh 获取音效音量（0.0 ~ 1.0）。
+		
+		@example 
+		```js
+		var volume = cc.audioEngine.getEffectsVolume();
+		``` 
+		*/
+		static getEffectsVolume(): number;		
+		/**
+		!#en Pause effect audio.
+		!#zh 暂停播放音效。
+		@param audioID audio id.
+		
+		@example 
+		```js
+		cc.audioEngine.pauseEffect(audioID);
+		``` 
+		*/
+		static pauseEffect(audioID: number): void;		
+		/**
+		!#en Stop playing all the sound effects.
+		!#zh 暂停播放所有音效。
+		
+		@example 
+		```js
+		cc.audioEngine.pauseAllEffects();
+		``` 
+		*/
+		static pauseAllEffects(): void;		
+		/**
+		!#en Resume effect audio.
+		!#zh 恢复播放音效音频。
+		@param audioID The return value of function play.
+		
+		@example 
+		```js
+		cc.audioEngine.resumeEffect(audioID);
+		``` 
+		*/
+		static resumeEffect(audioID: number): void;		
+		/**
+		!#en Resume all effect audio.
+		!#zh 恢复播放所有之前暂停的音效。
+		
+		@example 
+		```js
+		cc.audioEngine.resumeAllEffects();
+		``` 
+		*/
+		static resumeAllEffects(): void;		
+		/**
+		!#en Stop playing the effect audio.
+		!#zh 停止播放音效。
+=======
 		    var audioID = cc.audioEngine.play(clip, false, 0.5);
 		});
 		``` 
@@ -2626,10 +3146,359 @@ declare namespace cc {
 		/**
 		!#en Get audio duration
 		!#zh 获取音频总时长。
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		@param audioID audio id.
 		
 		@example 
 		```js
+<<<<<<< HEAD
+		cc.audioEngine.stopEffect(id);
+		``` 
+		*/
+		static stopEffect(audioID: number): void;		
+		/**
+		!#en Stop playing all the effects.
+		!#zh 停止播放所有音效。
+		
+		@example 
+		```js
+		cc.audioEngine.stopAllEffects();
+		``` 
+		*/
+		static stopAllEffects(): void;	
+	}	
+	/** !#en Class for animation data handling.
+	!#zh 动画剪辑，用于存储动画数据。 */
+	export class AnimationClip extends Asset {		
+		/** !#en Duration of this animation.
+		!#zh 动画的持续时间。 */
+		duration: number;		
+		/** !#en FrameRate of this animation.
+		!#zh 动画的帧速率。 */
+		sample: number;		
+		/** !#en Speed of this animation.
+		!#zh 动画的播放速度。 */
+		speed: number;		
+		/** !#en WrapMode of this animation.
+		!#zh 动画的循环模式。 */
+		wrapMode: WrapMode;		
+		/** !#en Curve data.
+		!#zh 曲线数据。 */
+		curveData: any;		
+		/** !#en Event data.
+		!#zh 事件数据。 */
+		events: {frame: number, func: string, params: string[]}[];		
+		/**
+		!#en Crate clip with a set of sprite frames
+		!#zh 使用一组序列帧图片来创建动画剪辑
+		@param spriteFrames spriteFrames
+		@param sample sample
+		
+		@example 
+		```js
+		var clip = cc.AnimationClip.createWithSpriteFrames(spriteFrames, 10);
+		``` 
+		*/
+		static createWithSpriteFrames(spriteFrames: SpriteFrame[], sample: number): AnimationClip;	
+	}	
+	/** !#en
+	The AnimationState gives full control over animation playback process.
+	In most cases the Animation Component is sufficient and easier to use. Use the AnimationState if you need full control.
+	!#zh
+	AnimationState 完全控制动画播放过程。<br/>
+	大多数情况下 动画组件 是足够和易于使用的。如果您需要更多的动画控制接口，请使用 AnimationState。 */
+	export class AnimationState extends Playable {		
+		/**
+		
+		@param clip clip
+		@param name name 
+		*/
+		constructor(clip: AnimationClip, name?: string);		
+		/** !#en The curves list.
+		!#zh 曲线列表。 */
+		curves: any[];		
+		/** !#en The start delay which represents the number of seconds from an animation's start time to the start of
+		the active interval.
+		!#zh 延迟多少秒播放。 */
+		delay: number;		
+		/** !#en The animation's iteration count property.
+		
+		A real number greater than or equal to zero (including positive infinity) representing the number of times
+		to repeat the animation node.
+		
+		Values less than zero and NaN values are treated as the value 1.0 for the purpose of timing model
+		calculations.
+		
+		!#zh 迭代次数，指动画播放多少次后结束, normalize time。 如 2.5（2次半） */
+		repeatCount: number;		
+		/** !#en The iteration duration of this animation in seconds. (length)
+		!#zh 单次动画的持续时间，秒。 */
+		duration: number;		
+		/** !#en The animation's playback speed. 1 is normal playback speed.
+		!#zh 播放速率。 */
+		speed: number;		
+		/** !#en
+		Wrapping mode of the playing animation.
+		Notice : dynamic change wrapMode will reset time and repeatCount property
+		!#zh
+		动画循环方式。
+		需要注意的是，动态修改 wrapMode 时，会重置 time 以及 repeatCount */
+		wrapMode: WrapMode;		
+		/** !#en The current time of this animation in seconds.
+		!#zh 动画当前的时间，秒。 */
+		time: number;		
+		/** !#en The clip that is being played by this animation state.
+		!#zh 此动画状态正在播放的剪辑。 */
+		clip: AnimationClip;		
+		/** !#en The name of the playing animation.
+		!#zh 动画的名字 */
+		name: string;	
+	}	
+	/** !#en
+	This class provide easing methods for {{#crossLink "tween"}}{{/crossLink}} class.<br>
+	Demonstratio: https://easings.net/
+	!#zh
+	缓动函数类，为 {{#crossLink "Tween"}}{{/crossLink}} 提供缓动效果函数。<br>
+	函数效果演示： https://easings.net/ */
+	export class Easing {		
+		/**
+		!#en Easing in with quadratic formula. From slow to fast.
+		!#zh 平方曲线缓入函数。运动由慢到快。
+		@param t The current time as a percentage of the total time. 
+		*/
+		quadIn(t: number): number;		
+		/**
+		!#en Easing out with quadratic formula. From fast to slow.
+		!#zh 平方曲线缓出函数。运动由快到慢。
+		@param t The current time as a percentage of the total time. 
+		*/
+		quadOut(t: number): number;		
+		/**
+		!#en Easing in and out with quadratic formula. From slow to fast, then back to slow.
+		!#zh 平方曲线缓入缓出函数。运动由慢到快再到慢。
+		@param t The current time as a percentage of the total time. 
+		*/
+		quadInOut(t: number): number;		
+		/**
+		!#en Easing in with cubic formula. From slow to fast.
+		!#zh 立方曲线缓入函数。运动由慢到快。
+		@param t The current time as a percentage of the total time. 
+		*/
+		cubicIn(t: number): number;		
+		/**
+		!#en Easing out with cubic formula. From slow to fast.
+		!#zh 立方曲线缓出函数。运动由快到慢。
+		@param t The current time as a percentage of the total time. 
+		*/
+		cubicOut(t: number): number;		
+		/**
+		!#en Easing in and out with cubic formula. From slow to fast, then back to slow.
+		!#zh 立方曲线缓入缓出函数。运动由慢到快再到慢。
+		@param t The current time as a percentage of the total time. 
+		*/
+		cubicInOut(t: number): number;		
+		/**
+		!#en Easing in with quartic formula. From slow to fast.
+		!#zh 四次方曲线缓入函数。运动由慢到快。
+		@param t The current time as a percentage of the total time. 
+		*/
+		quartIn(t: number): number;		
+		/**
+		!#en Easing out with quartic formula. From fast to slow.
+		!#zh 四次方曲线缓出函数。运动由快到慢。
+		@param t The current time as a percentage of the total time. 
+		*/
+		quartOut(t: number): number;		
+		/**
+		!#en Easing in and out with quartic formula. From slow to fast, then back to slow.
+		!#zh 四次方曲线缓入缓出函数。运动由慢到快再到慢。
+		@param t The current time as a percentage of the total time. 
+		*/
+		quartInOut(t: number): number;		
+		/**
+		!#en Easing in with quintic formula. From slow to fast.
+		!#zh 五次方曲线缓入函数。运动由慢到快。
+		@param t The current time as a percentage of the total time. 
+		*/
+		quintIn(t: number): number;		
+		/**
+		!#en Easing out with quintic formula. From fast to slow.
+		!#zh 五次方曲线缓出函数。运动由快到慢。
+		@param t The current time as a percentage of the total time. 
+		*/
+		quintOut(t: number): number;		
+		/**
+		!#en Easing in and out with quintic formula. From slow to fast, then back to slow.
+		!#zh 五次方曲线缓入缓出函数。运动由慢到快再到慢。
+		@param t The current time as a percentage of the total time. 
+		*/
+		quintInOut(t: number): number;		
+		/**
+		!#en Easing in and out with sine formula. From slow to fast.
+		!#zh 正弦曲线缓入函数。运动由慢到快。
+		@param t The current time as a percentage of the total time. 
+		*/
+		sineIn(t: number): number;		
+		/**
+		!#en Easing in and out with sine formula. From fast to slow.
+		!#zh 正弦曲线缓出函数。运动由快到慢。
+		@param t The current time as a percentage of the total time. 
+		*/
+		sineOut(t: number): number;		
+		/**
+		!#en Easing in and out with sine formula. From slow to fast, then back to slow.
+		!#zh 正弦曲线缓入缓出函数。运动由慢到快再到慢。
+		@param t The current time as a percentage of the total time. 
+		*/
+		sineInOut(t: number): number;		
+		/**
+		!#en Easing in and out with exponential formula. From slow to fast.
+		!#zh 指数曲线缓入函数。运动由慢到快。
+		@param t The current time as a percentage of the total time. 
+		*/
+		expoIn(t: number): number;		
+		/**
+		!#en Easing in and out with exponential formula. From fast to slow.
+		!#zh 指数曲线缓出函数。运动由快到慢。
+		@param t The current time as a percentage of the total time. 
+		*/
+		expoOut(t: number): number;		
+		/**
+		!#en Easing in and out with exponential formula. From slow to fast.
+		!#zh 指数曲线缓入和缓出函数。运动由慢到很快再到慢。
+		@param t The current time as a percentage of the total time, then back to slow. 
+		*/
+		expoInOut(t: number): number;		
+		/**
+		!#en Easing in and out with circular formula. From slow to fast.
+		!#zh 循环公式缓入函数。运动由慢到快。
+		@param t The current time as a percentage of the total time. 
+		*/
+		circIn(t: number): number;		
+		/**
+		!#en Easing in and out with circular formula. From fast to slow.
+		!#zh 循环公式缓出函数。运动由快到慢。
+		@param t The current time as a percentage of the total time. 
+		*/
+		circOut(t: number): number;		
+		/**
+		!#en Easing in and out with circular formula. From slow to fast.
+		!#zh 指数曲线缓入缓出函数。运动由慢到很快再到慢。
+		@param t The current time as a percentage of the total time, then back to slow. 
+		*/
+		circInOut(t: number): number;		
+		/**
+		!#en Easing in action with a spring oscillating effect.
+		!#zh 弹簧回震效果的缓入函数。
+		@param t The current time as a percentage of the total time. 
+		*/
+		elasticIn(t: number): number;		
+		/**
+		!#en Easing out action with a spring oscillating effect.
+		!#zh 弹簧回震效果的缓出函数。
+		@param t The current time as a percentage of the total time. 
+		*/
+		elasticOut(t: number): number;		
+		/**
+		!#en Easing in and out action with a spring oscillating effect.
+		!#zh 弹簧回震效果的缓入缓出函数。
+		@param t The current time as a percentage of the total time. 
+		*/
+		elasticInOut(t: number): number;		
+		/**
+		!#en Easing in action with "back up" behavior.
+		!#zh 回退效果的缓入函数。
+		@param t The current time as a percentage of the total time. 
+		*/
+		backIn(t: number): number;		
+		/**
+		!#en Easing out action with "back up" behavior.
+		!#zh 回退效果的缓出函数。
+		@param t The current time as a percentage of the total time. 
+		*/
+		backOut(t: number): number;		
+		/**
+		!#en Easing in and out action with "back up" behavior.
+		!#zh 回退效果的缓入缓出函数。
+		@param t The current time as a percentage of the total time. 
+		*/
+		backInOut(t: number): number;		
+		/**
+		!#en Easing in action with bouncing effect.
+		!#zh 弹跳效果的缓入函数。
+		@param t The current time as a percentage of the total time. 
+		*/
+		bounceIn(t: number): number;		
+		/**
+		!#en Easing out action with bouncing effect.
+		!#zh 弹跳效果的缓出函数。
+		@param t The current time as a percentage of the total time. 
+		*/
+		bounceOut(t: number): number;		
+		/**
+		!#en Easing in and out action with bouncing effect.
+		!#zh 弹跳效果的缓入缓出函数。
+		@param t The current time as a percentage of the total time. 
+		*/
+		bounceInOut(t: number): number;		
+		/**
+		!#en Target will run action with smooth effect.
+		!#zh 平滑效果函数。
+		@param t The current time as a percentage of the total time. 
+		*/
+		smooth(t: number): number;		
+		/**
+		!#en Target will run action with fade effect.
+		!#zh 渐褪效果函数。
+		@param t The current time as a percentage of the total time. 
+		*/
+		fade(t: number): number;	
+	}	
+	/** !#en Specifies how time is treated when it is outside of the keyframe range of an Animation.
+	!#zh 动画使用的循环模式。 */
+	export enum WrapMode {		
+		Default = 0,
+		Normal = 0,
+		Reverse = 0,
+		Loop = 0,
+		LoopReverse = 0,
+		PingPong = 0,
+		PingPongReverse = 0,	
+	}	
+	/** undefined */
+	export class Playable {		
+		/** !#en Is playing or paused in play mode?
+		!#zh 当前是否正在播放。 */
+		isPlaying: boolean;		
+		/** !#en Is currently paused? This can be true even if in edit mode(isPlaying == false).
+		!#zh 当前是否正在暂停 */
+		isPaused: boolean;		
+		/**
+		!#en Play this animation.
+		!#zh 播放动画。 
+		*/
+		play(): void;		
+		/**
+		!#en Stop this animation.
+		!#zh 停止动画播放。 
+		*/
+		stop(): void;		
+		/**
+		!#en Pause this animation.
+		!#zh 暂停动画。 
+		*/
+		pause(): void;		
+		/**
+		!#en Resume this animation.
+		!#zh 重新播放动画。 
+		*/
+		resume(): void;		
+		/**
+		!#en Perform a single frame step.
+		!#zh 执行一帧动画。 
+		*/
+		step(): void;	
+=======
 		var time = cc.audioEngine.getDuration(id);
 		``` 
 		*/
@@ -2935,6 +3804,7 @@ declare namespace cc {
 		``` 
 		*/
 		static stopAllEffects(): void;	
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	}	
 	/** !#en An object to boot the game.
 	!#zh 包含游戏主体信息并负责驱动游戏的游戏对象。 */
@@ -2945,7 +3815,11 @@ declare namespace cc {
 		@param errorId errorId
 		@param param param 
 		*/
+<<<<<<< HEAD
+		static getError(errorId: number, param?: any): string;		
+=======
 		static getError(errorId: string, param?: any): string;		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		/**
 		!#en Returns whether or not to display the FPS informations.
 		!#zh 是否显示 FPS 信息。 
@@ -4426,8 +5300,13 @@ declare namespace cc {
 		
 		@example 
 		```js
+<<<<<<< HEAD
 		//register a schedule to scheduler
 		cc.director.getScheduler().schedule(callback, this, interval, !this._isRunning);
+=======
+		//register a schedule to scheduler
+		cc.director.getScheduler().schedule(callback, this, interval, !this._isRunning);
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		
 		``` 
 		*/
@@ -4796,6 +5675,59 @@ declare namespace cc {
 		!#zh 指定目标的混合模式 */
 		dstBlendFactor: macro.BlendFactor;	
 	}	
+<<<<<<< HEAD
+	/** !#en cc.WebView is a component for display web pages in the game. Because different platforms have different authorization, API and control methods for WebView component. And have not yet formed a unified standard, only Web, iOS, and Android platforms are currently supported.
+	!#zh WebView 组件，用于在游戏中显示网页。由于不同平台对于 WebView 组件的授权、API、控制方式都不同，还没有形成统一的标准，所以目前只支持 Web、iOS 和 Android 平台。 */
+	export class WebView extends Component {		
+		/** !#en A given URL to be loaded by the WebView, it should have a http or https prefix.
+		!#zh 指定 WebView 加载的网址，它应该是一个 http 或者 https 开头的字符串 */
+		url: string;		
+		/** !#en The webview's event callback , it will be triggered when certain webview event occurs.
+		!#zh WebView 的回调事件，当网页加载过程中，加载完成后或者加载出错时都会回调此函数 */
+		webviewLoadedEvents: Component.EventHandler[];		
+		/**
+		!#en
+		Set javascript interface scheme (see also setOnJSCallback). <br/>
+		Note: Supports only on the Android and iOS. For HTML5, please refer to the official documentation.<br/>
+		Please refer to the official documentation for more details.
+		!#zh
+		设置 JavaScript 接口方案（与 'setOnJSCallback' 配套使用）。<br/>
+		注意：只支持 Android 和 iOS ，Web 端用法请前往官方文档查看。<br/>
+		详情请参阅官方文档
+		@param scheme scheme 
+		*/
+		setJavascriptInterfaceScheme(scheme: string): void;		
+		/**
+		!#en
+		This callback called when load URL that start with javascript
+		interface scheme (see also setJavascriptInterfaceScheme). <br/>
+		Note: Supports only on the Android and iOS. For HTML5, please refer to the official documentation.<br/>
+		Please refer to the official documentation for more details.
+		!#zh
+		当加载 URL 以 JavaScript 接口方案开始时调用这个回调函数。<br/>
+		注意：只支持 Android 和 iOS，Web 端用法请前往官方文档查看。
+		详情请参阅官方文档
+		@param callback callback 
+		*/
+		setOnJSCallback(callback: Function): void;		
+		/**
+		!#en
+		Evaluates JavaScript in the context of the currently displayed page. <br/>
+		Please refer to the official document for more details <br/>
+		Note: Cross domain issues need to be resolved by yourself <br/>
+		!#zh
+		执行 WebView 内部页面脚本（详情请参阅官方文档） <br/>
+		注意：需要自行解决跨域问题
+		@param str str 
+		*/
+		evaluateJS(str: string): void;		
+		/**
+		!#en if you don't need the WebView and it isn't in any running Scene, you should
+		call the destroy method on this component or the associated node explicitly.
+		Otherwise, the created DOM element won't be removed from web page.
+		!#zh
+		如果你不再使用 WebView，并且组件未添加到场景中，那么你必须手动对组件或所在节点调用 destroy。
+=======
 	/** !#en cc.VideoPlayer is a component for playing videos, you can use it for showing videos in your game. Because different platforms have different authorization, API and control methods for VideoPlayer component. And have not yet formed a unified standard, only Web, iOS, and Android platforms are currently supported.
 	!#zh Video 组件，用于在游戏中播放视频。由于不同平台对于 VideoPlayer 组件的授权、API、控制方式都不同，还没有形成统一的标准，所以目前只支持 Web、iOS 和 Android 平台。 */
 	export class VideoPlayer extends Component {		
@@ -4865,13 +5797,20 @@ declare namespace cc {
 		Otherwise, the created DOM element won't be removed from web page.
 		!#zh
 		如果你不再使用 VideoPlayer，并且组件未添加到场景中，那么你必须手动对组件或所在节点调用 destroy。
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		这样才能移除网页上的 DOM 节点，避免 Web 平台内存泄露。
 		
 		@example 
 		```js
+<<<<<<< HEAD
+		webview.node.parent = null;  // or  webview.node.removeFromParent(false);
+		// when you don't need webview anymore
+		webview.node.destroy();
+=======
 		videoplayer.node.parent = null;  // or  videoplayer.node.removeFromParent(false);
 		// when you don't need videoplayer anymore
 		videoplayer.node.destroy();
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		``` 
 		*/
 		destroy(): boolean;	
@@ -5434,6 +6373,77 @@ declare namespace cc {
 		!#zh 指定 TiledTile 的 gid 值 */
 		gid: number;	
 	}	
+<<<<<<< HEAD
+	/** !#en cc.VideoPlayer is a component for playing videos, you can use it for showing videos in your game. Because different platforms have different authorization, API and control methods for VideoPlayer component. And have not yet formed a unified standard, only Web, iOS, and Android platforms are currently supported.
+	!#zh Video 组件，用于在游戏中播放视频。由于不同平台对于 VideoPlayer 组件的授权、API、控制方式都不同，还没有形成统一的标准，所以目前只支持 Web、iOS 和 Android 平台。 */
+	export class VideoPlayer extends Component {		
+		/** !#en The resource type of videoplayer, REMOTE for remote url and LOCAL for local file path.
+		!#zh 视频来源：REMOTE 表示远程视频 URL，LOCAL 表示本地视频地址。 */
+		resourceType: VideoPlayer.ResourceType;		
+		/** !#en The remote URL of video.
+		!#zh 远程视频的 URL */
+		remoteURL: string;		
+		/** !#en The local video full path.
+		!#zh 本地视频的 URL */
+		clip: string;		
+		/** !#en The current playback time of the now playing item in seconds, you could also change the start playback time.
+		!#zh 指定视频从什么时间点开始播放，单位是秒，也可以用来获取当前视频播放的时间进度。 */
+		currentTime: number;		
+		/** !#en The volume of the video.
+		!#zh 视频的音量（0.0 ~ 1.0） */
+		volume: number;		
+		/** !#en Mutes the VideoPlayer. Mute sets the volume=0, Un-Mute restore the original volume.
+		!#zh 是否静音视频。静音时设置音量为 0，取消静音是恢复原来的音量。 */
+		mute: boolean;		
+		/** !#en Whether keep the aspect ration of the original video.
+		!#zh 是否保持视频原来的宽高比 */
+		keepAspectRatio: boolean;		
+		/** !#en Whether play video in fullscreen mode.
+		!#zh 是否全屏播放视频 */
+		isFullscreen: boolean;		
+		/** !#en Always below the game view (only useful on Web. Note: The specific effects are not guaranteed to be consistent, depending on whether each browser supports or restricts).
+		!#zh 永远在游戏视图最底层（这个属性只有在 Web 平台上有效果。注意：具体效果无法保证一致，跟各个浏览器是否支持与限制有关） */
+		stayOnBottom: boolean;		
+		/** !#en the video player's callback, it will be triggered when certain event occurs, like: playing, paused, stopped and completed.
+		!#zh 视频播放回调函数，该回调函数会在特定情况被触发，比如播放中，暂时，停止和完成播放。 */
+		videoPlayerEvent: Component.EventHandler[];		
+		/**
+		!#en If a video is paused, call this method could resume playing. If a video is stopped, call this method to play from scratch.
+		!#zh 如果视频被暂停播放了，调用这个接口可以继续播放。如果视频被停止播放了，调用这个接口可以从头开始播放。 
+		*/
+		play(): void;		
+		/**
+		!#en If a video is paused, call this method to resume playing.
+		!#zh 如果一个视频播放被暂停播放了，调用这个接口可以继续播放。 
+		*/
+		resume(): void;		
+		/**
+		!#en If a video is playing, call this method to pause playing.
+		!#zh 如果一个视频正在播放，调用这个接口可以暂停播放。 
+		*/
+		pause(): void;		
+		/**
+		!#en If a video is playing, call this method to stop playing immediately.
+		!#zh 如果一个视频正在播放，调用这个接口可以立马停止播放。 
+		*/
+		stop(): void;		
+		/**
+		!#en Gets the duration of the video
+		!#zh 获取视频文件的播放总时长 
+		*/
+		getDuration(): number;		
+		/**
+		!#en Determine whether video is playing or not.
+		!#zh 判断当前视频是否处于播放状态 
+		*/
+		isPlaying(): boolean;		
+		/**
+		!#en if you don't need the VideoPlayer and it isn't in any running Scene, you should
+		call the destroy method on this component or the associated node explicitly.
+		Otherwise, the created DOM element won't be removed from web page.
+		!#zh
+		如果你不再使用 VideoPlayer，并且组件未添加到场景中，那么你必须手动对组件或所在节点调用 destroy。
+=======
 	/** !#en cc.WebView is a component for display web pages in the game. Because different platforms have different authorization, API and control methods for WebView component. And have not yet formed a unified standard, only Web, iOS, and Android platforms are currently supported.
 	!#zh WebView 组件，用于在游戏中显示网页。由于不同平台对于 WebView 组件的授权、API、控制方式都不同，还没有形成统一的标准，所以目前只支持 Web、iOS 和 Android 平台。 */
 	export class WebView extends Component {		
@@ -5485,13 +6495,20 @@ declare namespace cc {
 		Otherwise, the created DOM element won't be removed from web page.
 		!#zh
 		如果你不再使用 WebView，并且组件未添加到场景中，那么你必须手动对组件或所在节点调用 destroy。
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		这样才能移除网页上的 DOM 节点，避免 Web 平台内存泄露。
 		
 		@example 
 		```js
+<<<<<<< HEAD
+		videoplayer.node.parent = null;  // or  videoplayer.node.removeFromParent(false);
+		// when you don't need videoplayer anymore
+		videoplayer.node.destroy();
+=======
 		webview.node.parent = null;  // or  webview.node.removeFromParent(false);
 		// when you don't need webview anymore
 		webview.node.destroy();
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		``` 
 		*/
 		destroy(): boolean;	
@@ -5583,6 +6600,292 @@ declare namespace cc {
 		*/
 		get(...params: any[]): Node;	
 	}	
+<<<<<<< HEAD
+	/** !#en Box Collider.
+	!#zh 包围盒碰撞组件 */
+	export class BoxCollider extends Collider implements Collider.Box {		
+		/** !#en
+		Collider info in world coordinate.
+		!#zh
+		碰撞体的世界坐标系下的信息。 */
+		world: ColliderInfo;		
+		/** !#en Position offset
+		!#zh 位置偏移量 */
+		offset: Vec2;		
+		/** !#en Box size
+		!#zh 包围盒大小 */
+		size: Size;	
+	}	
+	/** !#en Collider component base class.
+	!#zh 碰撞组件基类 */
+	export class Collider extends Component {		
+		/** !#en Tag. If a node has several collider components, you can judge which type of collider is collided according to the tag.
+		!#zh 标签。当一个节点上有多个碰撞组件时，在发生碰撞后，可以使用此标签来判断是节点上的哪个碰撞组件被碰撞了。 */
+		tag: number;	
+	}	
+	/** !#en Circle Collider.
+	!#zh 圆形碰撞组件 */
+	export class CircleCollider extends Collider implements Collider.Circle {		
+		/** !#en
+		Collider info in world coordinate.
+		!#zh
+		碰撞体的世界坐标系下的信息。 */
+		world: ColliderInfo;		
+		/** !#en Position offset
+		!#zh 位置偏移量 */
+		offset: Vec2;		
+		/** !#en Circle radius
+		!#zh 圆形半径 */
+		radius: number;	
+	}	
+	/** !#en
+	Collider Info.
+	!#zh
+	碰撞体信息。 */
+	export class ColliderInfo {		
+		/** !#en
+		Collider aabb information of last frame
+		!#zh
+		碰撞体上一帧的 aabb 信息 */
+		preAabb: Rect;		
+		/** !#en
+		Collider aabb information of current frame
+		!#zh
+		碰撞体当前帧的 aabb 信息 */
+		aabb: Rect;		
+		/** !#en
+		Collider matrix
+		!#zh
+		碰撞体的矩阵信息 */
+		matrix: Mat4;		
+		/** !#en
+		Collider radius (for CircleCollider)
+		!#zh
+		碰撞体的半径（只对 CircleCollider 有效） */
+		radius: number;		
+		/** !#en
+		Collider position (for CircleCollider)
+		!#zh
+		碰撞体的位置（只对 CircleCollider 有效） */
+		position: Vec2;		
+		/** !#en
+		Collider points (for BoxCollider and PolygonCollider)
+		!#zh
+		碰撞体的顶点信息（只对 BoxCollider 和 PolygonCollider 有效） */
+		points: Vec2[];	
+	}	
+	/** !#en
+	A simple collision manager class.
+	It will calculate whether the collider collides other colliders, if collides then call the callbacks.
+	!#zh
+	一个简单的碰撞组件管理类，用于处理节点之间的碰撞组件是否产生了碰撞，并调用相应回调函数。 */
+	export class CollisionManager implements EventTarget {		
+		/** !#en
+		!#zh
+		是否开启碰撞管理，默认为不开启 */
+		enabled: boolean;		
+		/** !#en
+		!#zh
+		是否绘制碰撞组件的包围盒，默认为不绘制 */
+		enabledDrawBoundingBox: boolean;		
+		/** !#en
+		!#zh
+		是否绘制碰撞组件的形状，默认为不绘制 */
+		enabledDebugDraw: boolean;		
+		/**
+		!#en Checks whether the EventTarget object has any callback registered for a specific type of event.
+		!#zh 检查事件目标对象是否有为特定类型的事件注册的回调。
+		@param type The type of event. 
+		*/
+		hasEventListener(type: string): boolean;		
+		/**
+		!#en
+		Register an callback of a specific event type on the EventTarget.
+		This type of event should be triggered via `emit`.
+		!#zh
+		注册事件目标的特定事件类型回调。这种类型的事件应该被 `emit` 触发。
+		@param type A string representing the event type to listen for.
+		@param callback The callback that will be invoked when the event is dispatched.
+		                             The callback is ignored if it is a duplicate (the callbacks are unique).
+		@param target The target (this object) to invoke the callback, can be null
+		
+		@example 
+		```js
+		eventTarget.on('fire', function () {
+		    cc.log("fire in the hole");
+		}, node);
+		``` 
+		*/
+		on<T extends Function>(type: string, callback: T, target?: any, useCapture?: boolean): T;		
+		/**
+		!#en
+		Removes the listeners previously registered with the same type, callback, target and or useCapture,
+		if only type is passed as parameter, all listeners registered with that type will be removed.
+		!#zh
+		删除之前用同类型，回调，目标或 useCapture 注册的事件监听器，如果只传递 type，将会删除 type 类型的所有事件监听器。
+		@param type A string representing the event type being removed.
+		@param callback The callback to remove.
+		@param target The target (this object) to invoke the callback, if it's not given, only callback without target will be removed
+		
+		@example 
+		```js
+		// register fire eventListener
+		var callback = eventTarget.on('fire', function () {
+		    cc.log("fire in the hole");
+		}, target);
+		// remove fire event listener
+		eventTarget.off('fire', callback, target);
+		// remove all fire event listeners
+		eventTarget.off('fire');
+		``` 
+		*/
+		off(type: string, callback?: Function, target?: any): void;		
+		/**
+		!#en Removes all callbacks previously registered with the same target (passed as parameter).
+		This is not for removing all listeners in the current event target,
+		and this is not for removing all listeners the target parameter have registered.
+		It's only for removing all listeners (callback and target couple) registered on the current event target by the target parameter.
+		!#zh 在当前 EventTarget 上删除指定目标（target 参数）注册的所有事件监听器。
+		这个函数无法删除当前 EventTarget 的所有事件监听器，也无法删除 target 参数所注册的所有事件监听器。
+		这个函数只能删除 target 参数在当前 EventTarget 上注册的所有事件监听器。
+		@param target The target to be searched for all related listeners 
+		*/
+		targetOff(target: any): void;		
+		/**
+		!#en
+		Register an callback of a specific event type on the EventTarget,
+		the callback will remove itself after the first time it is triggered.
+		!#zh
+		注册事件目标的特定事件类型回调，回调会在第一时间被触发后删除自身。
+		@param type A string representing the event type to listen for.
+		@param callback The callback that will be invoked when the event is dispatched.
+		                             The callback is ignored if it is a duplicate (the callbacks are unique).
+		@param target The target (this object) to invoke the callback, can be null
+		
+		@example 
+		```js
+		eventTarget.once('fire', function () {
+		    cc.log("this is the callback and will be invoked only once");
+		}, node);
+		``` 
+		*/
+		once(type: string, callback: (arg1?: any, arg2?: any, arg3?: any, arg4?: any, arg5?: any) => void, target?: any): void;		
+		/**
+		!#en
+		Send an event with the event object.
+		!#zh
+		通过事件对象派发事件
+		@param event event 
+		*/
+		dispatchEvent(event: Event): void;		
+		/**
+		!#en
+		Destroy all callbackInfos.
+		!#zh
+		销毁记录的事件 
+		*/
+		clear(): void;	
+	}	
+	/** !#en Intersection helper class
+	!#zh 辅助类，用于测试形状与形状是否相交 */
+	export class Intersection {		
+		/**
+		!#en Test line and line
+		!#zh 测试线段与线段是否相交
+		@param a1 The start point of the first line
+		@param a2 The end point of the first line
+		@param b1 The start point of the second line
+		@param b2 The end point of the second line 
+		*/
+		static lineLine(a1: Vec2, a2: Vec2, b1: Vec2, b2: Vec2): boolean;		
+		/**
+		!#en Test line and rect
+		!#zh 测试线段与矩形是否相交
+		@param a1 The start point of the line
+		@param a2 The end point of the line
+		@param b The rect 
+		*/
+		static lineRect(a1: Vec2, a2: Vec2, b: Rect): boolean;		
+		/**
+		!#en Test line and polygon
+		!#zh 测试线段与多边形是否相交
+		@param a1 The start point of the line
+		@param a2 The end point of the line
+		@param b The polygon, a set of points 
+		*/
+		static linePolygon(a1: Vec2, a2: Vec2, b: Vec2[]): boolean;		
+		/**
+		!#en Test rect and rect
+		!#zh 测试矩形与矩形是否相交
+		@param a The first rect
+		@param b The second rect 
+		*/
+		static rectRect(a: Rect, b: Rect): boolean;		
+		/**
+		!#en Test rect and polygon
+		!#zh 测试矩形与多边形是否相交
+		@param a The rect
+		@param b The polygon, a set of points 
+		*/
+		static rectPolygon(a: Rect, b: Vec2[]): boolean;		
+		/**
+		!#en Test polygon and polygon
+		!#zh 测试多边形与多边形是否相交
+		@param a The first polygon, a set of points
+		@param b The second polygon, a set of points 
+		*/
+		static polygonPolygon(a: Vec2[], b: Vec2[]): boolean;		
+		/**
+		!#en Test circle and circle
+		!#zh 测试圆形与圆形是否相交
+		@param a Object contains position and radius
+		@param b Object contains position and radius 
+		*/
+		static circleCircle(a: {position: Vec2, radius: number}, b: {position: Vec2, radius: number}): boolean;		
+		/**
+		!#en Test polygon and circle
+		!#zh 测试矩形与圆形是否相交
+		@param polygon The Polygon, a set of points
+		@param circle Object contains position and radius 
+		*/
+		static polygonCircle(polygon: Vec2[], circle: {position: Vec2, radius: number}): boolean;		
+		/**
+		!#en Test whether the point is in the polygon
+		!#zh 测试一个点是否在一个多边形中
+		@param point The point
+		@param polygon The polygon, a set of points 
+		*/
+		static pointInPolygon(point: Vec2, polygon: Vec2[]): boolean;		
+		/**
+		!#en Calculate the distance of point to line.
+		!#zh 计算点到直线的距离。如果这是一条线段并且垂足不在线段内，则会计算点到线段端点的距离。
+		@param point The point
+		@param start The start point of line
+		@param end The end point of line
+		@param isSegment whether this line is a segment 
+		*/
+		static pointLineDistance(point: Vec2, start: Vec2, end: Vec2, isSegment: boolean): number;	
+	}	
+	/** !#en Polygon Collider.
+	!#zh 多边形碰撞组件 */
+	export class PolygonCollider extends Collider implements Collider.Polygon {		
+		/** !#en
+		Collider info in world coordinate.
+		!#zh
+		碰撞体的世界坐标系下的信息。 */
+		world: ColliderInfo;		
+		/** !#en Position offset
+		!#zh 位置偏移量 */
+		offset: Vec2;		
+		/** !#en Polygon points
+		!#zh 多边形顶点数组 */
+		points: Vec2[];	
+	}	
+	/** !#en The Light Component
+	
+	!#zh 光源组件 */
+	export class Light extends Component {	
+=======
 	/** !#en
 	Camera is usefull when making reel game or other games which need scroll screen.
 	Using camera will be more efficient than moving node to scroll screen.
@@ -5778,6 +7081,7 @@ declare namespace cc {
 		@param out the matrix to receive the result 
 		*/
 		getWorldToCameraMatrix(out: Mat4): Mat4;	
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	}	
 	/** !#en
 	This module controls asset's behaviors and information, include loading, releasing etc. it is a singleton
@@ -6059,10 +7363,17 @@ declare namespace cc {
 		loadScript('http://localhost:8080/index.js', null, (err) => console.log(err));
 		``` 
 		*/
+<<<<<<< HEAD
+		loadScript(url: string|string[], options: Record<string, any>, onComplete: (err: Error) => void): void;
+		loadScript(url: string|string[], onComplete: (err: Error) => void): void;
+		loadScript(url: string|string[], options: Record<string, any>): void;
+		loadScript(url: string|string[]): void;		
+=======
 		loadScript(url: string|string[], options: Record<string, any>, onComplete: (err: Error) => void): void;;
 		loadScript(url: string|string[], onComplete: (err: Error) => void): void;;
 		loadScript(url: string|string[], options: Record<string, any>): void;;
 		loadScript(url: string|string[]): void;;		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		/**
 		!#en
 		load bundle
@@ -6521,10 +7832,16 @@ declare namespace cc {
 		目前所有平台和设备支持的格式有 ['.webp', '.jpg', '.jpeg', '.bmp', '.png']. 另外 Ios 手机平台还额外支持了 PVR 格式。 */
 		static SUPPORT_TEXTURE_FORMATS: string[];	
 	}	
+<<<<<<< HEAD
+	/** !#en Class for BitmapFont handling.
+	!#zh 位图字体资源类。 */
+	export class BitmapFont extends Font {	
+=======
 	/** !#en The Light Component
 	
 	!#zh 光源组件 */
 	export class Light extends Component {	
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	}	
 	/** !#en Class for audio data handling.
 	!#zh 音频资源类。 */
@@ -6626,10 +7943,13 @@ declare namespace cc {
 		*/
 		clear(): void;	
 	}	
+<<<<<<< HEAD
+=======
 	/** !#en Class for BitmapFont handling.
 	!#zh 位图字体资源类。 */
 	export class BitmapFont extends Font {	
 	}	
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	/** undefined */
 	export class BufferAsset extends Asset {	
 	}	
@@ -6637,6 +7957,13 @@ declare namespace cc {
 	!#zh 字体资源类。 */
 	export class Font extends Asset {	
 	}	
+<<<<<<< HEAD
+	/** !#en Class for LabelAtlas handling.
+	!#zh 艺术数字字体资源类。 */
+	export class LabelAtlas extends BitmapFont {	
+	}	
+=======
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	/** !#en
 	Class for JSON file. When the JSON file is loaded, this object is returned.
 	The parsed JSON object can be accessed through the `json` attribute in it.<br>
@@ -6650,10 +7977,13 @@ declare namespace cc {
 		/** The loaded JSON object. */
 		json: any;	
 	}	
+<<<<<<< HEAD
+=======
 	/** !#en Class for LabelAtlas handling.
 	!#zh 艺术数字字体资源类。 */
 	export class LabelAtlas extends BitmapFont {	
 	}	
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	/** !#en Class for prefab handling.
 	!#zh 预制资源类。 */
 	export class Prefab extends Asset {		
@@ -7483,6 +8813,106 @@ declare namespace cc {
 		*/
 		setAccelerometerInterval(interval: number): void;	
 	}	
+<<<<<<< HEAD
+	/** !#en The animation component is used to play back animations.
+	
+	Animation provide several events to register：
+	 - play : Emit when begin playing animation
+	 - stop : Emit when stop playing animation
+	 - pause : Emit when pause animation
+	 - resume : Emit when resume animation
+	 - lastframe : If animation repeat count is larger than 1, emit when animation play to the last frame
+	 - finished : Emit when finish playing animation
+	
+	!#zh Animation 组件用于播放动画。
+	
+	Animation 提供了一系列可注册的事件：
+	 - play : 开始播放时
+	 - stop : 停止播放时
+	 - pause : 暂停播放时
+	 - resume : 恢复播放时
+	 - lastframe : 假如动画循环次数大于 1，当动画播放到最后一帧时
+	 - finished : 动画播放完成时 */
+	export class Animation extends Component implements EventTarget {		
+		/** !#en Animation will play the default clip when start game.
+		!#zh 在勾选自动播放或调用 play() 时默认播放的动画剪辑。 */
+		defaultClip: AnimationClip;		
+		/** !#en Current played clip.
+		!#zh 当前播放的动画剪辑。 */
+		currentClip: AnimationClip;		
+		/** !#en Whether the animation should auto play the default clip when start game.
+		!#zh 是否在运行游戏后自动播放默认动画剪辑。 */
+		playOnLoad: boolean;		
+		/**
+		!#en Get all the clips used in this animation.
+		!#zh 获取动画组件上的所有动画剪辑。 
+		*/
+		getClips(): AnimationClip[];		
+		/**
+		!#en Plays an animation and stop other animations.
+		!#zh 播放指定的动画，并且停止当前正在播放动画。如果没有指定动画，则播放默认动画。
+		@param name The name of animation to play. If no name is supplied then the default animation will be played.
+		@param startTime play an animation from startTime
+		
+		@example 
+		```js
+		var animCtrl = this.node.getComponent(cc.Animation);
+		animCtrl.play("linear");
+		``` 
+		*/
+		play(name?: string, startTime?: number): AnimationState;		
+		/**
+		!#en
+		Plays an additive animation, it will not stop other animations.
+		If there are other animations playing, then will play several animations at the same time.
+		!#zh 播放指定的动画（将不会停止当前播放的动画）。如果没有指定动画，则播放默认动画。
+		@param name The name of animation to play. If no name is supplied then the default animation will be played.
+		@param startTime play an animation from startTime
+		
+		@example 
+		```js
+		// linear_1 and linear_2 at the same time playing.
+		var animCtrl = this.node.getComponent(cc.Animation);
+		animCtrl.playAdditive("linear_1");
+		animCtrl.playAdditive("linear_2");
+		``` 
+		*/
+		playAdditive(name?: string, startTime?: number): AnimationState;		
+		/**
+		!#en Stops an animation named name. If no name is supplied then stops all playing animations that were started with this Animation. <br/>
+		Stopping an animation also Rewinds it to the Start.
+		!#zh 停止指定的动画。如果没有指定名字，则停止当前正在播放的动画。
+		@param name The animation to stop, if not supplied then stops all playing animations. 
+		*/
+		stop(name?: string): void;		
+		/**
+		!#en Pauses an animation named name. If no name is supplied then pauses all playing animations that were started with this Animation.
+		!#zh 暂停当前或者指定的动画。如果没有指定名字，则暂停当前正在播放的动画。
+		@param name The animation to pauses, if not supplied then pauses all playing animations. 
+		*/
+		pause(name?: string): void;		
+		/**
+		!#en Resumes an animation named name. If no name is supplied then resumes all paused animations that were started with this Animation.
+		!#zh 重新播放指定的动画，如果没有指定名字，则重新播放当前正在播放的动画。
+		@param name The animation to resumes, if not supplied then resumes all paused animations. 
+		*/
+		resume(name?: string): void;		
+		/**
+		!#en Make an animation named name go to the specified time. If no name is supplied then make all animations go to the specified time.
+		!#zh 设置指定动画的播放时间。如果没有指定名字，则设置当前播放动画的播放时间。
+		@param time The time to go to
+		@param name Specified animation name, if not supplied then make all animations go to the time. 
+		*/
+		setCurrentTime(time?: number, name?: string): void;		
+		/**
+		!#en Returns the animation state named name. If no animation with the specified name, the function will return null.
+		!#zh 获取当前或者指定的动画状态，如果未找到指定动画剪辑则返回 null。
+		@param name name 
+		*/
+		getAnimationState(name: string): AnimationState;		
+		/**
+		!#en Adds a clip to the animation with name newName. If a clip with that name already exists it will be replaced with the new clip.
+=======
 	/** !#en Box Collider.
 	!#zh 包围盒碰撞组件 */
 	export class BoxCollider extends Collider implements Collider.Box {		
@@ -7923,6 +9353,7 @@ declare namespace cc {
 		getAnimationState(name: string): AnimationState;		
 		/**
 		!#en Adds a clip to the animation with name newName. If a clip with that name already exists it will be replaced with the new clip.
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		!#zh 添加动画剪辑，并且可以重新设置该动画剪辑的名称。
 		@param clip the clip to add
 		@param newName newName 
@@ -9596,6 +11027,71 @@ declare namespace cc {
 	!#zh 自 v2.4.1 起，SwanSubContextView 已经废弃，请使用 SubContextView */
 	export class SwanSubContextView extends Component {	
 	}	
+<<<<<<< HEAD
+	/** !#en The touch event class
+	!#zh 封装了触摸相关的信息。 */
+	export class Touch {		
+		/**
+		!#en Returns the current touch location in OpenGL coordinates.、
+		!#zh 获取当前触点位置。 
+		*/
+		getLocation(): Vec2;		
+		/**
+		!#en Returns X axis location value.
+		!#zh 获取当前触点 X 轴位置。 
+		*/
+		getLocationX(): number;		
+		/**
+		!#en Returns Y axis location value.
+		!#zh 获取当前触点 Y 轴位置。 
+		*/
+		getLocationY(): number;		
+		/**
+		!#en Returns the previous touch location in OpenGL coordinates.
+		!#zh 获取触点在上一次事件时的位置对象，对象包含 x 和 y 属性。 
+		*/
+		getPreviousLocation(): Vec2;		
+		/**
+		!#en Returns the start touch location in OpenGL coordinates.
+		!#zh 获取触点落下时的位置对象，对象包含 x 和 y 属性。 
+		*/
+		getStartLocation(): Vec2;		
+		/**
+		!#en Returns the delta distance from the previous touche to the current one in screen coordinates.
+		!#zh 获取触点距离上一次事件移动的距离对象，对象包含 x 和 y 属性。 
+		*/
+		getDelta(): Vec2;		
+		/**
+		!#en Returns the current touch location in screen coordinates.
+		!#zh 获取当前事件在游戏窗口内的坐标位置对象，对象包含 x 和 y 属性。 
+		*/
+		getLocationInView(): Vec2;		
+		/**
+		!#en Returns the previous touch location in screen coordinates.
+		!#zh 获取触点在上一次事件时在游戏窗口中的位置对象，对象包含 x 和 y 属性。 
+		*/
+		getPreviousLocationInView(): Vec2;		
+		/**
+		!#en Returns the start touch location in screen coordinates.
+		!#zh 获取触点落下时在游戏窗口中的位置对象，对象包含 x 和 y 属性。 
+		*/
+		getStartLocationInView(): Vec2;		
+		/**
+		!#en Returns the id of cc.Touch.
+		!#zh 触点的标识 ID，可以用来在多点触摸中跟踪触点。 
+		*/
+		getID(): number;		
+		/**
+		!#en Sets information to touch.
+		!#zh 设置触摸相关的信息。用于监控触摸事件。
+		@param id id
+		@param x x
+		@param y y 
+		*/
+		setTouchInfo(id: number, x: number, y: number): void;	
+	}	
+=======
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	/** undefined */
 	export class Graphics extends RenderComponent {		
 		/** !#en
@@ -9740,6 +11236,280 @@ declare namespace cc {
 		*/
 		fill(): void;	
 	}	
+<<<<<<< HEAD
+	/** !#en
+	Camera is usefull when making reel game or other games which need scroll screen.
+	Using camera will be more efficient than moving node to scroll screen.
+	Camera
+	!#zh
+	摄像机在制作卷轴或是其他需要移动屏幕的游戏时比较有用，使用摄像机将会比移动节点来移动屏幕更加高效。 */
+	export class Camera extends Component {		
+		/** !#en
+		The camera zoom ratio, only support 2D camera.
+		!#zh
+		摄像机缩放比率, 只支持 2D camera。 */
+		zoomRatio: number;		
+		/** !#en
+		Field of view. The width of the Camera’s view angle, measured in degrees along the local Y axis.
+		!#zh
+		决定摄像机视角的宽度，当摄像机处于透视投影模式下这个属性才会生效。 */
+		fov: number;		
+		/** !#en
+		The viewport size of the Camera when set to orthographic projection.
+		!#zh
+		摄像机在正交投影模式下的视窗大小。 */
+		orthoSize: number;		
+		/** !#en
+		The near clipping plane.
+		!#zh
+		摄像机的近剪裁面。 */
+		nearClip: number;		
+		/** !#en
+		The far clipping plane.
+		!#zh
+		摄像机的远剪裁面。 */
+		farClip: number;		
+		/** !#en
+		Is the camera orthographic (true) or perspective (false)?
+		!#zh
+		设置摄像机的投影模式是正交还是透视模式。 */
+		ortho: boolean;		
+		/** !#en
+		Four values (0 ~ 1) that indicate where on the screen this camera view will be drawn.
+		!#zh
+		决定摄像机绘制在屏幕上哪个位置，值为（0 ~ 1）。 */
+		rect: Rect;		
+		/** !#en
+		This is used to render parts of the scene selectively.
+		!#zh
+		决定摄像机会渲染场景的哪一部分。 */
+		cullingMask: number;		
+		/** !#en
+		Determining what to clear when camera rendering.
+		!#zh
+		决定摄像机渲染时会清除哪些状态。 */
+		clearFlags: Camera.ClearFlags;		
+		/** !#en
+		The color with which the screen will be cleared.
+		!#zh
+		摄像机用于清除屏幕的背景色。 */
+		backgroundColor: Color;		
+		/** !#en
+		Camera's depth in the camera rendering order. Cameras with higher depth are rendered after cameras with lower depth.
+		!#zh
+		摄像机深度。用于决定摄像机的渲染顺序，值越大渲染在越上层。 */
+		depth: number;		
+		/** !#en
+		Destination render texture.
+		Usually cameras render directly to screen, but for some effects it is useful to make a camera render into a texture.
+		!#zh
+		摄像机渲染的目标 RenderTexture。
+		一般摄像机会直接渲染到屏幕上，但是有一些效果可以使用摄像机渲染到 RenderTexture 上再对 RenderTexture 进行处理来实现。 */
+		targetTexture: RenderTexture;		
+		/** !#en
+		Sets the camera's render stages.
+		!#zh
+		设置摄像机渲染的阶段 */
+		renderStages: number;		
+		/** !#en Whether auto align camera viewport to screen
+		!#zh 是否自动将摄像机的视口对准屏幕 */
+		alignWithScreen: boolean;		
+		/** !#en
+		The primary camera in the scene. Returns the rear most rendered camera, which is the camera with the lowest depth.
+		!#zh
+		当前场景中激活的主摄像机。将会返回渲染在屏幕最底层，也就是 depth 最小的摄像机。 */
+		static main: Camera;		
+		/** !#en
+		All enabled cameras.
+		!#zh
+		当前激活的所有摄像机。 */
+		static cameras: Camera[];		
+		/**
+		!#en
+		Get the first camera which the node belong to.
+		!#zh
+		获取节点所在的第一个摄像机。
+		@param node node 
+		*/
+		static findCamera(node: Node): Camera;		
+		/**
+		!#en
+		Get the screen to world matrix, only support 2D camera which alignWithScreen is true.
+		!#zh
+		获取屏幕坐标系到世界坐标系的矩阵，只适用于 alignWithScreen 为 true 的 2D 摄像机。
+		@param out the matrix to receive the result 
+		*/
+		getScreenToWorldMatrix2D(out: Mat4): Mat4;		
+		/**
+		!#en
+		Get the world to camera matrix, only support 2D camera which alignWithScreen is true.
+		!#zh
+		获取世界坐标系到摄像机坐标系的矩阵，只适用于 alignWithScreen 为 true 的 2D 摄像机。
+		@param out the matrix to receive the result 
+		*/
+		getWorldToScreenMatrix2D(out: Mat4): Mat4;		
+		/**
+		!#en
+		Convert point from screen to world.
+		!#zh
+		将坐标从屏幕坐标系转换到世界坐标系。
+		@param screenPosition screenPosition
+		@param out out 
+		*/
+		getScreenToWorldPoint(screenPosition: Vec3|Vec2, out?: Vec3|Vec2): Vec3;		
+		/**
+		!#en
+		Convert point from world to screen.
+		!#zh
+		将坐标从世界坐标系转化到屏幕坐标系。
+		@param worldPosition worldPosition
+		@param out out 
+		*/
+		getWorldToScreenPoint(worldPosition: Vec3|Vec2, out?: Vec3|Vec2): Vec3;		
+		/**
+		!#en
+		Get a ray from screen position
+		!#zh
+		从屏幕坐标获取一条射线
+		@param screenPos screenPos 
+		*/
+		getRay(screenPos: Vec2): geomUtils.Ray;		
+		/**
+		!#en
+		Check whether the node is in the camera.
+		!#zh
+		检测节点是否被此摄像机影响
+		@param node the node which need to check 
+		*/
+		containsNode(node: Node): boolean;		
+		/**
+		!#en
+		Render the camera manually.
+		!#zh
+		手动渲染摄像机。
+		@param rootNode rootNode 
+		*/
+		render(rootNode?: Node): void;		
+		/**
+		!#en
+		Returns the matrix that transform the node's (local) space coordinates into the camera's space coordinates.
+		!#zh
+		返回一个将节点坐标系转换到摄像机坐标系下的矩阵
+		@param node the node which should transform 
+		*/
+		getNodeToCameraTransform(node: Node): AffineTransform;		
+		/**
+		!#en
+		Conver a camera coordinates point to world coordinates.
+		!#zh
+		将一个摄像机坐标系下的点转换到世界坐标系下。
+		@param point the point which should transform
+		@param out the point to receive the result 
+		*/
+		getCameraToWorldPoint(point: Vec2, out?: Vec2): Vec2;		
+		/**
+		!#en
+		Conver a world coordinates point to camera coordinates.
+		!#zh
+		将一个世界坐标系下的点转换到摄像机坐标系下。
+		@param point point
+		@param out the point to receive the result 
+		*/
+		getWorldToCameraPoint(point: Vec2, out?: Vec2): Vec2;		
+		/**
+		!#en
+		Get the camera to world matrix
+		!#zh
+		获取摄像机坐标系到世界坐标系的矩阵
+		@param out the matrix to receive the result 
+		*/
+		getCameraToWorldMatrix(out: Mat4): Mat4;		
+		/**
+		!#en
+		Get the world to camera matrix
+		!#zh
+		获取世界坐标系到摄像机坐标系的矩阵
+		@param out the matrix to receive the result 
+		*/
+		getWorldToCameraMatrix(out: Mat4): Mat4;	
+	}	
+	/** !#en Mesh Asset.
+	!#zh 网格资源。 */
+	export class Mesh extends Asset implements EventTarget {		
+		/** !#en Get ir set the sub meshes.
+		!#zh 设置或者获取子网格。 */
+		subMeshes: InputAssembler[];		
+		/**
+		!#en
+		Init vertex buffer according to the vertex format.
+		!#zh
+		根据顶点格式初始化顶点内存。
+		@param vertexFormat vertex format
+		@param vertexCount how much vertex should be create in this buffer.
+		@param dynamic whether or not to use dynamic buffer.
+		@param index index 
+		*/
+		init(vertexFormat: gfx.VertexFormat, vertexCount: number, dynamic?: boolean, index?: boolean): void;		
+		/**
+		!#en
+		Set the vertex values.
+		!#zh
+		设置顶点数据
+		@param name the attribute name, e.g. gfx.ATTR_POSITION
+		@param values the vertex values 
+		*/
+		setVertices(name: string, values: Vec2[]|Vec3[]|Color[]|number[]|Uint8Array|Float32Array): void;		
+		/**
+		!#en
+		Set the sub mesh indices.
+		!#zh
+		设置子网格索引。
+		@param indices the sub mesh indices.
+		@param index sub mesh index.
+		@param dynamic whether or not to use dynamic buffer. 
+		*/
+		setIndices(indices: number[]|Uint16Array|Uint8Array, index?: number, dynamic?: boolean): void;		
+		/**
+		!#en
+		Set the sub mesh primitive type.
+		!#zh
+		设置子网格绘制线条的方式。
+		@param type type
+		@param index index 
+		*/
+		setPrimitiveType(type: number, index: number): void;		
+		/**
+		!#en
+		Clear the buffer data.
+		!#zh
+		清除网格创建的内存数据。 
+		*/
+		clear(): void;		
+		/**
+		!#en Set mesh bounding box
+		!#zh 设置网格的包围盒
+		@param min min
+		@param max max 
+		*/
+		setBoundingBox(min: Vec3, max: Vec3): void;		
+		/**
+		!#en Read the specified attributes of the subgrid into the target buffer.
+		!#zh 读取子网格的指定属性到目标缓冲区中。
+		@param primitiveIndex The subgrid index.
+		@param attributeName attribute name.
+		@param buffer The target buffer.
+		@param stride The byte interval between adjacent attributes in the target buffer.
+		@param offset The offset of the first attribute in the target buffer. 
+		*/
+		copyAttribute(primitiveIndex: number, attributeName: string, buffer: ArrayBuffer, stride: number, offset: number): boolean;		
+		/**
+		!#en Read the index data of the subgrid into the target array.
+		!#zh 读取子网格的索引数据到目标数组中。
+		@param primitiveIndex The subgrid index.
+		@param outputArray The target array. 
+		*/
+		copyIndices(primitiveIndex: number, outputArray: DataView): boolean;		
+=======
 	/** undefined */
 	export class WorldManifold {		
 		/** !#en
@@ -10057,6 +11827,7 @@ declare namespace cc {
 		!#zh
 		物理世界重力值 */
 		gravity: Vec2;		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		/**
 		!#en Checks whether the EventTarget object has any callback registered for a specific type of event.
 		!#zh 检查事件目标对象是否有为特定类型的事件注册的回调。
@@ -10142,6 +11913,427 @@ declare namespace cc {
 		通过事件对象派发事件
 		@param event event 
 		*/
+<<<<<<< HEAD
+		dispatchEvent(event: Event): void;	
+	}	
+	/** !#en
+	Mesh Renderer Component
+	!#zh
+	网格渲染组件 */
+	export class MeshRenderer extends RenderComponent {		
+		/** !#en
+		The mesh which the renderer uses.
+		!#zh
+		设置使用的网格 */
+		mesh: Mesh;		
+		/** !#en
+		Whether the mesh should receive shadows.
+		!#zh
+		网格是否接受光源投射的阴影 */
+		receiveShadows: boolean;		
+		/** !#en
+		Shadow Casting Mode
+		!#zh
+		网格投射阴影的模式 */
+		shadowCastingMode: MeshRenderer.ShadowCastingMode;		
+		/** !#en
+		Enable auto merge mesh, only support when mesh's VertexFormat, PrimitiveType, materials are all the same
+		!#zh
+		开启自动合并 mesh 功能，只有在网格的 顶点格式，PrimitiveType, 使用的材质 都一致的情况下才会有效 */
+		enableAutoBatch: boolean;	
+	}	
+	/** The class BufferRange denotes a range of the buffer. */
+	export class BufferRange {		
+		/** The offset of the range. */
+		offset: number;		
+		/** The length of the range. */
+		length: number;	
+	}	
+	/** undefined */
+	export class VertexFormat {		
+		/** The data range of this bundle.
+		This range of data is essentially mapped to a GPU vertex buffer. */
+		data: BufferRange;		
+		/** The attribute formats. */
+		formats: VertexFormat;		
+		/** The vertex bundle that the primitive use. */
+		vertexBundleIndices: number[];		
+		/** The data range of the primitive.
+		This range of data is essentially mapped to a GPU indices buffer. */
+		data: BufferRange;		
+		/** The type of this primitive's indices. */
+		indexUnit: number;		
+		/** The primitive's topology. */
+		topology: number;	
+	}	
+	/** undefined */
+	export class WorldManifold {		
+		/** !#en
+		world contact point (point of intersection)
+		!#zh
+		碰撞点集合 */
+		points: Vec2[];		
+		/** !#en
+		world vector pointing from A to B
+		!#zh
+		世界坐标系下由 A 指向 B 的向量 */
+		normal: Vec2;	
+	}	
+	/** !#en
+	A manifold point is a contact point belonging to a contact manifold.
+	It holds details related to the geometry and dynamics of the contact points.
+	Note: the impulses are used for internal caching and may not
+	provide reliable contact forces, especially for high speed collisions.
+	!#zh
+	ManifoldPoint 是接触信息中的接触点信息。它拥有关于几何和接触点的详细信息。
+	注意：信息中的冲量用于系统内部缓存，提供的接触力可能不是很准确，特别是高速移动中的碰撞信息。 */
+	export class ManifoldPoint {		
+		/** !#en
+		The local point usage depends on the manifold type:
+		-e_circles: the local center of circleB
+		-e_faceA: the local center of circleB or the clip point of polygonB
+		-e_faceB: the clip point of polygonA
+		!#zh
+		本地坐标点的用途取决于 manifold 的类型
+		- e_circles: circleB 的本地中心点
+		- e_faceA: circleB 的本地中心点 或者是 polygonB 的截取点
+		- e_faceB: polygonB 的截取点 */
+		localPoint: Vec2;		
+		/** !#en
+		Normal impulse.
+		!#zh
+		法线冲量。 */
+		normalImpulse: number;		
+		/** !#en
+		Tangent impulse.
+		!#zh
+		切线冲量。 */
+		tangentImpulse: number;	
+	}	
+	/** undefined */
+	export class Manifold {		
+		/** !#en
+		Manifold type :  0: e_circles, 1: e_faceA, 2: e_faceB
+		!#zh
+		Manifold 类型 :  0: e_circles, 1: e_faceA, 2: e_faceB */
+		type: number;		
+		/** !#en
+		The local point usage depends on the manifold type:
+		-e_circles: the local center of circleA
+		-e_faceA: the center of faceA
+		-e_faceB: the center of faceB
+		!#zh
+		用途取决于 manifold 类型
+		-e_circles: circleA 的本地中心点
+		-e_faceA: faceA 的本地中心点
+		-e_faceB: faceB 的本地中心点 */
+		localPoint: Vec2;		
+		/** !#en
+		-e_circles: not used
+		-e_faceA: the normal on polygonA
+		-e_faceB: the normal on polygonB
+		!#zh
+		-e_circles: 没被使用到
+		-e_faceA: polygonA 的法向量
+		-e_faceB: polygonB 的法向量 */
+		localNormal: Vec2;		
+		/** !#en
+		the points of contact.
+		!#zh
+		接触点信息。 */
+		points: ManifoldPoint[];	
+	}	
+	/** !#en
+	Contact impulses for reporting.
+	!#zh
+	用于返回给回调的接触冲量。 */
+	export class PhysicsImpulse {		
+		/** !#en
+		Normal impulses.
+		!#zh
+		法线方向的冲量 */
+		normalImpulses: any;		
+		/** !#en
+		Tangent impulses
+		!#zh
+		切线方向的冲量 */
+		tangentImpulses: any;	
+	}	
+	/** !#en
+	PhysicsContact will be generated during begin and end collision as a parameter of the collision callback.
+	Note that contacts will be reused for speed up cpu time, so do not cache anything in the contact.
+	!#zh
+	物理接触会在开始和结束碰撞之间生成，并作为参数传入到碰撞回调函数中。
+	注意：传入的物理接触会被系统进行重用，所以不要在使用中缓存里面的任何信息。 */
+	export class PhysicsContact {		
+		/**
+		!#en
+		Get the world manifold.
+		!#zh
+		获取世界坐标系下的碰撞信息。 
+		*/
+		getWorldManifold(): WorldManifold;		
+		/**
+		!#en
+		Get the manifold.
+		!#zh
+		获取本地（局部）坐标系下的碰撞信息。 
+		*/
+		getManifold(): Manifold;		
+		/**
+		!#en
+		Get the impulses.
+		Note: PhysicsImpulse can only used in onPostSolve callback.
+		!#zh
+		获取冲量信息
+		注意：这个信息只有在 onPostSolve 回调中才能获取到 
+		*/
+		getImpulse(): PhysicsImpulse;		
+		/** !#en
+		One of the collider that collided
+		!#zh
+		发生碰撞的碰撞体之一 */
+		colliderA: Collider;		
+		/** !#en
+		One of the collider that collided
+		!#zh
+		发生碰撞的碰撞体之一 */
+		colliderB: Collider;		
+		/** !#en
+		If set disabled to true, the contact will be ignored until contact end.
+		If you just want to disabled contact for current time step or sub-step, please use disabledOnce.
+		!#zh
+		如果 disabled 被设置为 true，那么直到接触结束此接触都将被忽略。
+		如果只是希望在当前时间步或子步中忽略此接触，请使用 disabledOnce 。 */
+		disabled: boolean;		
+		/** !#en
+		Disabled contact for current time step or sub-step.
+		!#zh
+		在当前时间步或子步中忽略此接触。 */
+		disabledOnce: boolean;		
+		/**
+		!#en
+		Is this contact touching?
+		!#zh
+		返回碰撞体是否已经接触到。 
+		*/
+		isTouching(): boolean;		
+		/**
+		!#en
+		Set the desired tangent speed for a conveyor belt behavior.
+		!#zh
+		为传送带设置期望的切线速度
+		@param tangentSpeed tangentSpeed 
+		*/
+		setTangentSpeed(tangentSpeed: number): void;		
+		/**
+		!#en
+		Get the desired tangent speed.
+		!#zh
+		获取切线速度 
+		*/
+		getTangentSpeed(): number;		
+		/**
+		!#en
+		Override the default friction mixture. You can call this in onPreSolve callback.
+		!#zh
+		覆盖默认的摩擦力系数。你可以在 onPreSolve 回调中调用此函数。
+		@param friction friction 
+		*/
+		setFriction(friction: number): void;		
+		/**
+		!#en
+		Get the friction.
+		!#zh
+		获取当前摩擦力系数 
+		*/
+		getFriction(): number;		
+		/**
+		!#en
+		Reset the friction mixture to the default value.
+		!#zh
+		重置摩擦力系数到默认值 
+		*/
+		resetFriction(): void;		
+		/**
+		!#en
+		Override the default restitution mixture. You can call this in onPreSolve callback.
+		!#zh
+		覆盖默认的恢复系数。你可以在 onPreSolve 回调中调用此函数。
+		@param restitution restitution 
+		*/
+		setRestitution(restitution: number): void;		
+		/**
+		!#en
+		Get the restitution.
+		!#zh
+		获取当前恢复系数 
+		*/
+		getRestitution(): number;		
+		/**
+		!#en
+		Reset the restitution mixture to the default value.
+		!#zh
+		重置恢复系数到默认值 
+		*/
+		resetRestitution(): void;	
+	}	
+	/** !#en
+	Physics manager uses box2d as the inner physics system, and hide most box2d implement details(creating rigidbody, synchronize rigidbody info to node).
+	You can visit some common box2d function through physics manager(hit testing, raycast, debug info).
+	Physics manager distributes the collision information to each collision callback when collision is produced.
+	Note: You need first enable the collision listener in the rigidbody.
+	!#zh
+	物理系统将 box2d 作为内部物理系统，并且隐藏了大部分 box2d 实现细节（比如创建刚体，同步刚体信息到节点中等）。
+	你可以通过物理系统访问一些 box2d 常用的功能，比如点击测试，射线测试，设置测试信息等。
+	物理系统还管理碰撞信息的分发，她会在产生碰撞时，将碰撞信息分发到各个碰撞回调中。
+	注意：你需要先在刚体中开启碰撞接听才会产生相应的碰撞回调。<br>
+	支持的物理系统指定绘制信息事件，请参阅 {{#crossLink "PhysicsManager.DrawBits"}}{{/crossLink}} */
+	export class PhysicsManager implements EventTarget {		
+		/** !#en
+		The ratio transform between physics unit and pixel unit, generally is 32.
+		!#zh
+		物理单位与像素单位互相转换的比率，一般是 32。 */
+		static PTM_RATIO: number;		
+		/** !#en
+		The velocity iterations for the velocity constraint solver.
+		!#zh
+		速度更新迭代数 */
+		static VELOCITY_ITERATIONS: number;		
+		/** !#en
+		The position Iterations for the position constraint solver.
+		!#zh
+		位置迭代更新数 */
+		static POSITION_ITERATIONS: number;		
+		/** !#en
+		Specify the fixed time step.
+		Need enabledAccumulator to make it work.
+		!#zh
+		指定固定的物理更新间隔时间，需要开启 enabledAccumulator 才有效。 */
+		static FIXED_TIME_STEP: number;		
+		/** !#en
+		Specify the max accumulator time.
+		Need enabledAccumulator to make it work.
+		!#zh
+		每次可用于更新物理系统的最大时间，需要开启 enabledAccumulator 才有效。 */
+		static MAX_ACCUMULATOR: number;		
+		/** !#en
+		If enabled accumulator, then will call step function with the fixed time step FIXED_TIME_STEP.
+		And if the update dt is bigger than the time step, then will call step function several times.
+		If disabled accumulator, then will call step function with a time step calculated with the frame rate.
+		!#zh
+		如果开启此选项，那么将会以固定的间隔时间 FIXED_TIME_STEP 来更新物理引擎，如果一个 update 的间隔时间大于 FIXED_TIME_STEP，则会对物理引擎进行多次更新。
+		如果关闭此选项，那么将会根据设定的 frame rate 计算出一个间隔时间来更新物理引擎。 */
+		enabledAccumulator: boolean;		
+		/**
+		!#en
+		Test which collider contains the given world point
+		!#zh
+		获取包含给定世界坐标系点的碰撞体
+		@param point the world point 
+		*/
+		testPoint(point: Vec2): PhysicsCollider;		
+		/**
+		!#en
+		Test which colliders intersect the given world rect
+		!#zh
+		获取与给定世界坐标系矩形相交的碰撞体
+		@param rect the world rect 
+		*/
+		testAABB(rect: Rect): PhysicsCollider[];		
+		/**
+		!#en
+		Raycast the world for all colliders in the path of the ray.
+		The raycast ignores colliders that contain the starting point.
+		!#zh
+		检测哪些碰撞体在给定射线的路径上，射线检测将忽略包含起始点的碰撞体。
+		@param p1 start point of the raycast
+		@param p2 end point of the raycast
+		@param type optional, default is RayCastType.Closest 
+		*/
+		rayCast(p1: Vec2, p2: Vec2, type: RayCastType): PhysicsRayCastResult[];		
+		/** !#en
+		Enabled the physics manager?
+		!#zh
+		指定是否启用物理系统？ */
+		enabled: boolean;		
+		/** !#en
+		Debug draw flags.
+		!#zh
+		设置调试绘制标志 */
+		debugDrawFlags: number;		
+		/** !#en
+		The physics world gravity.
+		!#zh
+		物理世界重力值 */
+		gravity: Vec2;		
+		/**
+		!#en Checks whether the EventTarget object has any callback registered for a specific type of event.
+		!#zh 检查事件目标对象是否有为特定类型的事件注册的回调。
+		@param type The type of event. 
+		*/
+		hasEventListener(type: string): boolean;		
+		/**
+		!#en
+		Register an callback of a specific event type on the EventTarget.
+		This type of event should be triggered via `emit`.
+		!#zh
+		注册事件目标的特定事件类型回调。这种类型的事件应该被 `emit` 触发。
+		@param type A string representing the event type to listen for.
+		@param callback The callback that will be invoked when the event is dispatched.
+		                             The callback is ignored if it is a duplicate (the callbacks are unique).
+		@param target The target (this object) to invoke the callback, can be null
+		
+		@example 
+		```js
+		eventTarget.on('fire', function () {
+		    cc.log("fire in the hole");
+		}, node);
+		``` 
+		*/
+		on<T extends Function>(type: string, callback: T, target?: any, useCapture?: boolean): T;		
+		/**
+		!#en
+		Removes the listeners previously registered with the same type, callback, target and or useCapture,
+		if only type is passed as parameter, all listeners registered with that type will be removed.
+		!#zh
+		删除之前用同类型，回调，目标或 useCapture 注册的事件监听器，如果只传递 type，将会删除 type 类型的所有事件监听器。
+		@param type A string representing the event type being removed.
+		@param callback The callback to remove.
+		@param target The target (this object) to invoke the callback, if it's not given, only callback without target will be removed
+		
+		@example 
+		```js
+		// register fire eventListener
+		var callback = eventTarget.on('fire', function () {
+		    cc.log("fire in the hole");
+		}, target);
+		// remove fire event listener
+		eventTarget.off('fire', callback, target);
+		// remove all fire event listeners
+		eventTarget.off('fire');
+		``` 
+		*/
+		off(type: string, callback?: Function, target?: any): void;		
+		/**
+		!#en Removes all callbacks previously registered with the same target (passed as parameter).
+		This is not for removing all listeners in the current event target,
+		and this is not for removing all listeners the target parameter have registered.
+		It's only for removing all listeners (callback and target couple) registered on the current event target by the target parameter.
+		!#zh 在当前 EventTarget 上删除指定目标（target 参数）注册的所有事件监听器。
+		这个函数无法删除当前 EventTarget 的所有事件监听器，也无法删除 target 参数所注册的所有事件监听器。
+		这个函数只能删除 target 参数在当前 EventTarget 上注册的所有事件监听器。
+		@param target The target to be searched for all related listeners 
+		*/
+		targetOff(target: any): void;		
+		/**
+		!#en
+		Register an callback of a specific event type on the EventTarget,
+		the callback will remove itself after the first time it is triggered.
+		!#zh
+		注册事件目标的特定事件类型回调，回调会在第一时间被触发后删除自身。
+		@param type A string representing the event type to listen for.
+=======
 		dispatchEvent(event: Event): void;		
 		/**
 		!#en
@@ -10638,6 +12830,7 @@ declare namespace cc {
 		!#zh
 		注册事件目标的特定事件类型回调，回调会在第一时间被触发后删除自身。
 		@param type A string representing the event type to listen for.
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		@param callback The callback that will be invoked when the event is dispatched.
 		                             The callback is ignored if it is a duplicate (the callbacks are unique).
 		@param target The target (this object) to invoke the callback, can be null
@@ -10657,6 +12850,464 @@ declare namespace cc {
 		通过事件对象派发事件
 		@param event event 
 		*/
+<<<<<<< HEAD
+		dispatchEvent(event: Event): void;		
+		/**
+		!#en
+		Destroy all callbackInfos.
+		!#zh
+		销毁记录的事件 
+		*/
+		clear(): void;	
+	}	
+	/** undefined */
+	export class PhysicsRayCastResult {		
+		/** !#en
+		The PhysicsCollider which intersects with the raycast
+		!#zh
+		与射线相交的碰撞体 */
+		collider: PhysicsCollider;		
+		/** !#en
+		The intersection point
+		!#zh
+		射线与碰撞体相交的点 */
+		point: Vec2;		
+		/** !#en
+		The normal vector at the point of intersection
+		!#zh
+		射线与碰撞体相交的点的法向量 */
+		normal: Vec2;		
+		/** !#en
+		The fraction of the raycast path at the point of intersection
+		!#zh
+		射线与碰撞体相交的点占射线长度的分数 */
+		fraction: number;	
+	}	
+	/** !#en Enum for RigidBodyType.
+	!#zh 刚体类型 */
+	export enum RigidBodyType {		
+		Static = 0,
+		Kinematic = 0,
+		Dynamic = 0,
+		Animated = 0,	
+	}	
+	/** !#en Enum for RayCastType.
+	!#zh 射线检测类型 */
+	export enum RayCastType {		
+		Closest = 0,
+		Any = 0,
+		AllClosest = 0,
+		All = 0,	
+	}	
+	/** undefined */
+	export class RigidBody extends Component {		
+		/** !#en
+		Should enabled contact listener?
+		When a collision is trigger, the collision callback will only be called when enabled contact listener.
+		!#zh
+		是否启用接触接听器。
+		当 collider 产生碰撞时，只有开启了接触接听器才会调用相应的回调函数 */
+		enabledContactListener: boolean;		
+		/**
+		!#en
+		Collision callback.
+		Called when two collider begin to touch.
+		!#zh
+		碰撞回调。
+		如果你的脚本中实现了这个函数，那么它将会在两个碰撞体开始接触时被调用。
+		@param contact contact information
+		@param selfCollider the collider belong to this rigidbody
+		@param otherCollider the collider belong to another rigidbody 
+		*/
+		onBeginContact(contact: PhysicsContact, selfCollider: PhysicsCollider, otherCollider: PhysicsCollider): void;		
+		/**
+		!#en
+		Collision callback.
+		Called when two collider cease to touch.
+		!#zh
+		碰撞回调。
+		如果你的脚本中实现了这个函数，那么它将会在两个碰撞体停止接触时被调用。
+		@param contact contact information
+		@param selfCollider the collider belong to this rigidbody
+		@param otherCollider the collider belong to another rigidbody 
+		*/
+		onEndContact(contact: PhysicsContact, selfCollider: PhysicsCollider, otherCollider: PhysicsCollider): void;		
+		/**
+		!#en
+		Collision callback.
+		This is called when a contact is updated.
+		This allows you to inspect a contact before it goes to the solver(e.g. disable contact).
+		Note: this is called only for awake bodies.
+		Note: this is called even when the number of contact points is zero.
+		Note: this is not called for sensors.
+		!#zh
+		碰撞回调。
+		如果你的脚本中实现了这个函数，那么它将会在接触更新时被调用。
+		你可以在接触被处理前根据他包含的信息作出相应的处理，比如将这个接触禁用掉。
+		注意：回调只会为醒着的刚体调用。
+		注意：接触点为零的时候也有可能被调用。
+		注意：感知体(sensor)的回调不会被调用。
+		@param contact contact information
+		@param selfCollider the collider belong to this rigidbody
+		@param otherCollider the collider belong to another rigidbody 
+		*/
+		onPreSolve(contact: PhysicsContact, selfCollider: PhysicsCollider, otherCollider: PhysicsCollider): void;		
+		/**
+		!#en
+		Collision callback.
+		This is called after a contact is updated.
+		You can get the impulses from the contact in this callback.
+		!#zh
+		碰撞回调。
+		如果你的脚本中实现了这个函数，那么它将会在接触更新完后被调用。
+		你可以在这个回调中从接触信息中获取到冲量信息。
+		@param contact contact information
+		@param selfCollider the collider belong to this rigidbody
+		@param otherCollider the collider belong to another rigidbody 
+		*/
+		onPostSolve(contact: PhysicsContact, selfCollider: PhysicsCollider, otherCollider: PhysicsCollider): void;		
+		/** !#en
+		Is this a fast moving body that should be prevented from tunneling through
+		other moving bodies?
+		Note :
+		- All bodies are prevented from tunneling through kinematic and static bodies. This setting is only considered on dynamic bodies.
+		- You should use this flag sparingly since it increases processing time.
+		!#zh
+		这个刚体是否是一个快速移动的刚体，并且需要禁止穿过其他快速移动的刚体？
+		需要注意的是 :
+		 - 所有刚体都被禁止从 运动刚体 和 静态刚体 中穿过。此选项只关注于 动态刚体。
+		 - 应该尽量少的使用此选项，因为它会增加程序处理时间。 */
+		bullet: boolean;		
+		/** !#en
+		Rigidbody type : Static, Kinematic, Dynamic or Animated.
+		!#zh
+		刚体类型： Static, Kinematic, Dynamic or Animated. */
+		type: RigidBodyType;		
+		/** !#en
+		Set this flag to false if this body should never fall asleep.
+		Note that this increases CPU usage.
+		!#zh
+		如果此刚体永远都不应该进入睡眠，那么设置这个属性为 false。
+		需要注意这将使 CPU 占用率提高。 */
+		allowSleep: boolean;		
+		/** !#en
+		Scale the gravity applied to this body.
+		!#zh
+		缩放应用在此刚体上的重力值 */
+		gravityScale: number;		
+		/** !#en
+		Linear damping is use to reduce the linear velocity.
+		The damping parameter can be larger than 1, but the damping effect becomes sensitive to the
+		time step when the damping parameter is large.
+		!#zh
+		Linear damping 用于衰减刚体的线性速度。衰减系数可以大于 1，但是当衰减系数比较大的时候，衰减的效果会变得比较敏感。 */
+		linearDamping: number;		
+		/** !#en
+		Angular damping is use to reduce the angular velocity. The damping parameter
+		can be larger than 1 but the damping effect becomes sensitive to the
+		time step when the damping parameter is large.
+		!#zh
+		Angular damping 用于衰减刚体的角速度。衰减系数可以大于 1，但是当衰减系数比较大的时候，衰减的效果会变得比较敏感。 */
+		angularDamping: number;		
+		/** !#en
+		The linear velocity of the body's origin in world co-ordinates.
+		!#zh
+		刚体在世界坐标下的线性速度 */
+		linearVelocity: Vec2;		
+		/** !#en
+		The angular velocity of the body.
+		!#zh
+		刚体的角速度 */
+		angularVelocity: number;		
+		/** !#en
+		Should this body be prevented from rotating?
+		!#zh
+		是否禁止此刚体进行旋转 */
+		fixedRotation: boolean;		
+		/** !#en
+		Set the sleep state of the body. A sleeping body has very low CPU cost.(When the rigid body is hit, if the rigid body is in sleep state, it will be immediately awakened.)
+		!#zh
+		设置刚体的睡眠状态。 睡眠的刚体具有非常低的 CPU 成本。（当刚体被碰撞到时，如果刚体处于睡眠状态，它会立即被唤醒） */
+		awake: boolean;		
+		/** !#en
+		Whether to wake up this rigid body during initialization
+		!#zh
+		是否在初始化时唤醒此刚体 */
+		awakeOnLoad: boolean;		
+		/** !#en
+		Set the active state of the body. An inactive body is not
+		simulated and cannot be collided with or woken up.
+		If body is active, all fixtures will be added to the
+		broad-phase.
+		If body is inactive, all fixtures will be removed from
+		the broad-phase and all contacts will be destroyed.
+		Fixtures on an inactive body are implicitly inactive and will
+		not participate in collisions, ray-casts, or queries.
+		Joints connected to an inactive body are implicitly inactive.
+		!#zh
+		设置刚体的激活状态。一个非激活状态下的刚体是不会被模拟和碰撞的，不管它是否处于睡眠状态下。
+		如果刚体处于激活状态下，所有夹具会被添加到 粗测阶段（broad-phase）。
+		如果刚体处于非激活状态下，所有夹具会被从 粗测阶段（broad-phase）中移除。
+		在非激活状态下的夹具不会参与到碰撞，射线，或者查找中
+		链接到非激活状态下刚体的关节也是非激活的。 */
+		active: boolean;		
+		/**
+		!#en
+		Converts a given point in the world coordinate system to this rigid body's local coordinate system
+		!#zh
+		将一个给定的世界坐标系下的点转换为刚体本地坐标系下的点
+		@param worldPoint a point in world coordinates.
+		@param out optional, the receiving point 
+		*/
+		getLocalPoint(worldPoint: Vec2, out: Vec2): Vec2;		
+		/**
+		!#en
+		Converts a given point in this rigid body's local coordinate system to the world coordinate system
+		!#zh
+		将一个给定的刚体本地坐标系下的点转换为世界坐标系下的点
+		@param localPoint a point in local coordinates.
+		@param out optional, the receiving point 
+		*/
+		getWorldPoint(localPoint: Vec2, out: Vec2): Vec2;		
+		/**
+		!#en
+		Converts a given vector in this rigid body's local coordinate system to the world coordinate system
+		!#zh
+		将一个给定的刚体本地坐标系下的向量转换为世界坐标系下的向量
+		@param localVector a vector in world coordinates.
+		@param out optional, the receiving vector 
+		*/
+		getWorldVector(localVector: Vec2, out: Vec2): Vec2;		
+		/**
+		!#en
+		Converts a given vector in the world coordinate system to this rigid body's local coordinate system
+		!#zh
+		将一个给定的世界坐标系下的向量转换为刚体本地坐标系下的向量
+		@param worldVector a vector in world coordinates.
+		@param out optional, the receiving vector 
+		*/
+		getLocalVector(worldVector: Vec2, out: Vec2): Vec2;		
+		/**
+		!#en
+		Get the world body origin position.
+		!#zh
+		获取刚体世界坐标系下的原点值
+		@param out optional, the receiving point 
+		*/
+		getWorldPosition(out: Vec2): Vec2;		
+		/**
+		!#en
+		Get the world body rotation angle.
+		!#zh
+		获取刚体世界坐标系下的旋转值。 
+		*/
+		getWorldRotation(): number;		
+		/**
+		!#en
+		Get the local position of the center of mass.
+		!#zh
+		获取刚体本地坐标系下的质心 
+		*/
+		getLocalCenter(): Vec2;		
+		/**
+		!#en
+		Get the world position of the center of mass.
+		!#zh
+		获取刚体世界坐标系下的质心 
+		*/
+		getWorldCenter(): Vec2;		
+		/**
+		!#en
+		Get the world linear velocity of a world point attached to this body.
+		!#zh
+		获取刚体上指定点的线性速度
+		@param worldPoint a point in world coordinates.
+		@param out optional, the receiving point 
+		*/
+		getLinearVelocityFromWorldPoint(worldPoint: Vec2, out: Vec2): Vec2;		
+		/**
+		!#en
+		Get total mass of the body.
+		!#zh
+		获取刚体的质量。 
+		*/
+		getMass(): number;		
+		/**
+		!#en
+		Get the rotational inertia of the body about the local origin.
+		!#zh
+		获取刚体本地坐标系下原点的旋转惯性 
+		*/
+		getInertia(): number;		
+		/**
+		!#en
+		Get all the joints connect to the rigidbody.
+		!#zh
+		获取链接到此刚体的所有关节 
+		*/
+		getJointList(): Joint[];		
+		/**
+		!#en
+		Apply a force at a world point. If the force is not
+		applied at the center of mass, it will generate a torque and
+		affect the angular velocity.
+		!#zh
+		施加一个力到刚体上的一个点。如果力没有施加到刚体的质心上，还会产生一个扭矩并且影响到角速度。
+		@param force the world force vector.
+		@param point the world position.
+		@param wake also wake up the body. 
+		*/
+		applyForce(force: Vec2, point: Vec2, wake: boolean): void;		
+		/**
+		!#en
+		Apply a force to the center of mass.
+		!#zh
+		施加一个力到刚体上的质心上。
+		@param force the world force vector.
+		@param wake also wake up the body. 
+		*/
+		applyForceToCenter(force: Vec2, wake: boolean): void;		
+		/**
+		!#en
+		Apply a torque. This affects the angular velocity.
+		!#zh
+		施加一个扭矩力，将影响刚体的角速度
+		@param torque about the z-axis (out of the screen), usually in N-m.
+		@param wake also wake up the body 
+		*/
+		applyTorque(torque: number, wake: boolean): void;		
+		/**
+		!#en
+		Apply a impulse at a world point, This immediately modifies the velocity.
+		If the impulse is not applied at the center of mass, it will generate a torque and
+		affect the angular velocity.
+		!#zh
+		施加冲量到刚体上的一个点，将立即改变刚体的线性速度。
+		如果冲量施加到的点不是刚体的质心，那么将产生一个扭矩并影响刚体的角速度。
+		@param impulse the world impulse vector, usually in N-seconds or kg-m/s.
+		@param point the world position
+		@param wake alse wake up the body 
+		*/
+		applyLinearImpulse(impulse: Vec2, point: Vec2, wake: boolean): void;		
+		/**
+		!#en
+		Apply an angular impulse.
+		!#zh
+		施加一个角速度冲量。
+		@param impulse the angular impulse in units of kg*m*m/s
+		@param wake also wake up the body 
+		*/
+		applyAngularImpulse(impulse: number, wake: boolean): void;		
+		/**
+		!#en
+		Synchronize node's world position to box2d rigidbody's position.
+		If enableAnimated is true and rigidbody's type is Animated type,
+		will set linear velocity instead of directly set rigidbody's position.
+		!#zh
+		同步节点的世界坐标到 box2d 刚体的坐标上。
+		如果 enableAnimated 是 true，并且刚体的类型是 Animated ，那么将设置刚体的线性速度来代替直接设置刚体的位置。
+		@param enableAnimated enableAnimated 
+		*/
+		syncPosition(enableAnimated: boolean): void;		
+		/**
+		!#en
+		Synchronize node's world angle to box2d rigidbody's angle.
+		If enableAnimated is true and rigidbody's type is Animated type,
+		will set angular velocity instead of directly set rigidbody's angle.
+		!#zh
+		同步节点的世界旋转角度值到 box2d 刚体的旋转值上。
+		如果 enableAnimated 是 true，并且刚体的类型是 Animated ，那么将设置刚体的角速度来代替直接设置刚体的角度。
+		@param enableAnimated enableAnimated 
+		*/
+		syncRotation(enableAnimated: boolean): void;	
+	}	
+	/** !#en the device accelerometer reports values for each axis in units of g-force.
+	!#zh 设备重力传感器传递的各个轴的数据。 */
+	export class constructor {		
+		/**
+		whether enable accelerometer event
+		@param isEnable isEnable 
+		*/
+		setAccelerometerEnabled(isEnable: boolean): void;		
+		/**
+		set accelerometer interval value
+		@param interval interval 
+		*/
+		setAccelerometerInterval(interval: number): void;	
+	}	
+	/** undefined */
+	export enum VerticalTextAlignment {		
+		TOP = 0,
+		CENTER = 0,
+		BOTTOM = 0,	
+	}	
+	/** The base class of most of all the objects in Fireball. */
+	export class Object {		
+		/** !#en The name of the object.
+		!#zh 该对象的名称。 */
+		name: string;		
+		/** !#en
+		Indicates whether the object is not yet destroyed. (It will not be available after being destroyed)<br>
+		When an object's `destroy` is called, it is actually destroyed after the end of this frame.
+		So `isValid` will return false from the next frame, while `isValid` in the current frame will still be true.
+		If you want to determine whether the current frame has called `destroy`, use `cc.isValid(obj, true)`,
+		but this is often caused by a particular logical requirements, which is not normally required.
+		
+		!#zh
+		表示该对象是否可用（被 destroy 后将不可用）。<br>
+		当一个对象的 `destroy` 调用以后，会在这一帧结束后才真正销毁。因此从下一帧开始 `isValid` 就会返回 false，而当前帧内 `isValid` 仍然会是 true。如果希望判断当前帧是否调用过 `destroy`，请使用 `cc.isValid(obj, true)`，不过这往往是特殊的业务需求引起的，通常情况下不需要这样。 */
+		isValid: boolean;		
+		/**
+		!#en
+		Destroy this Object, and release all its own references to other objects.<br/>
+		Actual object destruction will delayed until before rendering.
+		From the next frame, this object is not usable anymore.
+		You can use `cc.isValid(obj)` to check whether the object is destroyed before accessing it.
+		!#zh
+		销毁该对象，并释放所有它对其它对象的引用。<br/>
+		实际销毁操作会延迟到当前帧渲染前执行。从下一帧开始，该对象将不再可用。
+		您可以在访问对象之前使用 `cc.isValid(obj)` 来检查对象是否已被销毁。
+		
+		@example 
+		```js
+		obj.destroy();
+		``` 
+		*/
+		destroy(): boolean;	
+	}	
+	/** Bit mask that controls object states. */
+	export enum Flags {		
+		DontSave = 0,
+		EditorOnly = 0,
+		HideInHierarchy = 0,	
+	}	
+	/** The fullscreen API provides an easy way for web content to be presented using the user's entire screen.
+	It's invalid on safari, QQbrowser and android browser */
+	export class screen {		
+		/**
+		initialize 
+		*/
+		init(): void;		
+		/**
+		return true if it's full now. 
+		*/
+		fullScreen(): boolean;		
+		/**
+		change the screen to full mode.
+		@param element element
+		@param onFullScreenChange onFullScreenChange
+		@param onFullScreenError onFullScreenError 
+		*/
+		requestFullScreen(element: Element, onFullScreenChange: Function, onFullScreenError: Function): void;		
+		/**
+		exit the full mode. 
+		*/
+		exitFullScreen(): boolean;		
+		/**
+		Automatically request full screen with a touch/click event
+		@param element element
+		@param onFullScreenChange onFullScreenChange 
+=======
 		dispatchEvent(event: Event): void;	
 	}	
 	/** !#en
@@ -10809,6 +13460,7 @@ declare namespace cc {
 		Automatically request full screen with a touch/click event
 		@param element element
 		@param onFullScreenChange onFullScreenChange 
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		*/
 		autoFullScreen(element: Element, onFullScreenChange: Function): void;	
 	}	
@@ -10933,17 +13585,28 @@ declare namespace cc {
 		Is webgl extension support?
 		@param name name 
 		*/
+<<<<<<< HEAD
+		static glExtension(name: any): boolean;		
+=======
 		static glExtension(name: any): void;		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		/**
 		Get max joint matrix size for skinned mesh renderer. 
 		*/
 		static getMaxJointMatrixSize(): void;		
 		/**
 		!#en
+<<<<<<< HEAD
+		Returns the safe area of the screen (in design resolution). If the screen is not notched, the visibleRect will be returned by default.
+		Currently supports Android, iOS and WeChat Mini Game platform.
+		!#zh
+		返回手机屏幕安全区域（设计分辨率为单位），如果不是异形屏将默认返回 visibleRect。目前支持安卓、iOS 原生平台和微信小游戏平台。 
+=======
 		Returns the safe area of the screen. If the screen is not notched, the design resolution will be returned by default.
 		Only supported on Android, iOS and WeChat Mini Game platform.
 		!#zh
 		返回手机屏幕安全区域，如果不是异形屏将默认返回设计分辨率尺寸。目前只支持安卓、iOS 原生平台和微信小游戏平台。 
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		*/
 		static getSafeAreaRect(): Rect;		
 		/** Indicate whether system is mobile system */
@@ -11568,6 +14231,604 @@ declare namespace cc {
 		*/
 		push(obj: any, propName: string, uuid: string): void;	
 	}	
+<<<<<<< HEAD
+	/** !#en
+	Representation of RGBA colors.
+	
+	Each color component is a floating point value with a range from 0 to 255.
+	
+	You can also use the convenience method {{#crossLink "cc/color:method"}}cc.color{{/crossLink}} to create a new Color.
+	
+	!#zh
+	cc.Color 用于表示颜色。
+	
+	它包含 RGBA 四个以浮点数保存的颜色分量，每个的值都在 0 到 255 之间。
+	
+	您也可以通过使用 {{#crossLink "cc/color:method"}}cc.color{{/crossLink}} 的便捷方法来创建一个新的 Color。 */
+	export class Color extends ValueType {		
+		/** !#en Solid white, RGBA is [255, 255, 255, 255].
+		!#zh 纯白色，RGBA 是 [255, 255, 255, 255]。 */
+		static WHITE: Color;		
+		/** !#en Solid black, RGBA is [0, 0, 0, 255].
+		!#zh 纯黑色，RGBA 是 [0, 0, 0, 255]。 */
+		static BLACK: Color;		
+		/** !#en Transparent, RGBA is [0, 0, 0, 0].
+		!#zh 透明，RGBA 是 [0, 0, 0, 0]。 */
+		static TRANSPARENT: Color;		
+		/** !#en Grey, RGBA is [127.5, 127.5, 127.5].
+		!#zh 灰色，RGBA 是 [127.5, 127.5, 127.5]。 */
+		static GRAY: Color;		
+		/** !#en Solid red, RGBA is [255, 0, 0].
+		!#zh 纯红色，RGBA 是 [255, 0, 0]。 */
+		static RED: Color;		
+		/** !#en Solid green, RGBA is [0, 255, 0].
+		!#zh 纯绿色，RGBA 是 [0, 255, 0]。 */
+		static GREEN: Color;		
+		/** !#en Solid blue, RGBA is [0, 0, 255].
+		!#zh 纯蓝色，RGBA 是 [0, 0, 255]。 */
+		static BLUE: Color;		
+		/** !#en Yellow, RGBA is [255, 235, 4].
+		!#zh 黄色，RGBA 是 [255, 235, 4]。 */
+		static YELLOW: Color;		
+		/** !#en Orange, RGBA is [255, 127, 0].
+		!#zh 橙色，RGBA 是 [255, 127, 0]。 */
+		static ORANGE: Color;		
+		/** !#en Cyan, RGBA is [0, 255, 255].
+		!#zh 青色，RGBA 是 [0, 255, 255]。 */
+		static CYAN: Color;		
+		/** !#en Magenta, RGBA is [255, 0, 255].
+		!#zh 洋红色（品红色），RGBA 是 [255, 0, 255]。 */
+		static MAGENTA: Color;		
+		/**
+		Copy content of a color into another. 
+		*/
+		static copy (out: Color, a: Color): Color;		
+		/**
+		Clone a new color. 
+		*/
+		static clone (a: Color): Color;		
+		/**
+		Set the components of a color to the given values. 
+		*/
+		static set (out: Color, r?: number, g?: number, b?: number, a?: number): Color;		
+		/**
+		Converts the hexadecimal formal color into rgb formal. 
+		*/
+		static fromHex (out: Color, hex: number): Color;		
+		/**
+		Converts the hexadecimal formal color into rgb formal. 
+		*/
+		static fromHEX (out: Color, hex: string): Color;		
+		/**
+		Add components of two colors, respectively. 
+		*/
+		static add (out: Color, a: Color, b: Color): Color;		
+		/**
+		Subtract components of color b from components of color a, respectively. 
+		*/
+		static subtract (out: Color, a: Color, b: Color): Color;		
+		/**
+		Multiply components of two colors, respectively. 
+		*/
+		static multiply (out: Color, a: Color, b: Color): Color;		
+		/**
+		Divide components of color a by components of color b, respectively. 
+		*/
+		static divide (out: Color, a: Color, b: Color): Color;		
+		/**
+		Scales a color by a number. 
+		*/
+		static scale (out: Color, a: Color, b: number): Color;		
+		/**
+		Performs a linear interpolation between two colors. 
+		*/
+		static lerp (out: Color, a: Color, b: Color, t: number): Color;		
+		/**
+		!#zh 颜色转数组
+		!#en Turn an array of colors
+		@param ofs 数组起始偏移量 
+		*/
+		static toArray <Out extends IWritableArrayLike<number>> (out: Out, a: IColorLike, ofs?: number): Out;		
+		/**
+		!#zh 数组转颜色
+		!#en An array of colors turn
+		@param ofs 数组起始偏移量 
+		*/
+		static fromArray <Out extends IColorLike> (arr: IWritableArrayLike<number>, out: Out, ofs?: number): Out;		
+		/**
+		!#zh 颜色 RGB 预乘 Alpha 通道
+		!#en RGB premultiply alpha channel
+		@param out 返回颜色
+		@param color 预乘处理的目标颜色 
+		*/
+		static premultiplyAlpha <Out extends IColorLike> (out: Out, a: IColorLike);		
+		/**
+		
+		@param r red component of the color, default value is 0.
+		@param g green component of the color, defualt value is 0.
+		@param b blue component of the color, default value is 0.
+		@param a alpha component of the color, default value is 255. 
+		*/
+		constructor(r?: number, g?: number, b?: number, a?: number);		
+		/**
+		!#en Clone a new color from the current color.
+		!#zh 克隆当前颜色。
+		
+		@example 
+		```js
+		var color = new cc.Color();
+		var newColor = color.clone();// Color {r: 0, g: 0, b: 0, a: 255}
+		``` 
+		*/
+		clone(): Color;		
+		/**
+		!#en TODO
+		!#zh 判断两个颜色是否相等。
+		@param other other
+		
+		@example 
+		```js
+		var color1 = cc.Color.WHITE;
+		var color2 = new cc.Color(255, 255, 255);
+		cc.log(color1.equals(color2)); // true;
+		color2 = cc.Color.RED;
+		cc.log(color2.equals(color1)); // false;
+		``` 
+		*/
+		equals(other: Color): boolean;		
+		/**
+		!#en TODO
+		!#zh 线性插值
+		@param to to
+		@param ratio the interpolation coefficient.
+		@param out optional, the receiving vector.
+		
+		@example 
+		```js
+		// Converts a white color to a black one trough time.
+		update: function (dt) {
+		    var color = this.node.color;
+		    if (color.equals(cc.Color.BLACK)) {
+		        return;
+		    }
+		    this.ratio += dt * 0.1;
+		    this.node.color = cc.Color.WHITE.lerp(cc.Color.BLACK, ratio);
+		}
+		
+		``` 
+		*/
+		lerp(to: Color, ratio: number, out?: Color): Color;		
+		/**
+		!#en TODO
+		!#zh 转换为方便阅读的字符串。
+		
+		@example 
+		```js
+		var color = cc.Color.WHITE;
+		color.toString(); // "rgba(255, 255, 255, 255)"
+		``` 
+		*/
+		toString(): string;		
+		/** !#en Get or set red channel value
+		!#zh 获取或者设置红色通道 */
+		r: number;		
+		/** !#en Get or set green channel value
+		!#zh 获取或者设置绿色通道 */
+		g: number;		
+		/** !#en Get or set blue channel value
+		!#zh 获取或者设置蓝色通道 */
+		b: number;		
+		/** !#en Get or set alpha channel value
+		!#zh 获取或者设置透明通道 */
+		a: number;		
+		/**
+		!#en Gets red channel value
+		!#zh 获取当前颜色的红色值。 
+		*/
+		getR(): number;		
+		/**
+		!#en Sets red value and return the current color object
+		!#zh 设置当前的红色值，并返回当前对象。
+		@param red the new Red component.
+		
+		@example 
+		```js
+		var color = new cc.Color();
+		color.setR(255); // Color {r: 255, g: 0, b: 0, a: 255}
+		``` 
+		*/
+		setR(red: number): Color;		
+		/**
+		!#en Gets green channel value
+		!#zh 获取当前颜色的绿色值。 
+		*/
+		getG(): number;		
+		/**
+		!#en Sets green value and return the current color object
+		!#zh 设置当前的绿色值，并返回当前对象。
+		@param green the new Green component.
+		
+		@example 
+		```js
+		var color = new cc.Color();
+		color.setG(255); // Color {r: 0, g: 255, b: 0, a: 255}
+		``` 
+		*/
+		setG(green: number): Color;		
+		/**
+		!#en Gets blue channel value
+		!#zh 获取当前颜色的蓝色值。 
+		*/
+		getB(): number;		
+		/**
+		!#en Sets blue value and return the current color object
+		!#zh 设置当前的蓝色值，并返回当前对象。
+		@param blue the new Blue component.
+		
+		@example 
+		```js
+		var color = new cc.Color();
+		color.setB(255); // Color {r: 0, g: 0, b: 255, a: 255}
+		``` 
+		*/
+		setB(blue: number): Color;		
+		/**
+		!#en Gets alpha channel value
+		!#zh 获取当前颜色的透明度值。 
+		*/
+		getA(): number;		
+		/**
+		!#en Sets alpha value and return the current color object
+		!#zh 设置当前的透明度，并返回当前对象。
+		@param alpha the new Alpha component.
+		
+		@example 
+		```js
+		var color = new cc.Color();
+		color.setA(0); // Color {r: 0, g: 0, b: 0, a: 0}
+		``` 
+		*/
+		setA(alpha: number): Color;		
+		/**
+		!#en Convert color to css format.
+		!#zh 转换为 CSS 格式。
+		@param opt "rgba", "rgb", "#rgb" or "#rrggbb".
+		
+		@example 
+		```js
+		var color = cc.Color.BLACK;
+		color.toCSS();          // "rgba(0,0,0,1.00)";
+		color.toCSS("rgba");    // "rgba(0,0,0,1.00)";
+		color.toCSS("rgb");     // "rgba(0,0,0)";
+		color.toCSS("#rgb");    // "#000";
+		color.toCSS("#rrggbb"); // "#000000";
+		``` 
+		*/
+		toCSS(opt?: string): string;		
+		/**
+		!#en Read hex string and store color data into the current color object, the hex string must be formated as rgba or rgb.
+		!#zh 读取 16 进制颜色。
+		@param hexString hexString
+		
+		@example 
+		```js
+		var color = cc.Color.BLACK;
+		color.fromHEX("#FFFF33"); // Color {r: 255, g: 255, b: 51, a: 255};
+		``` 
+		*/
+		fromHEX(hexString: string): Color;		
+		/**
+		!#en convert Color to HEX color string.
+		!#zh 转换为 16 进制。
+		@param fmt "#rgb", "#rrggbb" or "#rrggbbaa".
+		
+		@example 
+		```js
+		var color = cc.Color.BLACK;
+		color.toHEX("#rgb");     // "000";
+		color.toHEX("#rrggbb");  // "000000";
+		``` 
+		*/
+		toHEX(fmt?: string): string;		
+		/**
+		!#en Convert to 24bit rgb value.
+		!#zh 转换为 24bit 的 RGB 值。
+		
+		@example 
+		```js
+		var color = cc.Color.YELLOW;
+		color.toRGBValue(); // 16771844;
+		``` 
+		*/
+		toRGBValue(): number;		
+		/**
+		!#en Read HSV model color and convert to RGB color
+		!#zh 读取 HSV（色彩模型）格式。
+		@param h h
+		@param s s
+		@param v v
+		
+		@example 
+		```js
+		var color = cc.Color.YELLOW;
+		color.fromHSV(0, 0, 1); // Color {r: 255, g: 255, b: 255, a: 255};
+		``` 
+		*/
+		fromHSV(h: number, s: number, v: number): Color;		
+		/**
+		!#en Transform to HSV model color
+		!#zh 转换为 HSV（色彩模型）格式。
+		
+		@example 
+		```js
+		var color = cc.Color.YELLOW;
+		color.toHSV(); // Object {h: 0.1533864541832669, s: 0.9843137254901961, v: 1};
+		``` 
+		*/
+		toHSV(): any;		
+		/**
+		!#en Set the color
+		!#zh 设置颜色
+		@param color color 
+		*/
+		set (color: Color): Color;		
+		/**
+		!#en Multiplies the current color by the specified color
+		!#zh 将当前颜色乘以与指定颜色
+		@param other other 
+		*/
+		multiply(other: Color): Color;	
+	}	
+	/** !#en Representation of 4*4 matrix.
+	!#zh 表示 4*4 矩阵 */
+	export class Mat4 extends ValueType {		
+		/**
+		!#en Multiply the current matrix with another one
+		!#zh 将当前矩阵与指定矩阵相乘
+		@param other the second operand
+		@param out the receiving matrix, you can pass the same matrix to save result to itself, if not provided, a new matrix will be created 
+		*/
+		mul(other: Mat4, out?: Mat4): Mat4;		
+		/**
+		!#en Multiply each element of the matrix by a scalar.
+		!#zh 将矩阵的每一个元素都乘以指定的缩放值。
+		@param number amount to scale the matrix's elements by
+		@param out the receiving matrix, you can pass the same matrix to save result to itself, if not provided, a new matrix will be created 
+		*/
+		mulScalar(number: number, out?: Mat4): Mat4;		
+		/**
+		!#en Subtracts the current matrix with another one
+		!#zh 将当前矩阵与指定的矩阵相减
+		@param other the second operand
+		@param out the receiving matrix, you can pass the same matrix to save result to itself, if not provided, a new matrix will be created 
+		*/
+		sub(other: Mat4, out?: Mat4): Mat4;		
+		/** Identity  of Mat4 */
+		static IDENTITY: Mat4;		
+		/**
+		!#zh 获得指定矩阵的拷贝
+		!#en Copy of the specified matrix to obtain 
+		*/
+		static clone<Out extends IMat4Like> (a: Out): Mat4;		
+		/**
+		!#zh 复制目标矩阵
+		!#en Copy the target matrix 
+		*/
+		static copy<Out extends IMat4Like> (out: Out, a: Out): Out;		
+		/**
+		!#zh 将目标赋值为单位矩阵
+		!#en The target of an assignment is the identity matrix 
+		*/
+		static identity<Out extends IMat4Like> (out: Out): Out;		
+		/**
+		!#zh 转置矩阵
+		!#en Transposed matrix 
+		*/
+		static transpose<Out extends IMat4Like> (out: Out, a: Out): Out;		
+		/**
+		!#zh 矩阵求逆
+		!#en Matrix inversion 
+		*/
+		static invert<Out extends IMat4Like> (out: Out, a: Out): Out;		
+		/**
+		!#zh 矩阵行列式
+		!#en Matrix determinant 
+		*/
+		static determinant<Out extends IMat4Like> (a: Out): number;		
+		/**
+		!#zh 矩阵乘法
+		!#en Matrix Multiplication 
+		*/
+		static multiply<Out extends IMat4Like> (out: Out, a: Out, b: Out): Out;		
+		/**
+		!#zh 在给定矩阵变换基础上加入变换
+		!#en Was added in a given transformation matrix transformation on the basis of 
+		*/
+		static transform<Out extends IMat4Like, VecLike extends IVec3Like> (out: Out, a: Out, v: VecLike): Out;		
+		/**
+		!#zh 在给定矩阵变换基础上加入新位移变换
+		!#en Add new displacement transducer in a matrix transformation on the basis of a given 
+		*/
+		static translate<Out extends IMat4Like, VecLike extends IVec3Like> (out: Out, a: Out, v: VecLike): Out;		
+		/**
+		!#zh 在给定矩阵变换基础上加入新缩放变换
+		!#en Add new scaling transformation in a given matrix transformation on the basis of 
+		*/
+		static scale<Out extends IMat4Like, VecLike extends IVec3Like> (out: Out, a: Out, v: VecLike): Out;		
+		/**
+		!#zh 在给定矩阵变换基础上加入新旋转变换
+		!#en Add a new rotational transform matrix transformation on the basis of a given
+		@param rad 旋转角度
+		@param axis 旋转轴 
+		*/
+		static rotate<Out extends IMat4Like, VecLike extends IVec3Like> (out: Out, a: Out, rad: number, axis: VecLike): Out;		
+		/**
+		!#zh 在给定矩阵变换基础上加入绕 X 轴的旋转变换
+		!#en Add rotational transformation around the X axis at a given matrix transformation on the basis of
+		@param rad 旋转角度 
+		*/
+		static rotateX<Out extends IMat4Like> (out: Out, a: Out, rad: number): Out;		
+		/**
+		!#zh 在给定矩阵变换基础上加入绕 Y 轴的旋转变换
+		!#en Add about the Y axis rotation transformation in a given matrix transformation on the basis of
+		@param rad 旋转角度 
+		*/
+		static rotateY<Out extends IMat4Like> (out: Out, a: Out, rad: number): Out;		
+		/**
+		!#zh 在给定矩阵变换基础上加入绕 Z 轴的旋转变换
+		!#en Added about the Z axis at a given rotational transformation matrix transformation on the basis of
+		@param rad 旋转角度 
+		*/
+		static rotateZ<Out extends IMat4Like> (out: Out, a: Out, rad: number): Out;		
+		/**
+		!#zh 计算位移矩阵
+		!#en Displacement matrix calculation 
+		*/
+		static fromTranslation<Out extends IMat4Like, VecLike extends IVec3Like> (out: Out, v: VecLike): Out;		
+		/**
+		!#zh 计算缩放矩阵
+		!#en Scaling matrix calculation 
+		*/
+		static fromScaling<Out extends IMat4Like, VecLike extends IVec3Like> (out: Out, v: VecLike): Out;		
+		/**
+		!#zh 计算旋转矩阵
+		!#en Calculates the rotation matrix 
+		*/
+		static fromRotation<Out extends IMat4Like, VecLike extends IVec3Like> (out: Out, rad: number, axis: VecLike): Out;		
+		/**
+		!#zh 计算绕 X 轴的旋转矩阵
+		!#en Calculating rotation matrix about the X axis 
+		*/
+		static fromXRotation<Out extends IMat4Like> (out: Out, rad: number): Out;		
+		/**
+		!#zh 计算绕 Y 轴的旋转矩阵
+		!#en Calculating rotation matrix about the Y axis 
+		*/
+		static fromYRotation<Out extends IMat4Like> (out: Out, rad: number): Out;		
+		/**
+		!#zh 计算绕 Z 轴的旋转矩阵
+		!#en Calculating rotation matrix about the Z axis 
+		*/
+		static fromZRotation<Out extends IMat4Like> (out: Out, rad: number): Out;		
+		/**
+		!#zh 根据旋转和位移信息计算矩阵
+		!#en The rotation and displacement information calculating matrix 
+		*/
+		static fromRT<Out extends IMat4Like, VecLike extends IVec3Like> (out: Out, q: Quat, v: VecLike): Out;		
+		/**
+		!#zh 提取矩阵的位移信息, 默认矩阵中的变换以 S->R->T 的顺序应用
+		!#en Extracting displacement information of the matrix, the matrix transform to the default sequential application S-> R-> T is 
+		*/
+		static getTranslation<Out extends IMat4Like, VecLike extends IVec3Like> (out: VecLike, mat: Out): VecLike;		
+		/**
+		!#zh 提取矩阵的缩放信息, 默认矩阵中的变换以 S->R->T 的顺序应用
+		!#en Scaling information extraction matrix, the matrix transform to the default sequential application S-> R-> T is 
+		*/
+		static getScaling<Out extends IMat4Like, VecLike extends IVec3Like> (out: VecLike, mat: Out): VecLike;		
+		/**
+		!#zh 提取矩阵的旋转信息, 默认输入矩阵不含有缩放信息，如考虑缩放应使用 `toRTS` 函数。
+		!#en Rotation information extraction matrix, the matrix containing no default input scaling information, such as the use of `toRTS` should consider the scaling function. 
+		*/
+		static getRotation<Out extends IMat4Like> (out: Quat, mat: Out): Quat;		
+		/**
+		!#zh 提取旋转、位移、缩放信息， 默认矩阵中的变换以 S->R->T 的顺序应用
+		!#en Extracting rotational displacement, zoom information, the default matrix transformation in order S-> R-> T applications 
+		*/
+		static toRTS<Out extends IMat4Like, VecLike extends IVec3Like> (mat: Out, q: Quat, v: VecLike, s: VecLike): void;		
+		/**
+		!#zh 根据旋转、位移、缩放信息计算矩阵，以 S->R->T 的顺序应用
+		!#en The rotary displacement, the scaling matrix calculation information, the order S-> R-> T applications 
+		*/
+		static fromRTS<Out extends IMat4Like, VecLike extends IVec3Like> (out: Out, q: Quat, v: VecLike, s: VecLike): Out;		
+		/**
+		!#zh 根据指定的旋转、位移、缩放及变换中心信息计算矩阵，以 S->R->T 的顺序应用
+		!#en According to the specified rotation, displacement, and scale conversion matrix calculation information center, order S-> R-> T applications
+		@param q 旋转值
+		@param v 位移值
+		@param s 缩放值
+		@param o 指定变换中心 
+		*/
+		static fromRTSOrigin<Out extends IMat4Like, VecLike extends IVec3Like> (out: Out, q: Quat, v: VecLike, s: VecLike, o: VecLike): Out;		
+		/**
+		!#zh 根据指定的旋转信息计算矩阵
+		!#en The rotation matrix calculation information specified 
+		*/
+		static fromQuat<Out extends IMat4Like> (out: Out, q: Quat): Out;		
+		/**
+		!#zh 根据指定的视锥体信息计算矩阵
+		!#en The matrix calculation information specified frustum
+		@param left 左平面距离
+		@param right 右平面距离
+		@param bottom 下平面距离
+		@param top 上平面距离
+		@param near 近平面距离
+		@param far 远平面距离 
+		*/
+		static frustum<Out extends IMat4Like> (out: Out, left: number, right: number, bottom: number, top: number, near: number, far: number): Out;		
+		/**
+		!#zh 计算透视投影矩阵
+		!#en Perspective projection matrix calculation
+		@param fovy 纵向视角高度
+		@param aspect 长宽比
+		@param near 近平面距离
+		@param far 远平面距离 
+		*/
+		static perspective<Out extends IMat4Like> (out: Out, fovy: number, aspect: number, near: number, far: number): Out;		
+		/**
+		!#zh 计算正交投影矩阵
+		!#en Computing orthogonal projection matrix
+		@param left 左平面距离
+		@param right 右平面距离
+		@param bottom 下平面距离
+		@param top 上平面距离
+		@param near 近平面距离
+		@param far 远平面距离 
+		*/
+		static ortho<Out extends IMat4Like> (out: Out, left: number, right: number, bottom: number, top: number, near: number, far: number): Out;		
+		/**
+		!#zh 根据视点计算矩阵，注意 `eye - center` 不能为零向量或与 `up` 向量平行
+		!#en `Up` parallel vector or vector center` not be zero - the matrix calculation according to the viewpoint, note` eye
+		@param eye 当前位置
+		@param center 目标视点
+		@param up 视口上方向 
+		*/
+		static lookAt<Out extends IMat4Like, VecLike extends IVec3Like> (out: Out, eye: VecLike, center: VecLike, up: VecLike): Out;		
+		/**
+		!#zh 计算逆转置矩阵
+		!#en Reversal matrix calculation 
+		*/
+		static inverseTranspose<Out extends IMat4Like> (out: Out, a: Out): Out;		
+		/**
+		!#zh 逐元素矩阵加法
+		!#en Element by element matrix addition 
+		*/
+		static add<Out extends IMat4Like> (out: Out, a: Out, b: Out): Out;		
+		/**
+		!#zh 逐元素矩阵减法
+		!#en Matrix element by element subtraction 
+		*/
+		static subtract<Out extends IMat4Like> (out: Out, a: Out, b: Out): Out;		
+		/**
+		!#zh 矩阵标量乘法
+		!#en Matrix scalar multiplication 
+		*/
+		static multiplyScalar<Out extends IMat4Like> (out: Out, a: Out, b: number): Out;		
+		/**
+		!#zh 逐元素矩阵标量乘加: A + B * scale
+		!#en Elements of the matrix by the scalar multiplication and addition: A + B * scale 
+		*/
+		static multiplyScalarAndAdd<Out extends IMat4Like> (out: Out, a: Out, b: Out, scale: number): Out;		
+		/**
+		!#zh 矩阵等价判断
+		!#en Analyzing the equivalent matrix 
+		*/
+		static strictEquals<Out extends IMat4Like> (a: Out, b: Out): boolean;		
+		/**
+		!#zh 排除浮点数误差的矩阵近似等价判断
+		!#en Negative floating point error is approximately equivalent to determining a matrix 
+		*/
+		static equals<Out extends IMat4Like> (a: Out, b: Out, epsilon?: number): boolean;		
+=======
 	/** !#en The module provides utilities for working with file and directory paths
 	!#zh 用于处理文件与目录的路径的模块 */
 	export class path {		
@@ -12639,17 +15900,329 @@ declare namespace cc {
 	export class Mat3 extends ValueType {		
 		/** Identity  of Mat3 */
 		static IDENTITY: Mat3;		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		/**
 		!#zh 矩阵转数组
 		!#en Matrix transpose array
 		@param ofs 数组内的起始偏移量 
 		*/
+<<<<<<< HEAD
+		static toArray <Out extends IWritableArrayLike<number>> (out: Out, mat: IMat4Like, ofs?: number): Out;		
+=======
 		static toArray <Out extends IWritableArrayLike<number>> (out: Out, mat: IMat3Like, ofs?: number): Out;		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		/**
 		!#zh 数组转矩阵
 		!#en Transfer matrix array
 		@param ofs 数组起始偏移量 
 		*/
+<<<<<<< HEAD
+		static fromArray <Out extends IMat4Like> (out: Out, arr: IWritableArrayLike<number>, ofs?: number): Out;		
+		/** !#en Matrix Data
+		!#zh 矩阵数据 */
+		m: Float64Array|Float32Array;		
+		/**
+		!#en
+		Constructor
+		see {{#crossLink "cc/mat4:method"}}cc.mat4{{/crossLink}}
+		!#zh
+		构造函数，可查看 {{#crossLink "cc/mat4:method"}}cc.mat4{{/crossLink}} 
+		*/
+		constructor ( m00?: number, m01?: number, m02?: number, m03?: number, m10?: number, m11?: number, m12?: number, m13?: number, m20?: number, m21?: number, m22?: number, m23?: number, m30?: number, m31?: number, m32?: number, m33?: number);		
+		/**
+		!#en clone a Mat4 object
+		!#zh 克隆一个 Mat4 对象 
+		*/
+		clone(): Mat4;		
+		/**
+		!#en Sets the matrix with another one's value
+		!#zh 用另一个矩阵设置这个矩阵的值。
+		@param srcObj srcObj 
+		*/
+		set(srcObj: Mat4): Mat4;		
+		/**
+		!#en Check whether two matrix equal
+		!#zh 当前的矩阵是否与指定的矩阵相等。
+		@param other other 
+		*/
+		equals(other: Mat4): boolean;		
+		/**
+		!#en Check whether two matrix equal with default degree of variance.
+		!#zh
+		近似判断两个矩阵是否相等。<br/>
+		判断 2 个矩阵是否在默认误差范围之内，如果在则返回 true，反之则返回 false。
+		@param other other 
+		*/
+		fuzzyEquals(other: Mat4): boolean;		
+		/**
+		!#en Transform to string with matrix informations
+		!#zh 转换为方便阅读的字符串。 
+		*/
+		toString(): string;		
+		/**
+		Set the matrix to the identity matrix 
+		*/
+		identity(): Mat4;		
+		/**
+		Transpose the values of a mat4
+		@param out the receiving matrix, you can pass the same matrix to save result to itself, if not provided, a new matrix will be created. 
+		*/
+		transpose(out?: Mat4): Mat4;		
+		/**
+		Inverts a mat4
+		@param out the receiving matrix, you can pass the same matrix to save result to itself, if not provided, a new matrix will be created. 
+		*/
+		invert(out?: Mat4): Mat4;		
+		/**
+		Calculates the adjugate of a mat4
+		@param out the receiving matrix, you can pass the same matrix to save result to itself, if not provided, a new matrix will be created. 
+		*/
+		adjoint(out?: Mat4): Mat4;		
+		/**
+		Calculates the determinant of a mat4 
+		*/
+		determinant(): number;		
+		/**
+		Adds two Mat4
+		@param other the second operand
+		@param out the receiving matrix, you can pass the same matrix to save result to itself, if not provided, a new matrix will be created. 
+		*/
+		add(other: Mat4, out?: Mat4): Mat4;		
+		/**
+		Subtracts the current matrix with another one
+		@param other the second operand 
+		*/
+		subtract(other: Mat4): Mat4;		
+		/**
+		Subtracts the current matrix with another one
+		@param other the second operand 
+		*/
+		multiply(other: Mat4): Mat4;		
+		/**
+		Multiply each element of the matrix by a scalar.
+		@param number amount to scale the matrix's elements by 
+		*/
+		multiplyScalar(number: number): Mat4;		
+		/**
+		Translate a mat4 by the given vector
+		@param v vector to translate by
+		@param out the receiving matrix, you can pass the same matrix to save result to itself, if not provided, a new matrix will be created 
+		*/
+		translate(v: Vec3, out?: Mat4): Mat4;		
+		/**
+		Scales the mat4 by the dimensions in the given vec3
+		@param v vector to scale by
+		@param out the receiving matrix, you can pass the same matrix to save result to itself, if not provided, a new matrix will be created 
+		*/
+		scale(v: Vec3, out?: Mat4): Mat4;		
+		/**
+		Rotates a mat4 by the given angle around the given axis
+		@param rad the angle to rotate the matrix by
+		@param axis the axis to rotate around
+		@param out the receiving matrix, you can pass the same matrix to save result to itself, if not provided, a new matrix will be created 
+		*/
+		rotate(rad: number, axis: Vec3, out?: Mat4): Mat4;		
+		/**
+		Returns the translation vector component of a transformation matrix.
+		@param out Vector to receive translation component, if not provided, a new vec3 will be created 
+		*/
+		getTranslation(out: Vec3): Vec3;		
+		/**
+		Returns the scale factor component of a transformation matrix
+		@param out Vector to receive scale component, if not provided, a new vec3 will be created 
+		*/
+		getScale(out: Vec3): Vec3;		
+		/**
+		Returns the rotation factor component of a transformation matrix
+		@param out Vector to receive rotation component, if not provided, a new quaternion object will be created 
+		*/
+		getRotation(out: Quat): Quat;		
+		/**
+		Restore the matrix values from a quaternion rotation, vector translation and vector scale
+		@param q Rotation quaternion
+		@param v Translation vector
+		@param s Scaling vector 
+		*/
+		fromRTS(q: Quat, v: Vec3, s: Vec3): Mat4;		
+		/**
+		Restore the matrix values from a quaternion rotation
+		@param q Rotation quaternion 
+		*/
+		fromQuat(q: Quat): Mat4;	
+	}	
+	/** !#en Representation of 2D vectors and points.
+	!#zh 表示 2D 向量和坐标 */
+	export class Quat extends ValueType {		
+		/**
+		!#en
+		Constructor
+		see {{#crossLink "cc/quat:method"}}cc.quat{{/crossLink}}
+		!#zh
+		构造函数，可查看 {{#crossLink "cc/quat:method"}}cc.quat{{/crossLink}}
+		@param x x
+		@param y y
+		@param z z
+		@param w w 
+		*/
+		constructor(x?: number, y?: number, z?: number, w?: number);		
+		/**
+		!#en Calculate the multiply result between this quaternion and another one
+		!#zh 计算四元数乘积的结果
+		@param other other
+		@param out out 
+		*/
+		mul(other: Quat, out?: Quat): Quat;		
+		/**
+		!#zh 获得指定四元数的拷贝
+		!#en Obtaining copy specified quaternion 
+		*/
+		static clone<Out extends IQuatLike> (a: Out): Quat;		
+		/**
+		!#zh 复制目标四元数
+		!#en Copy quaternion target 
+		*/
+		static copy<Out extends IQuatLike, QuatLike extends IQuatLike> (out: Out, a: QuatLike): Out;		
+		/**
+		!#zh 设置四元数值
+		!#en Provided Quaternion Value 
+		*/
+		static set<Out extends IQuatLike> (out: Out, x: number, y: number, z: number, w: number): Out;		
+		/**
+		!#zh 将目标赋值为单位四元数
+		!#en The target of an assignment as a unit quaternion 
+		*/
+		static identity<Out extends IQuatLike> (out: Out): Out;		
+		/**
+		!#zh 设置四元数为两向量间的最短路径旋转，默认两向量都已归一化
+		!#en Set quaternion rotation is the shortest path between two vectors, the default two vectors are normalized 
+		*/
+		static rotationTo<Out extends IQuatLike, VecLike extends IVec3Like> (out: Out, a: VecLike, b: VecLike): Out;		
+		/**
+		!#zh 获取四元数的旋转轴和旋转弧度
+		!#en Get the rotary shaft and the arc of rotation quaternion
+		@param outAxis 旋转轴输出
+		@param q 源四元数 
+		*/
+		static getAxisAngle<Out extends IQuatLike, VecLike extends IVec3Like> (outAxis: VecLike, q: Out): number;		
+		/**
+		!#zh 四元数乘法
+		!#en Quaternion multiplication 
+		*/
+		static multiply<Out extends IQuatLike, QuatLike_1 extends IQuatLike, QuatLike_2 extends IQuatLike> (out: Out, a: QuatLike_1, b: QuatLike_2): Out;		
+		/**
+		!#zh 四元数标量乘法
+		!#en Quaternion scalar multiplication 
+		*/
+		static multiplyScalar<Out extends IQuatLike> (out: Out, a: Out, b: number): Out;		
+		/**
+		!#zh 四元数乘加：A + B * scale
+		!#en Quaternion multiplication and addition: A + B * scale 
+		*/
+		static scaleAndAdd<Out extends IQuatLike> (out: Out, a: Out, b: Out, scale: number): Out;		
+		/**
+		!#zh 绕 X 轴旋转指定四元数
+		!#en About the X axis specified quaternion
+		@param rad 旋转弧度 
+		*/
+		static rotateX<Out extends IQuatLike> (out: Out, a: Out, rad: number): Out;		
+		/**
+		!#zh 绕 Y 轴旋转指定四元数
+		!#en Rotation about the Y axis designated quaternion
+		@param rad 旋转弧度 
+		*/
+		static rotateY<Out extends IQuatLike> (out: Out, a: Out, rad: number): Out;		
+		/**
+		!#zh 绕 Z 轴旋转指定四元数
+		!#en Around the Z axis specified quaternion
+		@param rad 旋转弧度 
+		*/
+		static rotateZ<Out extends IQuatLike> (out: Out, a: Out, rad: number): Out;		
+		/**
+		!#zh 绕世界空间下指定轴旋转四元数
+		!#en Space around the world at a given axis of rotation quaternion
+		@param axis 旋转轴，默认已归一化
+		@param rad 旋转弧度 
+		*/
+		static rotateAround<Out extends IQuatLike, VecLike extends IVec3Like> (out: Out, rot: Out, axis: VecLike, rad: number): Out;		
+		/**
+		!#zh 绕本地空间下指定轴旋转四元数
+		!#en Local space around the specified axis rotation quaternion
+		@param axis 旋转轴
+		@param rad 旋转弧度 
+		*/
+		static rotateAroundLocal<Out extends IQuatLike, VecLike extends IVec3Like> (out: Out, rot: Out, axis: VecLike, rad: number): Out;		
+		/**
+		!#zh 根据 xyz 分量计算 w 分量，默认已归一化
+		!#en The component w xyz components calculated, normalized by default 
+		*/
+		static calculateW<Out extends IQuatLike> (out: Out, a: Out): Out;		
+		/**
+		!#zh 四元数点积（数量积）
+		!#en Quaternion dot product (scalar product) 
+		*/
+		static dot<Out extends IQuatLike> (a: Out, b: Out): number;		
+		/**
+		!#zh 逐元素线性插值： A + t * (B - A)
+		!#en Element by element linear interpolation: A + t * (B - A) 
+		*/
+		static lerp<Out extends IQuatLike> (out: Out, a: Out, b: Out, t: number): Out;		
+		/**
+		!#zh 四元数球面插值
+		!#en Spherical quaternion interpolation 
+		*/
+		static slerp<Out extends IQuatLike, QuatLike_1 extends IQuatLike, QuatLike_2 extends IQuatLike>(out: Out, a: QuatLike_1, b: QuatLike_2, t: number): Out;		
+		/**
+		!#zh 带两个控制点的四元数球面插值
+		!#en Quaternion with two spherical interpolation control points 
+		*/
+		static sqlerp<Out extends IQuatLike> (out: Out, a: Out, b: Out, c: Out, d: Out, t: number): Out;		
+		/**
+		!#zh 四元数求逆
+		!#en Quaternion inverse 
+		*/
+		static invert<Out extends IQuatLike, QuatLike extends IQuatLike> (out: Out, a: QuatLike): Out;		
+		/**
+		!#zh 求共轭四元数，对单位四元数与求逆等价，但更高效
+		!#en Conjugating a quaternion, and the unit quaternion equivalent to inversion, but more efficient 
+		*/
+		static conjugate<Out extends IQuatLike> (out: Out, a: Out): Out;		
+		/**
+		!#zh 求四元数长度
+		!#en Seek length quaternion 
+		*/
+		static len<Out extends IQuatLike> (a: Out): number;		
+		/**
+		!#zh 求四元数长度平方
+		!#en Seeking quaternion square of the length 
+		*/
+		static lengthSqr<Out extends IQuatLike> (a: Out): number;		
+		/**
+		!#zh 归一化四元数
+		!#en Normalized quaternions 
+		*/
+		static normalize<Out extends IQuatLike> (out: Out, a: Out): Out;		
+		/**
+		!#zh 根据本地坐标轴朝向计算四元数，默认三向量都已归一化且相互垂直
+		!#en Calculated according to the local orientation quaternion coordinate axis, the default three vectors are normalized and mutually perpendicular 
+		*/
+		static fromAxes<Out extends IQuatLike, VecLike extends IVec3Like> (out: Out, xAxis: VecLike, yAxis: VecLike, zAxis: VecLike): Out;		
+		/**
+		!#zh 根据视口的前方向和上方向计算四元数
+		!#en The forward direction and the direction of the viewport computing quaternion
+		@param view 视口面向的前方向，必须归一化
+		@param up 视口的上方向，必须归一化，默认为 (0, 1, 0) 
+		*/
+		static fromViewUp<Out extends IQuatLike> (out: Out, view: Vec3, up?: Vec3): Out;		
+		/**
+		!#zh 根据旋转轴和旋转弧度计算四元数
+		!#en The quaternion calculated and the arc of rotation of the rotary shaft 
+		*/
+		static fromAxisAngle<Out extends IQuatLike, VecLike extends IVec3Like> (out: Out, axis: VecLike, rad: number): Out;		
+		/**
+		!#zh 根据三维矩阵信息计算四元数，默认输入矩阵不含有缩放信息
+		!#en Calculating the three-dimensional quaternion matrix information, default zoom information input matrix does not contain 
+		*/
+=======
 		static fromArray <Out extends IMat3Like> (out: Out, arr: IWritableArrayLike<number>, ofs?: number): Out;		
 		/** !#en Matrix Data
 		!#zh 矩阵数据 */
@@ -13221,6 +16794,7 @@ declare namespace cc {
 		!#zh 根据三维矩阵信息计算四元数，默认输入矩阵不含有缩放信息
 		!#en Calculating the three-dimensional quaternion matrix information, default zoom information input matrix does not contain 
 		*/
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		static fromMat3<Out extends IQuatLike> (out: Out, mat: Mat3): Out;		
 		/**
 		!#zh 根据欧拉角信息计算四元数，旋转顺序为 YZX
@@ -13327,6 +16901,51 @@ declare namespace cc {
 		*/
 		rotateAround(rot: Quat, axis: Vec3, rad: number, out?: Quat): Quat;	
 	}	
+<<<<<<< HEAD
+	/** Mathematical 3x3 matrix.
+	
+	NOTE: we use column-major matrix for all matrix calculation.
+	
+	This may lead to some confusion when referencing OpenGL documentation,
+	however, which represents out all matricies in column-major format.
+	This means that while in code a matrix may be typed out as:
+	
+	[1, 0, 0, 0,
+	 0, 1, 0, 0,
+	 0, 0, 1, 0,
+	 x, y, z, 0]
+	
+	The same matrix in the [OpenGL documentation](https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glTranslate.xml)
+	is written as:
+	
+	 1 0 0 x
+	 0 1 0 y
+	 0 0 1 z
+	 0 0 0 0
+	
+	Please rest assured, however, that they are the same thing!
+	This is not unique to glMatrix, either, as OpenGL developers have long been confused by the
+	apparent lack of consistency between the memory layout and the documentation. */
+	export class Mat3 extends ValueType {		
+		/** Identity  of Mat3 */
+		static IDENTITY: Mat3;		
+		/**
+		!#zh 矩阵转数组
+		!#en Matrix transpose array
+		@param ofs 数组内的起始偏移量 
+		*/
+		static toArray <Out extends IWritableArrayLike<number>> (out: Out, mat: IMat3Like, ofs?: number): Out;		
+		/**
+		!#zh 数组转矩阵
+		!#en Transfer matrix array
+		@param ofs 数组起始偏移量 
+		*/
+		static fromArray <Out extends IMat3Like> (out: Out, arr: IWritableArrayLike<number>, ofs?: number): Out;		
+		/** !#en Matrix Data
+		!#zh 矩阵数据 */
+		m: Float64Array|Float32Array;		
+		constructor (m00?: number | Float32Array, m01?: number, m02?: number, m03?: number, m04?: number, m05?: number, m06?: number, m07?: number, m08?: number);	
+=======
 	/** !#en A 2D rectangle defined by x, y position and width, height.
 	!#zh 通过位置和宽高定义的 2D 矩形。 */
 	export class Rect extends ValueType {		
@@ -13511,6 +17130,7 @@ declare namespace cc {
 		/** !#en Width and height of the rectangle.
 		!#zh 矩形的大小。 */
 		size: Size;	
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	}	
 	/** !#en
 	cc.Size is the class for size object,<br/>
@@ -14206,6 +17826,192 @@ declare namespace cc {
 		*/
 		maxAxis(): number;	
 	}	
+<<<<<<< HEAD
+	/** !#en A 2D rectangle defined by x, y position and width, height.
+	!#zh 通过位置和宽高定义的 2D 矩形。 */
+	export class Rect extends ValueType {		
+		/**
+		!#en
+		Constructor of Rect class.
+		see {{#crossLink "cc/rect:method"}} cc.rect {{/crossLink}} for convenience method.
+		!#zh
+		Rect类的构造函数。可以通过 {{#crossLink "cc/rect:method"}} cc.rect {{/crossLink}} 简便方法进行创建。
+		@param x x
+		@param y y
+		@param w w
+		@param h h 
+		*/
+		constructor(x?: number, y?: number, w?: number, h?: number);		
+		/**
+		!#en Creates a rectangle from two coordinate values.
+		!#zh 根据指定 2 个坐标创建出一个矩形区域。
+		@param v1 v1
+		@param v2 v2
+		
+		@example 
+		```js
+		cc.Rect.fromMinMax(cc.v2(10, 10), cc.v2(20, 20)); // Rect {x: 10, y: 10, width: 10, height: 10};
+		``` 
+		*/
+		static fromMinMax(v1: Vec2, v2: Vec2): Rect;		
+		x: number;		
+		y: number;		
+		width: number;		
+		height: number;		
+		/**
+		!#en TODO
+		!#zh 克隆一个新的 Rect。
+		
+		@example 
+		```js
+		var a = new cc.Rect(0, 0, 10, 10);
+		a.clone();// Rect {x: 0, y: 0, width: 10, height: 10}
+		``` 
+		*/
+		clone(): Rect;		
+		/**
+		!#en TODO
+		!#zh 是否等于指定的矩形。
+		@param other other
+		
+		@example 
+		```js
+		var a = new cc.Rect(0, 0, 10, 10);
+		var b = new cc.Rect(0, 0, 10, 10);
+		a.equals(b);// true;
+		``` 
+		*/
+		equals(other: Rect): boolean;		
+		/**
+		!#en TODO
+		!#zh 线性插值
+		@param to to
+		@param ratio the interpolation coefficient.
+		@param out optional, the receiving vector.
+		
+		@example 
+		```js
+		var a = new cc.Rect(0, 0, 10, 10);
+		var b = new cc.Rect(50, 50, 100, 100);
+		update (dt) {
+		   // method 1;
+		   var c = a.lerp(b, dt * 0.1);
+		   // method 2;
+		   a.lerp(b, dt * 0.1, c);
+		}
+		``` 
+		*/
+		lerp(to: Rect, ratio: number, out?: Rect): Rect;		
+		/**
+		!#en Check whether the current rectangle intersects with the given one
+		!#zh 当前矩形与指定矩形是否相交。
+		@param rect rect
+		
+		@example 
+		```js
+		var a = new cc.Rect(0, 0, 10, 10);
+		var b = new cc.Rect(0, 0, 20, 20);
+		a.intersects(b);// true
+		``` 
+		*/
+		intersects(rect: Rect): boolean;		
+		/**
+		!#en Returns the overlapping portion of 2 rectangles.
+		!#zh 返回 2 个矩形重叠的部分。
+		@param out Stores the result
+		@param rectB rectB
+		
+		@example 
+		```js
+		var a = new cc.Rect(0, 10, 20, 20);
+		var b = new cc.Rect(0, 10, 10, 10);
+		var intersection = new cc.Rect();
+		a.intersection(intersection, b); // intersection {x: 0, y: 10, width: 10, height: 10};
+		``` 
+		*/
+		intersection(out: Rect, rectB: Rect): Rect;		
+		/**
+		!#en Check whether the current rect contains the given point
+		!#zh 当前矩形是否包含指定坐标点。
+		Returns true if the point inside this rectangle.
+		@param point point
+		
+		@example 
+		```js
+		var a = new cc.Rect(0, 0, 10, 10);
+		var b = new cc.Vec2(0, 5);
+		a.contains(b);// true
+		``` 
+		*/
+		contains(point: Vec2): boolean;		
+		/**
+		!#en Returns true if the other rect totally inside this rectangle.
+		!#zh 当前矩形是否包含指定矩形。
+		@param rect rect
+		
+		@example 
+		```js
+		var a = new cc.Rect(0, 0, 20, 20);
+		var b = new cc.Rect(0, 0, 10, 10);
+		a.containsRect(b);// true
+		``` 
+		*/
+		containsRect(rect: Rect): boolean;		
+		/**
+		!#en Returns the smallest rectangle that contains the current rect and the given rect.
+		!#zh 返回一个包含当前矩形和指定矩形的最小矩形。
+		@param out Stores the result
+		@param rectB rectB
+		
+		@example 
+		```js
+		var a = new cc.Rect(0, 10, 20, 20);
+		var b = new cc.Rect(0, 10, 10, 10);
+		var union = new cc.Rect();
+		a.union(union, b); // union {x: 0, y: 10, width: 20, height: 20};
+		``` 
+		*/
+		union(out: Rect, rectB: Rect): Rect;		
+		/**
+		!#en Apply matrix4 to the rect.
+		!#zh 使用 mat4 对矩形进行矩阵转换。
+		@param out The output rect
+		@param mat The matrix4 
+		*/
+		transformMat4(out: Rect, mat: Mat4): void;		
+		/**
+		!#en Output rect informations to string
+		!#zh 转换为方便阅读的字符串
+		
+		@example 
+		```js
+		var a = new cc.Rect(0, 0, 10, 10);
+		a.toString();// "(0.00, 0.00, 10.00, 10.00)";
+		``` 
+		*/
+		toString(): string;		
+		/** !#en The minimum x value, equals to rect.x
+		!#zh 矩形 x 轴上的最小值，等价于 rect.x。 */
+		xMin: number;		
+		/** !#en The minimum y value, equals to rect.y
+		!#zh 矩形 y 轴上的最小值。 */
+		yMin: number;		
+		/** !#en The maximum x value.
+		!#zh 矩形 x 轴上的最大值。 */
+		xMax: number;		
+		/** !#en The maximum y value.
+		!#zh 矩形 y 轴上的最大值。 */
+		yMax: number;		
+		/** !#en The position of the center of the rectangle.
+		!#zh 矩形的中心点。 */
+		center: Vec2;		
+		/** !#en The X and Y position of the rectangle.
+		!#zh 矩形的 x 和 y 坐标。 */
+		origin: Vec2;		
+		/** !#en Width and height of the rectangle.
+		!#zh 矩形的大小。 */
+		size: Size;	
+	}	
 	/** !#en Representation of 3D vectors and points.
 	!#zh 表示 3D 向量和坐标 */
 	export class Vec3 extends ValueType {		
@@ -14220,6 +18026,22 @@ declare namespace cc {
 		``` 
 		*/
 		mag(): number;		
+=======
+	/** !#en Representation of 3D vectors and points.
+	!#zh 表示 3D 向量和坐标 */
+	export class Vec3 extends ValueType {		
+		/**
+		!#en Returns the length of this vector.
+		!#zh 返回该向量的长度。
+		
+		@example 
+		```js
+		var v = cc.v3(10, 10, 10);
+		v.mag(); // return 17.320508075688775;
+		``` 
+		*/
+		mag(): number;		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		/**
 		!#en Returns the squared length of this vector.
 		!#zh 返回该向量的长度平方。 
@@ -15148,6 +18970,1228 @@ declare namespace cc {
 		*/
 		maxAxis(): number;	
 	}	
+<<<<<<< HEAD
+	/** !#en The module provides utilities for working with file and directory paths
+	!#zh 用于处理文件与目录的路径的模块 */
+	export class path {		
+		/**
+		!#en Join strings to be a path.
+		!#zh 拼接字符串为 Path
+		
+		@example 
+		```js
+		------------------------------
+		cc.path.join("a", "b.png");        //-->"a/b.png"
+		cc.path.join("a", "b", "c.png");   //-->"a/b/c.png"
+		cc.path.join("a", "b");            //-->"a/b"
+		cc.path.join("a", "b", "/");       //-->"a/b/"
+		cc.path.join("a", "b/", "/");      //-->"a/b/"
+		
+		``` 
+		*/
+		static join(): string;		
+		/**
+		!#en Get the ext name of a path including '.', like '.png'.
+		!#zh 返回 Path 的扩展名，包括 '.'，例如 '.png'。
+		@param pathStr pathStr
+		
+		@example 
+		```js
+		---------------------------
+		cc.path.extname("a/b.png");		//-->".png"
+		cc.path.extname("a/b.png?a=1&b=2");	//-->".png"
+		cc.path.extname("a/b");			//-->null
+		cc.path.extname("a/b?a=1&b=2");		//-->null
+		
+		``` 
+		*/
+		static extname(pathStr: string): any;		
+		/**
+		!#en Get the main name of a file name
+		!#zh 获取文件名的主名称
+		@param fileName fileName 
+		*/
+		static mainFileName(fileName: string): string;		
+		/**
+		!#en Get the file name of a file path.
+		!#zh 获取文件路径的文件名。
+		@param pathStr pathStr
+		@param extname extname
+		
+		@example 
+		```js
+		---------------------------------
+		cc.path.basename("a/b.png");			//-->"b.png"
+		cc.path.basename("a/b.png?a=1&b=2");		//-->"b.png"
+		cc.path.basename("a/b.png", ".png");		//-->"b"
+		cc.path.basename("a/b.png?a=1&b=2", ".png");	//-->"b"
+		cc.path.basename("a/b.png", ".txt");		//-->"b.png"
+		
+		``` 
+		*/
+		static basename(pathStr: string, extname?: string): any;		
+		/**
+		!#en Get dirname of a file path.
+		!#zh 获取文件路径的目录名。
+		@param pathStr pathStr
+		
+		@example 
+		```js
+		---------------------------------
+		* unix
+		cc.path.driname("a/b/c.png");		//-->"a/b"
+		cc.path.driname("a/b/c.png?a=1&b=2");	//-->"a/b"
+		cc.path.dirname("a/b/");		//-->"a/b"
+		cc.path.dirname("c.png");		//-->""
+		* windows
+		cc.path.driname("a\\b\\c.png");		//-->"a\b"
+		cc.path.driname("a\\b\\c.png?a=1&b=2");	//-->"a\b"
+		
+		``` 
+		*/
+		static dirname(pathStr: string): any;		
+		/**
+		!#en Change extname of a file path.
+		!#zh 更改文件路径的扩展名。
+		@param pathStr pathStr
+		@param extname extname
+		
+		@example 
+		```js
+		---------------------------------
+		cc.path.changeExtname("a/b.png", ".plist");		//-->"a/b.plist"
+		cc.path.changeExtname("a/b.png?a=1&b=2", ".plist");	//-->"a/b.plist?a=1&b=2"
+		
+		``` 
+		*/
+		static changeExtname(pathStr: string, extname?: string): string;	
+	}	
+	/** !#en
+	AffineTransform class represent an affine transform matrix. It's composed basically by translation, rotation, scale transformations.<br/>
+	!#zh
+	AffineTransform 类代表一个仿射变换矩阵。它基本上是由平移旋转，缩放转变所组成。<br/> */
+	export class AffineTransform {		
+		/**
+		!#en Create a AffineTransform object with all contents in the matrix.
+		!#zh 用在矩阵中的所有内容创建一个 AffineTransform 对象。
+		@param a a
+		@param b b
+		@param c c
+		@param d d
+		@param tx tx
+		@param ty ty 
+		*/
+		static create(a: number, b: number, c: number, d: number, tx: number, ty: number): AffineTransform;		
+		/**
+		!#en
+		Create a identity transformation matrix: <br/>
+		[ 1, 0, 0, <br/>
+		  0, 1, 0 ]
+		!#zh
+		单位矩阵：<br/>
+		[ 1, 0, 0, <br/>
+		  0, 1, 0 ] 
+		*/
+		static identity(): AffineTransform;		
+		/**
+		!#en Clone a AffineTransform object from the specified transform.
+		!#zh 克隆指定的 AffineTransform 对象。
+		@param t t 
+		*/
+		static clone(t: AffineTransform): AffineTransform;		
+		/**
+		!#en
+		Concatenate a transform matrix to another
+		The results are reflected in the out affine transform
+		out = t1 * t2
+		This function is memory free, you should create the output affine transform by yourself and manage its memory.
+		!#zh
+		拼接两个矩阵，将结果保存到 out 矩阵。这个函数不创建任何内存，你需要先创建 AffineTransform 对象用来存储结果，并作为第一个参数传入函数。
+		out = t1 * t2
+		@param out Out object to store the concat result
+		@param t1 The first transform object.
+		@param t2 The transform object to concatenate. 
+		*/
+		static concat(out: AffineTransform, t1: AffineTransform, t2: AffineTransform): AffineTransform;		
+		/**
+		!#en Get the invert transform of an AffineTransform object.
+		This function is memory free, you should create the output affine transform by yourself and manage its memory.
+		!#zh 求逆矩阵。这个函数不创建任何内存，你需要先创建 AffineTransform 对象用来存储结果，并作为第一个参数传入函数。
+		@param out out
+		@param t t 
+		*/
+		static invert(out: AffineTransform, t: AffineTransform): AffineTransform;		
+		/**
+		!#en Get an AffineTransform object from a given matrix 4x4.
+		This function is memory free, you should create the output affine transform by yourself and manage its memory.
+		!#zh 从一个 4x4 Matrix 获取 AffineTransform 对象。这个函数不创建任何内存，你需要先创建 AffineTransform 对象用来存储结果，并作为第一个参数传入函数。
+		@param out out
+		@param mat mat 
+		*/
+		static invert(out: AffineTransform, mat: Mat4): AffineTransform;		
+		/**
+		!#en Apply the affine transformation on a point.
+		This function is memory free, you should create the output Vec2 by yourself and manage its memory.
+		!#zh 对一个点应用矩阵变换。这个函数不创建任何内存，你需要先创建一个 Vec2 对象用来存储结果，并作为第一个参数传入函数。
+		@param out The output point to store the result
+		@param point Point to apply transform or x.
+		@param transOrY transform matrix or y.
+		@param t transform matrix. 
+		*/
+		static transformVec2(out: Vec2, point: Vec2|number, transOrY: AffineTransform|number, t?: AffineTransform): Vec2;		
+		/**
+		!#en Apply the affine transformation on a size.
+		This function is memory free, you should create the output Size by yourself and manage its memory.
+		!#zh 应用仿射变换矩阵到 Size 上。这个函数不创建任何内存，你需要先创建一个 Size 对象用来存储结果，并作为第一个参数传入函数。
+		@param out The output point to store the result
+		@param size size
+		@param t t 
+		*/
+		static transformSize(out: Size, size: Size, t: AffineTransform): Size;		
+		/**
+		!#en Apply the affine transformation on a rect.
+		This function is memory free, you should create the output Rect by yourself and manage its memory.
+		!#zh 应用仿射变换矩阵到 Rect 上。这个函数不创建任何内存，你需要先创建一个 Rect 对象用来存储结果，并作为第一个参数传入函数。
+		@param out out
+		@param rect rect
+		@param anAffineTransform anAffineTransform 
+		*/
+		static transformRect(out: Rect, rect: Rect, anAffineTransform: AffineTransform): Rect;		
+		/**
+		!#en Apply the affine transformation on a rect, and truns to an Oriented Bounding Box.
+		This function is memory free, you should create the output vectors by yourself and manage their memory.
+		!#zh 应用仿射变换矩阵到 Rect 上, 并转换为有向包围盒。这个函数不创建任何内存，你需要先创建包围盒的四个 Vector 对象用来存储结果，并作为前四个参数传入函数。
+		@param out_bl out_bl
+		@param out_tl out_tl
+		@param out_tr out_tr
+		@param out_br out_br
+		@param rect rect
+		@param anAffineTransform anAffineTransform 
+		*/
+		static transformObb(out_bl: Vec2, out_tl: Vec2, out_tr: Vec2, out_br: Vec2, rect: Rect, anAffineTransform: AffineTransform): void;	
+	}	
+	/** A base node for CCNode, it will:
+	- maintain scene hierarchy and active logic
+	- notifications if some properties changed
+	- define some interfaces shares between CCNode
+	- define machanisms for Enity Component Systems
+	- define prefab and serialize functions */
+	export class _BaseNode extends Object implements EventTarget {		
+		/** !#en Name of node.
+		!#zh 该节点名称。 */
+		name: string;		
+		/** !#en The uuid for editor, will be stripped before building project.
+		!#zh 主要用于编辑器的 uuid，在编辑器下可用于持久化存储，在项目构建之后将变成自增的 id。 */
+		uuid: string;		
+		/** !#en All children nodes.
+		!#zh 节点的所有子节点。 */
+		children: Node[];		
+		/** !#en All children nodes.
+		!#zh 节点的子节点数量。 */
+		childrenCount: number;		
+		/** !#en
+		The local active state of this node.<br/>
+		Note that a Node may be inactive because a parent is not active, even if this returns true.<br/>
+		Use {{#crossLink "Node/activeInHierarchy:property"}}{{/crossLink}} if you want to check if the Node is actually treated as active in the scene.
+		!#zh
+		当前节点的自身激活状态。<br/>
+		值得注意的是，一个节点的父节点如果不被激活，那么即使它自身设为激活，它仍然无法激活。<br/>
+		如果你想检查节点在场景中实际的激活状态可以使用 {{#crossLink "Node/activeInHierarchy:property"}}{{/crossLink}}。 */
+		active: boolean;		
+		/** !#en Indicates whether this node is active in the scene.
+		!#zh 表示此节点是否在场景中激活。 */
+		activeInHierarchy: boolean;		
+		/**
+		
+		@param name name 
+		*/
+		constructor(name?: string);		
+		/** !#en The parent of the node.
+		!#zh 该节点的父节点。 */
+		parent: Node;		
+		/**
+		!#en Get parent of the node.
+		!#zh 获取该节点的父节点。
+		
+		@example 
+		```js
+		var parent = this.node.getParent();
+		``` 
+		*/
+		getParent(): Node;		
+		/**
+		!#en Set parent of the node.
+		!#zh 设置该节点的父节点。
+		@param value value
+		
+		@example 
+		```js
+		node.setParent(newNode);
+		``` 
+		*/
+		setParent(value: Node): void;		
+		/**
+		!#en
+		Properties configuration function <br/>
+		All properties in attrs will be set to the node, <br/>
+		when the setter of the node is available, <br/>
+		the property will be set via setter function.<br/>
+		!#zh 属性配置函数。在 attrs 的所有属性将被设置为节点属性。
+		@param attrs Properties to be set to node
+		
+		@example 
+		```js
+		var attrs = { key: 0, num: 100 };
+		node.attr(attrs);
+		``` 
+		*/
+		attr(attrs: any): void;		
+		/**
+		!#en Returns a child from the container given its uuid.
+		!#zh 通过 uuid 获取节点的子节点。
+		@param uuid The uuid to find the child node.
+		
+		@example 
+		```js
+		var child = node.getChildByUuid(uuid);
+		``` 
+		*/
+		getChildByUuid(uuid: string): Node;		
+		/**
+		!#en Returns a child from the container given its name.
+		!#zh 通过名称获取节点的子节点。
+		@param name A name to find the child node.
+		
+		@example 
+		```js
+		var child = node.getChildByName("Test Node");
+		``` 
+		*/
+		getChildByName(name: string): Node;		
+		/**
+		!#en
+		Inserts a child to the node at a specified index.
+		!#zh
+		插入子节点到指定位置
+		@param child the child node to be inserted
+		@param siblingIndex the sibling index to place the child in
+		
+		@example 
+		```js
+		node.insertChild(child, 2);
+		``` 
+		*/
+		insertChild(child: Node, siblingIndex: number): void;		
+		/**
+		!#en Get the sibling index.
+		!#zh 获取同级索引。
+		
+		@example 
+		```js
+		var index = node.getSiblingIndex();
+		``` 
+		*/
+		getSiblingIndex(): number;		
+		/**
+		!#en Set the sibling index of this node.
+		!#zh 设置节点同级索引。
+		@param index index
+		
+		@example 
+		```js
+		node.setSiblingIndex(1);
+		``` 
+		*/
+		setSiblingIndex(index: number): void;		
+		/**
+		!#en Walk though the sub children tree of the current node.
+		Each node, including the current node, in the sub tree will be visited two times, before all children and after all children.
+		This function call is not recursive, it's based on stack.
+		Please don't walk any other node inside the walk process.
+		!#zh 遍历该节点的子树里的所有节点并按规则执行回调函数。
+		对子树中的所有节点，包含当前节点，会执行两次回调，prefunc 会在访问它的子节点之前调用，postfunc 会在访问所有子节点之后调用。
+		这个函数的实现不是基于递归的，而是基于栈展开递归的方式。
+		请不要在 walk 过程中对任何其他的节点嵌套执行 walk。
+		@param prefunc The callback to process node when reach the node for the first time
+		@param postfunc The callback to process node when re-visit the node after walked all children in its sub tree
+		
+		@example 
+		```js
+		node.walk(function (target) {
+		    console.log('Walked through node ' + target.name + ' for the first time');
+		}, function (target) {
+		    console.log('Walked through node ' + target.name + ' after walked all children in its sub tree');
+		});
+		``` 
+		*/
+		walk(prefunc: (target: _BaseNode) => void, postfunc: (target: _BaseNode) => void): void;		
+		/**
+		!#en
+		Remove itself from its parent node. If cleanup is `true`, then also remove all events and actions. <br/>
+		If the cleanup parameter is not passed, it will force a cleanup, so it is recommended that you always pass in the `false` parameter when calling this API.<br/>
+		If the node orphan, then nothing happens.
+		!#zh
+		从父节点中删除该节点。如果不传入 cleanup 参数或者传入 `true`，那么这个节点上所有绑定的事件、action 都会被删除。<br/>
+		因此建议调用这个 API 时总是传入 `false` 参数。<br/>
+		如果这个节点是一个孤节点，那么什么都不会发生。
+		@param cleanup true if all actions and callbacks on this node should be removed, false otherwise.
+		
+		@example 
+		```js
+		node.removeFromParent();
+		node.removeFromParent(false);
+		``` 
+		*/
+		removeFromParent(cleanup?: boolean): void;		
+		/**
+		!#en
+		Removes a child from the container. It will also cleanup all running actions depending on the cleanup parameter. </p>
+		If the cleanup parameter is not passed, it will force a cleanup. <br/>
+		"remove" logic MUST only be on this method  <br/>
+		If a class wants to extend the 'removeChild' behavior it only needs <br/>
+		to override this method.
+		!#zh
+		移除节点中指定的子节点，是否需要清理所有正在运行的行为取决于 cleanup 参数。<br/>
+		如果 cleanup 参数不传入，默认为 true 表示清理。<br/>
+		@param child The child node which will be removed.
+		@param cleanup true if all running actions and callbacks on the child node will be cleanup, false otherwise.
+		
+		@example 
+		```js
+		node.removeChild(newNode);
+		node.removeChild(newNode, false);
+		``` 
+		*/
+		removeChild(child: Node, cleanup?: boolean): void;		
+		/**
+		!#en
+		Removes all children from the container and do a cleanup all running actions depending on the cleanup parameter. <br/>
+		If the cleanup parameter is not passed, it will force a cleanup.
+		!#zh
+		移除节点所有的子节点，是否需要清理所有正在运行的行为取决于 cleanup 参数。<br/>
+		如果 cleanup 参数不传入，默认为 true 表示清理。
+		@param cleanup true if all running actions on all children nodes should be cleanup, false otherwise.
+		
+		@example 
+		```js
+		node.removeAllChildren();
+		node.removeAllChildren(false);
+		``` 
+		*/
+		removeAllChildren(cleanup?: boolean): void;		
+		/**
+		!#en Is this node a child of the given node?
+		!#zh 是否是指定节点的子节点？
+		@param parent parent
+		
+		@example 
+		```js
+		node.isChildOf(newNode);
+		``` 
+		*/
+		isChildOf(parent: Node): boolean;		
+		/**
+		!#en
+		Returns the component of supplied type if the node has one attached, null if it doesn't.<br/>
+		You can also get component in the node by passing in the name of the script.
+		!#zh
+		获取节点上指定类型的组件，如果节点有附加指定类型的组件，则返回，如果没有则为空。<br/>
+		传入参数也可以是脚本的名称。
+		@param typeOrClassName typeOrClassName
+		
+		@example 
+		```js
+		// get sprite component
+		var sprite = node.getComponent(cc.Sprite);
+		// get custom test class
+		var test = node.getComponent("Test");
+		``` 
+		*/
+		getComponent<T extends Component>(type: {prototype: T}): T;
+		getComponent(className: string): any;		
+		/**
+		!#en Returns all components of supplied type in the node.
+		!#zh 返回节点上指定类型的所有组件。
+		@param typeOrClassName typeOrClassName
+		
+		@example 
+		```js
+		var sprites = node.getComponents(cc.Sprite);
+		var tests = node.getComponents("Test");
+		``` 
+		*/
+		getComponents<T extends Component>(type: {prototype: T}): T[];
+		getComponents(className: string): any[];		
+		/**
+		!#en Returns the component of supplied type in any of its children using depth first search.
+		!#zh 递归查找所有子节点中第一个匹配指定类型的组件。
+		@param typeOrClassName typeOrClassName
+		
+		@example 
+		```js
+		var sprite = node.getComponentInChildren(cc.Sprite);
+		var Test = node.getComponentInChildren("Test");
+		``` 
+		*/
+		getComponentInChildren<T extends Component>(type: {prototype: T}): T;
+		getComponentInChildren(className: string): any;		
+		/**
+		!#en Returns all components of supplied type in self or any of its children.
+		!#zh 递归查找自身或所有子节点中指定类型的组件
+		@param typeOrClassName typeOrClassName
+		
+		@example 
+		```js
+		var sprites = node.getComponentsInChildren(cc.Sprite);
+		var tests = node.getComponentsInChildren("Test");
+		``` 
+		*/
+		getComponentsInChildren<T extends Component>(type: {prototype: T}): T[];
+		getComponentsInChildren(className: string): any[];		
+		/**
+		!#en Adds a component class to the node. You can also add component to node by passing in the name of the script.
+		!#zh 向节点添加一个指定类型的组件类，你还可以通过传入脚本的名称来添加组件。
+		@param typeOrClassName The constructor or the class name of the component to add
+		
+		@example 
+		```js
+		var sprite = node.addComponent(cc.Sprite);
+		var test = node.addComponent("Test");
+		``` 
+		*/
+		addComponent<T extends Component>(type: {new(): T}): T;
+		addComponent(className: string): any;		
+		/**
+		!#en
+		Removes a component identified by the given name or removes the component object given.
+		You can also use component.destroy() if you already have the reference.
+		!#zh
+		删除节点上的指定组件，传入参数可以是一个组件构造函数或组件名，也可以是已经获得的组件引用。
+		如果你已经获得组件引用，你也可以直接调用 component.destroy()
+		@param component The need remove component.
+		
+		@example 
+		```js
+		node.removeComponent(cc.Sprite);
+		var Test = require("Test");
+		node.removeComponent(Test);
+		``` 
+		*/
+		removeComponent(component: string|Function|Component): void;		
+		/**
+		!#en
+		Destroy all children from the node, and release all their own references to other objects.<br/>
+		Actual destruct operation will delayed until before rendering.
+		!#zh
+		销毁所有子节点，并释放所有它们对其它对象的引用。<br/>
+		实际销毁操作会延迟到当前帧渲染前执行。
+		
+		@example 
+		```js
+		node.destroyAllChildren();
+		``` 
+		*/
+		destroyAllChildren(): void;		
+		/**
+		!#en Checks whether the EventTarget object has any callback registered for a specific type of event.
+		!#zh 检查事件目标对象是否有为特定类型的事件注册的回调。
+		@param type The type of event. 
+		*/
+		hasEventListener(type: string): boolean;		
+		/**
+		!#en
+		Register an callback of a specific event type on the EventTarget.
+		This type of event should be triggered via `emit`.
+		!#zh
+		注册事件目标的特定事件类型回调。这种类型的事件应该被 `emit` 触发。
+		@param type A string representing the event type to listen for.
+		@param callback The callback that will be invoked when the event is dispatched.
+		                             The callback is ignored if it is a duplicate (the callbacks are unique).
+		@param target The target (this object) to invoke the callback, can be null
+		
+		@example 
+		```js
+		eventTarget.on('fire', function () {
+		    cc.log("fire in the hole");
+		}, node);
+		``` 
+		*/
+		on<T extends Function>(type: string, callback: T, target?: any, useCapture?: boolean): T;		
+		/**
+		!#en
+		Removes the listeners previously registered with the same type, callback, target and or useCapture,
+		if only type is passed as parameter, all listeners registered with that type will be removed.
+		!#zh
+		删除之前用同类型，回调，目标或 useCapture 注册的事件监听器，如果只传递 type，将会删除 type 类型的所有事件监听器。
+		@param type A string representing the event type being removed.
+		@param callback The callback to remove.
+		@param target The target (this object) to invoke the callback, if it's not given, only callback without target will be removed
+		
+		@example 
+		```js
+		// register fire eventListener
+		var callback = eventTarget.on('fire', function () {
+		    cc.log("fire in the hole");
+		}, target);
+		// remove fire event listener
+		eventTarget.off('fire', callback, target);
+		// remove all fire event listeners
+		eventTarget.off('fire');
+		``` 
+		*/
+		off(type: string, callback?: Function, target?: any): void;		
+		/**
+		!#en Removes all callbacks previously registered with the same target (passed as parameter).
+		This is not for removing all listeners in the current event target,
+		and this is not for removing all listeners the target parameter have registered.
+		It's only for removing all listeners (callback and target couple) registered on the current event target by the target parameter.
+		!#zh 在当前 EventTarget 上删除指定目标（target 参数）注册的所有事件监听器。
+		这个函数无法删除当前 EventTarget 的所有事件监听器，也无法删除 target 参数所注册的所有事件监听器。
+		这个函数只能删除 target 参数在当前 EventTarget 上注册的所有事件监听器。
+		@param target The target to be searched for all related listeners 
+		*/
+		targetOff(target: any): void;		
+		/**
+		!#en
+		Register an callback of a specific event type on the EventTarget,
+		the callback will remove itself after the first time it is triggered.
+		!#zh
+		注册事件目标的特定事件类型回调，回调会在第一时间被触发后删除自身。
+		@param type A string representing the event type to listen for.
+		@param callback The callback that will be invoked when the event is dispatched.
+		                             The callback is ignored if it is a duplicate (the callbacks are unique).
+		@param target The target (this object) to invoke the callback, can be null
+		
+		@example 
+		```js
+		eventTarget.once('fire', function () {
+		    cc.log("this is the callback and will be invoked only once");
+		}, node);
+		``` 
+		*/
+		once(type: string, callback: (arg1?: any, arg2?: any, arg3?: any, arg4?: any, arg5?: any) => void, target?: any): void;		
+		/**
+		!#en
+		Send an event with the event object.
+		!#zh
+		通过事件对象派发事件
+		@param event event 
+		*/
+		dispatchEvent(event: Event): void;		
+		/**
+		!#en
+		Destroy all callbackInfos.
+		!#zh
+		销毁记录的事件 
+		*/
+		clear(): void;	
+	}	
+	/** !#en
+	Helper class for setting material blend function.
+	!#zh
+	设置材质混合模式的辅助类。 */
+	export class BlendFunc {		
+		/** !#en specify the source Blend Factor, this will generate a custom material object, please pay attention to the memory cost.
+		!#zh 指定原图的混合模式，这会克隆一个新的材质对象，注意这带来的开销 */
+		srcBlendFactor: macro.BlendFactor;		
+		/** !#en specify the destination Blend Factor.
+		!#zh 指定目标的混合模式 */
+		dstBlendFactor: macro.BlendFactor;	
+	}	
+	/** An internal helper class for switching render component's material between normal sprite material and gray sprite material. */
+	export class GraySpriteState {		
+		/** !#en The normal material.
+		!#zh 正常状态的材质。 */
+		normalMaterial: Material;		
+		/** !#en The gray material.
+		!#zh 置灰状态的材质。 */
+		grayMaterial: Material;	
+	}	
+	/** misc utilities */
+	export class misc {		
+		/**
+		!#en Clamp a value between from and to.
+		!#zh
+		限定浮点数的最大最小值。<br/>
+		数值大于 max_inclusive 则返回 max_inclusive。<br/>
+		数值小于 min_inclusive 则返回 min_inclusive。<br/>
+		否则返回自身。
+		@param value value
+		@param min_inclusive min_inclusive
+		@param max_inclusive max_inclusive
+		
+		@example 
+		```js
+		var v1 = cc.misc.clampf(20, 0, 20); // 20;
+		var v2 = cc.misc.clampf(-1, 0, 20); //  0;
+		var v3 = cc.misc.clampf(10, 0, 20); // 10;
+		``` 
+		*/
+		static clampf(value: number, min_inclusive: number, max_inclusive: number): number;		
+		/**
+		!#en Clamp a value between 0 and 1.
+		!#zh 限定浮点数的取值范围为 0 ~ 1 之间。
+		@param value value
+		
+		@example 
+		```js
+		var v1 = cc.misc.clamp01(20);  // 1;
+		var v2 = cc.misc.clamp01(-1);  // 0;
+		var v3 = cc.misc.clamp01(0.5); // 0.5;
+		``` 
+		*/
+		static clamp01(value: number): number;		
+		/**
+		Linear interpolation between 2 numbers, the ratio sets how much it is biased to each end
+		@param a number A
+		@param b number B
+		@param r ratio between 0 and 1
+		
+		@example 
+		```js
+		----
+		lerp
+		cc.misc.lerp(2,10,0.5)//returns 6
+		cc.misc.lerp(2,10,0.2)//returns 3.6
+		
+		``` 
+		*/
+		static lerp(a: number, b: number, r: number): number;		
+		/**
+		converts degrees to radians
+		@param angle angle 
+		*/
+		static degreesToRadians(angle: number): number;		
+		/**
+		converts radians to degrees
+		@param angle angle 
+		*/
+		static radiansToDegrees(angle: number): number;	
+	}	
+	/** !#en The renderer object which provide access to render system APIs,
+	detailed APIs will be available progressively.
+	!#zh 提供基础渲染接口的渲染器对象，渲染层的基础接口将逐步开放给用户 */
+	export class renderer {		
+		/** !#en The render engine is available only after cc.game.EVENT_ENGINE_INITED event.<br/>
+		Normally it will be inited as the webgl render engine, but in wechat open context domain,
+		it will be inited as the canvas render engine. Canvas render engine is no longer available for other use case since v2.0.
+		!#zh 基础渲染引擎对象只在 cc.game.EVENT_ENGINE_INITED 事件触发后才可获取。<br/>
+		大多数情况下，它都会是 WebGL 渲染引擎实例，但是在微信开放数据域当中，它会是 Canvas 渲染引擎实例。请注意，从 2.0 开始，我们在其他平台和环境下都废弃了 Canvas 渲染器。 */
+		static renderEngine: any;		
+		/** !#en The total draw call count in last rendered frame.
+		!#zh 上一次渲染帧所提交的渲染批次总数。 */
+		static drawCalls: number;	
+	}	
+	/** !#en The burst of 3d particle.
+	!#zh 3D 粒子发射时的爆发个数 */
+	export class Burst {		
+		/** !#en Time between the start of the particle system and the trigger of this Brust
+		!#zh 粒子系统开始运行到触发此次 Brust 的时间 */
+		time: number;		
+		/** !#en Minimum number of emitted particles
+		!#zh 发射粒子的最小数量 */
+		minCount: number;		
+		/** !#en Maximum number of emitted particles
+		!#zh 发射粒子的最大数量 */
+		maxCount: number;		
+		/** !#en The number of times Burst was triggered.
+		!#zh Burst 的触发次数 */
+		repeatCount: number;		
+		/** !#en Interval of each trigger
+		!#zh 每次触发的间隔时间 */
+		repeatInterval: number;		
+		/** !#en Number of particles emitted
+		!#zh 发射的粒子的数量 */
+		count: CurveRange;	
+	}	
+	/** !#en The animation curve of 3d particle.
+	!#zh 3D 粒子动画曲线 */
+	export class AnimationCurve {		
+		/** !#en Array of key value.
+		!#zh 关键值列表。 */
+		keyFrames: Keyframe[];		
+		/** !#en Pre-wrap mode.
+		!#zh 前置循环模式。 */
+		preWrapMode: WrapMode;		
+		/** !#en Post-wrap mode.
+		!#zh 后置循环模式。 */
+		postWrapMode: WrapMode;	
+	}	
+	/** !#en The ParticleSystem3D Component.
+	!#zh 3D 粒子组件 */
+	export class ParticleSystem3D extends RenderComponent {		
+		/** !#en The run time of particle.
+		!#zh 粒子系统运行时间 */
+		duration: number;		
+		/** !#en The maximum number of particles that a particle system can generate.
+		!#zh 粒子系统能生成的最大粒子数量 */
+		capacity: number;		
+		/** !#en Whether the particle system loops.
+		!#zh 粒子系统是否循环播放 */
+		loop: boolean;		
+		/** !#en Whether the particles start playing automatically after loaded.
+		!#zh 粒子系统加载后是否自动开始播放 */
+		playOnAwake: boolean;		
+		/** !#en When selected, the particle system will start playing after one round has been played (only effective when loop is enabled).
+		!#zh 选中之后，粒子系统会以已播放完一轮之后的状态开始播放（仅当循环播放启用时有效） */
+		prewarm: boolean;		
+		/** !#en The coordinate system in which the particle system is located.<br>
+		World coordinates (does not change when the position of other objects changes)<br>
+		Local coordinates (moving as the position of the parent node changes)<br>
+		Custom coordinates (moving with the position of a custom node)
+		!#zh 选择粒子系统所在的坐标系<br>
+		世界坐标（不随其他物体位置改变而变换）<br>
+		局部坐标（跟随父节点位置改变而移动）<br>
+		自定坐标（跟随自定义节点的位置改变而移动） */
+		simulationSpace: ParticleSystem3DAssembler.Space;		
+		/** !#en Controlling the update speed of the entire particle system.
+		!#zh 控制整个粒子系统的更新速度。 */
+		simulationSpeed: number;		
+		/** !#en Delay particle emission time after particle system starts running.
+		!#zh 粒子系统开始运行后，延迟粒子发射的时间。 */
+		startDelay: CurveRange;		
+		/** !#en Particle life cycle。
+		!#zh 粒子生命周期。 */
+		startLifetime: CurveRange;		
+		/** !#en Particle initial color
+		!#zh 粒子初始颜色 */
+		startColor: GradientRange;		
+		/** !#en Particle scale space
+		!#zh 缩放空间 */
+		scaleSpace: ParticleSystem3DAssembler.Space;		
+		/** !#en Initial particle size
+		!#zh 粒子初始大小 */
+		startSize: CurveRange;		
+		/** !#en Initial particle speed
+		!#zh 粒子初始速度 */
+		startSpeed: CurveRange;		
+		/** !#en Particle initial rotation angle
+		!#zh 粒子初始旋转角度 */
+		startRotation: CurveRange;		
+		/** !#en Gravity coefficient of particles affected by gravity
+		!#zh 粒子受重力影响的重力系数 */
+		gravityModifier: CurveRange;		
+		/** !#en Particles emitted per second
+		!#zh 每秒发射的粒子数 */
+		rateOverTime: CurveRange;		
+		/** !#en Number of particles emitted per unit distance moved
+		!#zh 每移动单位距离发射的粒子数 */
+		rateOverDistance: CurveRange;		
+		/** !#en The number of Brusts that emit a specified number of particles at a specified time
+		!#zh 设定在指定时间发射指定数量的粒子的 Brust 的数量 */
+		bursts: Burst[];		
+		/** !#en Particle emitter module
+		!#zh 粒子发射器模块 */
+		shapeModule: ShapeModule;		
+		/** !#en Color control module
+		!#zh 颜色控制模块 */
+		colorOverLifetimeModule: ColorOverLifetimeModule;		
+		/** !#en Particle size module
+		!#zh 粒子大小模块 */
+		sizeOvertimeModule: SizeOvertimeModule;		
+		/** !#en Particle speed module
+		!#zh 粒子速度模块 */
+		velocityOvertimeModule: VelocityOvertimeModule;		
+		/** !#en Particle acceleration module
+		!#zh 粒子加速度模块 */
+		forceOvertimeModule: ForceOvertimeModule;		
+		/** !#en Particle limit speed module (only CPU particles are supported)
+		!#zh 粒子限制速度模块（只支持 CPU 粒子） */
+		limitVelocityOvertimeModule: LimitVelocityOvertimeModule;		
+		/** !#en Particle rotation module
+		!#zh 粒子旋转模块 */
+		rotationOvertimeModule: RotationOvertimeModule;		
+		/** !#en Texture Animation Module
+		!#zh 贴图动画模块 */
+		textureAnimationModule: TextureAnimationModule;		
+		/** !#en Particle Trajectory Module
+		!#zh 粒子轨迹模块 */
+		trailModule: TrailModule;		
+		/** !#en Particle generation mode
+		!#zh 设定粒子生成模式 */
+		renderMode: ParticleSystem3DAssembler.RenderMode;		
+		/** !#en When the particle generation mode is StrecthedBillboard, in the direction of movement of the particles is stretched by velocity magnitude
+		!#zh 在粒子生成方式为 StrecthedBillboard 时,对粒子在运动方向上按速度大小进行拉伸 */
+		velocityScale: number;		
+		/** !#en When the particle generation method is StrecthedBillboard, the particles are stretched according to the particle size in the direction of motion
+		!#zh 在粒子生成方式为 StrecthedBillboard 时,对粒子在运动方向上按粒子大小进行拉伸 */
+		lengthScale: number;		
+		/** !#en Particle model
+		!#zh 粒子模型 */
+		mesh: Mesh;		
+		/** !#en Particle material
+		!#zh 粒子材质 */
+		particleMaterial: Material;		
+		/** !#en Particle trail material
+		!#zh 粒子轨迹材质 */
+		trailMaterial: Material;		
+		/**
+		!#en Playing particle effects
+		!#zh 播放粒子效果 
+		*/
+		play(): void;		
+		/**
+		!#en Pause particle effect
+		!#zh 暂停播放粒子效果 
+		*/
+		pause(): void;		
+		/**
+		!#en Stop particle effect
+		!#zh 停止播放粒子效果 
+		*/
+		stop(): void;		
+		/**
+		!#en Remove all particle effect
+		!#zh 将所有粒子从粒子系统中清除 
+		*/
+		clear(): void;	
+	}	
+	/** !#en
+	Helper class for ES5 Map.
+	!#zh
+	ES5 Map 辅助类。 */
+	export class MapUtils {	
+	}	
+	/** !#en .
+	!#zh 。 */
+	export class SkeletonAnimation extends Animation {	
+	}	
+	/** !#en
+	Skinned Mesh Renderer
+	!#zh
+	蒙皮渲染组件 */
+	export class SkinnedMeshRenderer extends MeshRenderer {		
+		/** !#en
+		Skeleton Asset
+		!#zh
+		骨骼资源 */
+		skeleton: sp.Skeleton;		
+		/** !#en
+		Root Bone
+		!#zh
+		骨骼根节点 */
+		rootBone: Node;	
+	}	
+	/** !#en SkeletonAnimationClip Asset.
+	!#zh 骨骼动画剪辑。 */
+	export class SkeletonAnimationClip extends AnimationClip {	
+	}	
+	/** !#en Effect Asset.
+	!#zh Effect 资源类型。 */
+	export class EffectAsset extends Asset {	
+	}	
+	/** !#en Material Asset.
+	!#zh 材质资源类。 */
+	export class Material extends Asset {		
+		/**
+		!#en Get built-in materials
+		!#zh 获取内置材质
+		@param name name 
+		*/
+		static getBuiltinMaterial(name: string): Material;		
+		/**
+		!#en Creates a Material with builtin Effect.
+		!#zh 使用内建 Effect 创建一个材质。
+		@param effectName effectName
+		@param techniqueIndex techniqueIndex 
+		*/
+		static createWithBuiltin(effectName: string, techniqueIndex?: number): Material;		
+		/**
+		!#en Creates a Material.
+		!#zh 创建一个材质。
+		@param effectAsset effectAsset
+		@param techniqueIndex techniqueIndex 
+		*/
+		static create(effectAsset: EffectAsset, techniqueIndex?: number): Material;		
+		/**
+		!#en Sets the Material property
+		!#zh 设置材质的属性
+		@param name name
+		@param val val
+		@param passIdx passIdx
+		@param directly directly 
+		*/
+		setProperty(name: string, val: any, passIdx?: number, directly?: boolean): void;		
+		/**
+		!#en Gets the Material property.
+		!#zh 获取材质的属性。
+		@param name name
+		@param passIdx passIdx 
+		*/
+		getProperty(name: string, passIdx: number): any;		
+		/**
+		!#en Sets the Material define.
+		!#zh 设置材质的宏定义。
+		@param name name
+		@param val val
+		@param passIdx passIdx
+		@param force force 
+		*/
+		define(name: string, val: boolean|number, passIdx?: number, force?: boolean): void;		
+		/**
+		!#en Gets the Material define.
+		!#zh 获取材质的宏定义。
+		@param name name
+		@param passIdx passIdx 
+		*/
+		getDefine(name: string, passIdx?: number): boolean;		
+		/**
+		!#en Sets the Material cull mode.
+		!#zh 设置材质的裁减模式。
+		@param cullMode cullMode
+		@param passIdx passIdx 
+		*/
+		setCullMode(cullMode: number, passIdx: number): void;		
+		/**
+		!#en Sets the Material depth states.
+		!#zh 设置材质的深度渲染状态。
+		@param depthTest depthTest
+		@param depthWrite depthWrite
+		@param depthFunc depthFunc
+		@param passIdx passIdx 
+		*/
+		setDepth(depthTest: boolean, depthWrite: boolean, depthFunc: number, passIdx: number): void;		
+		/**
+		!#en Sets the Material blend states.
+		!#zh 设置材质的混合渲染状态。
+		@param enabled enabled
+		@param blendEq blendEq
+		@param blendSrc blendSrc
+		@param blendDst blendDst
+		@param blendAlphaEq blendAlphaEq
+		@param blendSrcAlpha blendSrcAlpha
+		@param blendDstAlpha blendDstAlpha
+		@param blendColor blendColor
+		@param passIdx passIdx 
+		*/
+		setBlend(enabled: boolean, blendEq: number, blendSrc: number, blendDst: number, blendAlphaEq: number, blendSrcAlpha: number, blendDstAlpha: number, blendColor: number, passIdx: number): void;		
+		/**
+		!#en Sets whether enable the stencil test.
+		!#zh 设置是否开启模板测试。
+		@param stencilTest stencilTest
+		@param passIdx passIdx 
+		*/
+		setStencilEnabled(stencilTest: number, passIdx: number): void;		
+		/**
+		!#en Sets the Material stencil render states.
+		!#zh 设置材质的模板测试渲染参数。
+		@param stencilTest stencilTest
+		@param stencilFunc stencilFunc
+		@param stencilRef stencilRef
+		@param stencilMask stencilMask
+		@param stencilFailOp stencilFailOp
+		@param stencilZFailOp stencilZFailOp
+		@param stencilZPassOp stencilZPassOp
+		@param stencilWriteMask stencilWriteMask
+		@param passIdx passIdx 
+		*/
+		setStencil(stencilTest: number, stencilFunc: number, stencilRef: number, stencilMask: number, stencilFailOp: number, stencilZFailOp: number, stencilZPassOp: number, stencilWriteMask: number, passIdx: number): void;	
+	}	
+	/** !#en
+	Material Variant is an extension of the Material Asset.
+	Changes to Material Variant do not affect other Material Variant or Material Asset,
+	and changes to Material Asset are synchronized to the Material Variant.
+	However, when a Material Variant had already modifies a state, the Material Asset state is not synchronized to the Material Variant.
+	!#zh
+	材质变体是材质资源的一个延伸。
+	材质变体的修改不会影响到其他的材质变体或者材质资源，而材质资源的修改会同步体现到材质变体上，
+	但是当材质变体对一个状态修改后，材质资源再对这个状态修改是不会同步到材质变体上的。 */
+	export class MaterialVariant extends Material {		
+		/**
+		
+		@param materialName materialName
+		@param owner owner 
+		*/
+		static createWithBuiltin (materialName: string, owner: cc.RenderComponent): MaterialVariant | null;		
+		/**
+		
+		@param material material
+		@param owner owner 
+		*/
+		static create (material: Material, owner: cc.RenderComponent): MaterialVariant | null;	
+	}	
+	/** !#en cc.EditBox is a component for inputing text, you can use it to gather small amounts of text from users.
+	!#zh EditBox 组件，用于获取用户的输入文本。 */
+	export class EditBox extends Component {		
+		/** !#en Input string of EditBox.
+		!#zh 输入框的初始输入内容，如果为空则会显示占位符的文本。 */
+		string: string;		
+		/** !#en The Label component attached to the node for EditBox's input text label
+		!#zh 输入框输入文本节点上挂载的 Label 组件对象 */
+		textLabel: Label;		
+		/** !#en The Label component attached to the node for EditBox's placeholder text label
+		!#zh 输入框占位符节点上挂载的 Label 组件对象 */
+		placeholderLabel: Label;		
+		/** !#en The Sprite component attached to the node for EditBox's background
+		!#zh 输入框背景节点上挂载的 Sprite 组件对象 */
+		background: Sprite;		
+		/** !#en The background image of EditBox. This property will be removed in the future, use editBox.background instead please.
+		!#zh 输入框的背景图片。 该属性会在将来的版本中移除，请用 editBox.background */
+		backgroundImage: SpriteFrame;		
+		/** !#en
+		The return key type of EditBox.
+		Note: it is meaningless for web platforms and desktop platforms.
+		!#zh
+		指定移动设备上面回车按钮的样式。
+		注意：这个选项对 web 平台与 desktop 平台无效。 */
+		returnType: EditBox.KeyboardReturnType;		
+		/** !#en Set the input flags that are to be applied to the EditBox.
+		!#zh 指定输入标志位，可以指定输入方式为密码或者单词首字母大写。 */
+		inputFlag: EditBox.InputFlag;		
+		/** !#en
+		Set the input mode of the edit box.
+		If you pass ANY, it will create a multiline EditBox.
+		!#zh
+		指定输入模式: ANY表示多行输入，其它都是单行输入，移动平台上还可以指定键盘样式。 */
+		inputMode: EditBox.InputMode;		
+		/** !#en Font size of the input text. This property will be removed in the future, use editBox.textLabel.fontSize instead please.
+		!#zh 输入框文本的字体大小。 该属性会在将来的版本中移除，请使用 editBox.textLabel.fontSize。 */
+		fontSize: number;		
+		/** !#en Change the lineHeight of displayed text. This property will be removed in the future, use editBox.textLabel.lineHeight instead.
+		!#zh 输入框文本的行高。该属性会在将来的版本中移除，请使用 editBox.textLabel.lineHeight */
+		lineHeight: number;		
+		/** !#en Font color of the input text. This property will be removed in the future, use editBox.textLabel.node.color instead.
+		!#zh 输入框文本的颜色。该属性会在将来的版本中移除，请使用 editBox.textLabel.node.color */
+		fontColor: Color;		
+		/** !#en The display text of placeholder.
+		!#zh 输入框占位符的文本内容。 */
+		placeholder: string;		
+		/** !#en The font size of placeholder. This property will be removed in the future, use editBox.placeholderLabel.fontSize instead.
+		!#zh 输入框占位符的字体大小。该属性会在将来的版本中移除，请使用 editBox.placeholderLabel.fontSize */
+		placeholderFontSize: number;		
+		/** !#en The font color of placeholder. This property will be removed in the future, use editBox.placeholderLabel.node.color instead.
+		!#zh 输入框占位符的字体颜色。该属性会在将来的版本中移除，请使用 editBox.placeholderLabel.node.color */
+		placeholderFontColor: Color;		
+		/** !#en The maximize input length of EditBox.
+		- If pass a value less than 0, it won't limit the input number of characters.
+		- If pass 0, it doesn't allow input any characters.
+		!#zh 输入框最大允许输入的字符个数。
+		- 如果值为小于 0 的值，则不会限制输入字符个数。
+		- 如果值为 0，则不允许用户进行任何输入。 */
+		maxLength: number;		
+		/** !#en The input is always visible and be on top of the game view (only useful on Web), this property will be removed on v2.1
+		!zh 输入框总是可见，并且永远在游戏视图的上面（这个属性只有在 Web 上面修改有意义），该属性会在 v2.1 中移除
+		Note: only available on Web at the moment. */
+		stayOnTop: boolean;		
+		/** !#en Set the tabIndex of the DOM input element (only useful on Web).
+		!#zh 修改 DOM 输入元素的 tabIndex（这个属性只有在 Web 上面修改有意义）。 */
+		tabIndex: number;		
+		/** !#en The event handler to be called when EditBox began to edit text.
+		!#zh 开始编辑文本输入框触发的事件回调。 */
+		editingDidBegan: Component.EventHandler[];		
+		/** !#en The event handler to be called when EditBox text changes.
+		!#zh 编辑文本输入框时触发的事件回调。 */
+		textChanged: Component.EventHandler[];		
+		/** !#en The event handler to be called when EditBox edit ends.
+		!#zh 结束编辑文本输入框时触发的事件回调。 */
+		editingDidEnded: Component.EventHandler[];		
+		/** !#en The event handler to be called when return key is pressed. Windows is not supported.
+		!#zh 当用户按下回车按键时的事件回调，目前不支持 windows 平台 */
+		editingReturn: Component.EventHandler[];		
+		/**
+		!#en Let the EditBox get focus, this method will be removed on v2.1
+		!#zh 让当前 EditBox 获得焦点, 这个方法会在 v2.1 中移除 
+		*/
+		setFocus(): void;		
+		/**
+		!#en Let the EditBox get focus
+		!#zh 让当前 EditBox 获得焦点 
+		*/
+		focus(): void;		
+		/**
+		!#en Let the EditBox lose focus
+		!#zh 让当前 EditBox 失去焦点 
+		*/
+		blur(): void;		
+		/**
+		!#en Determine whether EditBox is getting focus or not.
+		!#zh 判断 EditBox 是否获得了焦点 
+		*/
+		isFocused(): void;		
+		/**
+		!#en if you don't need the EditBox and it isn't in any running Scene, you should
+		call the destroy method on this component or the associated node explicitly.
+		Otherwise, the created DOM element won't be removed from web page.
+		!#zh
+		如果你不再使用 EditBox，并且组件未添加到场景中，那么你必须手动对组件或所在节点调用 destroy。
+		这样才能移除网页上的 DOM 节点，避免 Web 平台内存泄露。
+		
+		@example 
+		```js
+		editbox.node.parent = null;  // or  editbox.node.removeFromParent(false);
+		// when you don't need editbox anymore
+		editbox.node.destroy();
+		``` 
+		*/
+		destroy(): boolean;	
+	}	
+	/** undefined */
+	export class PhysicsBoxCollider extends PhysicsCollider implements Collider.Box {		
+		/** !#en Position offset
+		!#zh 位置偏移量 */
+		offset: Vec2;		
+		/** !#en Box size
+		!#zh 包围盒大小 */
+		size: Size;	
+	}	
+	/** undefined */
+	export class PhysicsChainCollider extends PolygonCollider {		
+		/** !#en Whether the chain is loop
+		!#zh 链条是否首尾相连 */
+		loop: boolean;		
+		/** !#en Chain points
+		!#zh 链条顶点数组 */
+		points: Vec2[];	
+	}	
+	/** undefined */
+	export class PhysicsCircleCollider extends PhysicsCollider implements Collider.Circle {		
+		/** !#en Position offset
+		!#zh 位置偏移量 */
+		offset: Vec2;		
+		/** !#en Circle radius
+		!#zh 圆形半径 */
+		radius: number;	
+	}	
+	/** undefined */
+	export class PhysicsCollider extends Collider {		
+		/** !#en
+		The density.
+		!#zh
+		密度 */
+		density: number;		
+		/** !#en
+		A sensor collider collects contact information but never generates a collision response
+		!#zh
+		一个传感器类型的碰撞体会产生碰撞回调，但是不会发生物理碰撞效果。 */
+		sensor: boolean;		
+		/** !#en
+		The friction coefficient, usually in the range [0,1].
+		!#zh
+		摩擦系数，取值一般在 [0, 1] 之间 */
+		friction: number;		
+		/** !#en
+		The restitution (elasticity) usually in the range [0,1].
+		!#zh
+		弹性系数，取值一般在 [0, 1]之间 */
+		restitution: number;		
+		/** !#en
+		Physics collider will find the rigidbody component on the node and set to this property.
+		!#zh
+		碰撞体会在初始化时查找节点上是否存在刚体，如果查找成功则赋值到这个属性上。 */
+		body: RigidBody;		
+		/**
+		!#en
+		Apply current changes to collider, this will regenerate inner box2d fixtures.
+		!#zh
+		应用当前 collider 中的修改，调用此函数会重新生成内部 box2d 的夹具。 
+		*/
+		apply(): void;		
+		/**
+		!#en
+		Get the world aabb of the collider
+		!#zh
+		获取碰撞体的世界坐标系下的包围盒 
+=======
 	/** !#en The burst of 3d particle.
 	!#zh 3D 粒子发射时的爆发个数 */
 	export class Burst {		
@@ -16026,6 +21070,7 @@ declare namespace cc {
 		Get the world aabb of the collider
 		!#zh
 		获取碰撞体的世界坐标系下的包围盒 
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		*/
 		getAABB(): void;	
 	}	
@@ -16038,6 +21083,376 @@ declare namespace cc {
 		!#zh 多边形顶点数组 */
 		points: Vec2[];	
 	}	
+<<<<<<< HEAD
+	/** !#en
+	A distance joint constrains two points on two bodies
+	to remain at a fixed distance from each other. You can view
+	this as a massless, rigid rod.
+	!#zh
+	距离关节通过一个固定的长度来约束关节链接的两个刚体。你可以将它想象成一个无质量，坚固的木棍。 */
+	export class DistanceJoint extends Joint {		
+		/** !#en
+		The distance separating the two ends of the joint.
+		!#zh
+		关节两端的距离 */
+		distance: number;		
+		/** !#en
+		The spring frequency.
+		!#zh
+		弹性系数。 */
+		frequency: number;		
+		/** !#en
+		The damping ratio.
+		!#zh
+		阻尼，表示关节变形后，恢复到初始状态受到的阻力。 */
+		dampingRatio: number;	
+	}	
+	/** !#en
+	Base class for joints to connect rigidbody.
+	!#zh
+	关节类的基类 */
+	export class Joint extends Component {		
+		/** !#en
+		The anchor of the rigidbody.
+		!#zh
+		刚体的锚点。 */
+		anchor: Vec2;		
+		/** !#en
+		The anchor of the connected rigidbody.
+		!#zh
+		关节另一端刚体的锚点。 */
+		connectedAnchor: Vec2;		
+		/** !#en
+		The rigidbody to which the other end of the joint is attached.
+		!#zh
+		关节另一端链接的刚体 */
+		connectedBody: RigidBody;		
+		/** !#en
+		Should the two rigid bodies connected with this joint collide with each other?
+		!#zh
+		链接到关节上的两个刚体是否应该相互碰撞？ */
+		collideConnected: boolean;		
+		/**
+		!#en
+		Apply current changes to joint, this will regenerate inner box2d joint.
+		!#zh
+		应用当前关节中的修改，调用此函数会重新生成内部 box2d 的关节。 
+		*/
+		apply(): void;		
+		/**
+		!#en
+		Get the anchor point on rigidbody in world coordinates.
+		!#zh
+		获取刚体世界坐标系下的锚点。 
+		*/
+		getWorldAnchor(): Vec2;		
+		/**
+		!#en
+		Get the anchor point on connected rigidbody in world coordinates.
+		!#zh
+		获取链接刚体世界坐标系下的锚点。 
+		*/
+		getWorldConnectedAnchor(): Vec2;		
+		/**
+		!#en
+		Gets the reaction force of the joint.
+		!#zh
+		获取关节的反作用力。
+		@param timeStep The time to calculate the reaction force for. 
+		*/
+		getReactionForce(timeStep: number): Vec2;		
+		/**
+		!#en
+		Gets the reaction torque of the joint.
+		!#zh
+		获取关节的反扭矩。
+		@param timeStep The time to calculate the reaction torque for. 
+		*/
+		getReactionTorque(timeStep: number): number;	
+	}	
+	/** !#en
+	A motor joint is used to control the relative motion
+	between two bodies. A typical usage is to control the movement
+	of a dynamic body with respect to the ground.
+	!#zh
+	马达关节被用来控制两个刚体间的相对运动。
+	一个典型的例子是用来控制一个动态刚体相对于地面的运动。 */
+	export class MotorJoint extends Joint {		
+		/** !#en
+		The anchor of the rigidbody.
+		!#zh
+		刚体的锚点。 */
+		anchor: Vec2;		
+		/** !#en
+		The anchor of the connected rigidbody.
+		!#zh
+		关节另一端刚体的锚点。 */
+		connectedAnchor: Vec2;		
+		/** !#en
+		The linear offset from connected rigidbody to rigidbody.
+		!#zh
+		关节另一端的刚体相对于起始端刚体的位置偏移量 */
+		linearOffset: Vec2;		
+		/** !#en
+		The angular offset from connected rigidbody to rigidbody.
+		!#zh
+		关节另一端的刚体相对于起始端刚体的角度偏移量 */
+		angularOffset: number;		
+		/** !#en
+		The maximum force can be applied to rigidbody.
+		!#zh
+		可以应用于刚体的最大的力值 */
+		maxForce: number;		
+		/** !#en
+		The maximum torque can be applied to rigidbody.
+		!#zh
+		可以应用于刚体的最大扭矩值 */
+		maxTorque: number;		
+		/** !#en
+		The position correction factor in the range [0,1].
+		!#zh
+		位置矫正系数，范围为 [0, 1] */
+		correctionFactor: number;	
+	}	
+	/** !#en
+	A mouse joint is used to make a point on a body track a
+	specified world point. This a soft constraint with a maximum
+	force. This allows the constraint to stretch and without
+	applying huge forces.
+	Mouse Joint will auto register the touch event with the mouse region node,
+	and move the choosed rigidbody in touch move event.
+	Note : generally mouse joint only used in test bed.
+	!#zh
+	鼠标关节用于使刚体上的一个点追踪一个指定的世界坐标系下的位置。
+	鼠标关节可以指定一个最大的力来施加一个柔和的约束。
+	鼠标关节会自动使用 mouse region 节点来注册鼠标事件，并且在触摸移动事件中移动选中的刚体。
+	注意：一般鼠标关节只在测试环境中使用。 */
+	export class MouseJoint extends Joint {		
+		/** !#en
+		The anchor of the rigidbody.
+		!#zh
+		刚体的锚点。 */
+		anchor: Vec2;		
+		/** !#en
+		The anchor of the connected rigidbody.
+		!#zh
+		关节另一端刚体的锚点。 */
+		connectedAnchor: Vec2;		
+		/** !#en
+		The node used to register touch evnet.
+		If this is null, it will be the joint's node.
+		!#zh
+		用于注册触摸事件的节点。
+		如果没有设置这个值，那么将会使用关节的节点来注册事件。 */
+		mouseRegion: Node;		
+		/** !#en
+		The target point.
+		The mouse joint will move choosed rigidbody to target point.
+		!#zh
+		目标点，鼠标关节将会移动选中的刚体到指定的目标点 */
+		target: Vec2;		
+		/** !#en
+		The spring frequency.
+		!#zh
+		弹簧系数。 */
+		frequency: number;		
+		/** !#en
+		The damping ratio.
+		!#zh
+		阻尼，表示关节变形后，恢复到初始状态受到的阻力。 */
+		0: number;		
+		/** !#en
+		The maximum force
+		!#zh
+		最大阻力值 */
+		maxForce: number;	
+	}	
+	/** !#en
+	A prismatic joint. This joint provides one degree of freedom: translation
+	along an axis fixed in rigidbody. Relative rotation is prevented. You can
+	use a joint limit to restrict the range of motion and a joint motor to
+	drive the motion or to model joint friction.
+	!#zh
+	移动关节指定了只能在一个方向上移动刚体。
+	你可以开启关节限制来设置刚体运行移动的间距，也可以开启马达来使用关节马达驱动刚体的运行。 */
+	export class PrismaticJoint extends Joint {		
+		/** !#en
+		The local joint axis relative to rigidbody.
+		!#zh
+		指定刚体可以移动的方向。 */
+		localAxisA: Vec2;		
+		/** !#en
+		The reference angle.
+		!#zh
+		相对角度 */
+		referenceAngle: number;		
+		/** !#en
+		Enable joint distance limit?
+		!#zh
+		是否开启关节的距离限制？ */
+		enableLimit: boolean;		
+		/** !#en
+		Enable joint motor?
+		!#zh
+		是否开启关节马达？ */
+		enableMotor: boolean;		
+		/** !#en
+		The lower joint limit.
+		!#zh
+		刚体能够移动的最小值 */
+		lowerLimit: number;		
+		/** !#en
+		The upper joint limit.
+		!#zh
+		刚体能够移动的最大值 */
+		upperLimit: number;		
+		/** !#en
+		The maxium force can be applied to rigidbody to rearch the target motor speed.
+		!#zh
+		可以施加到刚体的最大力。 */
+		maxMotorForce: number;		
+		/** !#en
+		The expected motor speed.
+		!#zh
+		期望的马达速度。 */
+		motorSpeed: number;	
+	}	
+	/** !#en
+	A rope joint enforces a maximum distance between two points
+	on two bodies. It has no other effect.
+	Warning: if you attempt to change the maximum length during
+	the simulation you will get some non-physical behavior.
+	!#zh
+	绳子关节只指定两个刚体间的最大距离，没有其他的效果。
+	注意：如果你试图动态修改关节的长度，这有可能会得到一些意外的效果。 */
+	export class RopeJoint extends Joint {		
+		/** !#en
+		The max length.
+		!#zh
+		最大长度。 */
+		maxLength: number;	
+	}	
+	/** !#en
+	A revolute joint constrains two bodies to share a common point while they
+	are free to rotate about the point. The relative rotation about the shared
+	point is the joint angle. You can limit the relative rotation with
+	a joint limit that specifies a lower and upper angle. You can use a motor
+	to drive the relative rotation about the shared point. A maximum motor torque
+	is provided so that infinite forces are not generated.
+	!#zh
+	旋转关节可以约束两个刚体围绕一个点来进行旋转。
+	你可以通过开启关节限制来限制旋转的最大角度和最小角度。
+	你可以通过开启马达来施加一个扭矩力来驱动这两个刚体在这一点上的相对速度。 */
+	export class RevoluteJoint extends Joint {		
+		/** !#en
+		The reference angle.
+		An angle between bodies considered to be zero for the joint angle.
+		!#zh
+		相对角度。
+		两个物体之间角度为零时可以看作相等于关节角度 */
+		referenceAngle: number;		
+		/** !#en
+		The lower angle.
+		!#zh
+		角度的最低限制。 */
+		lowerAngle: number;		
+		/** !#en
+		The upper angle.
+		!#zh
+		角度的最高限制。 */
+		upperAngle: number;		
+		/** !#en
+		The maxium torque can be applied to rigidbody to rearch the target motor speed.
+		!#zh
+		可以施加到刚体的最大扭矩。 */
+		maxMotorTorque: number;		
+		/** !#en
+		The expected motor speed.
+		!#zh
+		期望的马达速度。 */
+		motorSpeed: number;		
+		/** !#en
+		Enable joint limit?
+		!#zh
+		是否开启关节的限制？ */
+		enableLimit: boolean;		
+		/** !#en
+		Enable joint motor?
+		!#zh
+		是否开启关节马达？ */
+		enableMotor: boolean;		
+		/**
+		!#en
+		Get the joint angle.
+		!#zh
+		获取关节角度。 
+		*/
+		getJointAngle(): number;	
+	}	
+	/** !#en
+	A weld joint essentially glues two bodies together. A weld joint may
+	distort somewhat because the island constraint solver is approximate.
+	!#zh
+	熔接关节相当于将两个刚体粘在了一起。
+	熔接关节可能会使某些东西失真，因为约束求解器算出的都是近似值。 */
+	export class WeldJoint extends Joint {		
+		/** !#en
+		The reference angle.
+		!#zh
+		相对角度。 */
+		referenceAngle: number;		
+		/** !#en
+		The frequency.
+		!#zh
+		弹性系数。 */
+		frequency: number;		
+		/** !#en
+		The damping ratio.
+		!#zh
+		阻尼，表示关节变形后，恢复到初始状态受到的阻力。 */
+		0: number;	
+	}	
+	/** !#en
+	A wheel joint. This joint provides two degrees of freedom: translation
+	along an axis fixed in bodyA and rotation in the plane. You can use a joint motor to drive
+	the rotation or to model rotational friction.
+	This joint is designed for vehicle suspensions.
+	!#zh
+	轮子关节提供两个维度的自由度：旋转和沿着指定方向上位置的移动。
+	你可以通过开启关节马达来使用马达驱动刚体的旋转。
+	轮组关节是专门为机动车类型设计的。 */
+	export class WheelJoint extends Joint {		
+		/** !#en
+		The local joint axis relative to rigidbody.
+		!#zh
+		指定刚体可以移动的方向。 */
+		localAxisA: Vec2;		
+		/** !#en
+		The maxium torque can be applied to rigidbody to rearch the target motor speed.
+		!#zh
+		可以施加到刚体的最大扭矩。 */
+		maxMotorTorque: number;		
+		/** !#en
+		The expected motor speed.
+		!#zh
+		期望的马达速度。 */
+		motorSpeed: number;		
+		/** !#en
+		Enable joint motor?
+		!#zh
+		是否开启关节马达？ */
+		enableMotor: boolean;		
+		/** !#en
+		The spring frequency.
+		!#zh
+		弹性系数。 */
+		frequency: number;		
+		/** !#en
+		The damping ratio.
+		!#zh
+		阻尼，表示关节变形后，恢复到初始状态受到的阻力。 */
+		dampingRatio: number;	
+=======
 	/** !#en The shape module of 3d particle.
 	!#zh 3D 粒子的发射形状模块 */
 	export class ShapeModule {		
@@ -16105,6 +21520,7 @@ declare namespace cc {
 		/** !#en Interpolation between the current emission direction and the direction from the current position to the center of the node.
 		!#zh 表示当前发射方向与当前位置到结点中心连线方向的插值。 */
 		sphericalDirectionAmount: number;	
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	}	
 	/** !#en The color over time module of 3d particle.
 	!#zh 3D 粒子颜色变化模块 */
@@ -16351,6 +21767,115 @@ declare namespace cc {
 		!#zh 速度修正系数（只支持 CPU 粒子）。 */
 		speedModifier: CurveRange;	
 	}	
+<<<<<<< HEAD
+	/** !#en The shape module of 3d particle.
+	!#zh 3D 粒子的发射形状模块 */
+	export class ShapeModule {		
+		/** !#en The enable of shapeModule.
+		!#zh 是否启用 */
+		enable: boolean;		
+		/** !#en Particle emitter type.
+		!#zh 粒子发射器类型。 */
+		shapeType: shapeModule.ShapeType;		
+		/** !#en The emission site of the particle.
+		!#zh 粒子从发射器哪个部位发射。 */
+		emitFrom: shapeModule.EmitLocation;		
+		/** !#en Particle emitter radius.
+		!#zh 粒子发射器半径。 */
+		radius: number;		
+		/** !#en Particle emitter emission position (not valid for Box type emitters)：<bg>
+		- 0 means emitted from the surface;
+		- 1 means launch from the center;
+		- 0 ~ 1 indicates emission from the center to the surface.
+		!#zh 粒子发射器发射位置（对 Box 类型的发射器无效）：<bg>
+		- 0 表示从表面发射；
+		- 1 表示从中心发射；
+		- 0 ~ 1 之间表示在中心到表面之间发射。 */
+		radiusThickness: number;		
+		/** !#en The angle between the axis of the cone and the generatrix<bg>
+		Determines the opening and closing of the cone launcher
+		!#zh 圆锥的轴与母线的夹角<bg>。
+		决定圆锥发射器的开合程度。 */
+		angle: number;		
+		/** !#en Particle emitters emit in a fan-shaped range.
+		!#zh 粒子发射器在一个扇形范围内发射。 */
+		arc: number;		
+		/** !#en How particles are emitted in the sector range.
+		!#zh 粒子在扇形范围内的发射方式。 */
+		arcMode: shapeModule.ArcMode;		
+		/** !#en Controls the discrete intervals around the arcs where particles might be generated.
+		!#zh 控制可能产生粒子的弧周围的离散间隔。 */
+		arcSpread: number;		
+		/** !#en The speed at which particles are emitted around the circumference.
+		!#zh 粒子沿圆周发射的速度。 */
+		arcSpeed: CurveRange;		
+		/** !#en Axis length from top of cone to bottom of cone <bg>.
+		Determines the height of the cone emitter.
+		!#zh 圆锥顶部截面距离底部的轴长<bg>。
+		决定圆锥发射器的高度。 */
+		length: number;		
+		/** !#en Particle emitter emission location (for box-type particle emitters).
+		!#zh 粒子发射器发射位置（针对 Box 类型的粒子发射器。 */
+		boxThickness: Vec3;		
+		/** !#en Particle Emitter Position
+		!#zh 粒子发射器位置。 */
+		position: Vec3;		
+		/** !#en Particle emitter rotation angle.
+		!#zh 粒子发射器旋转角度。 */
+		rotation: Vec3;		
+		/** !#en Particle emitter scaling
+		!#zh 粒子发射器缩放比例。 */
+		scale: Vec3;		
+		/** !#en The direction of particle movement is determined based on the initial direction of the particles.
+		!#zh 根据粒子的初始方向决定粒子的移动方向。 */
+		alignToDirection: boolean;		
+		/** !#en Set particle generation direction randomly.
+		!#zh 粒子生成方向随机设定。 */
+		randomDirectionAmount: number;		
+		/** !#en Interpolation between the current emission direction and the direction from the current position to the center of the node.
+		!#zh 表示当前发射方向与当前位置到结点中心连线方向的插值。 */
+		sphericalDirectionAmount: number;	
+	}	
+	/** !#en The trail module of 3d particle.
+	!#zh 3D 粒子拖尾模块 */
+	export class TrailModule {		
+		/** !#en The enable of trailModule.
+		!#zh 是否启用 */
+		enable: boolean;		
+		/** !#en Sets how particles generate trajectories.
+		!#zh 设定粒子生成轨迹的方式。 */
+		mode: trailModule.TrailMode;		
+		/** !#en Life cycle of trajectory.
+		!#zh 轨迹存在的生命周期。 */
+		lifeTime: CurveRange;		
+		/** !#en Minimum spacing between each track particle
+		!#zh 每个轨迹粒子之间的最小间距。 */
+		minParticleDistance: number;		
+		/** !#en The coordinate system of trajectories.
+		!#zh 轨迹设定时的坐标系。 */
+		space: ParticleSystem3DAssembler.Space;		
+		/** !#en Whether the particle itself exists.
+		!#zh 粒子本身是否存在。 */
+		existWithParticles: boolean;		
+		/** !#en Set the texture fill method
+		!#zh 设定纹理填充方式。 */
+		textureMode: trailModule.TextureMode;		
+		/** !#en Whether to use particle width
+		!#zh 是否使用粒子的宽度。 */
+		widthFromParticle: boolean;		
+		/** !#en Curves that control track length
+		!#zh 控制轨迹长度的曲线。 */
+		widthRatio: CurveRange;		
+		/** !#en Whether to use particle color
+		!#zh 是否使用粒子的颜色。 */
+		colorFromParticle: boolean;		
+		/** !#en The color of trajectories.
+		!#zh 轨迹的颜色。 */
+		colorOverTrail: GradientRange;		
+		/** !#en Trajectories color over time.
+		!#zh 轨迹随时间变化的颜色。 */
+		colorOvertime: GradientRange;	
+=======
 	/** !#en The trail module of 3d particle.
 	!#zh 3D 粒子拖尾模块 */
 	export class TrailModule {		
@@ -16525,6 +22050,7 @@ declare namespace cc {
 		DYNAMIC = 0,
 		STATIC = 0,
 		KINEMATIC = 0,	
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	}	
 	/** !#en
 	Trigger event
@@ -16594,6 +22120,16 @@ declare namespace cc {
 		碰撞中的所有碰撞点的信息。 */
 		contacts: IContactEquation[];	
 	}	
+<<<<<<< HEAD
+	/** !#en The rigid body type
+	!#zh 刚体类型 */
+	export enum ERigidBodyType {		
+		DYNAMIC = 0,
+		STATIC = 0,
+		KINEMATIC = 0,	
+	}	
+=======
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	/** !#en
 	Physical systems manager.
 	!#zh
@@ -16699,6 +22235,137 @@ declare namespace cc {
 		*/
 		clone(): void;	
 	}	
+<<<<<<< HEAD
+	/** Rigid body interface */
+	export class IRigidBody {		
+		rigidBody: RigidBody3D;		
+		mass: number;		
+		linearDamping: number;		
+		angularDamping: number;		
+		isKinematic: boolean;		
+		useGravity: boolean;		
+		fixedRotation: boolean;		
+		linearFactor: IVec3Like;		
+		angularFactor: IVec3Like;		
+		allowSleep: boolean;		
+		isAwake: boolean;		
+		isSleepy: boolean;		
+		isSleeping: boolean;		
+		wakeUp(): void;		
+		sleep(): void;		
+		/**
+		
+		@param out out 
+		*/
+		getLinearVelocity(out: IVec3Like): void;		
+		/**
+		
+		@param out out 
+		*/
+		setLinearVelocity(out: IVec3Like): void;		
+		/**
+		
+		@param out out 
+		*/
+		getAngularVelocity(out: IVec3Like): void;		
+		/**
+		
+		@param out out 
+		*/
+		setAngularVelocity(out: IVec3Like): void;		
+		/**
+		
+		@param force force
+		@param relativePoint relativePoint 
+		*/
+		applyForce(force: IVec3Like, relativePoint: IVec3Like): void;		
+		/**
+		
+		@param force force
+		@param relativePoint relativePoint 
+		*/
+		applyLocalForce(force: IVec3Like, relativePoint: IVec3Like): void;		
+		/**
+		
+		@param force force
+		@param relativePoint relativePoint 
+		*/
+		applyImpulse(force: IVec3Like, relativePoint: IVec3Like): void;		
+		/**
+		
+		@param force force
+		@param relativePoint relativePoint 
+		*/
+		applyLocalImpulse(force: IVec3Like, relativePoint: IVec3Like): void;		
+		/**
+		
+		@param torque torque 
+		*/
+		applyTorque(torque: IVec3Like): void;		
+		/**
+		
+		@param torque torque 
+		*/
+		applyLocalTorque(torque: IVec3Like): void;	
+	}	
+	/** Class has x y z properties */
+	export class IVec3Like {		
+		x: number;		
+		y: number;		
+		z: number;	
+	}	
+	/** Class has x y z w properties */
+	export class IQuatLike {		
+		x: number;		
+		y: number;		
+		z: number;		
+		w: number;	
+	}	
+	/** !#en Base shape interface. */
+	export class IBaseShape {		
+		collider: Collider3D;		
+		attachedRigidBody: RigidBody3D|void;		
+		material: any;		
+		isTrigger: boolean;		
+		center: IVec3Like;	
+	}	
+	/** !#en box shape interface */
+	export class IBoxShape {		
+		size: IVec3Like;	
+	}	
+	/** !#en Sphere shape interface */
+	export class ISphereShape {		
+		radius: number;	
+	}	
+	/** Ray cast options */
+	export class IRaycastOptions {		
+		groupIndex: number;		
+		queryTrigger: boolean;		
+		maxDistance: number;	
+	}	
+	/** Collision detect */
+	export class ICollisionDetect {		
+		/**
+		Ray cast, and return information of the closest hit.
+		@param worldRay worldRay
+		@param options options
+		@param out out 
+		*/
+		raycastClosest(worldRay: geomUtils.Ray, options: IRaycastOptions, out: PhysicsRayResult): boolean;		
+		/**
+		Ray cast against all bodies. The provided callback will be executed for each hit with a RaycastResult as single argument.
+		@param worldRay worldRay
+		@param options options
+		@param pool pool
+		@param resultes resultes 
+		*/
+		raycast(worldRay: geomUtils.Ray, options: IRaycastOptions, pool: RecyclePool, resultes: PhysicsRayResult[]): boolean;	
+	}	
+	/** Physics world interface */
+	export class IPhysicsWorld {	
+	}	
+=======
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	/** !#en Manage Dynamic Atlas Manager. Dynamic Atlas Manager is used for merging textures at runtime, see [Dynamic Atlas](https://docs.cocos.com/creator/manual/en/advanced-topics/dynamic-atlas.html) for details.
 	!#zh 管理动态图集。动态图集用于在运行时对贴图进行合并，详见 [动态合图](https://docs.cocos.com/creator/manual/zh/advanced-topics/dynamic-atlas.html)。 */
 	export class DynamicAtlasManager {		
@@ -16708,6 +22375,12 @@ declare namespace cc {
 		/** !#en The maximum number of atlas that can be created.
 		!#zh 可以创建的最大图集数量。 */
 		maxAtlasCount: number;		
+<<<<<<< HEAD
+		/** !#en Get the current created atlas count.
+		!#zh 获取当前已经创建的图集数量。 */
+		atlasCount: number;		
+=======
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		/** !#en Is enable textureBleeding.
 		!#zh 是否开启 textureBleeding */
 		textureBleeding: boolean;		
@@ -16722,6 +22395,7 @@ declare namespace cc {
 		minFrameSize: number;		
 		/**
 		!#en Append a sprite frame into the dynamic atlas.
+<<<<<<< HEAD
 		!#zh 添加碎图进入动态图集。
 		@param spriteFrame spriteFrame 
 		*/
@@ -16737,6 +22411,49 @@ declare namespace cc {
 		@param show show 
 		*/
 		showDebug(show: boolean): Node;	
+	}	
+	/** !#en
+	Each frame applies a constant force to a rigid body, depending on the RigidBody3D
+	!#zh
+	在每帧对一个刚体施加持续的力，依赖 RigidBody3D 组件 */
+	export class ConstantForce extends Component {		
+		/** !#en
+		Set the force used in the world coordinate system, use `this.force = otherVec3`.
+		!#zh
+		设置世界坐标系中使用的力，设置时请用 `this.force = otherVec3` 的方式。 */
+		force: Vec3;		
+		/** !#en
+		Set the force used in the local coordinate system, using `this.localforce = otherVec3`.
+		!#zh
+		获取和设置本地坐标系中使用的力，设置时请用 `this.localForce = otherVec3` 的方式。 */
+		localForce: Vec3;		
+		/** !#en
+		Torque applied to the world orientation
+		!#zh
+		对世界朝向施加的扭矩 */
+		torque: Vec3;		
+		/** !#en
+		Torque applied to local orientation, using `this.localtorque = otherVec3`.
+		!#zh
+		对本地朝向施加的扭矩，设置时请用 `this.localTorque = otherVec3` 的方式。 */
+		localTorque: Vec3;	
+=======
+		!#zh 添加碎图进入动态图集。
+		@param spriteFrame spriteFrame 
+		*/
+		insertSpriteFrame(spriteFrame: SpriteFrame): void;		
+		/**
+		!#en Resets all dynamic atlas, and the existing ones will be destroyed.
+		!#zh 重置所有动态图集，已有的动态图集会被销毁。 
+		*/
+		reset(): void;		
+		/**
+		!#en Displays all the dynamic atlas in the current scene, which you can use to view the current atlas state.
+		!#zh 在当前场景中显示所有动态图集，可以用来查看当前的合图状态。
+		@param show show 
+		*/
+		showDebug(show: boolean): Node;	
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	}	
 	/** !#en
 	RigidBody is the basic object that make up the physical world, and it can make a node physically affected and react.
@@ -16908,6 +22625,8 @@ declare namespace cc {
 		setAngularVelocity(value: Vec3): void;	
 	}	
 	/** !#en
+<<<<<<< HEAD
+=======
 	Each frame applies a constant force to a rigid body, depending on the RigidBody3D
 	!#zh
 	在每帧对一个刚体施加持续的力，依赖 RigidBody3D 组件 */
@@ -16934,6 +22653,7 @@ declare namespace cc {
 		localTorque: Vec3;	
 	}	
 	/** !#en
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	Physics material.
 	!#zh
 	物理材质。 */
@@ -17275,6 +22995,18 @@ declare namespace cc {
 	}
 		
 	/****************************************************
+<<<<<<< HEAD
+	* WebView
+	*****************************************************/
+	
+	export namespace WebView {		
+		/** !#en WebView event type
+		!#zh 网页视图事件类型 */
+		export enum EventType {			
+			LOADED = 0,
+			LOADING = 0,
+			ERROR = 0,		
+=======
 	* VideoPlayer
 	*****************************************************/
 	
@@ -17302,6 +23034,7 @@ declare namespace cc {
 		export enum ResourceType {			
 			REMOTE = 0,
 			LOCAL = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		}	
 	}
 		
@@ -17398,6 +23131,69 @@ declare namespace cc {
 	}
 		
 	/****************************************************
+<<<<<<< HEAD
+	* VideoPlayer
+	*****************************************************/
+	
+	export namespace VideoPlayer {		
+		/** !#en Video event type
+		!#zh 视频事件类型 */
+		export enum EventType {			
+			PLAYING = 0,
+			PAUSED = 0,
+			STOPPED = 0,
+			COMPLETED = 0,
+			META_LOADED = 0,
+			CLICKED = 0,
+			READY_TO_PLAY = 0,		
+		}	
+	}
+		
+	/****************************************************
+	* VideoPlayer
+	*****************************************************/
+	
+	export namespace VideoPlayer {		
+		/** !#en Enum for video resouce type type.
+		!#zh 视频来源 */
+		export enum ResourceType {			
+			REMOTE = 0,
+			LOCAL = 0,		
+		}	
+	}
+		
+	/****************************************************
+	* Collider
+	*****************************************************/
+	
+	export namespace Collider {		
+		/** !#en Defines a Box Collider .
+		!#zh 用来定义包围盒碰撞体 */
+		export class Box {			
+			/** !#en Position offset
+			!#zh 位置偏移量 */
+			offset: Vec2;			
+			/** !#en Box size
+			!#zh 包围盒大小 */
+			size: Size;		
+		}	
+	}
+		
+	/****************************************************
+	* Collider
+	*****************************************************/
+	
+	export namespace Collider {		
+		/** !#en Defines a Circle Collider .
+		!#zh 用来定义圆形碰撞体 */
+		export class Circle {			
+			/** !#en Position offset
+			!#zh 位置偏移量 */
+			offset: Vec2;			
+			/** !#en Circle radius
+			!#zh 圆形半径 */
+			radius: number;		
+=======
 	* WebView
 	*****************************************************/
 	
@@ -17408,10 +23204,26 @@ declare namespace cc {
 			LOADED = 0,
 			LOADING = 0,
 			ERROR = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		}	
 	}
 		
 	/****************************************************
+<<<<<<< HEAD
+	* Collider
+	*****************************************************/
+	
+	export namespace Collider {		
+		/** !#en Defines a Polygon Collider .
+		!#zh 用来定义多边形碰撞体 */
+		export class Polygon {			
+			/** !#en Position offset
+			!#zh 位置偏移量 */
+			offset: Vec2;			
+			/** !#en Polygon points
+			!#zh 多边形顶点数组 */
+			points: Vec2[];		
+=======
 	* Camera
 	*****************************************************/
 	
@@ -17422,6 +23234,7 @@ declare namespace cc {
 			COLOR = 0,
 			DEPTH = 0,
 			STENCIL = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		}	
 	}
 		
@@ -17520,6 +23333,17 @@ declare namespace cc {
 	}
 		
 	/****************************************************
+<<<<<<< HEAD
+	* Texture2D
+	*****************************************************/
+	
+	export namespace Texture2D {		
+		/** The texture wrap mode */
+		export enum WrapMode {			
+			REPEAT = 0,
+			CLAMP_TO_EDGE = 0,
+			MIRRORED_REPEAT = 0,		
+=======
 	* Texture2D
 	*****************************************************/
 	
@@ -17648,10 +23472,21 @@ declare namespace cc {
 			/** !#en Polygon points
 			!#zh 多边形顶点数组 */
 			points: Vec2[];		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		}	
 	}
 		
 	/****************************************************
+<<<<<<< HEAD
+	* Texture2D
+	*****************************************************/
+	
+	export namespace Texture2D {		
+		/** The texture filter mode */
+		export enum Filter {			
+			LINEAR = 0,
+			NEAREST = 0,		
+=======
 	* Event
 	*****************************************************/
 	
@@ -17773,6 +23608,7 @@ declare namespace cc {
 			/** !#en The tag of Mouse button 8.
 			!#zh 鼠标按键 8 的标签。 */
 			static BUTTON_8: number;		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		}	
 	}
 		
@@ -17781,6 +23617,36 @@ declare namespace cc {
 	*****************************************************/
 	
 	export namespace Event {		
+<<<<<<< HEAD
+		/** !#en The Custom event
+		!#zh 自定义事件 */
+		export class EventCustom extends Event {			
+			/**
+			
+			@param type The name of the event (case-sensitive), e.g. "click", "fire", or "submit"
+			@param bubbles A boolean indicating whether the event bubbles up through the tree or not 
+			*/
+			constructor(type: string, bubbles: boolean);			
+			/** !#en A reference to the detailed data of the event
+			!#zh 事件的详细数据 */
+			detail: any;			
+			/**
+			!#en Sets user data
+			!#zh 设置用户数据
+			@param data data 
+			*/
+			setUserData(data: any): void;			
+			/**
+			!#en Gets user data
+			!#zh 获取用户数据 
+			*/
+			getUserData(): any;			
+			/**
+			!#en Gets event name
+			!#zh 获取事件名称 
+			*/
+			getEventName(): string;		
+=======
 		/** !#en The touch event
 		!#zh 触摸事件 */
 		export class EventTouch extends Event {			
@@ -17871,10 +23737,29 @@ declare namespace cc {
 		/** !#en The acceleration event
 		!#zh 加速度事件 */
 		export class EventAcceleration extends Event {		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		}	
 	}
 		
 	/****************************************************
+<<<<<<< HEAD
+	* SystemEvent
+	*****************************************************/
+	
+	export namespace SystemEvent {		
+		/** !#en The event type supported by SystemEvent
+		!#zh SystemEvent 支持的事件类型 */
+		export class EventType {			
+			/** !#en The event type for press the key down event, you can use its value directly: 'keydown'
+			!#zh 当按下按键时触发的事件 */
+			static KEY_DOWN: string;			
+			/** !#en The event type for press the key up event, you can use its value directly: 'keyup'
+			!#zh 当松开按键时触发的事件 */
+			static KEY_UP: string;			
+			/** !#en The event type for press the devicemotion event, you can use its value directly: 'devicemotion'
+			!#zh 重力感应 */
+			static DEVICEMOTION: string;		
+=======
 	* Event
 	*****************************************************/
 	
@@ -17892,6 +23777,7 @@ declare namespace cc {
 			这通常是十进制 ASCII (RFC20) 或者 Windows 1252 代码，所对应的密钥。
 			如果无法识别该键，则该值为 0。 */
 			keyCode: number;		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		}	
 	}
 		
@@ -17993,6 +23879,7 @@ declare namespace cc {
 	/****************************************************
 	* Label
 	*****************************************************/
+<<<<<<< HEAD
 	
 	export namespace Label {		
 		/** !#en Enum for text alignment.
@@ -18220,6 +24107,575 @@ declare namespace cc {
 		export enum Direction {			
 			HORIZONTAL = 0,
 			VERTICAL = 0,		
+=======
+	
+	export namespace Label {		
+		/** !#en Enum for text alignment.
+		!#zh 文本横向对齐类型 */
+		export enum HorizontalAlign {			
+			LEFT = 0,
+			CENTER = 0,
+			RIGHT = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
+		}	
+	}
+		
+	/****************************************************
+<<<<<<< HEAD
+	* ScrollView
+	*****************************************************/
+	
+	export namespace ScrollView {		
+		/** !#en Enum for ScrollView event type.
+		!#zh 滚动视图事件类型 */
+		export enum EventType {			
+			SCROLL_TO_TOP = 0,
+			SCROLL_TO_BOTTOM = 0,
+			SCROLL_TO_LEFT = 0,
+			SCROLL_TO_RIGHT = 0,
+			SCROLLING = 0,
+			BOUNCE_TOP = 0,
+			BOUNCE_BOTTOM = 0,
+			BOUNCE_LEFT = 0,
+			BOUNCE_RIGHT = 0,
+			SCROLL_ENDED = 0,
+			TOUCH_UP = 0,
+			AUTOSCROLL_ENDED_WITH_THRESHOLD = 0,
+			SCROLL_BEGAN = 0,		
+=======
+	* Label
+	*****************************************************/
+	
+	export namespace Label {		
+		/** !#en Enum for vertical text alignment.
+		!#zh 文本垂直对齐类型 */
+		export enum VerticalAlign {			
+			TOP = 0,
+			CENTER = 0,
+			BOTTOM = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
+		}	
+	}
+		
+	/****************************************************
+<<<<<<< HEAD
+	* Slider
+	*****************************************************/
+	
+	export namespace Slider {		
+		/** !#en The Slider Direction
+		!#zh 滑动器方向 */
+		export enum Direction {			
+			Horizontal = 0,
+			Vertical = 0,		
+=======
+	* Label
+	*****************************************************/
+	
+	export namespace Label {		
+		/** !#en Enum for Overflow.
+		!#zh Overflow 类型 */
+		export enum Overflow {			
+			NONE = 0,
+			CLAMP = 0,
+			SHRINK = 0,
+			RESIZE_HEIGHT = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
+		}	
+	}
+		
+	/****************************************************
+<<<<<<< HEAD
+	* Sprite
+	*****************************************************/
+	
+	export namespace Sprite {		
+		/** !#en Enum for sprite type.
+		!#zh Sprite 类型 */
+		export enum Type {			
+			SIMPLE = 0,
+			SLICED = 0,
+			TILED = 0,
+			FILLED = 0,
+			MESH = 0,		
+=======
+	* Label
+	*****************************************************/
+	
+	export namespace Label {		
+		/** !#en Enum for font type.
+		!#zh Type 类型 */
+		export enum Type {			
+			TTF = 0,
+			BMFont = 0,
+			SystemFont = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
+		}	
+	}
+		
+	/****************************************************
+<<<<<<< HEAD
+	* Sprite
+	*****************************************************/
+	
+	export namespace Sprite {		
+		/** !#en Enum for fill type.
+		!#zh 填充类型 */
+		export enum FillType {			
+			HORIZONTAL = 0,
+			VERTICAL = 0,
+			RADIAL = 0,		
+=======
+	* Label
+	*****************************************************/
+	
+	export namespace Label {		
+		/** !#en Enum for cache mode.
+		!#zh CacheMode 类型 */
+		export enum CacheMode {			
+			NONE = 0,
+			BITMAP = 0,
+			CHAR = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
+		}	
+	}
+		
+	/****************************************************
+<<<<<<< HEAD
+	* Sprite
+	*****************************************************/
+	
+	export namespace Sprite {		
+		/** !#en Sprite Size can track trimmed size, raw size or none.
+		!#zh 精灵尺寸调整模式 */
+		export enum SizeMode {			
+			CUSTOM = 0,
+			TRIMMED = 0,
+			RAW = 0,		
+=======
+	* Layout
+	*****************************************************/
+	
+	export namespace Layout {		
+		/** !#en Enum for Layout type
+		!#zh 布局类型 */
+		export enum Type {			
+			NONE = 0,
+			HORIZONTAL = 0,
+			VERTICAL = 0,
+			GRID = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
+		}	
+	}
+		
+	/****************************************************
+<<<<<<< HEAD
+	* Sprite
+	*****************************************************/
+	
+	export namespace Sprite {		
+		/** !#en Sprite state can choice the normal or grayscale.
+		!#zh 精灵颜色通道模式。 */
+		export enum State {			
+			NORMAL = 0,
+			GRAY = 0,		
+=======
+	* Layout
+	*****************************************************/
+	
+	export namespace Layout {		
+		/** !#en Enum for Layout Resize Mode
+		!#zh 缩放模式 */
+		export enum ResizeMode {			
+			NONE = 0,
+			CONTAINER = 0,
+			CHILDREN = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
+		}	
+	}
+		
+	/****************************************************
+<<<<<<< HEAD
+	* Widget
+	*****************************************************/
+	
+	export namespace Widget {		
+		/** !#en Enum for Widget's alignment mode, indicating when the widget should refresh.
+		!#zh Widget 的对齐模式，表示 Widget 应该何时刷新。 */
+		export enum AlignMode {			
+			ONCE = 0,
+			ON_WINDOW_RESIZE = 0,
+			ALWAYS = 0,		
+=======
+	* Layout
+	*****************************************************/
+	
+	export namespace Layout {		
+		/** !#en Enum for Grid Layout start axis direction.
+		The items in grid layout will be arranged in each axis at first.;
+		!#zh 布局轴向，只用于 GRID 布局。 */
+		export enum AxisDirection {			
+			HORIZONTAL = 0,
+			VERTICAL = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
+		}	
+	}
+		
+	/****************************************************
+<<<<<<< HEAD
+	* Event
+	*****************************************************/
+	
+	export namespace Event {		
+		/** !#en The mouse event
+		!#zh 鼠标事件类型 */
+		export class EventMouse extends Event {			
+			/**
+			!#en Sets scroll data.
+			!#zh 设置鼠标的滚动数据。
+			@param scrollX scrollX
+			@param scrollY scrollY 
+			*/
+			setScrollData(scrollX: number, scrollY: number): void;			
+			/**
+			!#en Returns the x axis scroll value.
+			!#zh 获取鼠标滚动的X轴距离，只有滚动时才有效。 
+			*/
+			getScrollX(): number;			
+			/**
+			!#en Returns the y axis scroll value.
+			!#zh 获取滚轮滚动的 Y 轴距离，只有滚动时才有效。 
+			*/
+			getScrollY(): number;			
+			/**
+			!#en Sets cursor location.
+			!#zh 设置当前鼠标位置。
+			@param x x
+			@param y y 
+			*/
+			setLocation(x: number, y: number): void;			
+			/**
+			!#en Returns cursor location.
+			!#zh 获取鼠标位置对象，对象包含 x 和 y 属性。 
+			*/
+			getLocation(): Vec2;			
+			/**
+			!#en Returns the current cursor location in screen coordinates.
+			!#zh 获取当前事件在游戏窗口内的坐标位置对象，对象包含 x 和 y 属性。 
+			*/
+			getLocationInView(): Vec2;			
+			/**
+			!#en Returns the previous touch location.
+			!#zh 获取鼠标点击在上一次事件时的位置对象，对象包含 x 和 y 属性。 
+			*/
+			getPreviousLocation(): Vec2;			
+			/**
+			!#en Returns the delta distance from the previous location to current location.
+			!#zh 获取鼠标距离上一次事件移动的距离对象，对象包含 x 和 y 属性。 
+			*/
+			getDelta(): Vec2;			
+			/**
+			!#en Returns the X axis delta distance from the previous location to current location.
+			!#zh 获取鼠标距离上一次事件移动的 X 轴距离。 
+			*/
+			getDeltaX(): number;			
+			/**
+			!#en Returns the Y axis delta distance from the previous location to current location.
+			!#zh 获取鼠标距离上一次事件移动的 Y 轴距离。 
+			*/
+			getDeltaY(): number;			
+			/**
+			!#en Sets mouse button.
+			!#zh 设置鼠标按键。
+			@param button button 
+			*/
+			setButton(button: number): void;			
+			/**
+			!#en Returns mouse button.
+			!#zh 获取鼠标按键。 
+			*/
+			getButton(): number;			
+			/**
+			!#en Returns location X axis data.
+			!#zh 获取鼠标当前位置 X 轴。 
+			*/
+			getLocationX(): number;			
+			/**
+			!#en Returns location Y axis data.
+			!#zh 获取鼠标当前位置 Y 轴。 
+			*/
+			getLocationY(): number;			
+			/** !#en The none event code of mouse event.
+			!#zh 无。 */
+			static NONE: number;			
+			/** !#en The event type code of mouse down event.
+			!#zh 鼠标按下事件。 */
+			static DOWN: number;			
+			/** !#en The event type code of mouse up event.
+			!#zh 鼠标按下后释放事件。 */
+			static UP: number;			
+			/** !#en The event type code of mouse move event.
+			!#zh 鼠标移动事件。 */
+			static MOVE: number;			
+			/** !#en The event type code of mouse scroll event.
+			!#zh 鼠标滚轮事件。 */
+			static SCROLL: number;			
+			/** !#en The tag of Mouse left button.
+			!#zh 鼠标左键的标签。 */
+			static BUTTON_LEFT: number;			
+			/** !#en The tag of Mouse right button  (The right button number is 2 on browser).
+			!#zh 鼠标右键的标签。 */
+			static BUTTON_RIGHT: number;			
+			/** !#en The tag of Mouse middle button  (The right button number is 1 on browser).
+			!#zh 鼠标中键的标签。 */
+			static BUTTON_MIDDLE: number;			
+			/** !#en The tag of Mouse button 4.
+			!#zh 鼠标按键 4 的标签。 */
+			static BUTTON_4: number;			
+			/** !#en The tag of Mouse button 5.
+			!#zh 鼠标按键 5 的标签。 */
+			static BUTTON_5: number;			
+			/** !#en The tag of Mouse button 6.
+			!#zh 鼠标按键 6 的标签。 */
+			static BUTTON_6: number;			
+			/** !#en The tag of Mouse button 7.
+			!#zh 鼠标按键 7 的标签。 */
+			static BUTTON_7: number;			
+			/** !#en The tag of Mouse button 8.
+			!#zh 鼠标按键 8 的标签。 */
+			static BUTTON_8: number;		
+=======
+	* Layout
+	*****************************************************/
+	
+	export namespace Layout {		
+		/** !#en Enum for vertical layout direction.
+		 Used in Grid Layout together with AxisDirection is VERTICAL
+		!#zh 垂直方向布局方式 */
+		export enum VerticalDirection {			
+			BOTTOM_TO_TOP = 0,
+			TOP_TO_BOTTOM = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
+		}	
+	}
+		
+	/****************************************************
+<<<<<<< HEAD
+	* Event
+	*****************************************************/
+	
+	export namespace Event {		
+		/** !#en The touch event
+		!#zh 触摸事件 */
+		export class EventTouch extends Event {			
+			/**
+			
+			@param touchArr The array of the touches
+			@param bubbles A boolean indicating whether the event bubbles up through the tree or not 
+			*/
+			constructor(touchArr: any[], bubbles: boolean);			
+			/** !#en The current touch object
+			!#zh 当前触点对象 */
+			touch: Touch;			
+			/**
+			!#en Returns event code.
+			!#zh 获取事件类型。 
+			*/
+			getEventCode(): number;			
+			/**
+			!#en Returns touches of event.
+			!#zh 获取触摸点的列表。 
+			*/
+			getTouches(): any[];			
+			/**
+			!#en Sets touch location.
+			!#zh 设置当前触点位置
+			@param x x
+			@param y y 
+			*/
+			setLocation(x: number, y: number): void;			
+			/**
+			!#en Returns touch location.
+			!#zh 获取触点位置。 
+			*/
+			getLocation(): Vec2;			
+			/**
+			!#en Returns the current touch location in screen coordinates.
+			!#zh 获取当前触点在游戏窗口中的位置。 
+			*/
+			getLocationInView(): Vec2;			
+			/**
+			!#en Returns the previous touch location.
+			!#zh 获取触点在上一次事件时的位置对象，对象包含 x 和 y 属性。 
+			*/
+			getPreviousLocation(): Vec2;			
+			/**
+			!#en Returns the start touch location.
+			!#zh 获取触点落下时的位置对象，对象包含 x 和 y 属性。 
+			*/
+			getStartLocation(): Vec2;			
+			/**
+			!#en Returns the id of cc.Touch.
+			!#zh 触点的标识 ID，可以用来在多点触摸中跟踪触点。 
+			*/
+			getID(): number;			
+			/**
+			!#en Returns the delta distance from the previous location to current location.
+			!#zh 获取触点距离上一次事件移动的距离对象，对象包含 x 和 y 属性。 
+			*/
+			getDelta(): Vec2;			
+			/**
+			!#en Returns the X axis delta distance from the previous location to current location.
+			!#zh 获取触点距离上一次事件移动的 x 轴距离。 
+			*/
+			getDeltaX(): number;			
+			/**
+			!#en Returns the Y axis delta distance from the previous location to current location.
+			!#zh 获取触点距离上一次事件移动的 y 轴距离。 
+			*/
+			getDeltaY(): number;			
+			/**
+			!#en Returns location X axis data.
+			!#zh 获取当前触点 X 轴位置。 
+			*/
+			getLocationX(): number;			
+			/**
+			!#en Returns location Y axis data.
+			!#zh 获取当前触点 Y 轴位置。 
+			*/
+			getLocationY(): number;		
+=======
+	* Layout
+	*****************************************************/
+	
+	export namespace Layout {		
+		/** !#en Enum for horizontal layout direction.
+		 Used in Grid Layout together with AxisDirection is HORIZONTAL
+		!#zh 水平方向布局方式 */
+		export enum HorizontalDirection {			
+			LEFT_TO_RIGHT = 0,
+			RIGHT_TO_LEFT = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
+		}	
+	}
+		
+	/****************************************************
+<<<<<<< HEAD
+	* Event
+	*****************************************************/
+	
+	export namespace Event {		
+		/** !#en The acceleration event
+		!#zh 加速度事件 */
+		export class EventAcceleration extends Event {		
+=======
+	* Mask
+	*****************************************************/
+	
+	export namespace Mask {		
+		/** !#en the type for mask.
+		!#zh 遮罩组件类型 */
+		export enum Type {			
+			RECT = 0,
+			ELLIPSE = 0,
+			IMAGE_STENCIL = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
+		}	
+	}
+		
+	/****************************************************
+<<<<<<< HEAD
+	* Event
+	*****************************************************/
+	
+	export namespace Event {		
+		/** !#en The keyboard event
+		!#zh 键盘事件 */
+		export class EventKeyboard extends Event {			
+			/** !#en
+			The keyCode read-only property represents a system and implementation dependent numerical code identifying the unmodified value of the pressed key.
+			This is usually the decimal ASCII (RFC 20) or Windows 1252 code corresponding to the key.
+			If the key can't be identified, this value is 0.
+			
+			!#zh
+			keyCode 是只读属性它表示一个系统和依赖于实现的数字代码，可以识别按键的未修改值。
+			这通常是十进制 ASCII (RFC20) 或者 Windows 1252 代码，所对应的密钥。
+			如果无法识别该键，则该值为 0。 */
+			keyCode: number;		
+=======
+	* PageView
+	*****************************************************/
+	
+	export namespace PageView {		
+		/** !#en The Page View Size Mode
+		!#zh 页面视图每个页面统一的大小类型 */
+		export enum SizeMode {			
+			Unified = 0,
+			Free = 0,		
+		}	
+	}
+		
+	/****************************************************
+	* PageView
+	*****************************************************/
+	
+	export namespace PageView {		
+		/** !#en The Page View Direction
+		!#zh 页面视图滚动类型 */
+		export enum Direction {			
+			Horizontal = 0,
+			Vertical = 0,		
+		}	
+	}
+		
+	/****************************************************
+	* PageView
+	*****************************************************/
+	
+	export namespace PageView {		
+		/** !#en Enum for ScrollView event type.
+		!#zh 滚动视图事件类型 */
+		export enum EventType {			
+			PAGE_TURNING = 0,		
+		}	
+	}
+		
+	/****************************************************
+	* ProgressBar
+	*****************************************************/
+	
+	export namespace ProgressBar {		
+		/** !#en Enum for ProgressBar mode
+		!#zh 进度条模式 */
+		export enum Mode {			
+			HORIZONTAL = 0,
+			VERTICAL = 0,
+			FILLED = 0,		
+		}	
+	}
+		
+	/****************************************************
+	* PageViewIndicator
+	*****************************************************/
+	
+	export namespace PageViewIndicator {		
+		/** !#en Enum for PageView Indicator direction
+		!#zh 页面视图指示器的摆放方向 */
+		export enum Direction {			
+			HORIZONTAL = 0,
+			VERTICAL = 0,		
+		}	
+	}
+		
+	/****************************************************
+	* Scrollbar
+	*****************************************************/
+	
+	export namespace Scrollbar {		
+		/** Enum for Scrollbar direction */
+		export enum Direction {			
+			HORIZONTAL = 0,
+			VERTICAL = 0,		
 		}	
 	}
 		
@@ -18287,10 +24743,23 @@ declare namespace cc {
 			HORIZONTAL = 0,
 			VERTICAL = 0,
 			RADIAL = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		}	
 	}
 		
 	/****************************************************
+<<<<<<< HEAD
+	* Graphics
+	*****************************************************/
+	
+	export namespace Graphics {		
+		/** !#en Enum for LineCap.
+		!#zh 线段末端属性 */
+		export enum LineCap {			
+			BUTT = 0,
+			ROUND = 0,
+			SQUARE = 0,		
+=======
 	* Sprite
 	*****************************************************/
 	
@@ -18301,10 +24770,23 @@ declare namespace cc {
 			CUSTOM = 0,
 			TRIMMED = 0,
 			RAW = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		}	
 	}
 		
 	/****************************************************
+<<<<<<< HEAD
+	* Graphics
+	*****************************************************/
+	
+	export namespace Graphics {		
+		/** !#en Enum for LineJoin.
+		!#zh 线段拐角属性 */
+		export enum LineJoin {			
+			BEVEL = 0,
+			ROUND = 0,
+			MITER = 0,		
+=======
 	* Sprite
 	*****************************************************/
 	
@@ -18328,6 +24810,7 @@ declare namespace cc {
 			ONCE = 0,
 			ON_WINDOW_RESIZE = 0,
 			ALWAYS = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		}	
 	}
 		
@@ -19257,6 +25740,18 @@ declare namespace cc {
 	}
 		
 	/****************************************************
+<<<<<<< HEAD
+	* Camera
+	*****************************************************/
+	
+	export namespace Camera {		
+		/** !#en Values for Camera.clearFlags, determining what to clear when rendering a Camera.
+		!#zh 摄像机清除标记位，决定摄像机渲染时会清除哪些状态 */
+		export enum ClearFlags {			
+			COLOR = 0,
+			DEPTH = 0,
+			STENCIL = 0,		
+=======
 	* Graphics
 	*****************************************************/
 	
@@ -19267,10 +25762,23 @@ declare namespace cc {
 			BUTT = 0,
 			ROUND = 0,
 			SQUARE = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		}	
 	}
 		
 	/****************************************************
+<<<<<<< HEAD
+	* MeshRenderer
+	*****************************************************/
+	
+	export namespace MeshRenderer {		
+		/** !#en Shadow projection mode
+		
+		!#ch 阴影投射方式 */
+		export enum ShadowCastingMode {			
+			OFF = 0,
+			ON = 0,		
+=======
 	* Graphics
 	*****************************************************/
 	
@@ -19281,6 +25789,7 @@ declare namespace cc {
 			BEVEL = 0,
 			ROUND = 0,
 			MITER = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		}	
 	}
 		
@@ -19319,6 +25828,8 @@ declare namespace cc {
 	}
 		
 	/****************************************************
+<<<<<<< HEAD
+=======
 	* MeshRenderer
 	*****************************************************/
 	
@@ -19333,6 +25844,7 @@ declare namespace cc {
 	}
 		
 	/****************************************************
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	* macro
 	*****************************************************/
 	
@@ -19673,6 +26185,7 @@ declare namespace cc {
 		export enum BUILTIN_NAME {			
 			SPRITE = 0,
 			GRAY_SPRITE = 0,
+<<<<<<< HEAD
 			UNLIT = 0,		
 		}	
 	}
@@ -19746,6 +26259,383 @@ declare namespace cc {
 	export namespace textureAnimationModule {		
 		/** 贴图动画的播放方式 */
 		export enum Animation {					
+		}	
+	}
+	
+}
+
+/** !#en
+The global main namespace of DragonBones, all classes, functions,
+properties and constants of DragonBones are defined in this namespace
+!#zh
+DragonBones 的全局的命名空间，
+与 DragonBones 相关的所有的类，函数，属性，常量都在这个命名空间中定义。 */
+declare namespace dragonBones {	
+	/** !#en
+	The Armature Display of DragonBones <br/>
+	<br/>
+	Armature Display has a reference to a DragonBonesAsset and stores the state for ArmatureDisplay instance,
+	which consists of the current pose's bone SRT, slot colors, and which slot attachments are visible. <br/>
+	Multiple Armature Display can use the same DragonBonesAsset which includes all animations, skins, and attachments. <br/>
+	!#zh
+	DragonBones 骨骼动画 <br/>
+	<br/>
+	Armature Display 具有对骨骼数据的引用并且存储了骨骼实例的状态，
+	它由当前的骨骼动作，slot 颜色，和可见的 slot attachments 组成。<br/>
+	多个 Armature Display 可以使用相同的骨骼数据，其中包括所有的动画，皮肤和 attachments。<br/> */
+	export class ArmatureDisplay extends cc.RenderComponent {		
+		/** !#en
+		The DragonBones data contains the armatures information (bind pose bones, slots, draw order,
+		attachments, skins, etc) and animations but does not hold any state.<br/>
+		Multiple ArmatureDisplay can share the same DragonBones data.
+		!#zh
+		骨骼数据包含了骨骼信息（绑定骨骼动作，slots，渲染顺序，
+		attachments，皮肤等等）和动画但不持有任何状态。<br/>
+		多个 ArmatureDisplay 可以共用相同的骨骼数据。 */
+		dragonAsset: DragonBonesAsset;		
+		/** !#en
+		The atlas asset for the DragonBones.
+		!#zh
+		骨骼数据所需的 Atlas Texture 数据。 */
+		dragonAtlasAsset: DragonBonesAtlasAsset;		
+		/** !#en The name of current armature.
+		!#zh 当前的 Armature 名称。 */
+		armatureName: string;		
+		/** !#en The name of current playing animation.
+		!#zh 当前播放的动画名称。 */
+		animationName: string;		
+		_defaultArmatureIndex: number;		
+		/** !#en The time scale of this armature.
+		!#zh 当前骨骼中所有动画的时间缩放率。 */
+		timeScale: number;		
+		/** !#en The play times of the default animation.
+		     -1 means using the value of config file;
+		     0 means repeat for ever
+		     >0 means repeat times
+		!#zh 播放默认动画的循环次数
+		     -1 表示使用配置文件中的默认值;
+		     0 表示无限循环
+		     >0 表示循环次数 */
+		playTimes: number;		
+		/** !#en Indicates whether to enable premultiplied alpha.
+		You should disable this option when image's transparent area appears to have opaque pixels,
+		or enable this option when image's half transparent area appears to be darken.
+		!#zh 是否启用贴图预乘。
+		当图片的透明区域出现色块时需要关闭该选项，当图片的半透明区域颜色变黑时需要启用该选项。 */
+		premultipliedAlpha: boolean;		
+		/** !#en Indicates whether open debug bones.
+		!#zh 是否显示 bone 的 debug 信息。 */
+		debugBones: boolean;		
+		/** !#en Enabled batch model, if skeleton is complex, do not enable batch, or will lower performance.
+		!#zh 开启合批，如果渲染大量相同纹理，且结构简单的骨骼动画，开启合批可以降低drawcall，否则请不要开启，cpu消耗会上升。 */
+		enableBatch: boolean;		
+		/**
+		!#en
+		The key of dragonbones cache data, which is regard as 'dragonbonesName', when you want to change dragonbones cloth.
+		!#zh
+		缓存龙骨数据的key值，换装的时会使用到该值，作为dragonbonesName使用
+		
+		@example 
+		```js
+		let factory = dragonBones.CCFactory.getInstance();
+		let needChangeSlot = needChangeArmature.armature().getSlot("changeSlotName");
+		factory.replaceSlotDisplay(toChangeArmature.getArmatureKey(), "armatureName", "slotName", "displayName", needChangeSlot);
+		``` 
+		*/
+		getArmatureKey(): string;		
+		/**
+		!#en
+		It's best to set cache mode before set property 'dragonAsset', or will waste some cpu time.
+		If set the mode in editor, then no need to worry about order problem.
+		!#zh
+		若想切换渲染模式，最好在设置'dragonAsset'之前，先设置好渲染模式，否则有运行时开销。
+		若在编辑中设置渲染模式，则无需担心设置次序的问题。
+		@param cacheMode cacheMode
+		
+		@example 
+		```js
+		armatureDisplay.setAnimationCacheMode(dragonBones.ArmatureDisplay.AnimationCacheMode.SHARED_CACHE);
+		``` 
+		*/
+		setAnimationCacheMode(cacheMode: ArmatureDisplay.AnimationCacheMode): void;		
+		/**
+		!#en Whether in cached mode.
+		!#zh 当前是否处于缓存模式。 
+		*/
+		isAnimationCached(): boolean;		
+		/**
+		!#en
+		Play the specified animation.
+		Parameter animName specify the animation name.
+		Parameter playTimes specify the repeat times of the animation.
+		-1 means use the value of the config file.
+		0 means play the animation for ever.
+		>0 means repeat times.
+		!#zh
+		播放指定的动画.
+		animName 指定播放动画的名称。
+		playTimes 指定播放动画的次数。
+		-1 为使用配置文件中的次数。
+		0 为无限循环播放。
+		>0 为动画的重复次数。
+		@param animName animName
+		@param playTimes playTimes 
+		*/
+		playAnimation(animName: string, playTimes: number): dragonBones.AnimationState;		
+		/**
+		!#en
+		Updating an animation cache to calculate all frame data in the animation is a cost in
+		performance due to calculating all data in a single frame.
+		To update the cache, use the invalidAnimationCache method with high performance.
+		!#zh
+		更新某个动画缓存, 预计算动画中所有帧数据，由于在单帧计算所有数据，所以较消耗性能。
+		若想更新缓存，可使用 invalidAnimationCache 方法，具有较高性能。
+		@param animName animName 
+		*/
+		updateAnimationCache(animName: string): void;		
+		/**
+		!#en
+		Invalidates the animation cache, which is then recomputed on each frame..
+		!#zh
+		使动画缓存失效，之后会在每帧重新计算。 
+		*/
+		invalidAnimationCache(): void;		
+		/**
+		!#en
+		Get the all armature names in the DragonBones Data.
+		!#zh
+		获取 DragonBones 数据中所有的 armature 名称 
+		*/
+		getArmatureNames(): any[];		
+		/**
+		!#en
+		Get the all animation names of specified armature.
+		!#zh
+		获取指定的 armature 的所有动画名称。
+		@param armatureName armatureName 
+		*/
+		getAnimationNames(armatureName: string): any[];		
+		/**
+		!#en
+		Add event listener for the DragonBones Event, the same to addEventListener.
+		!#zh
+		添加 DragonBones 事件监听器，与 addEventListener 作用相同。
+		@param type A string representing the event type to listen for.
+		@param listener The callback that will be invoked when the event is dispatched.
+		@param target The target (this object) to invoke the callback, can be null 
+		*/
+		on(type: string, listener: (event: cc.Event) => void, target?: any): void;		
+		/**
+		!#en
+		Remove the event listener for the DragonBones Event, the same to removeEventListener.
+		!#zh
+		移除 DragonBones 事件监听器，与 removeEventListener 作用相同。
+		@param type A string representing the event type to listen for.
+		@param listener listener
+		@param target target 
+		*/
+		off(type: string, listener?: Function, target?: any): void;		
+		/**
+		!#en
+		Add DragonBones one-time event listener, the callback will remove itself after the first time it is triggered.
+		!#zh
+		添加 DragonBones 一次性事件监听器，回调会在第一时间被触发后删除自身。
+		@param type A string representing the event type to listen for.
+		@param listener The callback that will be invoked when the event is dispatched.
+		@param target The target (this object) to invoke the callback, can be null 
+		*/
+		once(type: string, listener: (event: cc.Event) => void, target?: any): void;		
+		/**
+		!#en
+		Add event listener for the DragonBones Event.
+		!#zh
+		添加 DragonBones 事件监听器。
+		@param type A string representing the event type to listen for.
+		@param listener The callback that will be invoked when the event is dispatched.
+		@param target The target (this object) to invoke the callback, can be null 
+		*/
+		addEventListener(type: string, listener: (event: cc.Event) => void, target?: any): void;		
+		/**
+		!#en
+		Remove the event listener for the DragonBones Event.
+		!#zh
+		移除 DragonBones 事件监听器。
+		@param type A string representing the event type to listen for.
+		@param listener listener
+		@param target target 
+		*/
+		removeEventListener(type: string, listener?: Function, target?: any): void;		
+		/**
+		!#en
+		Build the armature for specified name.
+		!#zh
+		构建指定名称的 armature 对象
+		@param armatureName armatureName
+		@param node node 
+		*/
+		buildArmature(armatureName: string, node: cc.Node): ArmatureDisplay;		
+		/**
+		!#en
+		Get the current armature object of the ArmatureDisplay.
+		!#zh
+		获取 ArmatureDisplay 当前使用的 Armature 对象 
+		*/
+		armature(): any;	
+	}	
+	/** DragonBones factory */
+	export class CCFactory extends BaseFactory {		
+		/**
+		
+		
+		@example 
+		```js
+		let factory = dragonBones.CCFactory.getInstance();
+		``` 
+		*/
+		static getInstance(): CCFactory;	
+	}	
+	/** !#en The skeleton data of dragonBones.
+	!#zh dragonBones 的 骨骼数据。 */
+	export class DragonBonesAsset extends cc.Asset {		
+		/** !#en See http://developer.egret.com/cn/github/egret-docs/DB/dbLibs/dataFormat/index.html
+		!#zh 可查看 DragonBones 官方文档 http://developer.egret.com/cn/github/egret-docs/DB/dbLibs/dataFormat/index.html */
+		dragonBonesJson: string;	
+	}	
+	/** !#en The skeleton atlas data of dragonBones.
+	!#zh dragonBones 的骨骼纹理数据。 */
+	export class DragonBonesAtlasAsset extends cc.Asset {		
+		atlasJson: string;		
+		texture: cc.Texture2D;	
+	}	
+	/****************************************************
+	* ArmatureDisplay
+	*****************************************************/
+	
+	export namespace ArmatureDisplay {		
+		/** !#en Enum for cache mode type.
+		!#zh Dragonbones渲染类型 */
+		export enum AnimationCacheMode {			
+			REALTIME = 0,
+			SHARED_CACHE = 0,
+			PRIVATE_CACHE = 0,		
+=======
+			UNLIT = 0,		
+		}	
+	}
+		
+	/****************************************************
+	* EditBox
+	*****************************************************/
+	
+	export namespace EditBox {		
+		/** !#en Enum for keyboard return types
+		!#zh 键盘的返回键类型 */
+		export enum KeyboardReturnType {			
+			DEFAULT = 0,
+			DONE = 0,
+			SEND = 0,
+			SEARCH = 0,
+			GO = 0,
+			NEXT = 0,		
+		}	
+	}
+		
+	/****************************************************
+	* EditBox
+	*****************************************************/
+	
+	export namespace EditBox {		
+		/** !#en The EditBox's InputMode defines the type of text that the user is allowed to enter.
+		!#zh 输入模式 */
+		export enum InputMode {			
+			ANY = 0,
+			EMAIL_ADDR = 0,
+			NUMERIC = 0,
+			PHONE_NUMBER = 0,
+			URL = 0,
+			DECIMAL = 0,
+			SINGLE_LINE = 0,		
+		}	
+	}
+		
+	/****************************************************
+	* EditBox
+	*****************************************************/
+	
+	export namespace EditBox {		
+		/** !#en Enum for the EditBox's input flags
+		!#zh 定义了一些用于设置文本显示和文本格式化的标志位。 */
+		export enum InputFlag {			
+			PASSWORD = 0,
+			SENSITIVE = 0,
+			INITIAL_CAPS_WORD = 0,
+			INITIAL_CAPS_SENTENCE = 0,
+			INITIAL_CAPS_ALL_CHARACTERS = 0,
+			DEFAULT = 0,		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
+		}	
+	}
+		
+	/****************************************************
+<<<<<<< HEAD
+	* dragonBones
+	*****************************************************/
+	
+	export namespace dragonBones {		
+		/** !#en Attach node tool
+		!#zh 挂点工具类 */
+		export class AttachUtil {			
+			/**
+			!#en Gets attached root node.
+			!#zh 获取挂接节点树的根节点 
+			*/
+			getAttachedRootNode(): cc.Node;			
+			/**
+			!#en Gets attached node which you want.
+			!#zh 获得对应的挂点
+			@param boneName boneName 
+			*/
+			getAttachedNodes(boneName: string): cc.Node[];			
+			/**
+			!#en Destroy attached node which you want.
+			!#zh 销毁对应的挂点
+			@param boneName boneName 
+			*/
+			destroyAttachedNodes(boneName: string): void;			
+			/**
+			!#en Traverse all bones to generate the minimum node tree containing the given bone names, NOTE that make sure the skeleton has initialized before calling this interface.
+			!#zh 遍历所有插槽，生成包含所有给定插槽名称的最小节点树，注意，调用该接口前请确保骨骼动画已经初始化好。
+			@param boneName boneName 
+			*/
+			generateAttachedNodes(boneName: string): cc.Node[];			
+			/**
+			!#en Destroy all attached node.
+			!#zh 销毁所有挂点 
+			*/
+			destroyAllAttachedNodes(): void;			
+			/**
+			!#en Traverse all bones to generate a tree containing all bones nodes, NOTE that make sure the skeleton has initialized before calling this interface.
+			!#zh 遍历所有插槽，生成包含所有插槽的节点树，注意，调用该接口前请确保骨骼动画已经初始化好。 
+			*/
+			generateAllAttachedNodes(): cc.Node;		
+=======
+	* textureAnimationModule
+	*****************************************************/
+	
+	export namespace textureAnimationModule {		
+		/** 粒子贴图动画类型 */
+		export enum Mode {					
+		}	
+	}
+		
+	/****************************************************
+	* textureAnimationModule
+	*****************************************************/
+	
+	export namespace textureAnimationModule {		
+		/** 贴图动画的播放方式 */
+		export enum Animation {					
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		}	
 	}
 	
@@ -20083,6 +26973,147 @@ declare namespace sp {
 		*/
 		setEventListener(listener: Function): void;		
 		/**
+<<<<<<< HEAD
+		!#en Set the start event listener for specified TrackEntry.
+		!#zh 用来为指定的 TrackEntry 设置动画开始播放的事件监听。
+		@param entry entry
+		@param listener listener 
+		*/
+		setTrackStartListener(entry: sp.spine.TrackEntry, listener: Function): void;		
+		/**
+		!#en Set the interrupt event listener for specified TrackEntry.
+		!#zh 用来为指定的 TrackEntry 设置动画被打断的事件监听。
+		@param entry entry
+		@param listener listener 
+		*/
+		setTrackInterruptListener(entry: sp.spine.TrackEntry, listener: Function): void;		
+		/**
+		!#en Set the end event listener for specified TrackEntry.
+		!#zh 用来为指定的 TrackEntry 设置动画播放结束的事件监听。
+		@param entry entry
+		@param listener listener 
+		*/
+		setTrackEndListener(entry: sp.spine.TrackEntry, listener: Function): void;		
+		/**
+		!#en Set the dispose event listener for specified TrackEntry.
+		!#zh 用来为指定的 TrackEntry 设置动画即将被销毁的事件监听。
+		@param entry entry
+		@param listener listener 
+		*/
+		setTrackDisposeListener(entry: sp.spine.TrackEntry, listener: Function): void;		
+		/**
+		!#en Set the complete event listener for specified TrackEntry.
+		!#zh 用来为指定的 TrackEntry 设置动画一次循环播放结束的事件监听。
+		@param entry entry
+		@param listener listener 
+		*/
+		setTrackCompleteListener(entry: sp.spine.TrackEntry, listener: (entry: sp.spine.TrackEntry, loopCount: number) => void): void;		
+		/**
+		!#en Set the event listener for specified TrackEntry.
+		!#zh 用来为指定的 TrackEntry 设置动画帧事件的监听。
+		@param entry entry
+		@param listener listener 
+		*/
+		setTrackEventListener(entry: sp.spine.TrackEntry, listener: Function): void;		
+		/**
+		!#en Get the animation state object
+		!#zh 获取动画状态 
+		*/
+		getState(): sp.spine.AnimationState;	
+	}	
+	/** !#en The event type of spine skeleton animation.
+	!#zh 骨骼动画事件类型。 */
+	export enum AnimationEventType {		
+		START = 0,
+		END = 0,
+		COMPLETE = 0,
+		EVENT = 0,	
+	}	
+	/** !#en The skeleton data of spine.
+	!#zh Spine 的 骨骼数据。 */
+	export class SkeletonData extends cc.Asset {		
+		/** !#en See http://en.esotericsoftware.com/spine-json-format
+		!#zh 可查看 Spine 官方文档 http://zh.esotericsoftware.com/spine-json-format */
+		skeletonJson: any;		
+		atlasText: string;		
+		textures: cc.Texture2D[];		
+		/** !#en
+		A scale can be specified on the JSON or binary loader which will scale the bone positions,
+		image sizes, and animation translations.
+		This can be useful when using different sized images than were used when designing the skeleton
+		in Spine. For example, if using images that are half the size than were used in Spine,
+		a scale of 0.5 can be used. This is commonly used for games that can run with either low or high
+		resolution texture atlases.
+		see http://en.esotericsoftware.com/spine-using-runtimes#Scaling
+		!#zh 可查看 Spine 官方文档： http://zh.esotericsoftware.com/spine-using-runtimes#Scaling */
+		scale: number;		
+		/**
+		!#en Get the included SkeletonData used in spine runtime.<br>
+		Returns a {{#crossLinkModule "sp.spine"}}sp.spine{{/crossLinkModule}}.SkeletonData object.
+		!#zh 获取 Spine Runtime 使用的 SkeletonData。<br>
+		返回一个 {{#crossLinkModule "sp.spine"}}sp.spine{{/crossLinkModule}}.SkeletonData 对象。
+		@param quiet quiet 
+		*/
+		getRuntimeData(quiet?: boolean): sp.spine.SkeletonData;	
+	}	
+	/** !#en
+	The delegate of spine vertex effect
+	!#zh
+	Spine 顶点动画代理 */
+	export class VertexEffectDelegate {		
+		/**
+		!#en Clears vertex effect.
+		!#zh 清空顶点效果 
+		*/
+		clear(): void;		
+		/**
+		!#en Inits delegate with jitter effect
+		!#zh 设置顶点抖动效果
+		@param jitterX jitterX
+		@param jitterY jitterY 
+		*/
+		initJitter(jitterX: number, jitterY: number): void;		
+		/**
+		!#en Inits delegate with swirl effect
+		!#zh 设置顶点漩涡效果
+		@param radius radius
+		@param power power 
+		*/
+		initSwirlWithPow(radius: number, power: number): sp.spine.JitterEffect;		
+		/**
+		!#en Inits delegate with swirl effect
+		!#zh 设置顶点漩涡效果
+		@param radius radius
+		@param power power 
+		*/
+		initSwirlWithPowOut(radius: number, power: number): sp.spine.SwirlEffect;		
+		/**
+		!#en Gets jitter vertex effect
+		!#zh 获取顶点抖动效果 
+		*/
+		getJitterVertexEffect(): sp.spine.JitterEffect;		
+		/**
+		!#en Gets swirl vertex effect
+		!#zh 获取顶点漩涡效果 
+		*/
+		getSwirlVertexEffect(): sp.spine.SwirlEffect;		
+		/**
+		!#en Gets vertex effect
+		!#zh 获取顶点效果 
+		*/
+		getVertexEffect(): sp.spine.JitterEffect;		
+		/**
+		!#en Gets effect type
+		!#zh 获取效果类型 
+		*/
+		getEffectType(): string;	
+	}	
+	/****************************************************
+	* sp
+	*****************************************************/
+	
+	export namespace sp {		
+=======
 		!#en Set the start event listener for specified TrackEntry.
 		!#zh 用来为指定的 TrackEntry 设置动画开始播放的事件监听。
 		@param entry entry
@@ -20547,6 +27578,7 @@ declare namespace dragonBones {
 	*****************************************************/
 	
 	export namespace dragonBones {		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		/** !#en Attach node tool
 		!#zh 挂点工具类 */
 		export class AttachUtil {			
@@ -20585,10 +27617,38 @@ declare namespace dragonBones {
 			generateAllAttachedNodes(): cc.Node;		
 		}	
 	}
+<<<<<<< HEAD
+		
+	/****************************************************
+	* Skeleton
+	*****************************************************/
+	
+	export namespace Skeleton {		
+		/** !#en Enum for animation cache mode type.
+		!#zh Spine动画缓存类型 */
+		export enum AnimationCacheMode {			
+			REALTIME = 0,
+			SHARED_CACHE = 0,
+			PRIVATE_CACHE = 0,		
+		}	
+	}
+=======
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	
 }
 
 /** !#en
+<<<<<<< HEAD
+`sp.spine` is the namespace for official Spine Runtime, which officially implemented and maintained by Spine.<br>
+Please refer to the official documentation for its detailed usage: [http://en.esotericsoftware.com/spine-using-runtimes](http://en.esotericsoftware.com/spine-using-runtimes)
+!#zh
+sp.spine 模块是 Spine 官方运行库的 API 入口，由 Spine 官方统一实现和维护，具体用法请参考：[http://zh.esotericsoftware.com/spine-using-runtimes](http://zh.esotericsoftware.com/spine-using-runtimes) */
+declare namespace sp.spine {
+}
+
+/** !#en
+=======
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 This module controls asset's behaviors and information, include loading, releasing etc.
 All member can be accessed with `cc.assetManager`. All class or enum can be accessed with `cc.AssetManager`
 
@@ -21027,7 +28087,11 @@ declare namespace cc.AssetManager {
 		
 		!#zh
 		所有缓存文件列表 */
+<<<<<<< HEAD
+		cachedFiles: Cache<{ bundle: string, url: string, lastTime: number }>;		
+=======
 		cachedFiles: Cache<{ bundle: string, url: string, lastTime: url }>;		
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 		/**
 		!#en
 		Get cached path with origin url
@@ -21774,6 +28838,8 @@ declare namespace cc.AssetManager {
 		static create(): RequestItem;	
 	}	
 	/** !#en
+<<<<<<< HEAD
+=======
 	The builtin bundles
 	
 	!#zh
@@ -21785,6 +28851,7 @@ declare namespace cc.AssetManager {
 		START_SCENE = 0,	
 	}	
 	/** !#en
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	Task is used to run in the pipeline for some effect
 	
 	!#zh
@@ -21911,6 +28978,20 @@ declare namespace cc.AssetManager {
 		@param options Some optional paramters 
 		*/
 		static create(options?: {onComplete?: (err: Error, result: any) => void, onError?: () => void, onProgress?: Function, input: any, progress?: any, options?: Record<string, any>}): Task;	
+<<<<<<< HEAD
+	}	
+	/** !#en
+	The builtin bundles
+	
+	!#zh
+	内置 bundle */
+	export enum BuiltinBundleName {		
+		RESOURCES = 0,
+		INTERNAL = 0,
+		MAIN = 0,
+		START_SCENE = 0,	
+=======
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 	}
 }
 
@@ -22564,6 +29645,7 @@ declare namespace cc.js {
 		resize(): void;	
 	}
 }
+<<<<<<< HEAD
 
 /** !#en A basic module for creating vertex data for 3D objects. You can access this module by `cc.primitive`.
 !#zh 一个创建 3D 物体顶点数据的基础模块，你可以通过 `cc.primitive` 来访问这个模块。 */
@@ -32047,6 +39129,9491 @@ declare namespace jsb{
          */
         export function getWritablePath ():string;
     }
+=======
+
+/** !#en A basic module for creating vertex data for 3D objects. You can access this module by `cc.primitive`.
+!#zh 一个创建 3D 物体顶点数据的基础模块，你可以通过 `cc.primitive` 来访问这个模块。 */
+declare namespace cc.primitive {	
+	/**
+	!#en Create box vertex data
+	!#zh 创建长方体顶点数据
+	@param width width
+	@param height height
+	@param length length
+	@param opts opts 
+	*/
+	export function box(width: number, height: number, length: number, opts: {widthSegments: number; heightSegments: number; lengthSegments: number; }): cc.VertexData;	
+	/**
+	!#en Create cone vertex data
+	!#zh 创建圆锥体顶点数据
+	@param radius radius
+	@param height height
+	@param opts opts 
+	*/
+	export function cone(radius: number, height: number, opts: {radialSegments: number; heightSegments: number; capped: boolean; arc: number; }): cc.VertexData;	
+	/**
+	!#en Create cylinder vertex data
+	!#zh 创建圆柱体顶点数据
+	@param radiusTop radiusTop
+	@param radiusBottom radiusBottom
+	@param height height
+	@param opts opts 
+	*/
+	export function cylinder(radiusTop: number, radiusBottom: number, height: number, opts: {radialSegments: number; heightSegments: number; capped: boolean; arc: number; }): cc.VertexData;	
+	/**
+	!#en Create plane vertex data
+	!#zh 创建平台顶点数据
+	@param width width
+	@param length length
+	@param opts opts 
+	*/
+	export function plane(width: number, length: number, opts: {widthSegments: number; lengthSegments: number; }): cc.VertexData;	
+	/**
+	!#en Create quad vertex data
+	!#zh 创建面片顶点数据 
+	*/
+	export function quad(): cc.VertexData;	
+	/**
+	!#en Create sphere vertex data
+	!#zh 创建球体顶点数据
+	@param radius radius
+	@param opts opts 
+	*/
+	export function sphere(radius: number, opts: {segments: number; }): cc.VertexData;	
+	/**
+	!#en Create torus vertex data
+	!#zh 创建圆环顶点数据
+	@param radius radius
+	@param tube tube
+	@param opts opts 
+	*/
+	export function torus(radius: number, tube: number, opts: {radialSegments: number; tubularSegments: number; arc: number; }): cc.VertexData;	
+	/**
+	!#en Create capsule vertex data
+	!#zh 创建胶囊体顶点数据
+	@param radiusTop radiusTop
+	@param radiusBottom radiusBottom
+	@param height height
+	@param opts opts 
+	*/
+	export function capsule(radiusTop: number, radiusBottom: number, height: number, opts: {sides: number; heightSegments: number; capped: boolean; arc: number; }): cc.VertexData;	
+	/**
+	!#en Create polyhedron vertex data
+	!#zh 创建多面体顶点数据
+	@param type type
+	@param Size Size
+	@param opts opts 
+	*/
+	export function polyhedron(type: cc.primitive.PolyhedronType, Size: number, opts: {sizeX: number; sizeY: number; sizeZ: number; }): cc.VertexData;
+}
+
+declare let CC_JSB: boolean
+declare let CC_NATIVERENDERER: boolean
+declare let CC_EDITOR: boolean
+declare let CC_PREVIEW: boolean
+declare let CC_TEST: boolean
+declare let CC_DEBUG: boolean
+
+declare let cc: {
+    // polyfills: {
+    //     destroyObject? (object: any): void;
+    // };
+    [x: string]: any;
+}
+
+declare let Editor: any;
+
+// https://medium.com/dailyjs/typescript-create-a-condition-based-subset-types-9d902cea5b8c
+type FlagExcludedType<Base, Type> = { [Key in keyof Base]: Base[Key] extends Type ? never : Key };
+type AllowedNames<Base, Type> = FlagExcludedType<Base, Type>[keyof Base];
+type KeyPartial<T, K extends keyof T> = { [P in K]?: T[P] };
+type OmitType<Base, Type> = KeyPartial<Base, AllowedNames<Base, Type>>;
+type ConstructorType<T> = OmitType<T, Function>;
+
+declare interface IWritableArrayLike<T> {
+    readonly length: number;
+    [index: number]: T;
+}
+
+declare let module: {
+    exports: object
+}
+
+
+declare interface Math { 
+    sign(v: number); 
+}
+
+declare interface Object {
+    assign(target: {}, source: {});
+}
+
+
+type FloatArray = Float64Array | Float32Array;
+
+interface IColorLike {
+    r: number;
+    g: number;
+    b: number;
+    a: number;
+    _val: number;
+
+}
+
+interface IMat3Like {
+    m: FloatArray
+}
+
+interface IMat4Like {
+    m: FloatArray
+}
+
+interface IQuatLike {
+    x: number;
+    y: number;
+    z: number;
+    w: number;
+}
+
+interface IRectLike {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+}
+
+interface ISizeLike {
+    width: number;
+    height: number;
+}
+
+interface IVec2Like {
+    x: number;
+    y: number;
+}
+
+interface IVec3Like {
+    x: number;
+    y: number;
+    z: number;
+}
+
+interface IVec4Like {
+    x: number;
+    y: number;
+    z: number;
+    w: number;
+}
+declare namespace dragonBones {
+    /**
+     * @internal
+     * @private
+     */
+    const webAssemblyModule: {
+        HEAP16: Int16Array;
+        _malloc(byteSize: number): number;
+        _free(pointer: number): void;
+        setDataBinary(data: DragonBonesData, binaryPointer: number, intBytesLength: number, floatBytesLength: number, frameIntBytesLength: number, frameFloatBytesLength: number, frameBytesLength: number, timelineBytesLength: number): void;
+    };
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * @internal
+     * @private
+     */
+    const enum BinaryOffset {
+        WeigthBoneCount = 0,
+        WeigthFloatOffset = 1,
+        WeigthBoneIndices = 2,
+        MeshVertexCount = 0,
+        MeshTriangleCount = 1,
+        MeshFloatOffset = 2,
+        MeshWeightOffset = 3,
+        MeshVertexIndices = 4,
+        TimelineScale = 0,
+        TimelineOffset = 1,
+        TimelineKeyFrameCount = 2,
+        TimelineFrameValueCount = 3,
+        TimelineFrameValueOffset = 4,
+        TimelineFrameOffset = 5,
+        FramePosition = 0,
+        FrameTweenType = 1,
+        FrameTweenEasingOrCurveSampleCount = 2,
+        FrameCurveSamples = 3,
+        DeformMeshOffset = 0,
+        DeformCount = 1,
+        DeformValueCount = 2,
+        DeformValueOffset = 3,
+        DeformFloatOffset = 4,
+    }
+    /**
+     * @internal
+     * @private
+     */
+    const enum ArmatureType {
+        Armature = 0,
+        MovieClip = 1,
+        Stage = 2,
+    }
+    /**
+     * @internal
+     * @private
+     */
+    const enum BoneType {
+        Bone = 0,
+        Surface = 1,
+    }
+    /**
+     * @private
+     */
+    const enum DisplayType {
+        Image = 0,
+        Armature = 1,
+        Mesh = 2,
+        BoundingBox = 3,
+    }
+    /**
+     * - Bounding box type.
+     * @version DragonBones 5.0
+     * @language en_US
+     */
+    /**
+     * - 边界框类型。
+     * @version DragonBones 5.0
+     * @language zh_CN
+     */
+    const enum BoundingBoxType {
+        Rectangle = 0,
+        Ellipse = 1,
+        Polygon = 2,
+    }
+    /**
+     * @internal
+     * @private
+     */
+    const enum ActionType {
+        Play = 0,
+        Frame = 10,
+        Sound = 11,
+    }
+    /**
+     * @internal
+     * @private
+     */
+    const enum BlendMode {
+        Normal = 0,
+        Add = 1,
+        Alpha = 2,
+        Darken = 3,
+        Difference = 4,
+        Erase = 5,
+        HardLight = 6,
+        Invert = 7,
+        Layer = 8,
+        Lighten = 9,
+        Multiply = 10,
+        Overlay = 11,
+        Screen = 12,
+        Subtract = 13,
+    }
+    /**
+     * @internal
+     * @private
+     */
+    const enum TweenType {
+        None = 0,
+        Line = 1,
+        Curve = 2,
+        QuadIn = 3,
+        QuadOut = 4,
+        QuadInOut = 5,
+    }
+    /**
+     * @internal
+     * @private
+     */
+    const enum TimelineType {
+        Action = 0,
+        ZOrder = 1,
+        BoneAll = 10,
+        BoneTranslate = 11,
+        BoneRotate = 12,
+        BoneScale = 13,
+        Surface = 50,
+        SlotDisplay = 20,
+        SlotColor = 21,
+        SlotFFD = 22,
+        IKConstraint = 30,
+        AnimationTime = 40,
+        AnimationWeight = 41,
+    }
+    /**
+     * - Offset mode.
+     * @version DragonBones 5.5
+     * @language en_US
+     */
+    /**
+     * - 偏移模式。
+     * @version DragonBones 5.5
+     * @language zh_CN
+     */
+    const enum OffsetMode {
+        None = 0,
+        Additive = 1,
+        Override = 2,
+    }
+    /**
+     * - Animation fade out mode.
+     * @version DragonBones 4.5
+     * @language en_US
+     */
+    /**
+     * - 动画淡出模式。
+     * @version DragonBones 4.5
+     * @language zh_CN
+     */
+    const enum AnimationFadeOutMode {
+        /**
+         * - Do not fade out of any animation states.
+         * @language en_US
+         */
+        /**
+         * - 不淡出任何的动画状态。
+         * @language zh_CN
+         */
+        None = 0,
+        /**
+         * - Fade out the animation states of the same layer.
+         * @language en_US
+         */
+        /**
+         * - 淡出同层的动画状态。
+         * @language zh_CN
+         */
+        SameLayer = 1,
+        /**
+         * - Fade out the animation states of the same group.
+         * @language en_US
+         */
+        /**
+         * - 淡出同组的动画状态。
+         * @language zh_CN
+         */
+        SameGroup = 2,
+        /**
+         * - Fade out the animation states of the same layer and group.
+         * @language en_US
+         */
+        /**
+         * - 淡出同层并且同组的动画状态。
+         * @language zh_CN
+         */
+        SameLayerAndGroup = 3,
+        /**
+         * - Fade out of all animation states.
+         * @language en_US
+         */
+        /**
+         * - 淡出所有的动画状态。
+         * @language zh_CN
+         */
+        All = 4,
+        /**
+         * - Does not replace the animation state with the same name.
+         * @language en_US
+         */
+        /**
+         * - 不替换同名的动画状态。
+         * @language zh_CN
+         */
+        Single = 5,
+    }
+    /**
+     * @private
+     */
+    interface Map<T> {
+        [key: string]: T;
+    }
+    /**
+     * @private
+     */
+    class DragonBones {
+        static readonly VERSION: string;
+        static yDown: boolean;
+        static debug: boolean;
+        static debugDraw: boolean;
+        static webAssembly: boolean;
+        private readonly _clock;
+        private readonly _events;
+        private readonly _objects;
+        private _eventManager;
+        constructor(eventManager: IEventDispatcher);
+        advanceTime(passedTime: number): void;
+        bufferEvent(value: EventObject): void;
+        bufferObject(object: BaseObject): void;
+        readonly clock: WorldClock;
+        readonly eventManager: IEventDispatcher;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The BaseObject is the base class for all objects in the DragonBones framework.
+     * All BaseObject instances are cached to the object pool to reduce the performance consumption of frequent requests for memory or memory recovery.
+     * @version DragonBones 4.5
+     * @language en_US
+     */
+    /**
+     * - 基础对象，通常 DragonBones 的对象都继承自该类。
+     * 所有基础对象的实例都会缓存到对象池，以减少频繁申请内存或内存回收的性能消耗。
+     * @version DragonBones 4.5
+     * @language zh_CN
+     */
+    abstract class BaseObject {
+        private static _hashCode;
+        private static _defaultMaxCount;
+        private static readonly _maxCountMap;
+        private static readonly _poolsMap;
+        private static _returnObject(object);
+        static toString(): string;
+        /**
+         * - Set the maximum cache count of the specify object pool.
+         * @param objectConstructor - The specify class. (Set all object pools max cache count if not set)
+         * @param maxCount - Max count.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 设置特定对象池的最大缓存数量。
+         * @param objectConstructor - 特定的类。 (不设置则设置所有对象池的最大缓存数量)
+         * @param maxCount - 最大缓存数量。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        static setMaxCount(objectConstructor: (typeof BaseObject) | null, maxCount: number): void;
+        /**
+         * - Clear the cached instances of a specify object pool.
+         * @param objectConstructor - Specify class. (Clear all cached instances if not set)
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 清除特定对象池的缓存实例。
+         * @param objectConstructor - 特定的类。 (不设置则清除所有缓存的实例)
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        static clearPool(objectConstructor?: (typeof BaseObject) | null): void;
+        /**
+         * - Get an instance of the specify class from object pool.
+         * @param objectConstructor - The specify class.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 从对象池中获取特定类的实例。
+         * @param objectConstructor - 特定的类。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        static borrowObject<T extends BaseObject>(objectConstructor: {
+            new (): T;
+        }): T;
+        /**
+         * - A unique identification number assigned to the object.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 分配给此实例的唯一标识号。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        readonly hashCode: number;
+        private _isInPool;
+        /**
+         * @private
+         */
+        protected abstract _onClear(): void;
+        /**
+         * - Clear the object and return it back to object pool。
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 清除该实例的所有数据并将其返还对象池。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        returnToPool(): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - 2D Transform matrix.
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 2D 转换矩阵。
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class Matrix {
+        /**
+         * - The value that affects the positioning of pixels along the x axis when scaling or rotating an image.
+         * @default 1.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 缩放或旋转图像时影响像素沿 x 轴定位的值。
+         * @default 1.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        a: number;
+        /**
+         * - The value that affects the positioning of pixels along the y axis when rotating or skewing an image.
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 旋转或倾斜图像时影响像素沿 y 轴定位的值。
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        b: number;
+        /**
+         * - The value that affects the positioning of pixels along the x axis when rotating or skewing an image.
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 旋转或倾斜图像时影响像素沿 x 轴定位的值。
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        c: number;
+        /**
+         * - The value that affects the positioning of pixels along the y axis when scaling or rotating an image.
+         * @default 1.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 缩放或旋转图像时影响像素沿 y 轴定位的值。
+         * @default 1.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        d: number;
+        /**
+         * - The distance by which to translate each point along the x axis.
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 沿 x 轴平移每个点的距离。
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        tx: number;
+        /**
+         * - The distance by which to translate each point along the y axis.
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 沿 y 轴平移每个点的距离。
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        ty: number;
+        /**
+         * @private
+         */
+        constructor(a?: number, b?: number, c?: number, d?: number, tx?: number, ty?: number);
+        toString(): string;
+        /**
+         * @private
+         */
+        copyFrom(value: Matrix): Matrix;
+        /**
+         * @private
+         */
+        copyFromArray(value: Array<number>, offset?: number): Matrix;
+        /**
+         * - Convert to unit matrix.
+         * The resulting matrix has the following properties: a=1, b=0, c=0, d=1, tx=0, ty=0.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 转换为单位矩阵。
+         * 该矩阵具有以下属性：a=1、b=0、c=0、d=1、tx=0、ty=0。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        identity(): Matrix;
+        /**
+         * - Multiplies the current matrix with another matrix.
+         * @param value - The matrix that needs to be multiplied.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 将当前矩阵与另一个矩阵相乘。
+         * @param value - 需要相乘的矩阵。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        concat(value: Matrix): Matrix;
+        /**
+         * - Convert to inverse matrix.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 转换为逆矩阵。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        invert(): Matrix;
+        /**
+         * - Apply a matrix transformation to a specific point.
+         * @param x - X coordinate.
+         * @param y - Y coordinate.
+         * @param result - The point after the transformation is applied.
+         * @param delta - Whether to ignore tx, ty's conversion to point.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 将矩阵转换应用于特定点。
+         * @param x - 横坐标。
+         * @param y - 纵坐标。
+         * @param result - 应用转换之后的点。
+         * @param delta - 是否忽略 tx，ty 对点的转换。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        transformPoint(x: number, y: number, result: {
+            x: number;
+            y: number;
+        }, delta?: boolean): void;
+        /**
+         * @private
+         */
+        transformRectangle(rectangle: {
+            x: number;
+            y: number;
+            width: number;
+            height: number;
+        }, delta?: boolean): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - 2D Transform.
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 2D 变换。
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class Transform {
+        /**
+         * @private
+         */
+        static readonly PI: number;
+        /**
+         * @private
+         */
+        static readonly PI_D: number;
+        /**
+         * @private
+         */
+        static readonly PI_H: number;
+        /**
+         * @private
+         */
+        static readonly PI_Q: number;
+        /**
+         * @private
+         */
+        static readonly RAD_DEG: number;
+        /**
+         * @private
+         */
+        static readonly DEG_RAD: number;
+        /**
+         * @private
+         */
+        static normalizeRadian(value: number): number;
+        /**
+         * - Horizontal translate.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 水平位移。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        x: number;
+        /**
+         * - Vertical translate.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 垂直位移。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        y: number;
+        /**
+         * - Skew. (In radians)
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 倾斜。 （以弧度为单位）
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        skew: number;
+        /**
+         * - rotation. (In radians)
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 旋转。 （以弧度为单位）
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        rotation: number;
+        /**
+         * - Horizontal Scaling.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 水平缩放。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        scaleX: number;
+        /**
+         * - Vertical scaling.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 垂直缩放。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        scaleY: number;
+        /**
+         * @private
+         */
+        constructor(x?: number, y?: number, skew?: number, rotation?: number, scaleX?: number, scaleY?: number);
+        toString(): string;
+        /**
+         * @private
+         */
+        copyFrom(value: Transform): Transform;
+        /**
+         * @private
+         */
+        identity(): Transform;
+        /**
+         * @private
+         */
+        add(value: Transform): Transform;
+        /**
+         * @private
+         */
+        minus(value: Transform): Transform;
+        /**
+         * @private
+         */
+        fromMatrix(matrix: Matrix): Transform;
+        /**
+         * @private
+         */
+        toMatrix(matrix: Matrix): Transform;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * @internal
+     * @private
+     */
+    class ColorTransform {
+        alphaMultiplier: number;
+        redMultiplier: number;
+        greenMultiplier: number;
+        blueMultiplier: number;
+        alphaOffset: number;
+        redOffset: number;
+        greenOffset: number;
+        blueOffset: number;
+        constructor(alphaMultiplier?: number, redMultiplier?: number, greenMultiplier?: number, blueMultiplier?: number, alphaOffset?: number, redOffset?: number, greenOffset?: number, blueOffset?: number);
+        copyFrom(value: ColorTransform): void;
+        identity(): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The Point object represents a location in a two-dimensional coordinate system.
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - Point 对象表示二维坐标系统中的某个位置。
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class Point {
+        /**
+         * - The horizontal coordinate.
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 该点的水平坐标。
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        x: number;
+        /**
+         * - The vertical coordinate.
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 该点的垂直坐标。
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        y: number;
+        /**
+         * - Creates a new point. If you pass no parameters to this method, a point is created at (0,0).
+         * @param x - The horizontal coordinate.
+         * @param y - The vertical coordinate.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 创建一个 egret.Point 对象.若不传入任何参数，将会创建一个位于（0，0）位置的点。
+         * @param x - 该对象的x属性值，默认为 0.0。
+         * @param y - 该对象的y属性值，默认为 0.0。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        constructor(x?: number, y?: number);
+        /**
+         * @private
+         */
+        copyFrom(value: Point): void;
+        /**
+         * @private
+         */
+        clear(): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - A Rectangle object is an area defined by its position, as indicated by its top-left corner point (x, y) and by its
+     * width and its height.<br/>
+     * The x, y, width, and height properties of the Rectangle class are independent of each other; changing the value of
+     * one property has no effect on the others. However, the right and bottom properties are integrally related to those
+     * four properties. For example, if you change the value of the right property, the value of the width property changes;
+     * if you change the bottom property, the value of the height property changes.
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - Rectangle 对象是按其位置（由它左上角的点 (x, y) 确定）以及宽度和高度定义的区域。<br/>
+     * Rectangle 类的 x、y、width 和 height 属性相互独立；更改一个属性的值不会影响其他属性。
+     * 但是，right 和 bottom 属性与这四个属性是整体相关的。例如，如果更改 right 属性的值，则 width
+     * 属性的值将发生变化；如果更改 bottom 属性，则 height 属性的值将发生变化。
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class Rectangle {
+        /**
+         * - The x coordinate of the top-left corner of the rectangle.
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 矩形左上角的 x 坐标。
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        x: number;
+        /**
+         * - The y coordinate of the top-left corner of the rectangle.
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 矩形左上角的 y 坐标。
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        y: number;
+        /**
+         * - The width of the rectangle, in pixels.
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 矩形的宽度（以像素为单位）。
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        width: number;
+        /**
+         * - 矩形的高度（以像素为单位）。
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - The height of the rectangle, in pixels.
+         * @default 0.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        height: number;
+        /**
+         * @private
+         */
+        constructor(x?: number, y?: number, width?: number, height?: number);
+        /**
+         * @private
+         */
+        copyFrom(value: Rectangle): void;
+        /**
+         * @private
+         */
+        clear(): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The user custom data.
+     * @version DragonBones 5.0
+     * @language en_US
+     */
+    /**
+     * - 用户自定义数据。
+     * @version DragonBones 5.0
+     * @language zh_CN
+     */
+    class UserData extends BaseObject {
+        static toString(): string;
+        /**
+         * - The custom int numbers.
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 自定义整数。
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        readonly ints: Array<number>;
+        /**
+         * - The custom float numbers.
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 自定义浮点数。
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        readonly floats: Array<number>;
+        /**
+         * - The custom strings.
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 自定义字符串。
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        readonly strings: Array<string>;
+        /**
+         * @inheritDoc
+         */
+        protected _onClear(): void;
+        /**
+         * @internal
+         * @private
+         */
+        addInt(value: number): void;
+        /**
+         * @internal
+         * @private
+         */
+        addFloat(value: number): void;
+        /**
+         * @internal
+         * @private
+         */
+        addString(value: string): void;
+        /**
+         * - Get the custom int number.
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 获取自定义整数。
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        getInt(index?: number): number;
+        /**
+         * - Get the custom float number.
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 获取自定义浮点数。
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        getFloat(index?: number): number;
+        /**
+         * - Get the custom string.
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 获取自定义字符串。
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        getString(index?: number): string;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class ActionData extends BaseObject {
+        static toString(): string;
+        type: ActionType;
+        name: string;
+        bone: BoneData | null;
+        slot: SlotData | null;
+        data: UserData | null;
+        protected _onClear(): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The DragonBones data.
+     * A DragonBones data contains multiple armature data.
+     * @see dragonBones.ArmatureData
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 龙骨数据。
+     * 一个龙骨数据包含多个骨架数据。
+     * @see dragonBones.ArmatureData
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class DragonBonesData extends BaseObject {
+        static toString(): string;
+        /**
+         * @private
+         */
+        autoSearch: boolean;
+        /**
+         * - The animation frame rate.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 动画帧频。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        frameRate: number;
+        /**
+         * - The data version.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 数据版本。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        version: string;
+        /**
+         * - The DragonBones data name.
+         * The name is consistent with the DragonBones project name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 龙骨数据名称。
+         * 该名称与龙骨项目名保持一致。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        name: string;
+        /**
+         * @private
+         */
+        stage: ArmatureData | null;
+        /**
+         * @internal
+         * @private
+         */
+        readonly frameIndices: Array<number>;
+        /**
+         * @internal
+         * @private
+         */
+        readonly cachedFrames: Array<number>;
+        /**
+         * - All armature data names.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 所有的骨架数据名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly armatureNames: Array<string>;
+        /**
+         * @private
+         */
+        readonly armatures: Map<ArmatureData>;
+        /**
+         * @internal
+         * @private
+         */
+        binary: ArrayBuffer;
+        /**
+         * @internal
+         * @private
+         */
+        intArray: Int16Array;
+        /**
+         * @internal
+         * @private
+         */
+        floatArray: Float32Array;
+        /**
+         * @internal
+         * @private
+         */
+        frameIntArray: Int16Array;
+        /**
+         * @internal
+         * @private
+         */
+        frameFloatArray: Float32Array;
+        /**
+         * @internal
+         * @private
+         */
+        frameArray: Int16Array;
+        /**
+         * @internal
+         * @private
+         */
+        timelineArray: Uint16Array;
+        /**
+         * @private
+         */
+        userData: UserData | null;
+        /**
+         * @inheritDoc
+         */
+        protected _onClear(): void;
+        /**
+         * @internal
+         * @private
+         */
+        addArmature(value: ArmatureData): void;
+        /**
+         * - Get a specific armature data.
+         * @param name - The armature data name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 获取特定的骨架数据。
+         * @param name - 骨架数据名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        getArmature(name: string): ArmatureData | null;
+        /**
+         * - Deprecated, please refer to {@link #dragonBones.BaseFactory#removeDragonBonesData()}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #dragonBones.BaseFactory#removeDragonBonesData()}。
+         * @deprecated
+         * @language zh_CN
+         */
+        dispose(): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The armature data.
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 骨架数据。
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class ArmatureData extends BaseObject {
+        static toString(): string;
+        /**
+         * @private
+         */
+        type: ArmatureType;
+        /**
+         * - The animation frame rate.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 动画帧率。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        frameRate: number;
+        /**
+         * @private
+         */
+        cacheFrameRate: number;
+        /**
+         * @private
+         */
+        scale: number;
+        /**
+         * - The armature name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 骨架名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        name: string;
+        /**
+         * @private
+         */
+        readonly aabb: Rectangle;
+        /**
+         * - The names of all the animation data.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 所有的动画数据名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly animationNames: Array<string>;
+        /**
+         * @private
+         */
+        readonly sortedBones: Array<BoneData>;
+        /**
+         * @private
+         */
+        readonly sortedSlots: Array<SlotData>;
+        /**
+         * @private
+         */
+        readonly defaultActions: Array<ActionData>;
+        /**
+         * @private
+         */
+        readonly actions: Array<ActionData>;
+        /**
+         * @private
+         */
+        readonly bones: Map<BoneData>;
+        /**
+         * @private
+         */
+        readonly slots: Map<SlotData>;
+        /**
+         * @private
+         */
+        readonly constraints: Map<ConstraintData>;
+        /**
+         * @private
+         */
+        readonly skins: Map<SkinData>;
+        /**
+         * @private
+         */
+        readonly animations: Map<AnimationData>;
+        /**
+         * - The default skin data.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 默认插槽数据。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        defaultSkin: SkinData | null;
+        /**
+         * - The default animation data.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 默认动画数据。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        defaultAnimation: AnimationData | null;
+        /**
+         * @private
+         */
+        canvas: CanvasData | null;
+        /**
+         * @private
+         */
+        userData: UserData | null;
+        /**
+         * @private
+         */
+        parent: DragonBonesData;
+        /**
+         * @inheritDoc
+         */
+        protected _onClear(): void;
+        /**
+         * @internal
+         * @private
+         */
+        sortBones(): void;
+        /**
+         * @internal
+         * @private
+         */
+        cacheFrames(frameRate: number): void;
+        /**
+         * @internal
+         * @private
+         */
+        setCacheFrame(globalTransformMatrix: Matrix, transform: Transform): number;
+        /**
+         * @internal
+         * @private
+         */
+        getCacheFrame(globalTransformMatrix: Matrix, transform: Transform, arrayOffset: number): void;
+        /**
+         * @internal
+         * @private
+         */
+        addBone(value: BoneData): void;
+        /**
+         * @internal
+         * @private
+         */
+        addSlot(value: SlotData): void;
+        /**
+         * @internal
+         * @private
+         */
+        addConstraint(value: ConstraintData): void;
+        /**
+         * @internal
+         * @private
+         */
+        addSkin(value: SkinData): void;
+        /**
+         * @internal
+         * @private
+         */
+        addAnimation(value: AnimationData): void;
+        /**
+         * @internal
+         * @private
+         */
+        addAction(value: ActionData, isDefault: boolean): void;
+        /**
+         * - Get a specific done data.
+         * @param name - The bone name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 获取特定的骨骼数据。
+         * @param name - 骨骼名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        getBone(name: string): BoneData | null;
+        /**
+         * - Get a specific slot data.
+         * @param name - The slot name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 获取特定的插槽数据。
+         * @param name - 插槽名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        getSlot(name: string): SlotData | null;
+        /**
+         * @private
+         */
+        getConstraint(name: string): ConstraintData | null;
+        /**
+         * - Get a specific skin data.
+         * @param name - The skin name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 获取特定皮肤数据。
+         * @param name - 皮肤名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        getSkin(name: string): SkinData | null;
+        /**
+         * @internal
+         * @private
+         */
+        getMesh(skinName: string, slotName: string, meshName: string): MeshDisplayData | null;
+        /**
+         * - Get a specific animation data.
+         * @param name - The animation name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 获取特定的动画数据。
+         * @param name - 动画名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        getAnimation(name: string): AnimationData | null;
+    }
+    /**
+     * - The bone data.
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 骨骼数据。
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class BoneData extends BaseObject {
+        static toString(): string;
+        /**
+         * @private
+         */
+        inheritTranslation: boolean;
+        /**
+         * @private
+         */
+        inheritRotation: boolean;
+        /**
+         * @private
+         */
+        inheritScale: boolean;
+        /**
+         * @private
+         */
+        inheritReflection: boolean;
+        /**
+         * @private
+         */
+        type: BoneType;
+        /**
+         * - The bone length.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 骨骼长度。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        length: number;
+        /**
+         * - The bone name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 骨骼名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        name: string;
+        /**
+         * @private
+         */
+        readonly transform: Transform;
+        /**
+         * @private
+         */
+        userData: UserData | null;
+        /**
+         * - The parent bone data.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 父骨骼数据。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        parent: BoneData | null;
+        /**
+         * @inheritDoc
+         */
+        protected _onClear(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class SurfaceData extends BoneData {
+        static toString(): string;
+        segmentX: number;
+        segmentY: number;
+        readonly vertices: Array<number>;
+        /**
+         * @inheritDoc
+         */
+        protected _onClear(): void;
+    }
+    /**
+     * - The slot data.
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 插槽数据。
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class SlotData extends BaseObject {
+        /**
+         * @internal
+         * @private
+         */
+        static readonly DEFAULT_COLOR: ColorTransform;
+        /**
+         * @internal
+         * @private
+         */
+        static createColor(): ColorTransform;
+        static toString(): string;
+        /**
+         * @private
+         */
+        blendMode: BlendMode;
+        /**
+         * @private
+         */
+        displayIndex: number;
+        /**
+         * @private
+         */
+        zOrder: number;
+        /**
+         * - The slot name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 插槽名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        name: string;
+        /**
+         * @private
+         */
+        color: ColorTransform;
+        /**
+         * @private
+         */
+        userData: UserData | null;
+        /**
+         * - The parent bone data.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 父骨骼数据。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        parent: BoneData;
+        /**
+         * @inheritDoc
+         */
+        protected _onClear(): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * @internal
+     * @private
+     */
+    abstract class ConstraintData extends BaseObject {
+        order: number;
+        name: string;
+        target: BoneData;
+        root: BoneData;
+        bone: BoneData | null;
+        protected _onClear(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class IKConstraintData extends ConstraintData {
+        static toString(): string;
+        scaleEnabled: boolean;
+        bendPositive: boolean;
+        weight: number;
+        protected _onClear(): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * @internal
+     * @private
+     */
+    class CanvasData extends BaseObject {
+        static toString(): string;
+        hasBackground: boolean;
+        color: number;
+        x: number;
+        y: number;
+        width: number;
+        height: number;
+        protected _onClear(): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The skin data, typically a armature data instance contains at least one skinData.
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 皮肤数据，通常一个骨架数据至少包含一个皮肤数据。
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class SkinData extends BaseObject {
+        static toString(): string;
+        /**
+         * - The skin name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 皮肤名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        name: string;
+        /**
+         * @private
+         */
+        readonly displays: Map<Array<DisplayData | null>>;
+        /**
+         * @private
+         */
+        parent: ArmatureData;
+        /**
+         * @inheritDoc
+         */
+        protected _onClear(): void;
+        /**
+         * @internal
+         * @private
+         */
+        addDisplay(slotName: string, value: DisplayData | null): void;
+        /**
+         * @private
+         */
+        getDisplay(slotName: string, displayName: string): DisplayData | null;
+        /**
+         * @private
+         */
+        getDisplays(slotName: string): Array<DisplayData | null> | null;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * @internal
+     * @private
+     */
+    abstract class DisplayData extends BaseObject {
+        type: DisplayType;
+        name: string;
+        path: string;
+        parent: SkinData;
+        readonly transform: Transform;
+        protected _onClear(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class ImageDisplayData extends DisplayData {
+        static toString(): string;
+        readonly pivot: Point;
+        texture: TextureData | null;
+        protected _onClear(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class ArmatureDisplayData extends DisplayData {
+        static toString(): string;
+        inheritAnimation: boolean;
+        readonly actions: Array<ActionData>;
+        armature: ArmatureData | null;
+        protected _onClear(): void;
+        /**
+         * @private
+         */
+        addAction(value: ActionData): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class MeshDisplayData extends DisplayData {
+        static toString(): string;
+        inheritDeform: boolean;
+        offset: number;
+        weight: WeightData | null;
+        glue: GlueData | null;
+        texture: TextureData | null;
+        protected _onClear(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class BoundingBoxDisplayData extends DisplayData {
+        static toString(): string;
+        boundingBox: BoundingBoxData | null;
+        protected _onClear(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class WeightData extends BaseObject {
+        static toString(): string;
+        count: number;
+        offset: number;
+        readonly bones: Array<BoneData>;
+        protected _onClear(): void;
+        addBone(value: BoneData): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class GlueData extends BaseObject {
+        static toString(): string;
+        readonly weights: Array<number>;
+        readonly meshes: Array<MeshDisplayData | null>;
+        protected _onClear(): void;
+        addMesh(value: MeshDisplayData | null): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The base class of bounding box data.
+     * @see dragonBones.RectangleData
+     * @see dragonBones.EllipseData
+     * @see dragonBones.PolygonData
+     * @version DragonBones 5.0
+     * @language en_US
+     */
+    /**
+     * - 边界框数据基类。
+     * @see dragonBones.RectangleData
+     * @see dragonBones.EllipseData
+     * @see dragonBones.PolygonData
+     * @version DragonBones 5.0
+     * @language zh_CN
+     */
+    abstract class BoundingBoxData extends BaseObject {
+        /**
+         * - The bounding box type.
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 边界框类型。
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        type: BoundingBoxType;
+        /**
+         * @private
+         */
+        color: number;
+        /**
+         * @private
+         */
+        width: number;
+        /**
+         * @private
+         */
+        height: number;
+        /**
+         * @private
+         */
+        protected _onClear(): void;
+        /**
+         * - Check whether the bounding box contains a specific point. (Local coordinate system)
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 检查边界框是否包含特定点。（本地坐标系）
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        abstract containsPoint(pX: number, pY: number): boolean;
+        /**
+         * - Check whether the bounding box intersects a specific segment. (Local coordinate system)
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 检查边界框是否与特定线段相交。（本地坐标系）
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        abstract intersectsSegment(xA: number, yA: number, xB: number, yB: number, intersectionPointA: {
+            x: number;
+            y: number;
+        } | null, intersectionPointB: {
+            x: number;
+            y: number;
+        } | null, normalRadians: {
+            x: number;
+            y: number;
+        } | null): number;
+    }
+    /**
+     * - The rectangle bounding box data.
+     * @version DragonBones 5.1
+     * @language en_US
+     */
+    /**
+     * - 矩形边界框数据。
+     * @version DragonBones 5.1
+     * @language zh_CN
+     */
+    class RectangleBoundingBoxData extends BoundingBoxData {
+        static toString(): string;
+        /**
+         * - Compute the bit code for a point (x, y) using the clip rectangle
+         */
+        private static _computeOutCode(x, y, xMin, yMin, xMax, yMax);
+        /**
+         * @private
+         */
+        static rectangleIntersectsSegment(xA: number, yA: number, xB: number, yB: number, xMin: number, yMin: number, xMax: number, yMax: number, intersectionPointA?: {
+            x: number;
+            y: number;
+        } | null, intersectionPointB?: {
+            x: number;
+            y: number;
+        } | null, normalRadians?: {
+            x: number;
+            y: number;
+        } | null): number;
+        /**
+         * @inheritDoc
+         * @private
+         */
+        protected _onClear(): void;
+        /**
+         * @inheritDoc
+         */
+        containsPoint(pX: number, pY: number): boolean;
+        /**
+         * @inheritDoc
+         */
+        intersectsSegment(xA: number, yA: number, xB: number, yB: number, intersectionPointA?: {
+            x: number;
+            y: number;
+        } | null, intersectionPointB?: {
+            x: number;
+            y: number;
+        } | null, normalRadians?: {
+            x: number;
+            y: number;
+        } | null): number;
+    }
+    /**
+     * - The ellipse bounding box data.
+     * @version DragonBones 5.1
+     * @language en_US
+     */
+    /**
+     * - 椭圆边界框数据。
+     * @version DragonBones 5.1
+     * @language zh_CN
+     */
+    class EllipseBoundingBoxData extends BoundingBoxData {
+        static toString(): string;
+        /**
+         * @private
+         */
+        static ellipseIntersectsSegment(xA: number, yA: number, xB: number, yB: number, xC: number, yC: number, widthH: number, heightH: number, intersectionPointA?: {
+            x: number;
+            y: number;
+        } | null, intersectionPointB?: {
+            x: number;
+            y: number;
+        } | null, normalRadians?: {
+            x: number;
+            y: number;
+        } | null): number;
+        /**
+         * @inheritDoc
+         * @private
+         */
+        protected _onClear(): void;
+        /**
+         * @inheritDoc
+         */
+        containsPoint(pX: number, pY: number): boolean;
+        /**
+         * @inheritDoc
+         */
+        intersectsSegment(xA: number, yA: number, xB: number, yB: number, intersectionPointA?: {
+            x: number;
+            y: number;
+        } | null, intersectionPointB?: {
+            x: number;
+            y: number;
+        } | null, normalRadians?: {
+            x: number;
+            y: number;
+        } | null): number;
+    }
+    /**
+     * - The polygon bounding box data.
+     * @version DragonBones 5.1
+     * @language en_US
+     */
+    /**
+     * - 多边形边界框数据。
+     * @version DragonBones 5.1
+     * @language zh_CN
+     */
+    class PolygonBoundingBoxData extends BoundingBoxData {
+        static toString(): string;
+        /**
+         * @private
+         */
+        static polygonIntersectsSegment(xA: number, yA: number, xB: number, yB: number, vertices: Array<number>, intersectionPointA?: {
+            x: number;
+            y: number;
+        } | null, intersectionPointB?: {
+            x: number;
+            y: number;
+        } | null, normalRadians?: {
+            x: number;
+            y: number;
+        } | null): number;
+        /**
+         * @private
+         */
+        x: number;
+        /**
+         * @private
+         */
+        y: number;
+        /**
+         * - The polygon vertices.
+         * @version DragonBones 5.1
+         * @language en_US
+         */
+        /**
+         * - 多边形顶点。
+         * @version DragonBones 5.1
+         * @language zh_CN
+         */
+        readonly vertices: Array<number>;
+        /**
+         * @private
+         */
+        weight: WeightData | null;
+        /**
+         * @inheritDoc
+         * @private
+         */
+        protected _onClear(): void;
+        /**
+         * @inheritDoc
+         */
+        containsPoint(pX: number, pY: number): boolean;
+        /**
+         * @inheritDoc
+         */
+        intersectsSegment(xA: number, yA: number, xB: number, yB: number, intersectionPointA?: {
+            x: number;
+            y: number;
+        } | null, intersectionPointB?: {
+            x: number;
+            y: number;
+        } | null, normalRadians?: {
+            x: number;
+            y: number;
+        } | null): number;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The animation data.
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 动画数据。
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class AnimationData extends BaseObject {
+        static toString(): string;
+        /**
+         * - FrameIntArray.
+         * @internal
+         * @private
+         */
+        frameIntOffset: number;
+        /**
+         * - FrameFloatArray.
+         * @internal
+         * @private
+         */
+        frameFloatOffset: number;
+        /**
+         * - FrameArray.
+         * @internal
+         * @private
+         */
+        frameOffset: number;
+        /**
+         * - The frame count of the animation.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 动画的帧数。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        frameCount: number;
+        /**
+         * - The play times of the animation. [0: Loop play, [1~N]: Play N times]
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 动画的播放次数。 [0: 无限循环播放, [1~N]: 循环播放 N 次]
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        playTimes: number;
+        /**
+         * - The duration of the animation. (In seconds)
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 动画的持续时间。 （以秒为单位）
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        duration: number;
+        /**
+         * @private
+         */
+        scale: number;
+        /**
+         * - The fade in time of the animation. (In seconds)
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 动画的淡入时间。 （以秒为单位）
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        fadeInTime: number;
+        /**
+         * @private
+         */
+        cacheFrameRate: number;
+        /**
+         * - The animation name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 动画名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        name: string;
+        /**
+         * @private
+         */
+        readonly cachedFrames: Array<boolean>;
+        /**
+         * @private
+         */
+        readonly boneTimelines: Map<Array<TimelineData>>;
+        /**
+         * @private
+         */
+        readonly surfaceTimelines: Map<Array<TimelineData>>;
+        /**
+         * @private
+         */
+        readonly slotTimelines: Map<Array<TimelineData>>;
+        /**
+         * @private
+         */
+        readonly constraintTimelines: Map<Array<TimelineData>>;
+        /**
+         * @private
+         */
+        readonly animationTimelines: Map<Array<TimelineData>>;
+        /**
+         * @private
+         */
+        readonly boneCachedFrameIndices: Map<Array<number>>;
+        /**
+         * @private
+         */
+        readonly slotCachedFrameIndices: Map<Array<number>>;
+        /**
+         * @private
+         */
+        actionTimeline: TimelineData | null;
+        /**
+         * @private
+         */
+        zOrderTimeline: TimelineData | null;
+        /**
+         * @private
+         */
+        parent: ArmatureData;
+        /**
+         * @inheritDoc
+         */
+        protected _onClear(): void;
+        /**
+         * @internal
+         * @private
+         */
+        cacheFrames(frameRate: number): void;
+        /**
+         * @private
+         */
+        addBoneTimeline(bone: BoneData, timeline: TimelineData): void;
+        /**
+         * @private
+         */
+        addSurfaceTimeline(surface: SurfaceData, timeline: TimelineData): void;
+        /**
+         * @private
+         */
+        addSlotTimeline(slot: SlotData, timeline: TimelineData): void;
+        /**
+         * @private
+         */
+        addConstraintTimeline(constraint: ConstraintData, timeline: TimelineData): void;
+        /**
+         * @private
+         */
+        addAnimationTimeline(name: string, timeline: TimelineData): void;
+        /**
+         * @private
+         */
+        getBoneTimelines(name: string): Array<TimelineData> | null;
+        /**
+         * @private
+         */
+        getSurfaceTimelines(name: string): Array<TimelineData> | null;
+        /**
+         * @private
+         */
+        getSlotTimelines(name: string): Array<TimelineData> | null;
+        /**
+         * @private
+         */
+        getConstraintTimelines(name: string): Array<TimelineData> | null;
+        /**
+         * @private
+         */
+        getAnimationTimelines(name: string): Array<TimelineData> | null;
+        /**
+         * @private
+         */
+        getBoneCachedFrameIndices(name: string): Array<number> | null;
+        /**
+         * @private
+         */
+        getSlotCachedFrameIndices(name: string): Array<number> | null;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class TimelineData extends BaseObject {
+        static toString(): string;
+        type: TimelineType;
+        offset: number;
+        frameIndicesOffset: number;
+        protected _onClear(): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The animation config is used to describe all the information needed to play an animation state.
+     * The API is still in the experimental phase and may encounter bugs or stability or compatibility issues when used.
+     * @see dragonBones.AnimationState
+     * @beta
+     * @version DragonBones 5.0
+     * @language en_US
+     */
+    /**
+     * - 动画配置用来描述播放一个动画状态所需要的全部信息。
+     * 该 API 仍在实验阶段，使用时可能遭遇 bug 或稳定性或兼容性问题。
+     * @see dragonBones.AnimationState
+     * @beta
+     * @version DragonBones 5.0
+     * @language zh_CN
+     */
+    class AnimationConfig extends BaseObject {
+        static toString(): string;
+        /**
+         * @private
+         */
+        pauseFadeOut: boolean;
+        /**
+         * - Fade out the pattern of other animation states when the animation state is fade in.
+         * This property is typically used to specify the substitution of multiple animation states blend.
+         * @default dragonBones.AnimationFadeOutMode.All
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 淡入动画状态时淡出其他动画状态的模式。
+         * 该属性通常用来指定多个动画状态混合时的相互替换关系。
+         * @default dragonBones.AnimationFadeOutMode.All
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        fadeOutMode: AnimationFadeOutMode;
+        /**
+         * @private
+         */
+        fadeOutTweenType: TweenType;
+        /**
+         * @private
+         */
+        fadeOutTime: number;
+        /**
+         * @private
+         */
+        pauseFadeIn: boolean;
+        /**
+         * @private
+         */
+        actionEnabled: boolean;
+        /**
+         * @private
+         */
+        additiveBlending: boolean;
+        /**
+         * - Whether the animation state has control over the display property of the slots.
+         * Sometimes blend a animation state does not want it to control the display properties of the slots,
+         * especially if other animation state are controlling the display properties of the slots.
+         * @default true
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 动画状态是否对插槽的显示对象属性有控制权。
+         * 有时混合一个动画状态并不希望其控制插槽的显示对象属性，
+         * 尤其是其他动画状态正在控制这些插槽的显示对象属性时。
+         * @default true
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        displayControl: boolean;
+        /**
+         * - Whether to reset the objects without animation to the armature pose when the animation state is start to play.
+         * This property should usually be set to false when blend multiple animation states.
+         * @default true
+         * @version DragonBones 5.1
+         * @language en_US
+         */
+        /**
+         * - 开始播放动画状态时是否将没有动画的对象重置为骨架初始值。
+         * 通常在混合多个动画状态时应该将该属性设置为 false。
+         * @default true
+         * @version DragonBones 5.1
+         * @language zh_CN
+         */
+        resetToPose: boolean;
+        /**
+         * @private
+         */
+        fadeInTweenType: TweenType;
+        /**
+         * - The play times. [0: Loop play, [1~N]: Play N times]
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 播放次数。 [0: 无限循环播放, [1~N]: 循环播放 N 次]
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        playTimes: number;
+        /**
+         * - The blend layer.
+         * High layer animation state will get the blend weight first.
+         * When the blend weight is assigned more than 1, the remaining animation states will no longer get the weight assigned.
+         * @readonly
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 混合图层。
+         * 图层高的动画状态会优先获取混合权重。
+         * 当混合权重分配超过 1 时，剩余的动画状态将不再获得权重分配。
+         * @readonly
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        layer: number;
+        /**
+         * - The start time of play. (In seconds)
+         * @default 0.0
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 播放的开始时间。 （以秒为单位）
+         * @default 0.0
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        position: number;
+        /**
+         * - The duration of play.
+         * [-1: Use the default value of the animation data, 0: Stop play, (0~N]: The duration] (In seconds)
+         * @default -1.0
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 播放的持续时间。
+         * [-1: 使用动画数据默认值, 0: 动画停止, (0~N]: 持续时间] （以秒为单位）
+         * @default -1.0
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        duration: number;
+        /**
+         * - The play speed.
+         * The value is an overlay relationship with {@link dragonBones.Animation#timeScale}.
+         * [(-N~0): Reverse play, 0: Stop play, (0~1): Slow play, 1: Normal play, (1~N): Fast play]
+         * @default 1.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 播放速度。
+         * 该值与 {@link dragonBones.Animation#timeScale} 是叠加关系。
+         * [(-N~0): 倒转播放, 0: 停止播放, (0~1): 慢速播放, 1: 正常播放, (1~N): 快速播放]
+         * @default 1.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        timeScale: number;
+        /**
+         * - The blend weight.
+         * @default 1.0
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 混合权重。
+         * @default 1.0
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        weight: number;
+        /**
+         * - The fade in time.
+         * [-1: Use the default value of the animation data, [0~N]: The fade in time] (In seconds)
+         * @default -1.0
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 淡入时间。
+         * [-1: 使用动画数据默认值, [0~N]: 淡入时间] （以秒为单位）
+         * @default -1.0
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        fadeInTime: number;
+        /**
+         * - The auto fade out time when the animation state play completed.
+         * [-1: Do not fade out automatically, [0~N]: The fade out time] (In seconds)
+         * @default -1.0
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 动画状态播放完成后的自动淡出时间。
+         * [-1: 不自动淡出, [0~N]: 淡出时间] （以秒为单位）
+         * @default -1.0
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        autoFadeOutTime: number;
+        /**
+         * - The name of the animation state. (Can be different from the name of the animation data)
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 动画状态名称。 （可以不同于动画数据）
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        name: string;
+        /**
+         * - The animation data name.
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 动画数据名称。
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        animation: string;
+        /**
+         * - The blend group name of the animation state.
+         * This property is typically used to specify the substitution of multiple animation states blend.
+         * @readonly
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 混合组名称。
+         * 该属性通常用来指定多个动画状态混合时的相互替换关系。
+         * @readonly
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        group: string;
+        /**
+         * @private
+         */
+        readonly boneMask: Array<string>;
+        /**
+         * @private
+         */
+        protected _onClear(): void;
+        /**
+         * @private
+         */
+        clear(): void;
+        /**
+         * @private
+         */
+        copyFrom(value: AnimationConfig): void;
+        /**
+         * @private
+         */
+        containsBoneMask(name: string): boolean;
+        /**
+         * @private
+         */
+        addBoneMask(armature: Armature, name: string, recursive?: boolean): void;
+        /**
+         * @private
+         */
+        removeBoneMask(armature: Armature, name: string, recursive?: boolean): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The texture atlas data.
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 贴图集数据。
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    abstract class TextureAtlasData extends BaseObject {
+        /**
+         * @private
+         */
+        autoSearch: boolean;
+        /**
+         * @private
+         */
+        width: number;
+        /**
+         * @private
+         */
+        height: number;
+        /**
+         * @private
+         */
+        scale: number;
+        /**
+         * - The texture atlas name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 贴图集名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        name: string;
+        /**
+         * - The image path of the texture atlas.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 贴图集图片路径。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        imagePath: string;
+        /**
+         * @private
+         */
+        readonly textures: Map<TextureData>;
+        /**
+         * @inheritDoc
+         */
+        protected _onClear(): void;
+        /**
+         * @private
+         */
+        copyFrom(value: TextureAtlasData): void;
+        /**
+         * @internal
+         * @private
+         */
+        abstract createTexture(): TextureData;
+        /**
+         * @internal
+         * @private
+         */
+        addTexture(value: TextureData): void;
+        /**
+         * @private
+         */
+        getTexture(name: string): TextureData | null;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    abstract class TextureData extends BaseObject {
+        static createRectangle(): Rectangle;
+        rotated: boolean;
+        name: string;
+        readonly region: Rectangle;
+        parent: TextureAtlasData;
+        frame: Rectangle | null;
+        protected _onClear(): void;
+        copyFrom(value: TextureData): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The armature proxy interface, the docking engine needs to implement it concretely.
+     * @see dragonBones.Armature
+     * @version DragonBones 5.0
+     * @language en_US
+     */
+    /**
+     * - 骨架代理接口，对接的引擎需要对其进行具体实现。
+     * @see dragonBones.Armature
+     * @version DragonBones 5.0
+     * @language zh_CN
+     */
+    interface IArmatureProxy extends IEventDispatcher {
+        /**
+         * @internal
+         * @private
+         */
+        dbInit(armature: Armature): void;
+        /**
+         * @internal
+         * @private
+         */
+        dbClear(): void;
+        /**
+         * @internal
+         * @private
+         */
+        dbUpdate(): void;
+        /**
+         * - Dispose the instance and the Armature instance. (The Armature instance will return to the object pool)
+         * @example
+         * <pre>
+         *     removeChild(armatureDisplay);
+         *     armatureDisplay.dispose();
+         * </pre>
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 释放该实例和骨架。 （骨架会回收到对象池）
+         * @example
+         * <pre>
+         *     removeChild(armatureDisplay);
+         *     armatureDisplay.dispose();
+         * </pre>
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        dispose(disposeProxy: boolean): void;
+        /**
+         * - The armature.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 骨架。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        readonly armature: Armature;
+        /**
+         * - The animation player.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 动画播放器。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly animation: Animation;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - Armature is the core of the skeleton animation system.
+     * @see dragonBones.ArmatureData
+     * @see dragonBones.Bone
+     * @see dragonBones.Slot
+     * @see dragonBones.Animation
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 骨架是骨骼动画系统的核心。
+     * @see dragonBones.ArmatureData
+     * @see dragonBones.Bone
+     * @see dragonBones.Slot
+     * @see dragonBones.Animation
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class Armature extends BaseObject implements IAnimatable {
+        static toString(): string;
+        private static _onSortSlots(a, b);
+        /**
+         * - Whether to inherit the animation control of the parent armature.
+         * True to try to have the child armature play an animation with the same name when the parent armature play the animation.
+         * @default true
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 是否继承父骨架的动画控制。
+         * 如果该值为 true，当父骨架播放动画时，会尝试让子骨架播放同名动画。
+         * @default true
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        inheritAnimation: boolean;
+        /**
+         * @private
+         */
+        userData: any;
+        private _lockUpdate;
+        private _bonesDirty;
+        private _slotsDirty;
+        private _zOrderDirty;
+        private _flipX;
+        private _flipY;
+        /**
+         * @internal
+         * @private
+         */
+        _cacheFrameIndex: number;
+        private readonly _bones;
+        private readonly _slots;
+        /**
+         * @internal
+         * @private
+         */
+        readonly _glueSlots: Array<Slot>;
+        /**
+         * @internal
+         * @private
+         */
+        readonly _constraints: Array<Constraint>;
+        private readonly _actions;
+        /**
+         * @internal
+         * @private
+         */
+        _armatureData: ArmatureData;
+        private _animation;
+        private _proxy;
+        private _display;
+        /**
+         * @internal
+         * @private
+         */
+        _replaceTextureAtlasData: TextureAtlasData | null;
+        private _replacedTexture;
+        /**
+         * @internal
+         * @private
+         */
+        _dragonBones: DragonBones;
+        private _clock;
+        /**
+         * @internal
+         * @private
+         */
+        _parent: Slot | null;
+        /**
+         * @private
+         */
+        protected _onClear(): void;
+        private _sortBones();
+        private _sortSlots();
+        /**
+         * @internal
+         * @private
+         */
+        _sortZOrder(slotIndices: Array<number> | Int16Array | null, offset: number): void;
+        /**
+         * @internal
+         * @private
+         */
+        _addBoneToBoneList(value: Bone): void;
+        /**
+         * @internal
+         * @private
+         */
+        _removeBoneFromBoneList(value: Bone): void;
+        /**
+         * @internal
+         * @private
+         */
+        _addSlotToSlotList(value: Slot): void;
+        /**
+         * @internal
+         * @private
+         */
+        _removeSlotFromSlotList(value: Slot): void;
+        /**
+         * @internal
+         * @private
+         */
+        _bufferAction(action: ActionData, append: boolean): void;
+        /**
+         * - Dispose the armature. (Return to the object pool)
+         * @example
+         * <pre>
+         *     removeChild(armature.display);
+         *     armature.dispose();
+         * </pre>
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 释放骨架。 （回收到对象池）
+         * @example
+         * <pre>
+         *     removeChild(armature.display);
+         *     armature.dispose();
+         * </pre>
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        dispose(): void;
+        /**
+         * @internal
+         * @private
+         */
+        init(armatureData: ArmatureData, proxy: IArmatureProxy, display: any, dragonBones: DragonBones): void;
+        /**
+         * @inheritDoc
+         */
+        advanceTime(passedTime: number): void;
+        /**
+         * - Forces a specific bone or its owning slot to update the transform or display property in the next frame.
+         * @param boneName - The bone name. (If not set, all bones will be update)
+         * @param updateSlot - Whether to update the bone's slots. (Default: false)
+         * @see dragonBones.Bone#invalidUpdate()
+         * @see dragonBones.Slot#invalidUpdate()
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 强制特定骨骼或其拥有的插槽在下一帧更新变换或显示属性。
+         * @param boneName - 骨骼名称。 （如果未设置，将更新所有骨骼）
+         * @param updateSlot - 是否更新骨骼的插槽。 （默认: false）
+         * @see dragonBones.Bone#invalidUpdate()
+         * @see dragonBones.Slot#invalidUpdate()
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        invalidUpdate(boneName?: string | null, updateSlot?: boolean): void;
+        /**
+         * - Check whether a specific point is inside a custom bounding box in a slot.
+         * The coordinate system of the point is the inner coordinate system of the armature.
+         * Custom bounding boxes need to be customized in Dragonbones Pro.
+         * @param x - The horizontal coordinate of the point.
+         * @param y - The vertical coordinate of the point.
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 检查特定点是否在某个插槽的自定义边界框内。
+         * 点的坐标系为骨架内坐标系。
+         * 自定义边界框需要在 DragonBones Pro 中自定义。
+         * @param x - 点的水平坐标。
+         * @param y - 点的垂直坐标。
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        containsPoint(x: number, y: number): Slot | null;
+        /**
+         * - Check whether a specific segment intersects a custom bounding box for a slot in the armature.
+         * The coordinate system of the segment and intersection is the inner coordinate system of the armature.
+         * Custom bounding boxes need to be customized in Dragonbones Pro.
+         * @param xA - The horizontal coordinate of the beginning of the segment.
+         * @param yA - The vertical coordinate of the beginning of the segment.
+         * @param xB - The horizontal coordinate of the end point of the segment.
+         * @param yB - The vertical coordinate of the end point of the segment.
+         * @param intersectionPointA - The first intersection at which a line segment intersects the bounding box from the beginning to the end. (If not set, the intersection point will not calculated)
+         * @param intersectionPointB - The first intersection at which a line segment intersects the bounding box from the end to the beginning. (If not set, the intersection point will not calculated)
+         * @param normalRadians - The normal radians of the tangent of the intersection boundary box. [x: Normal radian of the first intersection tangent, y: Normal radian of the second intersection tangent] (If not set, the normal will not calculated)
+         * @returns The slot of the first custom bounding box where the segment intersects from the start point to the end point.
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 检查特定线段是否与骨架的某个插槽的自定义边界框相交。
+         * 线段和交点的坐标系均为骨架内坐标系。
+         * 自定义边界框需要在 DragonBones Pro 中自定义。
+         * @param xA - 线段起点的水平坐标。
+         * @param yA - 线段起点的垂直坐标。
+         * @param xB - 线段终点的水平坐标。
+         * @param yB - 线段终点的垂直坐标。
+         * @param intersectionPointA - 线段从起点到终点与边界框相交的第一个交点。 （如果未设置，则不计算交点）
+         * @param intersectionPointB - 线段从终点到起点与边界框相交的第一个交点。 （如果未设置，则不计算交点）
+         * @param normalRadians - 交点边界框切线的法线弧度。 [x: 第一个交点切线的法线弧度, y: 第二个交点切线的法线弧度] （如果未设置，则不计算法线）
+         * @returns 线段从起点到终点相交的第一个自定义边界框的插槽。
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        intersectsSegment(xA: number, yA: number, xB: number, yB: number, intersectionPointA?: {
+            x: number;
+            y: number;
+        } | null, intersectionPointB?: {
+            x: number;
+            y: number;
+        } | null, normalRadians?: {
+            x: number;
+            y: number;
+        } | null): Slot | null;
+        /**
+         * - Get a specific bone.
+         * @param name - The bone name.
+         * @see dragonBones.Bone
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 获取特定的骨骼。
+         * @param name - 骨骼名称。
+         * @see dragonBones.Bone
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        getBone(name: string): Bone | null;
+        /**
+         * - Get a specific bone by the display.
+         * @param display - The display object.
+         * @see dragonBones.Bone
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 通过显示对象获取特定的骨骼。
+         * @param display - 显示对象。
+         * @see dragonBones.Bone
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        getBoneByDisplay(display: any): Bone | null;
+        /**
+         * - Get a specific slot.
+         * @param name - The slot name.
+         * @see dragonBones.Slot
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 获取特定的插槽。
+         * @param name - 插槽名称。
+         * @see dragonBones.Slot
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        getSlot(name: string): Slot | null;
+        /**
+         * - Get a specific slot by the display.
+         * @param display - The display object.
+         * @see dragonBones.Slot
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 通过显示对象获取特定的插槽。
+         * @param display - 显示对象。
+         * @see dragonBones.Slot
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        getSlotByDisplay(display: any): Slot | null;
+        /**
+         * @deprecated
+         */
+        addBone(value: Bone, parentName: string): void;
+        /**
+         * @deprecated
+         */
+        addSlot(value: Slot, parentName: string): void;
+        /**
+         * @private
+         */
+        addConstraint(value: Constraint): void;
+        /**
+         * @deprecated
+         */
+        removeBone(value: Bone): void;
+        /**
+         * @deprecated
+         */
+        removeSlot(value: Slot): void;
+        /**
+         * - Get all bones.
+         * @see dragonBones.Bone
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 获取所有的骨骼。
+         * @see dragonBones.Bone
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        getBones(): Array<Bone>;
+        /**
+         * - Get all slots.
+         * @see dragonBones.Slot
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 获取所有的插槽。
+         * @see dragonBones.Slot
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        getSlots(): Array<Slot>;
+        /**
+         * - Whether to flip the armature horizontally.
+         * @version DragonBones 5.5
+         * @language en_US
+         */
+        /**
+         * - 是否将骨架水平翻转。
+         * @version DragonBones 5.5
+         * @language zh_CN
+         */
+        flipX: boolean;
+        /**
+         * - Whether to flip the armature vertically.
+         * @version DragonBones 5.5
+         * @language en_US
+         */
+        /**
+         * - 是否将骨架垂直翻转。
+         * @version DragonBones 5.5
+         * @language zh_CN
+         */
+        flipY: boolean;
+        /**
+         * - The animation cache frame rate, which turns on the animation cache when the set value is greater than 0.
+         * There is a certain amount of memory overhead to improve performance by caching animation data in memory.
+         * The frame rate should not be set too high, usually with the frame rate of the animation is similar and lower than the program running frame rate.
+         * When the animation cache is turned on, some features will fail, such as the offset property of bone.
+         * @example
+         * <pre>
+         *     armature.cacheFrameRate = 24;
+         * </pre>
+         * @see dragonBones.DragonBonesData#frameRate
+         * @see dragonBones.ArmatureData#frameRate
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 动画缓存帧率，当设置的值大于 0 的时，将会开启动画缓存。
+         * 通过将动画数据缓存在内存中来提高运行性能，会有一定的内存开销。
+         * 帧率不宜设置的过高，通常跟动画的帧率相当且低于程序运行的帧率。
+         * 开启动画缓存后，某些功能将会失效，比如骨骼的 offset 属性等。
+         * @example
+         * <pre>
+         *     armature.cacheFrameRate = 24;
+         * </pre>
+         * @see dragonBones.DragonBonesData#frameRate
+         * @see dragonBones.ArmatureData#frameRate
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        cacheFrameRate: number;
+        /**
+         * - The armature name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 骨架名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly name: string;
+        /**
+         * - The armature data.
+         * @see dragonBones.ArmatureData
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 骨架数据。
+         * @see dragonBones.ArmatureData
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        readonly armatureData: ArmatureData;
+        /**
+         * - The animation player.
+         * @see dragonBones.Animation
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 动画播放器。
+         * @see dragonBones.Animation
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly animation: Animation;
+        /**
+         * @pivate
+         */
+        readonly proxy: IArmatureProxy;
+        /**
+         * - The EventDispatcher instance of the armature.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 该骨架的 EventDispatcher 实例。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        readonly eventDispatcher: IEventDispatcher;
+        /**
+         * - The display container.
+         * The display of the slot is displayed as the parent.
+         * Depending on the rendering engine, the type will be different, usually the DisplayObjectContainer type.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 显示容器实例。
+         * 插槽的显示对象都会以此显示容器为父级。
+         * 根据渲染引擎的不同，类型会不同，通常是 DisplayObjectContainer 类型。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly display: any;
+        /**
+         * @private
+         */
+        replacedTexture: any;
+        /**
+         * @inheritDoc
+         */
+        clock: WorldClock | null;
+        /**
+         * - Get the parent slot which the armature belongs to.
+         * @see dragonBones.Slot
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 该骨架所属的父插槽。
+         * @see dragonBones.Slot
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        readonly parent: Slot | null;
+        /**
+         * @deprecated
+         * @private
+         */
+        replaceTexture(texture: any): void;
+        /**
+         * - Deprecated, please refer to {@link #eventDispatcher}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #eventDispatcher}。
+         * @deprecated
+         * @language zh_CN
+         */
+        hasEventListener(type: EventStringType): boolean;
+        /**
+         * - Deprecated, please refer to {@link #eventDispatcher}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #eventDispatcher}。
+         * @deprecated
+         * @language zh_CN
+         */
+        addEventListener(type: EventStringType, listener: Function, target: any): void;
+        /**
+         * - Deprecated, please refer to {@link #eventDispatcher}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #eventDispatcher}。
+         * @deprecated
+         * @language zh_CN
+         */
+        removeEventListener(type: EventStringType, listener: Function, target: any): void;
+        /**
+         * - Deprecated, please refer to {@link #cacheFrameRate}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #cacheFrameRate}。
+         * @deprecated
+         * @language zh_CN
+         */
+        enableAnimationCache(frameRate: number): void;
+        /**
+         * - Deprecated, please refer to {@link #display}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #display}。
+         * @deprecated
+         * @language zh_CN
+         */
+        getDisplay(): any;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The base class of the transform object.
+     * @see dragonBones.Transform
+     * @version DragonBones 4.5
+     * @language en_US
+     */
+    /**
+     * - 变换对象的基类。
+     * @see dragonBones.Transform
+     * @version DragonBones 4.5
+     * @language zh_CN
+     */
+    abstract class TransformObject extends BaseObject {
+        /**
+         * @private
+         */
+        protected static readonly _helpMatrix: Matrix;
+        /**
+         * @private
+         */
+        protected static readonly _helpTransform: Transform;
+        /**
+         * @private
+         */
+        protected static readonly _helpPoint: Point;
+        /**
+         * - A matrix relative to the armature coordinate system.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 相对于骨架坐标系的矩阵。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly globalTransformMatrix: Matrix;
+        /**
+         * - A transform relative to the armature coordinate system.
+         * @see #updateGlobalTransform()
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 相对于骨架坐标系的变换。
+         * @see #updateGlobalTransform()
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly global: Transform;
+        /**
+         * - The offset transform relative to the armature or the parent bone coordinate system.
+         * @see #dragonBones.Bone#invalidUpdate()
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 相对于骨架或父骨骼坐标系的偏移变换。
+         * @see #dragonBones.Bone#invalidUpdate()
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly offset: Transform;
+        /**
+         * @private
+         */
+        origin: Transform | null;
+        /**
+         * @private
+         */
+        userData: any;
+        /**
+         * @private
+         */
+        protected _globalDirty: boolean;
+        /**
+         * @internal
+         * @private
+         */
+        _armature: Armature;
+        /**
+         * @internal
+         * @private
+         */
+        _parent: Bone;
+        /**
+         * @private
+         */
+        protected _onClear(): void;
+        /**
+         * @internal
+         * @private
+         */
+        _setArmature(value: Armature | null): void;
+        /**
+         * @internal
+         * @private
+         */
+        _setParent(value: Bone | null): void;
+        /**
+         * - For performance considerations, rotation or scale in the {@link #global} attribute of the bone or slot is not always properly accessible,
+         * some engines do not rely on these attributes to update rendering, such as Egret.
+         * The use of this method ensures that the access to the {@link #global} property is correctly rotation or scale.
+         * @example
+         * <pre>
+         *     bone.updateGlobalTransform();
+         *     let rotation = bone.global.rotation;
+         * </pre>
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 出于性能的考虑，骨骼或插槽的 {@link #global} 属性中的旋转或缩放并不总是正确可访问的，有些引擎并不依赖这些属性更新渲染，比如 Egret。
+         * 使用此方法可以保证访问到 {@link #global} 属性中正确的旋转或缩放。
+         * @example
+         * <pre>
+         *     bone.updateGlobalTransform();
+         *     let rotation = bone.global.rotation;
+         * </pre>
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        updateGlobalTransform(): void;
+        /**
+         * - The armature to which it belongs.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 所属的骨架。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly armature: Armature;
+        /**
+         * - The parent bone to which it belongs.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 所属的父骨骼。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly parent: Bone;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - Bone is one of the most important logical units in the armature animation system,
+     * and is responsible for the realization of translate, rotation, scaling in the animations.
+     * A armature can contain multiple bones.
+     * @see dragonBones.BoneData
+     * @see dragonBones.Armature
+     * @see dragonBones.Slot
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 骨骼在骨骼动画体系中是最重要的逻辑单元之一，负责动画中的平移、旋转、缩放的实现。
+     * 一个骨架中可以包含多个骨骼。
+     * @see dragonBones.BoneData
+     * @see dragonBones.Armature
+     * @see dragonBones.Slot
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class Bone extends TransformObject {
+        static toString(): string;
+        /**
+         * - The offset mode.
+         * @see #offset
+         * @version DragonBones 5.5
+         * @language en_US
+         */
+        /**
+         * - 偏移模式。
+         * @see #offset
+         * @version DragonBones 5.5
+         * @language zh_CN
+         */
+        offsetMode: OffsetMode;
+        /**
+         * @internal
+         * @private
+         */
+        readonly animationPose: Transform;
+        /**
+         * @internal
+         * @private
+         */
+        _transformDirty: boolean;
+        /**
+         * @internal
+         * @private
+         */
+        _childrenTransformDirty: boolean;
+        protected _localDirty: boolean;
+        /**
+         * @internal
+         * @private
+         */
+        _hasConstraint: boolean;
+        private _visible;
+        protected _cachedFrameIndex: number;
+        /**
+         * @internal
+         * @private
+         */
+        readonly _blendState: BlendState;
+        /**
+         * @internal
+         * @private
+         */
+        _boneData: BoneData;
+        /**
+         * @internal
+         * @private
+         */
+        _cachedFrameIndices: Array<number> | null;
+        /**
+         * @inheritDoc
+         */
+        protected _onClear(): void;
+        /**
+         * @private
+         */
+        protected _updateGlobalTransformMatrix(isCache: boolean): void;
+        /**
+         * @inheritDoc
+         */
+        _setArmature(value: Armature | null): void;
+        /**
+         * @internal
+         * @private
+         */
+        init(boneData: BoneData): void;
+        /**
+         * @internal
+         * @private
+         */
+        update(cacheFrameIndex: number): void;
+        /**
+         * @internal
+         * @private
+         */
+        updateByConstraint(): void;
+        /**
+         * - Forces the bone to update the transform in the next frame.
+         * When the bone is not animated or its animation state is finished, the bone will not continue to update,
+         * and when the skeleton must be updated for some reason, the method needs to be called explicitly.
+         * @example
+         * <pre>
+         *     let bone = armature.getBone("arm");
+         *     bone.offset.scaleX = 2.0;
+         *     bone.invalidUpdate();
+         * </pre>
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 强制骨骼在下一帧更新变换。
+         * 当该骨骼没有动画状态或其动画状态播放完成时，骨骼将不在继续更新，而此时由于某些原因必须更新骨骼时，则需要显式调用该方法。
+         * @example
+         * <pre>
+         *     let bone = armature.getBone("arm");
+         *     bone.offset.scaleX = 2.0;
+         *     bone.invalidUpdate();
+         * </pre>
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        invalidUpdate(): void;
+        /**
+         * - Check whether the bone contains a specific bone or slot.
+         * @see dragonBones.Bone
+         * @see dragonBones.Slot
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 检查该骨骼是否包含特定的骨骼或插槽。
+         * @see dragonBones.Bone
+         * @see dragonBones.Slot
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        contains(value: TransformObject): boolean;
+        /**
+         * - The bone data.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 骨骼数据。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        readonly boneData: BoneData;
+        /**
+         * - The visible of all slots in the bone.
+         * @default true
+         * @see dragonBones.Slot#visible
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 此骨骼所有插槽的可见。
+         * @default true
+         * @see dragonBones.Slot#visible
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        visible: boolean;
+        /**
+         * - The bone name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 骨骼名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly name: string;
+        /**
+         * - Deprecated, please refer to {@link dragonBones.Armature#getBones()}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link dragonBones.Armature#getBones()}。
+         * @deprecated
+         * @language zh_CN
+         */
+        getBones(): Array<Bone>;
+        /**
+         * - Deprecated, please refer to {@link dragonBones.Armature#getSlots()}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link dragonBones.Armature#getSlots()}。
+         * @deprecated
+         * @language zh_CN
+         */
+        getSlots(): Array<Slot>;
+        /**
+         * - Deprecated, please refer to {@link dragonBones.Armature#getSlot()}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link dragonBones.Armature#getSlot()}。
+         * @deprecated
+         * @language zh_CN
+         */
+        readonly slot: Slot | null;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * @internal
+     * @private
+     */
+    class Surface extends Bone {
+        static toString(): string;
+        private _dX;
+        private _dY;
+        private _k;
+        private _kX;
+        private _kY;
+        /**
+         * For debug draw.
+         * @internal
+         * @private
+         */
+        readonly _vertices: Array<number>;
+        /**
+         * For timeline state.
+         * @internal
+         * @private
+         */
+        readonly _deformVertices: Array<number>;
+        /**
+         * x1, y1, x2, y2, x3, y3, x4, y4, d1X, d1Y, d2X, d2Y
+         */
+        private readonly _hullCache;
+        /**
+         * Inside [flag, a, b, c, d, tx, ty], Outside [flag, a, b, c, d, tx, ty]
+         */
+        private readonly _matrixCahce;
+        /**
+         * @inheritDoc
+         */
+        protected _onClear(): void;
+        private _getAffineTransform(x, y, lX, lY, aX, aY, bX, bY, cX, cY, transform, matrix, isDown);
+        private _updateVertices();
+        /**
+         * @private
+         */
+        protected _updateGlobalTransformMatrix(isCache: boolean): void;
+        _getGlobalTransformMatrix(x: number, y: number): Matrix;
+        init(surfaceData: SurfaceData): void;
+        /**
+         * @internal
+         * @private
+         */
+        update(cacheFrameIndex: number): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The slot attached to the armature, controls the display status and properties of the display object.
+     * A bone can contain multiple slots.
+     * A slot can contain multiple display objects, displaying only one of the display objects at a time,
+     * but you can toggle the display object into frame animation while the animation is playing.
+     * The display object can be a normal texture, or it can be a display of a child armature, a grid display object,
+     * and a custom other display object.
+     * @see dragonBones.Armature
+     * @see dragonBones.Bone
+     * @see dragonBones.SlotData
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 插槽附着在骨骼上，控制显示对象的显示状态和属性。
+     * 一个骨骼上可以包含多个插槽。
+     * 一个插槽中可以包含多个显示对象，同一时间只能显示其中的一个显示对象，但可以在动画播放的过程中切换显示对象实现帧动画。
+     * 显示对象可以是普通的图片纹理，也可以是子骨架的显示容器，网格显示对象，还可以是自定义的其他显示对象。
+     * @see dragonBones.Armature
+     * @see dragonBones.Bone
+     * @see dragonBones.SlotData
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    abstract class Slot extends TransformObject {
+        /**
+         * - Displays the animated state or mixed group name controlled by the object, set to null to be controlled by all animation states.
+         * @default null
+         * @see dragonBones.AnimationState#displayControl
+         * @see dragonBones.AnimationState#name
+         * @see dragonBones.AnimationState#group
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 显示对象受到控制的动画状态或混合组名称，设置为 null 则表示受所有的动画状态控制。
+         * @default null
+         * @see dragonBones.AnimationState#displayControl
+         * @see dragonBones.AnimationState#name
+         * @see dragonBones.AnimationState#group
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        displayController: string | null;
+        /**
+         * @private
+         */
+        protected _displayDirty: boolean;
+        /**
+         * @private
+         */
+        protected _zOrderDirty: boolean;
+        /**
+         * @private
+         */
+        protected _visibleDirty: boolean;
+        /**
+         * @private
+         */
+        protected _blendModeDirty: boolean;
+        /**
+         * @internal
+         * @private
+         */
+        _colorDirty: boolean;
+        /**
+         * @internal
+         * @private
+         */
+        _meshDirty: boolean;
+        /**
+         * @private
+         */
+        protected _transformDirty: boolean;
+        /**
+         * @private
+         */
+        protected _visible: boolean;
+        /**
+         * @private
+         */
+        protected _blendMode: BlendMode;
+        /**
+         * @private
+         */
+        protected _displayIndex: number;
+        /**
+         * @private
+         */
+        protected _animationDisplayIndex: number;
+        /**
+         * @internal
+         * @private
+         */
+        _zOrder: number;
+        /**
+         * @private
+         */
+        protected _cachedFrameIndex: number;
+        /**
+         * @internal
+         * @private
+         */
+        _pivotX: number;
+        /**
+         * @internal
+         * @private
+         */
+        _pivotY: number;
+        /**
+         * @private
+         */
+        protected readonly _localMatrix: Matrix;
+        /**
+         * @internal
+         * @private
+         */
+        readonly _colorTransform: ColorTransform;
+        /**
+         * @internal
+         * @private
+         */
+        readonly _deformVertices: Array<number>;
+        /**
+         * @private
+         */
+        readonly _displayDatas: Array<DisplayData | null>;
+        /**
+         * @private
+         */
+        protected readonly _displayList: Array<any | Armature>;
+        /**
+         * @private
+         */
+        protected readonly _meshBones: Array<Bone | null>;
+        /**
+         * @private
+         */
+        protected readonly _meshSlots: Array<Slot | null>;
+        /**
+         * @internal
+         * @private
+         */
+        _slotData: SlotData;
+        /**
+         * @private
+         */
+        protected _rawDisplayDatas: Array<DisplayData | null> | null;
+        /**
+         * @private
+         */
+        protected _displayData: DisplayData | null;
+        /**
+         * @private
+         */
+        protected _textureData: TextureData | null;
+        /**
+         * @internal
+         * @private
+         */
+        _meshData: MeshDisplayData | null;
+        /**
+         * @private
+         */
+        protected _boundingBoxData: BoundingBoxData | null;
+        /**
+         * @private
+         */
+        protected _rawDisplay: any;
+        /**
+         * @private
+         */
+        protected _meshDisplay: any;
+        /**
+         * @private
+         */
+        protected _display: any;
+        /**
+         * @private
+         */
+        protected _childArmature: Armature | null;
+        /**
+         * @internal
+         * @private
+         */
+        _cachedFrameIndices: Array<number> | null;
+        /**
+         * @inheritDoc
+         */
+        protected _onClear(): void;
+        /**
+         * @private
+         */
+        protected abstract _initDisplay(value: any, isRetain: boolean): void;
+        /**
+         * @private
+         */
+        protected abstract _disposeDisplay(value: any, isRelease: boolean): void;
+        /**
+         * @private
+         */
+        protected abstract _onUpdateDisplay(): void;
+        /**
+         * @private
+         */
+        protected abstract _addDisplay(): void;
+        /**
+         * @private
+         */
+        protected abstract _replaceDisplay(value: any): void;
+        /**
+         * @private
+         */
+        protected abstract _removeDisplay(): void;
+        /**
+         * @private
+         */
+        protected abstract _updateZOrder(): void;
+        /**
+         * @private
+         */
+        abstract _updateVisible(): void;
+        /**
+         * @private
+         */
+        protected abstract _updateBlendMode(): void;
+        /**
+         * @private
+         */
+        protected abstract _updateColor(): void;
+        /**
+         * @private
+         */
+        protected abstract _updateFrame(): void;
+        /**
+         * @private
+         */
+        protected abstract _updateMesh(): void;
+        /**
+         * @internal
+         * @private
+         */
+        abstract _updateGlueMesh(): void;
+        /**
+         * @private
+         */
+        protected abstract _updateTransform(): void;
+        /**
+         * @private
+         */
+        protected abstract _identityTransform(): void;
+        /**
+         * @private
+         */
+        protected _getDefaultRawDisplayData(): DisplayData | null;
+        /**
+         * @private
+         */
+        protected _updateDisplayData(): void;
+        /**
+         * @private
+         */
+        protected _updateDisplay(): void;
+        /**
+         * @private
+         */
+        protected _updateGlobalTransformMatrix(isCache: boolean): void;
+        /**
+         * @private
+         */
+        protected _isMeshBonesUpdate(): boolean;
+        /**
+         * @inheritDoc
+         */
+        _setArmature(value: Armature | null): void;
+        /**
+         * @internal
+         * @private
+         */
+        _setDisplayIndex(value: number, isAnimation?: boolean): boolean;
+        /**
+         * @internal
+         * @private
+         */
+        _setZorder(value: number): boolean;
+        /**
+         * @internal
+         * @private
+         */
+        _setColor(value: ColorTransform): boolean;
+        /**
+         * @internal
+         * @private
+         */
+        _setDisplayList(value: Array<any> | null): boolean;
+        /**
+         * @internal
+         * @private
+         */
+        init(slotData: SlotData, displayDatas: Array<DisplayData | null> | null, rawDisplay: any, meshDisplay: any): void;
+        /**
+         * @internal
+         * @private
+         */
+        update(cacheFrameIndex: number): void;
+        /**
+         * @private
+         */
+        updateTransformAndMatrix(): void;
+        /**
+         * @private
+         */
+        replaceDisplayData(value: DisplayData | null, displayIndex?: number): void;
+        /**
+         * - Check whether a specific point is inside a custom bounding box in the slot.
+         * The coordinate system of the point is the inner coordinate system of the armature.
+         * Custom bounding boxes need to be customized in Dragonbones Pro.
+         * @param x - The horizontal coordinate of the point.
+         * @param y - The vertical coordinate of the point.
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 检查特定点是否在插槽的自定义边界框内。
+         * 点的坐标系为骨架内坐标系。
+         * 自定义边界框需要在 DragonBones Pro 中自定义。
+         * @param x - 点的水平坐标。
+         * @param y - 点的垂直坐标。
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        containsPoint(x: number, y: number): boolean;
+        /**
+         * - Check whether a specific segment intersects a custom bounding box for the slot.
+         * The coordinate system of the segment and intersection is the inner coordinate system of the armature.
+         * Custom bounding boxes need to be customized in Dragonbones Pro.
+         * @param xA - The horizontal coordinate of the beginning of the segment.
+         * @param yA - The vertical coordinate of the beginning of the segment.
+         * @param xB - The horizontal coordinate of the end point of the segment.
+         * @param yB - The vertical coordinate of the end point of the segment.
+         * @param intersectionPointA - The first intersection at which a line segment intersects the bounding box from the beginning to the end. (If not set, the intersection point will not calculated)
+         * @param intersectionPointB - The first intersection at which a line segment intersects the bounding box from the end to the beginning. (If not set, the intersection point will not calculated)
+         * @param normalRadians - The normal radians of the tangent of the intersection boundary box. [x: Normal radian of the first intersection tangent, y: Normal radian of the second intersection tangent] (If not set, the normal will not calculated)
+         * @returns Intersection situation. [1: Disjoint and segments within the bounding box, 0: Disjoint, 1: Intersecting and having a nodal point and ending in the bounding box, 2: Intersecting and having a nodal point and starting at the bounding box, 3: Intersecting and having two intersections, N: Intersecting and having N intersections]
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 检查特定线段是否与插槽的自定义边界框相交。
+         * 线段和交点的坐标系均为骨架内坐标系。
+         * 自定义边界框需要在 DragonBones Pro 中自定义。
+         * @param xA - 线段起点的水平坐标。
+         * @param yA - 线段起点的垂直坐标。
+         * @param xB - 线段终点的水平坐标。
+         * @param yB - 线段终点的垂直坐标。
+         * @param intersectionPointA - 线段从起点到终点与边界框相交的第一个交点。 （如果未设置，则不计算交点）
+         * @param intersectionPointB - 线段从终点到起点与边界框相交的第一个交点。 （如果未设置，则不计算交点）
+         * @param normalRadians - 交点边界框切线的法线弧度。 [x: 第一个交点切线的法线弧度, y: 第二个交点切线的法线弧度] （如果未设置，则不计算法线）
+         * @returns 相交的情况。 [-1: 不相交且线段在包围盒内, 0: 不相交, 1: 相交且有一个交点且终点在包围盒内, 2: 相交且有一个交点且起点在包围盒内, 3: 相交且有两个交点, N: 相交且有 N 个交点]
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        intersectsSegment(xA: number, yA: number, xB: number, yB: number, intersectionPointA?: {
+            x: number;
+            y: number;
+        } | null, intersectionPointB?: {
+            x: number;
+            y: number;
+        } | null, normalRadians?: {
+            x: number;
+            y: number;
+        } | null): number;
+        /**
+         * - Forces the slot to update the state of the display object in the next frame.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 强制插槽在下一帧更新显示对象的状态。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        invalidUpdate(): void;
+        /**
+         * - The visible of slot's display object.
+         * @default true
+         * @version DragonBones 5.6
+         * @language en_US
+         */
+        /**
+         * - 插槽的显示对象的可见。
+         * @default true
+         * @version DragonBones 5.6
+         * @language zh_CN
+         */
+        visible: boolean;
+        /**
+         * - The index of the display object displayed in the display list.
+         * @example
+         * <pre>
+         *     let slot = armature.getSlot("weapon");
+         *     slot.displayIndex = 3;
+         *     slot.displayController = "none";
+         * </pre>
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 此时显示的显示对象在显示列表中的索引。
+         * @example
+         * <pre>
+         *     let slot = armature.getSlot("weapon");
+         *     slot.displayIndex = 3;
+         *     slot.displayController = "none";
+         * </pre>
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        displayIndex: number;
+        /**
+         * - The slot name.
+         * @see dragonBones.SlotData#name
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 插槽名称。
+         * @see dragonBones.SlotData#name
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly name: string;
+        /**
+         * - Contains a display list of display objects or child armatures.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 包含显示对象或子骨架的显示列表。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        displayList: Array<any>;
+        /**
+         * - The slot data.
+         * @see dragonBones.SlotData
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 插槽数据。
+         * @see dragonBones.SlotData
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        readonly slotData: SlotData;
+        /**
+         * @private
+         */
+        rawDisplayDatas: Array<DisplayData | null> | null;
+        /**
+         * - The custom bounding box data for the slot at current time.
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 插槽此时的自定义包围盒数据。
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        readonly boundingBoxData: BoundingBoxData | null;
+        /**
+         * @private
+         */
+        readonly rawDisplay: any;
+        /**
+         * @private
+         */
+        readonly meshDisplay: any;
+        /**
+         * - The display object that the slot displays at this time.
+         * @example
+         * <pre>
+         *     let slot = armature.getSlot("text");
+         *     slot.display = new yourEngine.TextField();
+         * </pre>
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 插槽此时显示的显示对象。
+         * @example
+         * <pre>
+         *     let slot = armature.getSlot("text");
+         *     slot.display = new yourEngine.TextField();
+         * </pre>
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        display: any;
+        /**
+         * - The child armature that the slot displayed at current time.
+         * @example
+         * <pre>
+         *     let slot = armature.getSlot("weapon");
+         *     slot.childArmature = factory.buildArmature("weapon_blabla", "weapon_blabla_project");
+         * </pre>
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 插槽此时显示的子骨架。
+         * @example
+         * <pre>
+         *     let slot = armature.getSlot("weapon");
+         *     slot.childArmature = factory.buildArmature("weapon_blabla", "weapon_blabla_project");
+         * </pre>
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        childArmature: Armature | null;
+        /**
+         * - Deprecated, please refer to {@link #display}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #display}。
+         * @deprecated
+         * @language zh_CN
+         */
+        getDisplay(): any;
+        /**
+         * - Deprecated, please refer to {@link #display}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #display}。
+         * @deprecated
+         * @language zh_CN
+         */
+        setDisplay(value: any): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * @internal
+     * @private
+     */
+    abstract class Constraint extends BaseObject {
+        protected static readonly _helpMatrix: Matrix;
+        protected static readonly _helpTransform: Transform;
+        protected static readonly _helpPoint: Point;
+        /**
+         * - For timeline state.
+         * @internal
+         */
+        _constraintData: ConstraintData;
+        protected _armature: Armature;
+        /**
+         * - For sort bones.
+         * @internal
+         */
+        _target: Bone;
+        /**
+         * - For sort bones.
+         * @internal
+         */
+        _root: Bone;
+        protected _bone: Bone | null;
+        protected _onClear(): void;
+        abstract init(constraintData: ConstraintData, armature: Armature): void;
+        abstract update(): void;
+        abstract invalidUpdate(): void;
+        readonly name: string;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class IKConstraint extends Constraint {
+        static toString(): string;
+        private _scaleEnabled;
+        /**
+         * - For timeline state.
+         * @internal
+         */
+        _bendPositive: boolean;
+        /**
+         * - For timeline state.
+         * @internal
+         */
+        _weight: number;
+        protected _onClear(): void;
+        private _computeA();
+        private _computeB();
+        init(constraintData: ConstraintData, armature: Armature): void;
+        update(): void;
+        invalidUpdate(): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - Play animation interface. (Both Armature and Wordclock implement the interface)
+     * Any instance that implements the interface can be added to the Worldclock instance and advance time by Worldclock instance uniformly.
+     * @see dragonBones.WorldClock
+     * @see dragonBones.Armature
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 播放动画接口。 (Armature 和 WordClock 都实现了该接口)
+     * 任何实现了此接口的实例都可以添加到 WorldClock 实例中，由 WorldClock 实例统一更新时间。
+     * @see dragonBones.WorldClock
+     * @see dragonBones.Armature
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    interface IAnimatable {
+        /**
+         * - Advance time.
+         * @param passedTime - Passed time. (In seconds)
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 更新时间。
+         * @param passedTime - 前进的时间。 （以秒为单位）
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        advanceTime(passedTime: number): void;
+        /**
+         * - The Wordclock instance to which the current belongs.
+         * @example
+         * <pre>
+         *     armature.clock = factory.clock; // Add armature to clock.
+         *     armature.clock = null; // Remove armature from clock.
+         * </pre>
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 当前所属的 WordClock 实例。
+         * @example
+         * <pre>
+         *     armature.clock = factory.clock; // 将骨架添加到时钟。
+         *     armature.clock = null; // 将骨架从时钟移除。
+         * </pre>
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        clock: WorldClock | null;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - Worldclock provides clock support for animations, advance time for each IAnimatable object added to the instance.
+     * @see dragonBones.IAnimateble
+     * @see dragonBones.Armature
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - WorldClock 对动画提供时钟支持，为每个加入到该实例的 IAnimatable 对象更新时间。
+     * @see dragonBones.IAnimateble
+     * @see dragonBones.Armature
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class WorldClock implements IAnimatable {
+        /**
+         * - Current time. (In seconds)
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 当前的时间。 (以秒为单位)
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        time: number;
+        /**
+         * - The play speed, used to control animation speed-shift play.
+         * [0: Stop play, (0~1): Slow play, 1: Normal play, (1~N): Fast play]
+         * @default 1.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 播放速度，用于控制动画变速播放。
+         * [0: 停止播放, (0~1): 慢速播放, 1: 正常播放, (1~N): 快速播放]
+         * @default 1.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        timeScale: number;
+        private readonly _animatebles;
+        private _clock;
+        /**
+         * - Creating a Worldclock instance. Typically, you do not need to create Worldclock instance.
+         * When multiple Worldclock instances are running at different speeds, can achieving some specific animation effects, such as bullet time.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 创建一个 WorldClock 实例。通常并不需要创建 WorldClock 实例。
+         * 当多个 WorldClock 实例使用不同的速度运行时，可以实现一些特殊的动画效果，比如子弹时间等。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        constructor(time?: number);
+        /**
+         * - Advance time for all IAnimatable instances.
+         * @param passedTime - Passed time. [-1: Automatically calculates the time difference between the current frame and the previous frame, [0~N): Passed time] (In seconds)
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 为所有的 IAnimatable 实例更新时间。
+         * @param passedTime - 前进的时间。 [-1: 自动计算当前帧与上一帧的时间差, [0~N): 前进的时间] (以秒为单位)
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        advanceTime(passedTime: number): void;
+        /**
+         * - Check whether contains a specific instance of IAnimatable.
+         * @param value - The IAnimatable instance.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 检查是否包含特定的 IAnimatable 实例。
+         * @param value - IAnimatable 实例。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        contains(value: IAnimatable): boolean;
+        /**
+         * - Add IAnimatable instance.
+         * @param value - The IAnimatable instance.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 添加 IAnimatable 实例。
+         * @param value - IAnimatable 实例。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        add(value: IAnimatable): void;
+        /**
+         * - Removes a specified IAnimatable instance.
+         * @param value - The IAnimatable instance.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 移除特定的 IAnimatable 实例。
+         * @param value - IAnimatable 实例。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        remove(value: IAnimatable): void;
+        /**
+         * - Clear all IAnimatable instances.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 清除所有的 IAnimatable 实例。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        clear(): void;
+        /**
+         * @inheritDoc
+         */
+        clock: WorldClock | null;
+        /**
+         * - Deprecated, please refer to {@link dragonBones.BaseFactory#clock}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link dragonBones.BaseFactory#clock}。
+         * @deprecated
+         * @language zh_CN
+         */
+        static readonly clock: WorldClock;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The animation player is used to play the animation data and manage the animation states.
+     * @see dragonBones.AnimationData
+     * @see dragonBones.AnimationState
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 动画播放器用来播放动画数据和管理动画状态。
+     * @see dragonBones.AnimationData
+     * @see dragonBones.AnimationState
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class Animation extends BaseObject {
+        static toString(): string;
+        /**
+         * - The play speed of all animations. [0: Stop, (0~1): Slow, 1: Normal, (1~N): Fast]
+         * @default 1.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 所有动画的播放速度。 [0: 停止播放, (0~1): 慢速播放, 1: 正常播放, (1~N): 快速播放]
+         * @default 1.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        timeScale: number;
+        private _lockUpdate;
+        private _animationDirty;
+        private _inheritTimeScale;
+        private readonly _animationNames;
+        private readonly _animationStates;
+        private readonly _animations;
+        private _armature;
+        private _animationConfig;
+        private _lastAnimationState;
+        /**
+         * @private
+         */
+        protected _onClear(): void;
+        private _fadeOut(animationConfig);
+        /**
+         * @internal
+         * @private
+         */
+        init(armature: Armature): void;
+        /**
+         * @internal
+         * @private
+         */
+        advanceTime(passedTime: number): void;
+        /**
+         * - Clear all animations states.
+         * @see dragonBones.AnimationState
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 清除所有的动画状态。
+         * @see dragonBones.AnimationState
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        reset(): void;
+        /**
+         * - Pause a specific animation state.
+         * @param animationName - The name of animation state. (If not set, it will pause all animations)
+         * @see dragonBones.AnimationState
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 暂停指定动画状态的播放。
+         * @param animationName - 动画状态名称。 （如果未设置，则暂停所有动画）
+         * @see dragonBones.AnimationState
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        stop(animationName?: string | null): void;
+        /**
+         * - Play animation with a specific animation config.
+         * The API is still in the experimental phase and may encounter bugs or stability or compatibility issues when used.
+         * @param animationConfig - The animation config.
+         * @returns The playing animation state.
+         * @see dragonBones.AnimationConfig
+         * @beta
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 通过指定的动画配置来播放动画。
+         * 该 API 仍在实验阶段，使用时可能遭遇 bug 或稳定性或兼容性问题。
+         * @param animationConfig - 动画配置。
+         * @returns 播放的动画状态。
+         * @see dragonBones.AnimationConfig
+         * @beta
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        playConfig(animationConfig: AnimationConfig): AnimationState | null;
+        /**
+         * - Play a specific animation.
+         * @param animationName - The name of animation data. (If not set, The default animation will be played, or resume the animation playing from pause status, or replay the last playing animation)
+         * @param playTimes - Playing repeat times. [-1: Use default value of the animation data, 0: No end loop playing, [1~N]: Repeat N times] (default: -1)
+         * @returns The playing animation state.
+         * @example
+         * <pre>
+         *     armature.animation.play("walk");
+         * </pre>
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 播放指定动画。
+         * @param animationName - 动画数据名称。 （如果未设置，则播放默认动画，或将暂停状态切换为播放状态，或重新播放之前播放的动画）
+         * @param playTimes - 循环播放次数。 [-1: 使用动画数据默认值, 0: 无限循环播放, [1~N]: 循环播放 N 次] （默认: -1）
+         * @returns 播放的动画状态。
+         * @example
+         * <pre>
+         *     armature.animation.play("walk");
+         * </pre>
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        play(animationName?: string | null, playTimes?: number): AnimationState | null;
+        /**
+         * - Fade in a specific animation.
+         * @param animationName - The name of animation data.
+         * @param fadeInTime - The fade in time. [-1: Use the default value of animation data, [0~N]: The fade in time (In seconds)] (Default: -1)
+         * @param playTimes - playing repeat times. [-1: Use the default value of animation data, 0: No end loop playing, [1~N]: Repeat N times] (Default: -1)
+         * @param layer - The blending layer, the animation states in high level layer will get the blending weights with high priority, when the total blending weights are more than 1.0, there will be no more weights can be allocated to the other animation states. (Default: 0)
+         * @param group - The blending group name, it is typically used to specify the substitution of multiple animation states blending. (Default: null)
+         * @param fadeOutMode - The fade out mode, which is typically used to specify alternate mode of multiple animation states blending. (Default: AnimationFadeOutMode.SameLayerAndGroup)
+         * @returns The playing animation state.
+         * @example
+         * <pre>
+         *     armature.animation.fadeIn("walk", 0.3, 0, 0, "normalGroup").resetToPose = false;
+         *     armature.animation.fadeIn("attack", 0.3, 1, 0, "attackGroup").resetToPose = false;
+         * </pre>
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 淡入播放指定的动画。
+         * @param animationName - 动画数据名称。
+         * @param fadeInTime - 淡入时间。 [-1: 使用动画数据默认值, [0~N]: 淡入时间 (以秒为单位)] （默认: -1）
+         * @param playTimes - 播放次数。 [-1: 使用动画数据默认值, 0: 无限循环播放, [1~N]: 循环播放 N 次] （默认: -1）
+         * @param layer - 混合图层，图层高的动画状态会优先获取混合权重，当混合权重分配总和超过 1.0 时，剩余的动画状态将不能再获得权重分配。 （默认: 0）
+         * @param group - 混合组名称，该属性通常用来指定多个动画状态混合时的相互替换关系。 （默认: null）
+         * @param fadeOutMode - 淡出模式，该属性通常用来指定多个动画状态混合时的相互替换模式。 （默认: AnimationFadeOutMode.SameLayerAndGroup）
+         * @returns 播放的动画状态。
+         * @example
+         * <pre>
+         *     armature.animation.fadeIn("walk", 0.3, 0, 0, "normalGroup").resetToPose = false;
+         *     armature.animation.fadeIn("attack", 0.3, 1, 0, "attackGroup").resetToPose = false;
+         * </pre>
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        fadeIn(animationName: string, fadeInTime?: number, playTimes?: number, layer?: number, group?: string | null, fadeOutMode?: AnimationFadeOutMode): AnimationState | null;
+        /**
+         * - Play a specific animation from the specific time.
+         * @param animationName - The name of animation data.
+         * @param time - The start time point of playing. (In seconds)
+         * @param playTimes - Playing repeat times. [-1: Use the default value of animation data, 0: No end loop playing, [1~N]: Repeat N times] (Default: -1)
+         * @returns The played animation state.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 从指定时间开始播放指定的动画。
+         * @param animationName - 动画数据名称。
+         * @param time - 播放开始的时间。 (以秒为单位)
+         * @param playTimes - 循环播放次数。 [-1: 使用动画数据默认值, 0: 无限循环播放, [1~N]: 循环播放 N 次] （默认: -1）
+         * @returns 播放的动画状态。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        gotoAndPlayByTime(animationName: string, time?: number, playTimes?: number): AnimationState | null;
+        /**
+         * - Play a specific animation from the specific frame.
+         * @param animationName - The name of animation data.
+         * @param frame - The start frame of playing.
+         * @param playTimes - Playing repeat times. [-1: Use the default value of animation data, 0: No end loop playing, [1~N]: Repeat N times] (Default: -1)
+         * @returns The played animation state.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 从指定帧开始播放指定的动画。
+         * @param animationName - 动画数据名称。
+         * @param frame - 播放开始的帧数。
+         * @param playTimes - 播放次数。 [-1: 使用动画数据默认值, 0: 无限循环播放, [1~N]: 循环播放 N 次] （默认: -1）
+         * @returns 播放的动画状态。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        gotoAndPlayByFrame(animationName: string, frame?: number, playTimes?: number): AnimationState | null;
+        /**
+         * - Play a specific animation from the specific progress.
+         * @param animationName - The name of animation data.
+         * @param progress - The start progress value of playing.
+         * @param playTimes - Playing repeat times. [-1: Use the default value of animation data, 0: No end loop playing, [1~N]: Repeat N times] (Default: -1)
+         * @returns The played animation state.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 从指定进度开始播放指定的动画。
+         * @param animationName - 动画数据名称。
+         * @param progress - 开始播放的进度。
+         * @param playTimes - 播放次数。 [-1: 使用动画数据默认值, 0: 无限循环播放, [1~N]: 循环播放 N 次] （默认: -1）
+         * @returns 播放的动画状态。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        gotoAndPlayByProgress(animationName: string, progress?: number, playTimes?: number): AnimationState | null;
+        /**
+         * - Stop a specific animation at the specific time.
+         * @param animationName - The name of animation data.
+         * @param time - The stop time. (In seconds)
+         * @returns The played animation state.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 在指定时间停止指定动画播放
+         * @param animationName - 动画数据名称。
+         * @param time - 停止的时间。 (以秒为单位)
+         * @returns 播放的动画状态。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        gotoAndStopByTime(animationName: string, time?: number): AnimationState | null;
+        /**
+         * - Stop a specific animation at the specific frame.
+         * @param animationName - The name of animation data.
+         * @param frame - The stop frame.
+         * @returns The played animation state.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 在指定帧停止指定动画的播放
+         * @param animationName - 动画数据名称。
+         * @param frame - 停止的帧数。
+         * @returns 播放的动画状态。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        gotoAndStopByFrame(animationName: string, frame?: number): AnimationState | null;
+        /**
+         * - Stop a specific animation at the specific progress.
+         * @param animationName - The name of animation data.
+         * @param progress - The stop progress value.
+         * @returns The played animation state.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 在指定的进度停止指定的动画播放。
+         * @param animationName - 动画数据名称。
+         * @param progress - 停止进度。
+         * @returns 播放的动画状态。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        gotoAndStopByProgress(animationName: string, progress?: number): AnimationState | null;
+        /**
+         * - Get a specific animation state.
+         * @param animationName - The name of animation state.
+         * @example
+         * <pre>
+         *     armature.animation.play("walk");
+         *     let walkState = armature.animation.getState("walk");
+         *     walkState.timeScale = 0.5;
+         * </pre>
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 获取指定的动画状态
+         * @param animationName - 动画状态名称。
+         * @example
+         * <pre>
+         *     armature.animation.play("walk");
+         *     let walkState = armature.animation.getState("walk");
+         *     walkState.timeScale = 0.5;
+         * </pre>
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        getState(animationName: string): AnimationState | null;
+        /**
+         * - Check whether a specific animation data is included.
+         * @param animationName - The name of animation data.
+         * @see dragonBones.AnimationData
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 检查是否包含指定的动画数据
+         * @param animationName - 动画数据名称。
+         * @see dragonBones.AnimationData
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        hasAnimation(animationName: string): boolean;
+        /**
+         * - Get all the animation states.
+         * @version DragonBones 5.1
+         * @language en_US
+         */
+        /**
+         * - 获取所有的动画状态
+         * @version DragonBones 5.1
+         * @language zh_CN
+         */
+        getStates(): Array<AnimationState>;
+        /**
+         * - Check whether there is an animation state is playing
+         * @see dragonBones.AnimationState
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 检查是否有动画状态正在播放
+         * @see dragonBones.AnimationState
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly isPlaying: boolean;
+        /**
+         * - Check whether all the animation states' playing were finished.
+         * @see dragonBones.AnimationState
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 检查是否所有的动画状态均已播放完毕。
+         * @see dragonBones.AnimationState
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly isCompleted: boolean;
+        /**
+         * - The name of the last playing animation state.
+         * @see #lastAnimationState
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 上一个播放的动画状态名称
+         * @see #lastAnimationState
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly lastAnimationName: string;
+        /**
+         * - The name of all animation data
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 所有动画数据的名称
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        readonly animationNames: Array<string>;
+        /**
+         * - All animation data.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 所有的动画数据。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        animations: Map<AnimationData>;
+        /**
+         * - An AnimationConfig instance that can be used quickly.
+         * @see dragonBones.AnimationConfig
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 一个可以快速使用的动画配置实例。
+         * @see dragonBones.AnimationConfig
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        readonly animationConfig: AnimationConfig;
+        /**
+         * - The last playing animation state
+         * @see dragonBones.AnimationState
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 上一个播放的动画状态
+         * @see dragonBones.AnimationState
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly lastAnimationState: AnimationState | null;
+        /**
+         * - Deprecated, please refer to {@link #play()} {@link #fadeIn()}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #play()} {@link #fadeIn()}。
+         * @deprecated
+         * @language zh_CN
+         */
+        gotoAndPlay(animationName: string, fadeInTime?: number, duration?: number, playTimes?: number, layer?: number, group?: string | null, fadeOutMode?: AnimationFadeOutMode, pauseFadeOut?: boolean, pauseFadeIn?: boolean): AnimationState | null;
+        /**
+         * - Deprecated, please refer to {@link #gotoAndStopByTime()}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #gotoAndStopByTime()}。
+         * @deprecated
+         * @language zh_CN
+         */
+        gotoAndStop(animationName: string, time?: number): AnimationState | null;
+        /**
+         * - Deprecated, please refer to {@link #animationNames}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #animationNames}。
+         * @deprecated
+         * @language zh_CN
+         */
+        readonly animationList: Array<string>;
+        /**
+         * - Deprecated, please refer to {@link #animationNames}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #animationNames}。
+         * @deprecated
+         * @language zh_CN
+         */
+        readonly animationDataList: Array<AnimationData>;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The animation state is generated when the animation data is played.
+     * @see dragonBones.Animation
+     * @see dragonBones.AnimationData
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 动画状态由播放动画数据时产生。
+     * @see dragonBones.Animation
+     * @see dragonBones.AnimationData
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    class AnimationState extends BaseObject {
+        static toString(): string;
+        /**
+         * @private
+         */
+        actionEnabled: boolean;
+        /**
+         * @private
+         */
+        additiveBlending: boolean;
+        /**
+         * - Whether the animation state has control over the display object properties of the slots.
+         * Sometimes blend a animation state does not want it to control the display object properties of the slots,
+         * especially if other animation state are controlling the display object properties of the slots.
+         * @default true
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 动画状态是否对插槽的显示对象属性有控制权。
+         * 有时混合一个动画状态并不希望其控制插槽的显示对象属性，
+         * 尤其是其他动画状态正在控制这些插槽的显示对象属性时。
+         * @default true
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        displayControl: boolean;
+        /**
+         * - Whether to reset the objects without animation to the armature pose when the animation state is start to play.
+         * This property should usually be set to false when blend multiple animation states.
+         * @default true
+         * @version DragonBones 5.1
+         * @language en_US
+         */
+        /**
+         * - 开始播放动画状态时是否将没有动画的对象重置为骨架初始值。
+         * 通常在混合多个动画状态时应该将该属性设置为 false。
+         * @default true
+         * @version DragonBones 5.1
+         * @language zh_CN
+         */
+        resetToPose: boolean;
+        /**
+         * - The play times. [0: Loop play, [1~N]: Play N times]
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 播放次数。 [0: 无限循环播放, [1~N]: 循环播放 N 次]
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        playTimes: number;
+        /**
+         * - The blend layer.
+         * High layer animation state will get the blend weight first.
+         * When the blend weight is assigned more than 1, the remaining animation states will no longer get the weight assigned.
+         * @readonly
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 混合图层。
+         * 图层高的动画状态会优先获取混合权重。
+         * 当混合权重分配超过 1 时，剩余的动画状态将不再获得权重分配。
+         * @readonly
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        layer: number;
+        /**
+         * - The play speed.
+         * The value is an overlay relationship with {@link dragonBones.Animation#timeScale}.
+         * [(-N~0): Reverse play, 0: Stop play, (0~1): Slow play, 1: Normal play, (1~N): Fast play]
+         * @default 1.0
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 播放速度。
+         * 该值与 {@link dragonBones.Animation#timeScale} 是叠加关系。
+         * [(-N~0): 倒转播放, 0: 停止播放, (0~1): 慢速播放, 1: 正常播放, (1~N): 快速播放]
+         * @default 1.0
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        timeScale: number;
+        /**
+         * - The blend weight.
+         * @default 1.0
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 混合权重。
+         * @default 1.0
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        weight: number;
+        /**
+         * - The auto fade out time when the animation state play completed.
+         * [-1: Do not fade out automatically, [0~N]: The fade out time] (In seconds)
+         * @default -1.0
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 动画状态播放完成后的自动淡出时间。
+         * [-1: 不自动淡出, [0~N]: 淡出时间] （以秒为单位）
+         * @default -1.0
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        autoFadeOutTime: number;
+        /**
+         * @private
+         */
+        fadeTotalTime: number;
+        /**
+         * - The name of the animation state. (Can be different from the name of the animation data)
+         * @readonly
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 动画状态名称。 （可以不同于动画数据）
+         * @readonly
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        name: string;
+        /**
+         * - The blend group name of the animation state.
+         * This property is typically used to specify the substitution of multiple animation states blend.
+         * @readonly
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 混合组名称。
+         * 该属性通常用来指定多个动画状态混合时的相互替换关系。
+         * @readonly
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        group: string;
+        private _timelineDirty;
+        /**
+         * - xx: Play Enabled, Fade Play Enabled
+         * @internal
+         * @private
+         */
+        _playheadState: number;
+        /**
+         * -1: Fade in, 0: Fade complete, 1: Fade out;
+         * @internal
+         * @private
+         */
+        _fadeState: number;
+        /**
+         * -1: Fade start, 0: Fading, 1: Fade complete;
+         * @internal
+         * @private
+         */
+        _subFadeState: number;
+        /**
+         * @internal
+         * @private
+         */
+        _position: number;
+        /**
+         * @internal
+         * @private
+         */
+        _duration: number;
+        private _fadeTime;
+        private _time;
+        /**
+         * @internal
+         * @private
+         */
+        _fadeProgress: number;
+        /**
+         * @internal
+         * @private
+         */
+        _weightResult: number;
+        /**
+         * @internal
+         * @private
+         */
+        readonly _blendState: BlendState;
+        private readonly _boneMask;
+        private readonly _boneTimelines;
+        private readonly _surfaceTimelines;
+        private readonly _slotTimelines;
+        private readonly _constraintTimelines;
+        private readonly _animationTimelines;
+        private readonly _poseTimelines;
+        private readonly _bonePoses;
+        /**
+         * @internal
+         * @private
+         */
+        _animationData: AnimationData;
+        private _armature;
+        /**
+         * @internal
+         * @private
+         */
+        _actionTimeline: ActionTimelineState;
+        private _zOrderTimeline;
+        /**
+         * @internal
+         * @private
+         */
+        _parent: AnimationState;
+        /**
+         * @private
+         */
+        protected _onClear(): void;
+        private _updateTimelines();
+        private _updateBoneAndSlotTimelines();
+        private _advanceFadeTime(passedTime);
+        /**
+         * @internal
+         * @private
+         */
+        init(armature: Armature, animationData: AnimationData, animationConfig: AnimationConfig): void;
+        /**
+         * @internal
+         * @private
+         */
+        advanceTime(passedTime: number, cacheFrameRate: number): void;
+        /**
+         * - Continue play.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 继续播放。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        play(): void;
+        /**
+         * - Stop play.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 暂停播放。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        stop(): void;
+        /**
+         * - Fade out the animation state.
+         * @param fadeOutTime - The fade out time. (In seconds)
+         * @param pausePlayhead - Whether to pause the animation playing when fade out.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 淡出动画状态。
+         * @param fadeOutTime - 淡出时间。 （以秒为单位）
+         * @param pausePlayhead - 淡出时是否暂停播放。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        fadeOut(fadeOutTime: number, pausePlayhead?: boolean): void;
+        /**
+         * - Check if a specific bone mask is included.
+         * @param name - The bone name.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 检查是否包含特定骨骼遮罩。
+         * @param name - 骨骼名称。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        containsBoneMask(name: string): boolean;
+        /**
+         * - Add a specific bone mask.
+         * @param name - The bone name.
+         * @param recursive - Whether or not to add a mask to the bone's sub-bone.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 添加特定的骨骼遮罩。
+         * @param name - 骨骼名称。
+         * @param recursive - 是否为该骨骼的子骨骼添加遮罩。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        addBoneMask(name: string, recursive?: boolean): void;
+        /**
+         * - Remove the mask of a specific bone.
+         * @param name - The bone name.
+         * @param recursive - Whether to remove the bone's sub-bone mask.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 删除特定骨骼的遮罩。
+         * @param name - 骨骼名称。
+         * @param recursive - 是否删除该骨骼的子骨骼遮罩。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        removeBoneMask(name: string, recursive?: boolean): void;
+        /**
+         * - Remove all bone masks.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 删除所有骨骼遮罩。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        removeAllBoneMask(): void;
+        /**
+         * - Whether the animation state is fading in.
+         * @version DragonBones 5.1
+         * @language en_US
+         */
+        /**
+         * - 是否正在淡入。
+         * @version DragonBones 5.1
+         * @language zh_CN
+         */
+        readonly isFadeIn: boolean;
+        /**
+         * - Whether the animation state is fading out.
+         * @version DragonBones 5.1
+         * @language en_US
+         */
+        /**
+         * - 是否正在淡出。
+         * @version DragonBones 5.1
+         * @language zh_CN
+         */
+        readonly isFadeOut: boolean;
+        /**
+         * - Whether the animation state is fade completed.
+         * @version DragonBones 5.1
+         * @language en_US
+         */
+        /**
+         * - 是否淡入或淡出完毕。
+         * @version DragonBones 5.1
+         * @language zh_CN
+         */
+        readonly isFadeComplete: boolean;
+        /**
+         * - Whether the animation state is playing.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 是否正在播放。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly isPlaying: boolean;
+        /**
+         * - Whether the animation state is play completed.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 是否播放完毕。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly isCompleted: boolean;
+        /**
+         * - The times has been played.
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 已经循环播放的次数。
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly currentPlayTimes: number;
+        /**
+         * - The total time. (In seconds)
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 总播放时间。 （以秒为单位）
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly totalTime: number;
+        /**
+         * - The time is currently playing. (In seconds)
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 当前播放的时间。 （以秒为单位）
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        currentTime: number;
+        /**
+         * - The animation data.
+         * @see dragonBones.AnimationData
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 动画数据。
+         * @see dragonBones.AnimationData
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        readonly animationData: AnimationData;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class BonePose extends BaseObject {
+        static toString(): string;
+        readonly current: Transform;
+        readonly delta: Transform;
+        readonly result: Transform;
+        protected _onClear(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class BlendState {
+        dirty: boolean;
+        layer: number;
+        leftWeight: number;
+        layerWeight: number;
+        blendWeight: number;
+        update(weight: number, layer: number): number;
+        clear(): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * @internal
+     * @private
+     */
+    const enum TweenState {
+        None = 0,
+        Once = 1,
+        Always = 2,
+    }
+    /**
+     * @internal
+     * @private
+     */
+    abstract class TimelineState extends BaseObject {
+        playState: number;
+        currentPlayTimes: number;
+        currentTime: number;
+        protected _tweenState: TweenState;
+        protected _frameRate: number;
+        protected _frameValueOffset: number;
+        protected _frameCount: number;
+        protected _frameOffset: number;
+        protected _frameIndex: number;
+        protected _frameRateR: number;
+        protected _position: number;
+        protected _duration: number;
+        protected _timeScale: number;
+        protected _timeOffset: number;
+        protected _dragonBonesData: DragonBonesData;
+        protected _animationData: AnimationData;
+        protected _timelineData: TimelineData | null;
+        protected _armature: Armature;
+        protected _animationState: AnimationState;
+        protected _actionTimeline: TimelineState;
+        protected _frameArray: Array<number> | Int16Array;
+        protected _frameIntArray: Array<number> | Int16Array;
+        protected _frameFloatArray: Array<number> | Int16Array;
+        protected _timelineArray: Array<number> | Uint16Array;
+        protected _frameIndices: Array<number>;
+        protected _onClear(): void;
+        protected abstract _onArriveAtFrame(): void;
+        protected abstract _onUpdateFrame(): void;
+        protected _setCurrentTime(passedTime: number): boolean;
+        init(armature: Armature, animationState: AnimationState, timelineData: TimelineData | null): void;
+        fadeOut(): void;
+        update(passedTime: number): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    abstract class TweenTimelineState extends TimelineState {
+        private static _getEasingValue(tweenType, progress, easing);
+        private static _getEasingCurveValue(progress, samples, count, offset);
+        protected _tweenType: TweenType;
+        protected _curveCount: number;
+        protected _framePosition: number;
+        protected _frameDurationR: number;
+        protected _tweenProgress: number;
+        protected _tweenEasing: number;
+        protected _onClear(): void;
+        protected _onArriveAtFrame(): void;
+        protected _onUpdateFrame(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    abstract class BoneTimelineState extends TweenTimelineState {
+        bone: Bone;
+        bonePose: BonePose;
+        protected _onClear(): void;
+        blend(state: number): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    abstract class SlotTimelineState extends TweenTimelineState {
+        slot: Slot;
+        protected _onClear(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    abstract class ConstraintTimelineState extends TweenTimelineState {
+        constraint: Constraint;
+        protected _onClear(): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * @internal
+     * @private
+     */
+    class ActionTimelineState extends TimelineState {
+        static toString(): string;
+        private _onCrossFrame(frameIndex);
+        protected _onArriveAtFrame(): void;
+        protected _onUpdateFrame(): void;
+        update(passedTime: number): void;
+        setCurrentTime(value: number): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class ZOrderTimelineState extends TimelineState {
+        static toString(): string;
+        protected _onArriveAtFrame(): void;
+        protected _onUpdateFrame(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class BoneAllTimelineState extends BoneTimelineState {
+        static toString(): string;
+        protected _onArriveAtFrame(): void;
+        protected _onUpdateFrame(): void;
+        fadeOut(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class BoneTranslateTimelineState extends BoneTimelineState {
+        static toString(): string;
+        protected _onArriveAtFrame(): void;
+        protected _onUpdateFrame(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class BoneRotateTimelineState extends BoneTimelineState {
+        static toString(): string;
+        protected _onArriveAtFrame(): void;
+        protected _onUpdateFrame(): void;
+        fadeOut(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class BoneScaleTimelineState extends BoneTimelineState {
+        static toString(): string;
+        protected _onArriveAtFrame(): void;
+        protected _onUpdateFrame(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class SurfaceTimelineState extends TweenTimelineState {
+        static toString(): string;
+        surface: Surface;
+        private _frameFloatOffset;
+        private _valueCount;
+        private _deformCount;
+        private _valueOffset;
+        private readonly _current;
+        private readonly _delta;
+        private readonly _result;
+        protected _onClear(): void;
+        protected _onArriveAtFrame(): void;
+        protected _onUpdateFrame(): void;
+        init(armature: Armature, animationState: AnimationState, timelineData: TimelineData | null): void;
+        blend(state: number): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class SlotDislayTimelineState extends SlotTimelineState {
+        static toString(): string;
+        protected _onArriveAtFrame(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class SlotColorTimelineState extends SlotTimelineState {
+        static toString(): string;
+        private _dirty;
+        private readonly _current;
+        private readonly _delta;
+        private readonly _result;
+        protected _onClear(): void;
+        protected _onArriveAtFrame(): void;
+        protected _onUpdateFrame(): void;
+        fadeOut(): void;
+        update(passedTime: number): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class SlotFFDTimelineState extends SlotTimelineState {
+        static toString(): string;
+        meshOffset: number;
+        private _dirty;
+        private _frameFloatOffset;
+        private _valueCount;
+        private _deformCount;
+        private _valueOffset;
+        private readonly _current;
+        private readonly _delta;
+        private readonly _result;
+        protected _onClear(): void;
+        protected _onArriveAtFrame(): void;
+        protected _onUpdateFrame(): void;
+        init(armature: Armature, animationState: AnimationState, timelineData: TimelineData | null): void;
+        fadeOut(): void;
+        update(passedTime: number): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class IKConstraintTimelineState extends ConstraintTimelineState {
+        static toString(): string;
+        private _current;
+        private _delta;
+        protected _onClear(): void;
+        protected _onArriveAtFrame(): void;
+        protected _onUpdateFrame(): void;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class AnimationTimelineState extends TweenTimelineState {
+        static toString(): string;
+        animationState: AnimationState;
+        private readonly _floats;
+        protected _onClear(): void;
+        protected _onArriveAtFrame(): void;
+        protected _onUpdateFrame(): void;
+        blend(state: number): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - The properties of the object carry basic information about an event,
+     * which are passed as parameter or parameter's parameter to event listeners when an event occurs.
+     * @version DragonBones 4.5
+     * @language en_US
+     */
+    /**
+     * - 事件对象，包含有关事件的基本信息，当发生事件时，该实例将作为参数或参数的参数传递给事件侦听器。
+     * @version DragonBones 4.5
+     * @language zh_CN
+     */
+    class EventObject extends BaseObject {
+        /**
+         * - Animation start play.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 动画开始播放。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        static readonly START: string;
+        /**
+         * - Animation loop play complete once.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 动画循环播放完成一次。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        static readonly LOOP_COMPLETE: string;
+        /**
+         * - Animation play complete.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 动画播放完成。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        static readonly COMPLETE: string;
+        /**
+         * - Animation fade in start.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 动画淡入开始。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        static readonly FADE_IN: string;
+        /**
+         * - Animation fade in complete.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 动画淡入完成。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        static readonly FADE_IN_COMPLETE: string;
+        /**
+         * - Animation fade out start.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 动画淡出开始。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        static readonly FADE_OUT: string;
+        /**
+         * - Animation fade out complete.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 动画淡出完成。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        static readonly FADE_OUT_COMPLETE: string;
+        /**
+         * - Animation frame event.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 动画帧事件。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        static readonly FRAME_EVENT: string;
+        /**
+         * - Animation frame sound event.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 动画帧声音事件。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        static readonly SOUND_EVENT: string;
+        static toString(): string;
+        /**
+         * - If is a frame event, the value is used to describe the time that the event was in the animation timeline. (In seconds)
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 如果是帧事件，此值用来描述该事件在动画时间轴中所处的时间。（以秒为单位）
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        time: number;
+        /**
+         * - The event type。
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 事件类型。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        type: EventStringType;
+        /**
+         * - The event name. (The frame event name or the frame sound name)
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 事件名称。 (帧事件的名称或帧声音的名称)
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        name: string;
+        /**
+         * - The armature that dispatch the event.
+         * @see dragonBones.Armature
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 发出该事件的骨架。
+         * @see dragonBones.Armature
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        armature: Armature;
+        /**
+         * - The bone that dispatch the event.
+         * @see dragonBones.Bone
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 发出该事件的骨骼。
+         * @see dragonBones.Bone
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        bone: Bone | null;
+        /**
+         * - The slot that dispatch the event.
+         * @see dragonBones.Slot
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 发出该事件的插槽。
+         * @see dragonBones.Slot
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        slot: Slot | null;
+        /**
+         * - The animation state that dispatch the event.
+         * @see dragonBones.AnimationState
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 发出该事件的动画状态。
+         * @see dragonBones.AnimationState
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        animationState: AnimationState;
+        /**
+         * - The custom data.
+         * @see dragonBones.CustomData
+         * @version DragonBones 5.0
+         * @language en_US
+         */
+        /**
+         * - 自定义数据。
+         * @see dragonBones.CustomData
+         * @version DragonBones 5.0
+         * @language zh_CN
+         */
+        data: UserData | null;
+        /**
+         * @private
+         */
+        protected _onClear(): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * @private
+     */
+    type EventStringType = string | "start" | "loopComplete" | "complete" | "fadeIn" | "fadeInComplete" | "fadeOut" | "fadeOutComplete" | "frameEvent" | "soundEvent";
+    /**
+     * - The event dispatcher interface.
+     * Dragonbones event dispatch usually relies on docking engine to implement, which defines the event method to be implemented when docking the engine.
+     * @version DragonBones 4.5
+     * @language en_US
+     */
+    /**
+     * - 事件派发接口。
+     * DragonBones 的事件派发通常依赖于对接的引擎来实现，该接口定义了对接引擎时需要实现的事件方法。
+     * @version DragonBones 4.5
+     * @language zh_CN
+     */
+    interface IEventDispatcher {
+        /**
+         * - Checks whether the object has any listeners registered for a specific type of event。
+         * @param type - Event type.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 检查是否为特定的事件类型注册了任何侦听器。
+         * @param type - 事件类型。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        hasDBEventListener(type: EventStringType): boolean;
+        /**
+         * - Dispatches an event into the event flow.
+         * @param type - Event type.
+         * @param eventObject - Event object.
+         * @see dragonBones.EventObject
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 分派特定的事件到事件流中。
+         * @param type - 事件类型。
+         * @param eventObject - 事件数据。
+         * @see dragonBones.EventObject
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        dispatchDBEvent(type: EventStringType, eventObject: EventObject): void;
+        /**
+         * - Add an event listener object so that the listener receives notification of an event.
+         * @param type - Event type.
+         * @param listener - Event listener.
+         * @param thisObject - The listener function's "this".
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 添加特定事件类型的事件侦听器，以使侦听器能够接收事件通知。
+         * @param type - 事件类型。
+         * @param listener - 事件侦听器。
+         * @param thisObject - 侦听函数绑定的 this 对象。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        addDBEventListener(type: EventStringType, listener: Function, thisObject: any): void;
+        /**
+         * - Removes a listener from the object.
+         * @param type - Event type.
+         * @param listener - Event listener.
+         * @param thisObject - The listener function's "this".
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 删除特定事件类型的侦听器。
+         * @param type - 事件类型。
+         * @param listener - 事件侦听器。
+         * @param thisObject - 侦听函数绑定的 this 对象。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        removeDBEventListener(type: EventStringType, listener: Function, thisObject: any): void;
+        /**
+         * - Deprecated, please refer to {@link #hasDBEventListener()}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #hasDBEventListener()}。
+         * @deprecated
+         * @language zh_CN
+         */
+        hasEvent(type: EventStringType): boolean;
+        /**
+         * - Deprecated, please refer to {@link #addDBEventListener()}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #addDBEventListener()}。
+         * @deprecated
+         * @language zh_CN
+         */
+        addEvent(type: EventStringType, listener: Function, thisObject: any): void;
+        /**
+         * - Deprecated, please refer to {@link #removeDBEventListener()}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #removeDBEventListener()}。
+         * @deprecated
+         * @language zh_CN
+         */
+        removeEvent(type: EventStringType, listener: Function, thisObject: any): void;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * @internal
+     * @private
+     */
+    abstract class DataParser {
+        protected static readonly DATA_VERSION_2_3: string;
+        protected static readonly DATA_VERSION_3_0: string;
+        protected static readonly DATA_VERSION_4_0: string;
+        protected static readonly DATA_VERSION_4_5: string;
+        protected static readonly DATA_VERSION_5_0: string;
+        protected static readonly DATA_VERSION_5_5: string;
+        protected static readonly DATA_VERSION: string;
+        protected static readonly DATA_VERSIONS: Array<string>;
+        protected static readonly TEXTURE_ATLAS: string;
+        protected static readonly SUB_TEXTURE: string;
+        protected static readonly FORMAT: string;
+        protected static readonly IMAGE_PATH: string;
+        protected static readonly WIDTH: string;
+        protected static readonly HEIGHT: string;
+        protected static readonly ROTATED: string;
+        protected static readonly FRAME_X: string;
+        protected static readonly FRAME_Y: string;
+        protected static readonly FRAME_WIDTH: string;
+        protected static readonly FRAME_HEIGHT: string;
+        protected static readonly DRADON_BONES: string;
+        protected static readonly USER_DATA: string;
+        protected static readonly ARMATURE: string;
+        protected static readonly BONE: string;
+        protected static readonly SURFACE: string;
+        protected static readonly SLOT: string;
+        protected static readonly CONSTRAINT: string;
+        protected static readonly IK: string;
+        protected static readonly SKIN: string;
+        protected static readonly DISPLAY: string;
+        protected static readonly ANIMATION: string;
+        protected static readonly Z_ORDER: string;
+        protected static readonly FFD: string;
+        protected static readonly FRAME: string;
+        protected static readonly TRANSLATE_FRAME: string;
+        protected static readonly ROTATE_FRAME: string;
+        protected static readonly SCALE_FRAME: string;
+        protected static readonly DISPLAY_FRAME: string;
+        protected static readonly COLOR_FRAME: string;
+        protected static readonly DEFAULT_ACTIONS: string;
+        protected static readonly ACTIONS: string;
+        protected static readonly EVENTS: string;
+        protected static readonly INTS: string;
+        protected static readonly FLOATS: string;
+        protected static readonly STRINGS: string;
+        protected static readonly CANVAS: string;
+        protected static readonly TRANSFORM: string;
+        protected static readonly PIVOT: string;
+        protected static readonly AABB: string;
+        protected static readonly COLOR: string;
+        protected static readonly VERSION: string;
+        protected static readonly COMPATIBLE_VERSION: string;
+        protected static readonly FRAME_RATE: string;
+        protected static readonly TYPE: string;
+        protected static readonly SUB_TYPE: string;
+        protected static readonly NAME: string;
+        protected static readonly PARENT: string;
+        protected static readonly TARGET: string;
+        protected static readonly STAGE: string;
+        protected static readonly SHARE: string;
+        protected static readonly PATH: string;
+        protected static readonly LENGTH: string;
+        protected static readonly DISPLAY_INDEX: string;
+        protected static readonly BLEND_MODE: string;
+        protected static readonly INHERIT_TRANSLATION: string;
+        protected static readonly INHERIT_ROTATION: string;
+        protected static readonly INHERIT_SCALE: string;
+        protected static readonly INHERIT_REFLECTION: string;
+        protected static readonly INHERIT_ANIMATION: string;
+        protected static readonly INHERIT_DEFORM: string;
+        protected static readonly SEGMENT_X: string;
+        protected static readonly SEGMENT_Y: string;
+        protected static readonly BEND_POSITIVE: string;
+        protected static readonly CHAIN: string;
+        protected static readonly WEIGHT: string;
+        protected static readonly FADE_IN_TIME: string;
+        protected static readonly PLAY_TIMES: string;
+        protected static readonly SCALE: string;
+        protected static readonly OFFSET: string;
+        protected static readonly POSITION: string;
+        protected static readonly DURATION: string;
+        protected static readonly TWEEN_EASING: string;
+        protected static readonly TWEEN_ROTATE: string;
+        protected static readonly TWEEN_SCALE: string;
+        protected static readonly CLOCK_WISE: string;
+        protected static readonly CURVE: string;
+        protected static readonly SOUND: string;
+        protected static readonly EVENT: string;
+        protected static readonly ACTION: string;
+        protected static readonly X: string;
+        protected static readonly Y: string;
+        protected static readonly SKEW_X: string;
+        protected static readonly SKEW_Y: string;
+        protected static readonly SCALE_X: string;
+        protected static readonly SCALE_Y: string;
+        protected static readonly VALUE: string;
+        protected static readonly ROTATE: string;
+        protected static readonly SKEW: string;
+        protected static readonly ALPHA_OFFSET: string;
+        protected static readonly RED_OFFSET: string;
+        protected static readonly GREEN_OFFSET: string;
+        protected static readonly BLUE_OFFSET: string;
+        protected static readonly ALPHA_MULTIPLIER: string;
+        protected static readonly RED_MULTIPLIER: string;
+        protected static readonly GREEN_MULTIPLIER: string;
+        protected static readonly BLUE_MULTIPLIER: string;
+        protected static readonly UVS: string;
+        protected static readonly VERTICES: string;
+        protected static readonly TRIANGLES: string;
+        protected static readonly WEIGHTS: string;
+        protected static readonly SLOT_POSE: string;
+        protected static readonly BONE_POSE: string;
+        protected static readonly GLUE_WEIGHTS: string;
+        protected static readonly GLUE_MESHES: string;
+        protected static readonly GOTO_AND_PLAY: string;
+        protected static readonly DEFAULT_NAME: string;
+        protected static _getArmatureType(value: string): ArmatureType;
+        protected static _getBoneType(value: string): BoneType;
+        protected static _getDisplayType(value: string): DisplayType;
+        protected static _getBoundingBoxType(value: string): BoundingBoxType;
+        protected static _getActionType(value: string): ActionType;
+        protected static _getBlendMode(value: string): BlendMode;
+        abstract parseDragonBonesData(rawData: any, scale: number): DragonBonesData | null;
+        abstract parseTextureAtlasData(rawData: any, textureAtlasData: TextureAtlasData, scale: number): boolean;
+        /**
+         * - Deprecated, please refer to {@link dragonBones.BaseFactory#parsetTextureAtlasData()}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link dragonBones.BaseFactory#parsetTextureAtlasData()}。
+         * @deprecated
+         * @language zh_CN
+         */
+        static parseDragonBonesData(rawData: any): DragonBonesData | null;
+        /**
+         * - Deprecated, please refer to {@link dragonBones.BaseFactory#parsetTextureAtlasData()}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link dragonBones.BaseFactory#parsetTextureAtlasData()}。
+         * @deprecated
+         * @language zh_CN
+         */
+        static parseTextureAtlasData(rawData: any, scale?: number): any;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * @internal
+     * @private
+     */
+    class ObjectDataParser extends DataParser {
+        protected static _getBoolean(rawData: any, key: string, defaultValue: boolean): boolean;
+        protected static _getNumber(rawData: any, key: string, defaultValue: number): number;
+        protected static _getString(rawData: any, key: string, defaultValue: string): string;
+        protected _rawTextureAtlasIndex: number;
+        protected readonly _rawBones: Array<BoneData>;
+        protected _data: DragonBonesData;
+        protected _armature: ArmatureData;
+        protected _bone: BoneData;
+        protected _surface: SurfaceData;
+        protected _slot: SlotData;
+        protected _skin: SkinData;
+        protected _mesh: MeshDisplayData;
+        protected _animation: AnimationData;
+        protected _timeline: TimelineData;
+        protected _rawTextureAtlases: Array<any> | null;
+        private _defaultColorOffset;
+        private _prevClockwise;
+        private _prevRotation;
+        private readonly _helpMatrixA;
+        private readonly _helpMatrixB;
+        private readonly _helpTransform;
+        private readonly _helpColorTransform;
+        private readonly _helpPoint;
+        private readonly _helpArray;
+        private readonly _intArray;
+        private readonly _floatArray;
+        private readonly _frameIntArray;
+        private readonly _frameFloatArray;
+        private readonly _frameArray;
+        private readonly _timelineArray;
+        private readonly _cacheRawMeshes;
+        private readonly _cacheMeshes;
+        private readonly _actionFrames;
+        private readonly _weightSlotPose;
+        private readonly _weightBonePoses;
+        private readonly _cacheBones;
+        private readonly _slotChildActions;
+        private _getCurvePoint(x1, y1, x2, y2, x3, y3, x4, y4, t, result);
+        private _samplingEasingCurve(curve, samples);
+        private _parseActionDataInFrame(rawData, frameStart, bone, slot);
+        private _mergeActionFrame(rawData, frameStart, type, bone, slot);
+        protected _parseArmature(rawData: any, scale: number): ArmatureData;
+        protected _parseBone(rawData: any): BoneData;
+        protected _parseIKConstraint(rawData: any): ConstraintData | null;
+        protected _parseSlot(rawData: any, zOrder: number): SlotData;
+        protected _parseSkin(rawData: any): SkinData;
+        protected _parseDisplay(rawData: any): DisplayData | null;
+        protected _parsePivot(rawData: any, display: ImageDisplayData): void;
+        protected _parseMesh(rawData: any, mesh: MeshDisplayData): void;
+        protected _parseMeshGlue(rawData: any, mesh: MeshDisplayData): void;
+        protected _parseBoundingBox(rawData: any): BoundingBoxData | null;
+        protected _parsePolygonBoundingBox(rawData: any): PolygonBoundingBoxData;
+        protected _parseAnimation(rawData: any): AnimationData;
+        protected _parseTimeline(rawData: any, rawFrames: Array<any> | null, framesKey: string, type: TimelineType, addIntOffset: boolean, addFloatOffset: boolean, frameValueCount: number, frameParser: (rawData: any, frameStart: number, frameCount: number) => number): TimelineData | null;
+        protected _parseBoneTimeline(rawData: any): void;
+        protected _parseSlotTimeline(rawData: any): void;
+        protected _parseFrame(rawData: any, frameStart: number, frameCount: number): number;
+        protected _parseTweenFrame(rawData: any, frameStart: number, frameCount: number): number;
+        protected _parseActionFrame(frame: ActionFrame, frameStart: number, frameCount: number): number;
+        protected _parseZOrderFrame(rawData: any, frameStart: number, frameCount: number): number;
+        protected _parseBoneAllFrame(rawData: any, frameStart: number, frameCount: number): number;
+        protected _parseBoneTranslateFrame(rawData: any, frameStart: number, frameCount: number): number;
+        protected _parseBoneRotateFrame(rawData: any, frameStart: number, frameCount: number): number;
+        protected _parseBoneScaleFrame(rawData: any, frameStart: number, frameCount: number): number;
+        protected _parseSurfaceFrame(rawData: any, frameStart: number, frameCount: number): number;
+        protected _parseSlotDisplayFrame(rawData: any, frameStart: number, frameCount: number): number;
+        protected _parseSlotColorFrame(rawData: any, frameStart: number, frameCount: number): number;
+        protected _parseSlotFFDFrame(rawData: any, frameStart: number, frameCount: number): number;
+        protected _parseIKConstraintFrame(rawData: any, frameStart: number, frameCount: number): number;
+        protected _parseAnimationFrame(rawData: any, frameStart: number, frameCount: number): number;
+        protected _parseActionData(rawData: any, type: ActionType, bone: BoneData | null, slot: SlotData | null): Array<ActionData>;
+        protected _parseTransform(rawData: any, transform: Transform, scale: number): void;
+        protected _parseColorTransform(rawData: any, color: ColorTransform): void;
+        protected _parseArray(rawData: any): void;
+        protected _modifyArray(): void;
+        parseDragonBonesData(rawData: any, scale?: number): DragonBonesData | null;
+        parseTextureAtlasData(rawData: any, textureAtlasData: TextureAtlasData, scale?: number): boolean;
+        private static _objectDataParserInstance;
+        /**
+         * - Deprecated, please refer to {@link dragonBones.BaseFactory#parseDragonBonesData()}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link dragonBones.BaseFactory#parseDragonBonesData()}。
+         * @deprecated
+         * @language zh_CN
+         */
+        static getInstance(): ObjectDataParser;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class ActionFrame {
+        frameStart: number;
+        readonly actions: Array<number>;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * @internal
+     * @private
+     */
+    class BinaryDataParser extends ObjectDataParser {
+        private _binaryOffset;
+        private _binary;
+        private _intArrayBuffer;
+        private _floatArrayBuffer;
+        private _frameIntArrayBuffer;
+        private _frameFloatArrayBuffer;
+        private _frameArrayBuffer;
+        private _timelineArrayBuffer;
+        private _inRange(a, min, max);
+        private _decodeUTF8(data);
+        private _getUTF16Key(value);
+        private _parseBinaryTimeline(type, offset, timelineData?);
+        protected _parseMesh(rawData: any, mesh: MeshDisplayData): void;
+        protected _parseAnimation(rawData: any): AnimationData;
+        protected _parseArray(rawData: any): void;
+        parseDragonBonesData(rawData: any, scale?: number): DragonBonesData | null;
+        private static _binaryDataParserInstance;
+        /**
+         * - Deprecated, please refer to {@link dragonBones.BaseFactory#parseDragonBonesData()}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link dragonBones.BaseFactory#parseDragonBonesData()}。
+         * @deprecated
+         * @language zh_CN
+         */
+        static getInstance(): BinaryDataParser;
+    }
+}
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2012-2017 DragonBones team and other contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+declare namespace dragonBones {
+    /**
+     * - Base class for the factory that create the armatures. (Typically only one global factory instance is required)
+     * The factory instance create armatures by parsed and added DragonBonesData instances and TextureAtlasData instances.
+     * Once the data has been parsed, it has been cached in the factory instance and does not need to be parsed again until it is cleared by the factory instance.
+     * @see dragonBones.DragonBonesData
+     * @see dragonBones.TextureAtlasData
+     * @see dragonBones.ArmatureData
+     * @see dragonBones.Armature
+     * @version DragonBones 3.0
+     * @language en_US
+     */
+    /**
+     * - 创建骨架的工厂基类。 （通常只需要一个全局工厂实例）
+     * 工厂通过解析并添加的 DragonBonesData 实例和 TextureAtlasData 实例来创建骨架。
+     * 当数据被解析过之后，已经添加到工厂中，在没有被工厂清理之前，不需要再次解析。
+     * @see dragonBones.DragonBonesData
+     * @see dragonBones.TextureAtlasData
+     * @see dragonBones.ArmatureData
+     * @see dragonBones.Armature
+     * @version DragonBones 3.0
+     * @language zh_CN
+     */
+    abstract class BaseFactory {
+        /**
+         * @private
+         */
+        protected static _objectParser: ObjectDataParser;
+        /**
+         * @private
+         */
+        protected static _binaryParser: BinaryDataParser;
+        /**
+         * @private
+         */
+        autoSearch: boolean;
+        /**
+         * @private
+         */
+        protected readonly _dragonBonesDataMap: Map<DragonBonesData>;
+        /**
+         * @private
+         */
+        protected readonly _textureAtlasDataMap: Map<Array<TextureAtlasData>>;
+        /**
+         * @private
+         */
+        protected _dragonBones: DragonBones;
+        /**
+         * @private
+         */
+        protected _dataParser: DataParser;
+        /**
+         * - Create a factory instance. (typically only one global factory instance is required)
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 创建一个工厂实例。 （通常只需要一个全局工厂实例）
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        constructor(dataParser?: DataParser | null);
+        /**
+         * @private
+         */
+        protected _isSupportMesh(): boolean;
+        /**
+         * @private
+         */
+        protected _getTextureData(textureAtlasName: string, textureName: string): TextureData | null;
+        /**
+         * @private
+         */
+        protected _fillBuildArmaturePackage(dataPackage: BuildArmaturePackage, dragonBonesName: string, armatureName: string, skinName: string, textureAtlasName: string): boolean;
+        /**
+         * @private
+         */
+        protected _buildBones(dataPackage: BuildArmaturePackage, armature: Armature): void;
+        /**
+         * @private
+         */
+        protected _buildSlots(dataPackage: BuildArmaturePackage, armature: Armature): void;
+        /**
+         * @private
+         */
+        protected _buildChildArmature(dataPackage: BuildArmaturePackage | null, slot: Slot, displayData: DisplayData): Armature | null;
+        /**
+         * @private
+         */
+        protected _getSlotDisplay(dataPackage: BuildArmaturePackage | null, displayData: DisplayData, rawDisplayData: DisplayData | null, slot: Slot): any;
+        /**
+         * @private
+         */
+        protected abstract _buildTextureAtlasData(textureAtlasData: TextureAtlasData | null, textureAtlas: any): TextureAtlasData;
+        /**
+         * @private
+         */
+        protected abstract _buildArmature(dataPackage: BuildArmaturePackage): Armature;
+        /**
+         * @private
+         */
+        protected abstract _buildSlot(dataPackage: BuildArmaturePackage, slotData: SlotData, displays: Array<DisplayData | null> | null, armature: Armature): Slot;
+        /**
+         * - Parse the raw data to a DragonBonesData instance and cache it to the factory.
+         * @param rawData - The raw data.
+         * @param name - Specify a cache name for the instance so that the instance can be obtained through this name. (If not set, use the instance name instead)
+         * @param scale - Specify a scaling value for all armatures. (Default: 1.0)
+         * @returns DragonBonesData instance
+         * @see #getDragonBonesData()
+         * @see #addDragonBonesData()
+         * @see #removeDragonBonesData()
+         * @see dragonBones.DragonBonesData
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 将原始数据解析为 DragonBonesData 实例，并缓存到工厂中。
+         * @param rawData - 原始数据。
+         * @param name - 为该实例指定一个缓存名称，以便可以通过此名称获取该实例。 （如果未设置，则使用该实例中的名称）
+         * @param scale - 为所有的骨架指定一个缩放值。 （默认: 1.0）
+         * @returns DragonBonesData 实例
+         * @see #getDragonBonesData()
+         * @see #addDragonBonesData()
+         * @see #removeDragonBonesData()
+         * @see dragonBones.DragonBonesData
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        parseDragonBonesData(rawData: any, name?: string | null, scale?: number): DragonBonesData | null;
+        /**
+         * - Parse the raw texture atlas data and the texture atlas object to a TextureAtlasData instance and cache it to the factory.
+         * @param rawData - The raw texture atlas data.
+         * @param textureAtlas - The texture atlas object.
+         * @param name - Specify a cache name for the instance so that the instance can be obtained through this name. (If not set, use the instance name instead)
+         * @param scale - Specify a scaling value for the map set. (Default: 1.0)
+         * @returns TextureAtlasData instance
+         * @see #getTextureAtlasData()
+         * @see #addTextureAtlasData()
+         * @see #removeTextureAtlasData()
+         * @see dragonBones.TextureAtlasData
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 将原始贴图集数据和贴图集对象解析为 TextureAtlasData 实例，并缓存到工厂中。
+         * @param rawData - 原始贴图集数据。
+         * @param textureAtlas - 贴图集对象。
+         * @param name - 为该实例指定一个缓存名称，以便可以通过此名称获取该实例。 （如果未设置，则使用该实例中的名称）
+         * @param scale - 为贴图集指定一个缩放值。 （默认: 1.0）
+         * @returns TextureAtlasData 实例
+         * @see #getTextureAtlasData()
+         * @see #addTextureAtlasData()
+         * @see #removeTextureAtlasData()
+         * @see dragonBones.TextureAtlasData
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        parseTextureAtlasData(rawData: any, textureAtlas: any, name?: string | null, scale?: number): TextureAtlasData;
+        /**
+         * @private
+         */
+        updateTextureAtlasData(name: string, textureAtlases: Array<any>): void;
+        /**
+         * - Get a specific DragonBonesData instance.
+         * @param name - The DragonBonesData instance cache name.
+         * @returns DragonBonesData instance
+         * @see #parseDragonBonesData()
+         * @see #addDragonBonesData()
+         * @see #removeDragonBonesData()
+         * @see dragonBones.DragonBonesData
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 获取特定的 DragonBonesData 实例。
+         * @param name - DragonBonesData 实例的缓存名称。
+         * @returns DragonBonesData 实例
+         * @see #parseDragonBonesData()
+         * @see #addDragonBonesData()
+         * @see #removeDragonBonesData()
+         * @see dragonBones.DragonBonesData
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        getDragonBonesData(name: string): DragonBonesData | null;
+        /**
+         * - Cache a DragonBonesData instance to the factory.
+         * @param data - The DragonBonesData instance.
+         * @param name - Specify a cache name for the instance so that the instance can be obtained through this name. (if not set, use the instance name instead)
+         * @see #parseDragonBonesData()
+         * @see #getDragonBonesData()
+         * @see #removeDragonBonesData()
+         * @see dragonBones.DragonBonesData
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 将 DragonBonesData 实例缓存到工厂中。
+         * @param data - DragonBonesData 实例。
+         * @param name - 为该实例指定一个缓存名称，以便可以通过此名称获取该实例。 （如果未设置，则使用该实例中的名称）
+         * @see #parseDragonBonesData()
+         * @see #getDragonBonesData()
+         * @see #removeDragonBonesData()
+         * @see dragonBones.DragonBonesData
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        addDragonBonesData(data: DragonBonesData, name?: string | null): void;
+        /**
+         * - Remove a DragonBonesData instance.
+         * @param name - The DragonBonesData instance cache name.
+         * @param disposeData - Whether to dispose data. (Default: true)
+         * @see #parseDragonBonesData()
+         * @see #getDragonBonesData()
+         * @see #addDragonBonesData()
+         * @see dragonBones.DragonBonesData
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 移除 DragonBonesData 实例。
+         * @param name - DragonBonesData 实例缓存名称。
+         * @param disposeData - 是否释放数据。 （默认: true）
+         * @see #parseDragonBonesData()
+         * @see #getDragonBonesData()
+         * @see #addDragonBonesData()
+         * @see dragonBones.DragonBonesData
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        removeDragonBonesData(name: string, disposeData?: boolean): void;
+        /**
+         * - Get a list of specific TextureAtlasData instances.
+         * @param name - The TextureAtlasData cahce name.
+         * @see #parseTextureAtlasData()
+         * @see #addTextureAtlasData()
+         * @see #removeTextureAtlasData()
+         * @see dragonBones.TextureAtlasData
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 获取特定的 TextureAtlasData 实例列表。
+         * @param name - TextureAtlasData 实例缓存名称。
+         * @see #parseTextureAtlasData()
+         * @see #addTextureAtlasData()
+         * @see #removeTextureAtlasData()
+         * @see dragonBones.TextureAtlasData
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        getTextureAtlasData(name: string): Array<TextureAtlasData> | null;
+        /**
+         * - Cache a TextureAtlasData instance to the factory.
+         * @param data - The TextureAtlasData instance.
+         * @param name - Specify a cache name for the instance so that the instance can be obtained through this name. (if not set, use the instance name instead)
+         * @see #parseTextureAtlasData()
+         * @see #getTextureAtlasData()
+         * @see #removeTextureAtlasData()
+         * @see dragonBones.TextureAtlasData
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 将 TextureAtlasData 实例缓存到工厂中。
+         * @param data - TextureAtlasData 实例。
+         * @param name - 为该实例指定一个缓存名称，以便可以通过此名称获取该实例。 （如果未设置，则使用该实例中的名称）
+         * @see #parseTextureAtlasData()
+         * @see #getTextureAtlasData()
+         * @see #removeTextureAtlasData()
+         * @see dragonBones.TextureAtlasData
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        addTextureAtlasData(data: TextureAtlasData, name?: string | null): void;
+        /**
+         * - Remove a TextureAtlasData instance.
+         * @param name - The TextureAtlasData instance cache name.
+         * @param disposeData - Whether to dispose data.
+         * @see #parseTextureAtlasData()
+         * @see #getTextureAtlasData()
+         * @see #addTextureAtlasData()
+         * @see dragonBones.TextureAtlasData
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 移除 TextureAtlasData 实例。
+         * @param name - TextureAtlasData 实例的缓存名称。
+         * @param disposeData - 是否释放数据。
+         * @see #parseTextureAtlasData()
+         * @see #getTextureAtlasData()
+         * @see #addTextureAtlasData()
+         * @see dragonBones.TextureAtlasData
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        removeTextureAtlasData(name: string, disposeData?: boolean): void;
+        /**
+         * - Get a specific armature data.
+         * @param name - The armature data name.
+         * @param dragonBonesName - The cached name for DragonbonesData instance.
+         * @see dragonBones.ArmatureData
+         * @version DragonBones 5.1
+         * @language en_US
+         */
+        /**
+         * - 获取特定的骨架数据。
+         * @param name - 骨架数据名称。
+         * @param dragonBonesName - DragonBonesData 实例的缓存名称。
+         * @see dragonBones.ArmatureData
+         * @version DragonBones 5.1
+         * @language zh_CN
+         */
+        getArmatureData(name: string, dragonBonesName?: string): ArmatureData | null;
+        /**
+         * - Clear all cached DragonBonesData instances and TextureAtlasData instances.
+         * @param disposeData - Whether to dispose data.
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 清除缓存的所有 DragonBonesData 实例和 TextureAtlasData 实例。
+         * @param disposeData - 是否释放数据。
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        clear(disposeData?: boolean): void;
+        /**
+         * - Create a armature from cached DragonBonesData instances and TextureAtlasData instances.
+         * @param armatureName - The armature data name.
+         * @param dragonBonesName - The cached name of the DragonBonesData instance. (If not set, all DragonBonesData instances are retrieved, and when multiple DragonBonesData instances contain a the same name armature data, it may not be possible to accurately create a specific armature)
+         * @param skinName - The skin name, you can set a different ArmatureData name to share it's skin data. (If not set, use the default skin data)
+         * @returns The armature.
+         * @example
+         * <pre>
+         *     let armature = factory.buildArmature("armatureName", "dragonBonesName");
+         *     armature.clock = factory.clock;
+         * </pre>
+         * @see dragonBones.DragonBonesData
+         * @see dragonBones.ArmatureData
+         * @see dragonBones.Armature
+         * @version DragonBones 3.0
+         * @language en_US
+         */
+        /**
+         * - 通过缓存的 DragonBonesData 实例和 TextureAtlasData 实例创建一个骨架。
+         * @param armatureName - 骨架数据名称。
+         * @param dragonBonesName - DragonBonesData 实例的缓存名称。 （如果未设置，将检索所有的 DragonBonesData 实例，当多个 DragonBonesData 实例中包含同名的骨架数据时，可能无法准确的创建出特定的骨架）
+         * @param skinName - 皮肤名称，可以设置一个其他骨架数据名称来共享其皮肤数据（如果未设置，则使用默认的皮肤数据）。
+         * @returns 骨架。
+         * @example
+         * <pre>
+         *     let armature = factory.buildArmature("armatureName", "dragonBonesName");
+         *     armature.clock = factory.clock;
+         * </pre>
+         * @see dragonBones.DragonBonesData
+         * @see dragonBones.ArmatureData
+         * @see dragonBones.Armature
+         * @version DragonBones 3.0
+         * @language zh_CN
+         */
+        buildArmature(armatureName: string, dragonBonesName?: string, skinName?: string, textureAtlasName?: string): Armature | null;
+        /**
+         * @private
+         */
+        replaceDisplay(slot: Slot, displayData: DisplayData, displayIndex?: number): void;
+        /**
+         * - Replaces the current display data for a particular slot with a specific display data.
+         * Specify display data with "dragonBonesName/armatureName/slotName/displayName".
+         * @param dragonBonesName - The DragonBonesData instance cache name.
+         * @param armatureName - The armature data name.
+         * @param slotName - The slot data name.
+         * @param displayName - The display data name.
+         * @param slot - The slot.
+         * @param displayIndex - The index of the display data that is replaced. (If it is not set, replaces the current display data)
+         * @example
+         * <pre>
+         *     let slot = armature.getSlot("weapon");
+         *     factory.replaceSlotDisplay("dragonBonesName", "armatureName", "slotName", "displayName", slot);
+         * </pre>
+         * @version DragonBones 4.5
+         * @language en_US
+         */
+        /**
+         * - 用特定的显示对象数据替换特定插槽当前的显示对象数据。
+         * 用 "dragonBonesName/armatureName/slotName/displayName" 指定显示对象数据。
+         * @param dragonBonesName - DragonBonesData 实例的缓存名称。
+         * @param armatureName - 骨架数据名称。
+         * @param slotName - 插槽数据名称。
+         * @param displayName - 显示对象数据名称。
+         * @param slot - 插槽。
+         * @param displayIndex - 被替换的显示对象数据的索引。 （如果未设置，则替换当前的显示对象数据）
+         * @example
+         * <pre>
+         *     let slot = armature.getSlot("weapon");
+         *     factory.replaceSlotDisplay("dragonBonesName", "armatureName", "slotName", "displayName", slot);
+         * </pre>
+         * @version DragonBones 4.5
+         * @language zh_CN
+         */
+        replaceSlotDisplay(dragonBonesName: string, armatureName: string, slotName: string, displayName: string, slot: Slot, displayIndex?: number): boolean;
+        /**
+         * @private
+         */
+        replaceSlotDisplayList(dragonBonesName: string | null, armatureName: string, slotName: string, slot: Slot): boolean;
+        /**
+         * - Share specific skin data with specific armature.
+         * @param armature - The armature.
+         * @param skin - The skin data.
+         * @param isOverride - Whether it completely override the original skin. (Default: false)
+         * @param exclude - A list of slot names that do not need to be replace.
+         * @example
+         * <pre>
+         *     let armatureA = factory.buildArmature("armatureA", "dragonBonesA");
+         *     let armatureDataB = factory.getArmatureData("armatureB", "dragonBonesB");
+         *     if (armatureDataB && armatureDataB.defaultSkin) {
+         *     factory.replaceSkin(armatureA, armatureDataB.defaultSkin, false, ["arm_l", "weapon_l"]);
+         *     }
+         * </pre>
+         * @see dragonBones.Armature
+         * @see dragonBones.SkinData
+         * @version DragonBones 5.6
+         * @language en_US
+         */
+        /**
+         * - 将特定的皮肤数据共享给特定的骨架使用。
+         * @param armature - 骨架。
+         * @param skin - 皮肤数据。
+         * @param isOverride - 是否完全覆盖原来的皮肤。 （默认: false）
+         * @param exclude - 不需要被替换的插槽名称列表。
+         * @example
+         * <pre>
+         *     let armatureA = factory.buildArmature("armatureA", "dragonBonesA");
+         *     let armatureDataB = factory.getArmatureData("armatureB", "dragonBonesB");
+         *     if (armatureDataB && armatureDataB.defaultSkin) {
+         *     factory.replaceSkin(armatureA, armatureDataB.defaultSkin, false, ["arm_l", "weapon_l"]);
+         *     }
+         * </pre>
+         * @see dragonBones.Armature
+         * @see dragonBones.SkinData
+         * @version DragonBones 5.6
+         * @language zh_CN
+         */
+        replaceSkin(armature: Armature, skin: SkinData, isOverride?: boolean, exclude?: Array<string> | null): boolean;
+        /**
+         * - Replaces the existing animation data for a specific armature with the animation data for the specific armature data.
+         * This enables you to make a armature template so that other armature without animations can share it's animations.
+         * @param armature - The armtaure.
+         * @param armatureData - The armature data.
+         * @param isOverride - Whether to completely overwrite the original animation. (Default: false)
+         * @example
+         * <pre>
+         *     let armatureA = factory.buildArmature("armatureA", "dragonBonesA");
+         *     let armatureDataB = factory.getArmatureData("armatureB", "dragonBonesB");
+         *     if (armatureDataB) {
+         *     factory.replaceAnimation(armatureA, armatureDataB);
+         *     }
+         * </pre>
+         * @see dragonBones.Armature
+         * @see dragonBones.ArmatureData
+         * @version DragonBones 5.6
+         * @language en_US
+         */
+        /**
+         * - 用特定骨架数据的动画数据替换特定骨架现有的动画数据。
+         * 这样就能实现制作一个骨架动画模板，让其他没有制作动画的骨架共享该动画。
+         * @param armature - 骨架。
+         * @param armatureData - 骨架数据。
+         * @param isOverride - 是否完全覆盖原来的动画。（默认: false）。
+         * @example
+         * <pre>
+         *     let armatureA = factory.buildArmature("armatureA", "dragonBonesA");
+         *     let armatureDataB = factory.getArmatureData("armatureB", "dragonBonesB");
+         *     if (armatureDataB) {
+         *     factory.replaceAnimation(armatureA, armatureDataB);
+         *     }
+         * </pre>
+         * @see dragonBones.Armature
+         * @see dragonBones.ArmatureData
+         * @version DragonBones 5.6
+         * @language zh_CN
+         */
+        replaceAnimation(armature: Armature, armatureData: ArmatureData, isOverride?: boolean): boolean;
+        /**
+         * @private
+         */
+        getAllDragonBonesData(): Map<DragonBonesData>;
+        /**
+         * @private
+         */
+        getAllTextureAtlasData(): Map<Array<TextureAtlasData>>;
+        /**
+         * - An Worldclock instance updated by engine.
+         * @version DragonBones 5.7
+         * @language en_US
+         */
+        /**
+         * - 由引擎驱动的 WorldClock 实例。
+         * @version DragonBones 5.7
+         * @language zh_CN
+         */
+        readonly clock: WorldClock;
+        /**
+         * @private
+         */
+        readonly dragonBones: DragonBones;
+        /**
+         * - Deprecated, please refer to {@link #replaceSkin}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #replaceSkin}。
+         * @deprecated
+         * @language zh_CN
+         */
+        changeSkin(armature: Armature, skin: SkinData, exclude?: Array<string> | null): boolean;
+        /**
+         * - Deprecated, please refer to {@link #replaceAnimation}.
+         * @deprecated
+         * @language en_US
+         */
+        /**
+         * - 已废弃，请参考 {@link #replaceAnimation}。
+         * @deprecated
+         * @language zh_CN
+         */
+        copyAnimationsToArmature(toArmature: Armature, fromArmatreName: string, fromSkinName?: string, fromDragonBonesDataName?: string, replaceOriginalAnimation?: boolean): boolean;
+    }
+    /**
+     * @internal
+     * @private
+     */
+    class BuildArmaturePackage {
+        dataName: string;
+        textureAtlasName: string;
+        data: DragonBonesData;
+        armature: ArmatureData;
+        skin: SkinData | null;
+    }
+}
+
+declare namespace sp.spine {
+	class Animation {
+		name: string;
+		timelines: Array<Timeline>;
+		timelineIds: Array<boolean>;
+		duration: number;
+		constructor(name: string, timelines: Array<Timeline>, duration: number);
+		hasTimeline(id: number): boolean;
+		apply(skeleton: Skeleton, lastTime: number, time: number, loop: boolean, events: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+		static binarySearch(values: ArrayLike<number>, target: number, step?: number): number;
+		static linearSearch(values: ArrayLike<number>, target: number, step: number): number;
+	}
+	interface Timeline {
+		apply(skeleton: Skeleton, lastTime: number, time: number, events: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+		getPropertyId(): number;
+	}
+	enum MixBlend {
+		setup = 0,
+		first = 1,
+		replace = 2,
+		add = 3
+	}
+	enum MixDirection {
+		mixIn = 0,
+		mixOut = 1
+	}
+	enum TimelineType {
+		rotate = 0,
+		translate = 1,
+		scale = 2,
+		shear = 3,
+		attachment = 4,
+		color = 5,
+		deform = 6,
+		event = 7,
+		drawOrder = 8,
+		ikConstraint = 9,
+		transformConstraint = 10,
+		pathConstraintPosition = 11,
+		pathConstraintSpacing = 12,
+		pathConstraintMix = 13,
+		twoColor = 14
+	}
+	abstract class CurveTimeline implements Timeline {
+		static LINEAR: number;
+		static STEPPED: number;
+		static BEZIER: number;
+		static BEZIER_SIZE: number;
+		private curves;
+		abstract getPropertyId(): number;
+		constructor(frameCount: number);
+		getFrameCount(): number;
+		setLinear(frameIndex: number): void;
+		setStepped(frameIndex: number): void;
+		getCurveType(frameIndex: number): number;
+		setCurve(frameIndex: number, cx1: number, cy1: number, cx2: number, cy2: number): void;
+		getCurvePercent(frameIndex: number, percent: number): number;
+		abstract apply(skeleton: Skeleton, lastTime: number, time: number, events: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class RotateTimeline extends CurveTimeline {
+		static ENTRIES: number;
+		static PREV_TIME: number;
+		static PREV_ROTATION: number;
+		static ROTATION: number;
+		boneIndex: number;
+		frames: ArrayLike<number>;
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		setFrame(frameIndex: number, time: number, degrees: number): void;
+		apply(skeleton: Skeleton, lastTime: number, time: number, events: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class TranslateTimeline extends CurveTimeline {
+		static ENTRIES: number;
+		static PREV_TIME: number;
+		static PREV_X: number;
+		static PREV_Y: number;
+		static X: number;
+		static Y: number;
+		boneIndex: number;
+		frames: ArrayLike<number>;
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		setFrame(frameIndex: number, time: number, x: number, y: number): void;
+		apply(skeleton: Skeleton, lastTime: number, time: number, events: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class ScaleTimeline extends TranslateTimeline {
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		apply(skeleton: Skeleton, lastTime: number, time: number, events: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class ShearTimeline extends TranslateTimeline {
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		apply(skeleton: Skeleton, lastTime: number, time: number, events: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class ColorTimeline extends CurveTimeline {
+		static ENTRIES: number;
+		static PREV_TIME: number;
+		static PREV_R: number;
+		static PREV_G: number;
+		static PREV_B: number;
+		static PREV_A: number;
+		static R: number;
+		static G: number;
+		static B: number;
+		static A: number;
+		slotIndex: number;
+		frames: ArrayLike<number>;
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		setFrame(frameIndex: number, time: number, r: number, g: number, b: number, a: number): void;
+		apply(skeleton: Skeleton, lastTime: number, time: number, events: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class TwoColorTimeline extends CurveTimeline {
+		static ENTRIES: number;
+		static PREV_TIME: number;
+		static PREV_R: number;
+		static PREV_G: number;
+		static PREV_B: number;
+		static PREV_A: number;
+		static PREV_R2: number;
+		static PREV_G2: number;
+		static PREV_B2: number;
+		static R: number;
+		static G: number;
+		static B: number;
+		static A: number;
+		static R2: number;
+		static G2: number;
+		static B2: number;
+		slotIndex: number;
+		frames: ArrayLike<number>;
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		setFrame(frameIndex: number, time: number, r: number, g: number, b: number, a: number, r2: number, g2: number, b2: number): void;
+		apply(skeleton: Skeleton, lastTime: number, time: number, events: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class AttachmentTimeline implements Timeline {
+		slotIndex: number;
+		frames: ArrayLike<number>;
+		attachmentNames: Array<string>;
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		getFrameCount(): number;
+		setFrame(frameIndex: number, time: number, attachmentName: string): void;
+		apply(skeleton: Skeleton, lastTime: number, time: number, events: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class DeformTimeline extends CurveTimeline {
+		slotIndex: number;
+		attachment: VertexAttachment;
+		frames: ArrayLike<number>;
+		frameVertices: Array<ArrayLike<number>>;
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		setFrame(frameIndex: number, time: number, vertices: ArrayLike<number>): void;
+		apply(skeleton: Skeleton, lastTime: number, time: number, firedEvents: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class EventTimeline implements Timeline {
+		frames: ArrayLike<number>;
+		events: Array<Event>;
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		getFrameCount(): number;
+		setFrame(frameIndex: number, event: Event): void;
+		apply(skeleton: Skeleton, lastTime: number, time: number, firedEvents: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class DrawOrderTimeline implements Timeline {
+		frames: ArrayLike<number>;
+		drawOrders: Array<Array<number>>;
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		getFrameCount(): number;
+		setFrame(frameIndex: number, time: number, drawOrder: Array<number>): void;
+		apply(skeleton: Skeleton, lastTime: number, time: number, firedEvents: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class IkConstraintTimeline extends CurveTimeline {
+		static ENTRIES: number;
+		static PREV_TIME: number;
+		static PREV_MIX: number;
+		static PREV_SOFTNESS: number;
+		static PREV_BEND_DIRECTION: number;
+		static PREV_COMPRESS: number;
+		static PREV_STRETCH: number;
+		static MIX: number;
+		static SOFTNESS: number;
+		static BEND_DIRECTION: number;
+		static COMPRESS: number;
+		static STRETCH: number;
+		ikConstraintIndex: number;
+		frames: ArrayLike<number>;
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		setFrame(frameIndex: number, time: number, mix: number, softness: number, bendDirection: number, compress: boolean, stretch: boolean): void;
+		apply(skeleton: Skeleton, lastTime: number, time: number, firedEvents: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class TransformConstraintTimeline extends CurveTimeline {
+		static ENTRIES: number;
+		static PREV_TIME: number;
+		static PREV_ROTATE: number;
+		static PREV_TRANSLATE: number;
+		static PREV_SCALE: number;
+		static PREV_SHEAR: number;
+		static ROTATE: number;
+		static TRANSLATE: number;
+		static SCALE: number;
+		static SHEAR: number;
+		transformConstraintIndex: number;
+		frames: ArrayLike<number>;
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		setFrame(frameIndex: number, time: number, rotateMix: number, translateMix: number, scaleMix: number, shearMix: number): void;
+		apply(skeleton: Skeleton, lastTime: number, time: number, firedEvents: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class PathConstraintPositionTimeline extends CurveTimeline {
+		static ENTRIES: number;
+		static PREV_TIME: number;
+		static PREV_VALUE: number;
+		static VALUE: number;
+		pathConstraintIndex: number;
+		frames: ArrayLike<number>;
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		setFrame(frameIndex: number, time: number, value: number): void;
+		apply(skeleton: Skeleton, lastTime: number, time: number, firedEvents: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class PathConstraintSpacingTimeline extends PathConstraintPositionTimeline {
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		apply(skeleton: Skeleton, lastTime: number, time: number, firedEvents: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+	class PathConstraintMixTimeline extends CurveTimeline {
+		static ENTRIES: number;
+		static PREV_TIME: number;
+		static PREV_ROTATE: number;
+		static PREV_TRANSLATE: number;
+		static ROTATE: number;
+		static TRANSLATE: number;
+		pathConstraintIndex: number;
+		frames: ArrayLike<number>;
+		constructor(frameCount: number);
+		getPropertyId(): number;
+		setFrame(frameIndex: number, time: number, rotateMix: number, translateMix: number): void;
+		apply(skeleton: Skeleton, lastTime: number, time: number, firedEvents: Array<Event>, alpha: number, blend: MixBlend, direction: MixDirection): void;
+	}
+}
+declare namespace sp.spine {
+	class AnimationState {
+		static emptyAnimation: Animation;
+		static SUBSEQUENT: number;
+		static FIRST: number;
+		static HOLD: number;
+		static HOLD_MIX: number;
+		static NOT_LAST: number;
+		data: AnimationStateData;
+		tracks: TrackEntry[];
+		timeScale: number;
+		events: Event[];
+		listeners: AnimationStateListener[];
+		queue: EventQueue;
+		propertyIDs: IntSet;
+		animationsChanged: boolean;
+		trackEntryPool: Pool<TrackEntry>;
+		constructor(data: AnimationStateData);
+		update(delta: number): void;
+		updateMixingFrom(to: TrackEntry, delta: number): boolean;
+		apply(skeleton: Skeleton): boolean;
+		applyMixingFrom(to: TrackEntry, skeleton: Skeleton, blend: MixBlend): number;
+		applyRotateTimeline(timeline: Timeline, skeleton: Skeleton, time: number, alpha: number, blend: MixBlend, timelinesRotation: Array<number>, i: number, firstFrame: boolean): void;
+		queueEvents(entry: TrackEntry, animationTime: number): void;
+		clearTracks(): void;
+		clearTrack(trackIndex: number): void;
+		setCurrent(index: number, current: TrackEntry, interrupt: boolean): void;
+		setAnimation(trackIndex: number, animationName: string, loop: boolean): TrackEntry;
+		setAnimationWith(trackIndex: number, animation: Animation, loop: boolean): TrackEntry;
+		addAnimation(trackIndex: number, animationName: string, loop: boolean, delay: number): TrackEntry;
+		addAnimationWith(trackIndex: number, animation: Animation, loop: boolean, delay: number): TrackEntry;
+		setEmptyAnimation(trackIndex: number, mixDuration: number): TrackEntry;
+		addEmptyAnimation(trackIndex: number, mixDuration: number, delay: number): TrackEntry;
+		setEmptyAnimations(mixDuration: number): void;
+		expandToIndex(index: number): TrackEntry;
+		trackEntry(trackIndex: number, animation: Animation, loop: boolean, last: TrackEntry): TrackEntry;
+		disposeNext(entry: TrackEntry): void;
+		_animationsChanged(): void;
+		computeHold(entry: TrackEntry): void;
+		computeNotLast(entry: TrackEntry): void;
+		getCurrent(trackIndex: number): TrackEntry;
+		addListener(listener: AnimationStateListener): void;
+		removeListener(listener: AnimationStateListener): void;
+		clearListeners(): void;
+		clearListenerNotifications(): void;
+	}
+	class TrackEntry {
+		animation: Animation;
+		next: TrackEntry;
+		mixingFrom: TrackEntry;
+		mixingTo: TrackEntry;
+		listener: AnimationStateListener;
+		trackIndex: number;
+		loop: boolean;
+		holdPrevious: boolean;
+		eventThreshold: number;
+		attachmentThreshold: number;
+		drawOrderThreshold: number;
+		animationStart: number;
+		animationEnd: number;
+		animationLast: number;
+		nextAnimationLast: number;
+		delay: number;
+		trackTime: number;
+		trackLast: number;
+		nextTrackLast: number;
+		trackEnd: number;
+		timeScale: number;
+		alpha: number;
+		mixTime: number;
+		mixDuration: number;
+		interruptAlpha: number;
+		totalAlpha: number;
+		mixBlend: MixBlend;
+		timelineMode: number[];
+		timelineHoldMix: TrackEntry[];
+		timelinesRotation: number[];
+		reset(): void;
+		getAnimationTime(): number;
+		setAnimationLast(animationLast: number): void;
+		isComplete(): boolean;
+		resetRotationDirections(): void;
+	}
+	class EventQueue {
+		objects: Array<any>;
+		drainDisabled: boolean;
+		animState: AnimationState;
+		constructor(animState: AnimationState);
+		start(entry: TrackEntry): void;
+		interrupt(entry: TrackEntry): void;
+		end(entry: TrackEntry): void;
+		dispose(entry: TrackEntry): void;
+		complete(entry: TrackEntry): void;
+		event(entry: TrackEntry, event: Event): void;
+		drain(): void;
+		clear(): void;
+	}
+	enum EventType {
+		start = 0,
+		interrupt = 1,
+		end = 2,
+		dispose = 3,
+		complete = 4,
+		event = 5
+	}
+	interface AnimationStateListener {
+		start(entry: TrackEntry): void;
+		interrupt(entry: TrackEntry): void;
+		end(entry: TrackEntry): void;
+		dispose(entry: TrackEntry): void;
+		complete(entry: TrackEntry): void;
+		event(entry: TrackEntry, event: Event): void;
+	}
+	abstract class AnimationStateAdapter implements AnimationStateListener {
+		start(entry: TrackEntry): void;
+		interrupt(entry: TrackEntry): void;
+		end(entry: TrackEntry): void;
+		dispose(entry: TrackEntry): void;
+		complete(entry: TrackEntry): void;
+		event(entry: TrackEntry, event: Event): void;
+	}
+}
+declare namespace sp.spine {
+	class AnimationStateData {
+		skeletonData: SkeletonData;
+		animationToMixTime: Map<number>;
+		defaultMix: number;
+		constructor(skeletonData: SkeletonData);
+		setMix(fromName: string, toName: string, duration: number): void;
+		setMixWith(from: Animation, to: Animation, duration: number): void;
+		getMix(from: Animation, to: Animation): number;
+	}
+}
+declare namespace sp.spine {
+	class AssetManager implements Disposable {
+		private pathPrefix;
+		private textureLoader;
+		private assets;
+		private errors;
+		private toLoad;
+		private loaded;
+		constructor(textureLoader: (image: HTMLImageElement) => any, pathPrefix?: string);
+		private static downloadText;
+		private static downloadBinary;
+		loadBinary(path: string, success?: (path: string, binary: Uint8Array) => void, error?: (path: string, error: string) => void): void;
+		loadText(path: string, success?: (path: string, text: string) => void, error?: (path: string, error: string) => void): void;
+		loadTexture(path: string, success?: (path: string, image: HTMLImageElement) => void, error?: (path: string, error: string) => void): void;
+		loadTextureData(path: string, data: string, success?: (path: string, image: HTMLImageElement) => void, error?: (path: string, error: string) => void): void;
+		loadTextureAtlas(path: string, success?: (path: string, atlas: TextureAtlas) => void, error?: (path: string, error: string) => void): void;
+		get(path: string): any;
+		remove(path: string): void;
+		removeAll(): void;
+		isLoadingComplete(): boolean;
+		getToLoad(): number;
+		getLoaded(): number;
+		dispose(): void;
+		hasErrors(): boolean;
+		getErrors(): Map<string>;
+	}
+}
+declare namespace sp.spine {
+	class AtlasAttachmentLoader implements AttachmentLoader {
+		atlas: TextureAtlas;
+		constructor(atlas: TextureAtlas);
+		newRegionAttachment(skin: Skin, name: string, path: string): RegionAttachment;
+		newMeshAttachment(skin: Skin, name: string, path: string): MeshAttachment;
+		newBoundingBoxAttachment(skin: Skin, name: string): BoundingBoxAttachment;
+		newPathAttachment(skin: Skin, name: string): PathAttachment;
+		newPointAttachment(skin: Skin, name: string): PointAttachment;
+		newClippingAttachment(skin: Skin, name: string): ClippingAttachment;
+	}
+}
+declare namespace sp.spine {
+	enum BlendMode {
+		Normal = 0,
+		Additive = 1,
+		Multiply = 2,
+		Screen = 3
+	}
+}
+declare namespace sp.spine {
+	class Bone implements Updatable {
+		data: BoneData;
+		skeleton: Skeleton;
+		parent: Bone;
+		children: Bone[];
+		x: number;
+		y: number;
+		rotation: number;
+		scaleX: number;
+		scaleY: number;
+		shearX: number;
+		shearY: number;
+		ax: number;
+		ay: number;
+		arotation: number;
+		ascaleX: number;
+		ascaleY: number;
+		ashearX: number;
+		ashearY: number;
+		appliedValid: boolean;
+		a: number;
+		b: number;
+		c: number;
+		d: number;
+		worldY: number;
+		worldX: number;
+		sorted: boolean;
+		active: boolean;
+		constructor(data: BoneData, skeleton: Skeleton, parent: Bone);
+		isActive(): boolean;
+		update(): void;
+		updateWorldTransform(): void;
+		updateWorldTransformWith(x: number, y: number, rotation: number, scaleX: number, scaleY: number, shearX: number, shearY: number): void;
+		setToSetupPose(): void;
+		getWorldRotationX(): number;
+		getWorldRotationY(): number;
+		getWorldScaleX(): number;
+		getWorldScaleY(): number;
+		updateAppliedTransform(): void;
+		worldToLocal(world: Vector2): Vector2;
+		localToWorld(local: Vector2): Vector2;
+		worldToLocalRotation(worldRotation: number): number;
+		localToWorldRotation(localRotation: number): number;
+		rotateWorld(degrees: number): void;
+	}
+}
+declare namespace sp.spine {
+	class BoneData {
+		index: number;
+		name: string;
+		parent: BoneData;
+		length: number;
+		x: number;
+		y: number;
+		rotation: number;
+		scaleX: number;
+		scaleY: number;
+		shearX: number;
+		shearY: number;
+		transformMode: TransformMode;
+		skinRequired: boolean;
+		color: Color;
+		constructor(index: number, name: string, parent: BoneData);
+	}
+	enum TransformMode {
+		Normal = 0,
+		OnlyTranslation = 1,
+		NoRotationOrReflection = 2,
+		NoScale = 3,
+		NoScaleOrReflection = 4
+	}
+}
+declare namespace sp.spine {
+	abstract class ConstraintData {
+		name: string;
+		order: number;
+		skinRequired: boolean;
+		constructor(name: string, order: number, skinRequired: boolean);
+	}
+}
+declare namespace sp.spine {
+	class Event {
+		data: EventData;
+		intValue: number;
+		floatValue: number;
+		stringValue: string;
+		time: number;
+		volume: number;
+		balance: number;
+		constructor(time: number, data: EventData);
+	}
+}
+declare namespace sp.spine {
+	class EventData {
+		name: string;
+		intValue: number;
+		floatValue: number;
+		stringValue: string;
+		audioPath: string;
+		volume: number;
+		balance: number;
+		constructor(name: string);
+	}
+}
+declare namespace sp.spine {
+	class IkConstraint implements Updatable {
+		data: IkConstraintData;
+		bones: Array<Bone>;
+		target: Bone;
+		bendDirection: number;
+		compress: boolean;
+		stretch: boolean;
+		mix: number;
+		softness: number;
+		active: boolean;
+		constructor(data: IkConstraintData, skeleton: Skeleton);
+		isActive(): boolean;
+		apply(): void;
+		update(): void;
+		apply1(bone: Bone, targetX: number, targetY: number, compress: boolean, stretch: boolean, uniform: boolean, alpha: number): void;
+		apply2(parent: Bone, child: Bone, targetX: number, targetY: number, bendDir: number, stretch: boolean, softness: number, alpha: number): void;
+	}
+}
+declare namespace sp.spine {
+	class IkConstraintData extends ConstraintData {
+		bones: BoneData[];
+		target: BoneData;
+		bendDirection: number;
+		compress: boolean;
+		stretch: boolean;
+		uniform: boolean;
+		mix: number;
+		softness: number;
+		constructor(name: string);
+	}
+}
+declare namespace sp.spine {
+	class PathConstraint implements Updatable {
+		static NONE: number;
+		static BEFORE: number;
+		static AFTER: number;
+		static epsilon: number;
+		data: PathConstraintData;
+		bones: Array<Bone>;
+		target: Slot;
+		position: number;
+		spacing: number;
+		rotateMix: number;
+		translateMix: number;
+		spaces: number[];
+		positions: number[];
+		world: number[];
+		curves: number[];
+		lengths: number[];
+		segments: number[];
+		active: boolean;
+		constructor(data: PathConstraintData, skeleton: Skeleton);
+		isActive(): boolean;
+		apply(): void;
+		update(): void;
+		computeWorldPositions(path: PathAttachment, spacesCount: number, tangents: boolean, percentPosition: boolean, percentSpacing: boolean): number[];
+		addBeforePosition(p: number, temp: Array<number>, i: number, out: Array<number>, o: number): void;
+		addAfterPosition(p: number, temp: Array<number>, i: number, out: Array<number>, o: number): void;
+		addCurvePosition(p: number, x1: number, y1: number, cx1: number, cy1: number, cx2: number, cy2: number, x2: number, y2: number, out: Array<number>, o: number, tangents: boolean): void;
+	}
+}
+declare namespace sp.spine {
+	class PathConstraintData extends ConstraintData {
+		bones: BoneData[];
+		target: SlotData;
+		positionMode: PositionMode;
+		spacingMode: SpacingMode;
+		rotateMode: RotateMode;
+		offsetRotation: number;
+		position: number;
+		spacing: number;
+		rotateMix: number;
+		translateMix: number;
+		constructor(name: string);
+	}
+	enum PositionMode {
+		Fixed = 0,
+		Percent = 1
+	}
+	enum SpacingMode {
+		Length = 0,
+		Fixed = 1,
+		Percent = 2
+	}
+	enum RotateMode {
+		Tangent = 0,
+		Chain = 1,
+		ChainScale = 2
+	}
+}
+declare namespace sp.spine {
+	class SharedAssetManager implements Disposable {
+		private pathPrefix;
+		private clientAssets;
+		private queuedAssets;
+		private rawAssets;
+		private errors;
+		constructor(pathPrefix?: string);
+		private queueAsset;
+		loadText(clientId: string, path: string): void;
+		loadJson(clientId: string, path: string): void;
+		loadTexture(clientId: string, textureLoader: (image: HTMLImageElement) => any, path: string): void;
+		get(clientId: string, path: string): any;
+		private updateClientAssets;
+		isLoadingComplete(clientId: string): boolean;
+		dispose(): void;
+		hasErrors(): boolean;
+		getErrors(): Map<string>;
+	}
+}
+declare namespace sp.spine {
+	class Skeleton {
+		data: SkeletonData;
+		bones: Array<Bone>;
+		slots: Array<Slot>;
+		drawOrder: Array<Slot>;
+		ikConstraints: Array<IkConstraint>;
+		transformConstraints: Array<TransformConstraint>;
+		pathConstraints: Array<PathConstraint>;
+		_updateCache: Updatable[];
+		updateCacheReset: Updatable[];
+		skin: Skin;
+		color: Color;
+		time: number;
+		scaleX: number;
+		scaleY: number;
+		x: number;
+		y: number;
+		constructor(data: SkeletonData);
+		updateCache(): void;
+		sortIkConstraint(constraint: IkConstraint): void;
+		sortPathConstraint(constraint: PathConstraint): void;
+		sortTransformConstraint(constraint: TransformConstraint): void;
+		sortPathConstraintAttachment(skin: Skin, slotIndex: number, slotBone: Bone): void;
+		sortPathConstraintAttachmentWith(attachment: Attachment, slotBone: Bone): void;
+		sortBone(bone: Bone): void;
+		sortReset(bones: Array<Bone>): void;
+		updateWorldTransform(): void;
+		setToSetupPose(): void;
+		setBonesToSetupPose(): void;
+		setSlotsToSetupPose(): void;
+		getRootBone(): Bone;
+		findBone(boneName: string): Bone;
+		findBoneIndex(boneName: string): number;
+		findSlot(slotName: string): Slot;
+		findSlotIndex(slotName: string): number;
+		setSkinByName(skinName: string): void;
+		setSkin(newSkin: Skin): void;
+		getAttachmentByName(slotName: string, attachmentName: string): Attachment;
+		getAttachment(slotIndex: number, attachmentName: string): Attachment;
+		setAttachment(slotName: string, attachmentName: string): void;
+		findIkConstraint(constraintName: string): IkConstraint;
+		findTransformConstraint(constraintName: string): TransformConstraint;
+		findPathConstraint(constraintName: string): PathConstraint;
+		getBounds(offset: Vector2, size: Vector2, temp?: Array<number>): void;
+		update(delta: number): void;
+	}
+}
+declare namespace sp.spine {
+	class SkeletonBinary {
+		static AttachmentTypeValues: number[];
+		static TransformModeValues: TransformMode[];
+		static PositionModeValues: PositionMode[];
+		static SpacingModeValues: SpacingMode[];
+		static RotateModeValues: RotateMode[];
+		static BlendModeValues: BlendMode[];
+		static BONE_ROTATE: number;
+		static BONE_TRANSLATE: number;
+		static BONE_SCALE: number;
+		static BONE_SHEAR: number;
+		static SLOT_ATTACHMENT: number;
+		static SLOT_COLOR: number;
+		static SLOT_TWO_COLOR: number;
+		static PATH_POSITION: number;
+		static PATH_SPACING: number;
+		static PATH_MIX: number;
+		static CURVE_LINEAR: number;
+		static CURVE_STEPPED: number;
+		static CURVE_BEZIER: number;
+		scale: number;
+		attachmentLoader: AttachmentLoader;
+		private linkedMeshes;
+		constructor(attachmentLoader: AttachmentLoader);
+		readSkeletonData(binary: Uint8Array): SkeletonData;
+		private readSkin;
+		private readAttachment;
+		private readVertices;
+		private readFloatArray;
+		private readShortArray;
+		private readAnimation;
+		private readCurve;
+		setCurve(timeline: CurveTimeline, frameIndex: number, cx1: number, cy1: number, cx2: number, cy2: number): void;
+	}
+}
+declare namespace sp.spine {
+	class SkeletonBounds {
+		minX: number;
+		minY: number;
+		maxX: number;
+		maxY: number;
+		boundingBoxes: BoundingBoxAttachment[];
+		polygons: ArrayLike<number>[];
+		private polygonPool;
+		update(skeleton: Skeleton, updateAabb: boolean): void;
+		aabbCompute(): void;
+		aabbContainsPoint(x: number, y: number): boolean;
+		aabbIntersectsSegment(x1: number, y1: number, x2: number, y2: number): boolean;
+		aabbIntersectsSkeleton(bounds: SkeletonBounds): boolean;
+		containsPoint(x: number, y: number): BoundingBoxAttachment;
+		containsPointPolygon(polygon: ArrayLike<number>, x: number, y: number): boolean;
+		intersectsSegment(x1: number, y1: number, x2: number, y2: number): BoundingBoxAttachment;
+		intersectsSegmentPolygon(polygon: ArrayLike<number>, x1: number, y1: number, x2: number, y2: number): boolean;
+		getPolygon(boundingBox: BoundingBoxAttachment): ArrayLike<number>;
+		getWidth(): number;
+		getHeight(): number;
+	}
+}
+declare namespace sp.spine {
+	class SkeletonClipping {
+		private triangulator;
+		private clippingPolygon;
+		private clipOutput;
+		clippedVertices: number[];
+		clippedTriangles: number[];
+		private scratch;
+		private clipAttachment;
+		private clippingPolygons;
+		clipStart(slot: Slot, clip: ClippingAttachment): number;
+		clipEndWithSlot(slot: Slot): void;
+		clipEnd(): void;
+		isClipping(): boolean;
+		clipTriangles(vertices: ArrayLike<number>, verticesLength: number, triangles: ArrayLike<number>, trianglesLength: number, uvs: ArrayLike<number>, light: Color, dark: Color, twoColor: boolean): void;
+		clip(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, clippingArea: Array<number>, output: Array<number>): boolean;
+		static makeClockwise(polygon: ArrayLike<number>): void;
+	}
+}
+declare namespace sp.spine {
+	class SkeletonData {
+		name: string;
+		bones: BoneData[];
+		slots: SlotData[];
+		skins: Skin[];
+		defaultSkin: Skin;
+		events: EventData[];
+		animations: Animation[];
+		ikConstraints: IkConstraintData[];
+		transformConstraints: TransformConstraintData[];
+		pathConstraints: PathConstraintData[];
+		x: number;
+		y: number;
+		width: number;
+		height: number;
+		version: string;
+		hash: string;
+		fps: number;
+		imagesPath: string;
+		audioPath: string;
+		findBone(boneName: string): BoneData;
+		findBoneIndex(boneName: string): number;
+		findSlot(slotName: string): SlotData;
+		findSlotIndex(slotName: string): number;
+		findSkin(skinName: string): Skin;
+		findEvent(eventDataName: string): EventData;
+		findAnimation(animationName: string): Animation;
+		findIkConstraint(constraintName: string): IkConstraintData;
+		findTransformConstraint(constraintName: string): TransformConstraintData;
+		findPathConstraint(constraintName: string): PathConstraintData;
+		findPathConstraintIndex(pathConstraintName: string): number;
+	}
+}
+declare namespace sp.spine {
+	class SkeletonJson {
+		attachmentLoader: AttachmentLoader;
+		scale: number;
+		private linkedMeshes;
+		constructor(attachmentLoader: AttachmentLoader);
+		readSkeletonData(json: string | any): SkeletonData;
+		readAttachment(map: any, skin: Skin, slotIndex: number, name: string, skeletonData: SkeletonData): Attachment;
+		readVertices(map: any, attachment: VertexAttachment, verticesLength: number): void;
+		readAnimation(map: any, name: string, skeletonData: SkeletonData): void;
+		readCurve(map: any, timeline: CurveTimeline, frameIndex: number): void;
+		getValue(map: any, prop: string, defaultValue: any): any;
+		static blendModeFromString(str: string): BlendMode;
+		static positionModeFromString(str: string): PositionMode;
+		static spacingModeFromString(str: string): SpacingMode;
+		static rotateModeFromString(str: string): RotateMode;
+		static transformModeFromString(str: string): TransformMode;
+	}
+}
+declare namespace sp.spine {
+	class SkinEntry {
+		slotIndex: number;
+		name: string;
+		attachment: Attachment;
+		constructor(slotIndex: number, name: string, attachment: Attachment);
+	}
+	class Skin {
+		name: string;
+		attachments: Map<Attachment>[];
+		bones: BoneData[];
+		constraints: ConstraintData[];
+		constructor(name: string);
+		setAttachment(slotIndex: number, name: string, attachment: Attachment): void;
+		addSkin(skin: Skin): void;
+		copySkin(skin: Skin): void;
+		getAttachment(slotIndex: number, name: string): Attachment;
+		removeAttachment(slotIndex: number, name: string): void;
+		getAttachments(): Array<SkinEntry>;
+		getAttachmentsForSlot(slotIndex: number, attachments: Array<SkinEntry>): void;
+		clear(): void;
+		attachAll(skeleton: Skeleton, oldSkin: Skin): void;
+	}
+}
+declare namespace sp.spine {
+	class Slot {
+		data: SlotData;
+		bone: Bone;
+		color: Color;
+		darkColor: Color;
+		private attachment;
+		private attachmentTime;
+		deform: number[];
+		constructor(data: SlotData, bone: Bone);
+		getSkeleton(): Skeleton;
+		getAttachment(): Attachment;
+		setAttachment(attachment: Attachment): void;
+		setAttachmentTime(time: number): void;
+		getAttachmentTime(): number;
+		setToSetupPose(): void;
+	}
+}
+declare namespace sp.spine {
+	class SlotData {
+		index: number;
+		name: string;
+		boneData: BoneData;
+		color: Color;
+		darkColor: Color;
+		attachmentName: string;
+		blendMode: BlendMode;
+		constructor(index: number, name: string, boneData: BoneData);
+	}
+}
+declare namespace sp.spine {
+	abstract class Texture {
+		protected _image: HTMLImageElement;
+		constructor(image: HTMLImageElement);
+		getImage(): HTMLImageElement;
+		abstract setFilters(minFilter: TextureFilter, magFilter: TextureFilter): void;
+		abstract setWraps(uWrap: TextureWrap, vWrap: TextureWrap): void;
+		abstract dispose(): void;
+		static filterFromString(text: string): TextureFilter;
+		static wrapFromString(text: string): TextureWrap;
+	}
+	enum TextureFilter {
+		Nearest = 9728,
+		Linear = 9729,
+		MipMap = 9987,
+		MipMapNearestNearest = 9984,
+		MipMapLinearNearest = 9985,
+		MipMapNearestLinear = 9986,
+		MipMapLinearLinear = 9987
+	}
+	enum TextureWrap {
+		MirroredRepeat = 33648,
+		ClampToEdge = 33071,
+		Repeat = 10497
+	}
+	class TextureRegion {
+		renderObject: any;
+		u: number;
+		v: number;
+		u2: number;
+		v2: number;
+		width: number;
+		height: number;
+		rotate: boolean;
+		offsetX: number;
+		offsetY: number;
+		originalWidth: number;
+		originalHeight: number;
+	}
+	class FakeTexture extends Texture {
+		setFilters(minFilter: TextureFilter, magFilter: TextureFilter): void;
+		setWraps(uWrap: TextureWrap, vWrap: TextureWrap): void;
+		dispose(): void;
+	}
+}
+declare namespace sp.spine {
+	class TextureAtlas implements Disposable {
+		pages: TextureAtlasPage[];
+		regions: TextureAtlasRegion[];
+		constructor(atlasText: string, textureLoader: (path: string) => any);
+		private load;
+		findRegion(name: string): TextureAtlasRegion;
+		dispose(): void;
+	}
+	class TextureAtlasPage {
+		name: string;
+		minFilter: TextureFilter;
+		magFilter: TextureFilter;
+		uWrap: TextureWrap;
+		vWrap: TextureWrap;
+		texture: Texture;
+		width: number;
+		height: number;
+	}
+	class TextureAtlasRegion extends TextureRegion {
+		page: TextureAtlasPage;
+		name: string;
+		x: number;
+		y: number;
+		index: number;
+		rotate: boolean;
+		degrees: number;
+		texture: Texture;
+	}
+}
+declare namespace sp.spine {
+	class TransformConstraint implements Updatable {
+		data: TransformConstraintData;
+		bones: Array<Bone>;
+		target: Bone;
+		rotateMix: number;
+		translateMix: number;
+		scaleMix: number;
+		shearMix: number;
+		temp: Vector2;
+		active: boolean;
+		constructor(data: TransformConstraintData, skeleton: Skeleton);
+		isActive(): boolean;
+		apply(): void;
+		update(): void;
+		applyAbsoluteWorld(): void;
+		applyRelativeWorld(): void;
+		applyAbsoluteLocal(): void;
+		applyRelativeLocal(): void;
+	}
+}
+declare namespace sp.spine {
+	class TransformConstraintData extends ConstraintData {
+		bones: BoneData[];
+		target: BoneData;
+		rotateMix: number;
+		translateMix: number;
+		scaleMix: number;
+		shearMix: number;
+		offsetRotation: number;
+		offsetX: number;
+		offsetY: number;
+		offsetScaleX: number;
+		offsetScaleY: number;
+		offsetShearY: number;
+		relative: boolean;
+		local: boolean;
+		constructor(name: string);
+	}
+}
+declare namespace sp.spine {
+	class Triangulator {
+		private convexPolygons;
+		private convexPolygonsIndices;
+		private indicesArray;
+		private isConcaveArray;
+		private triangles;
+		private polygonPool;
+		private polygonIndicesPool;
+		triangulate(verticesArray: ArrayLike<number>): Array<number>;
+		decompose(verticesArray: Array<number>, triangles: Array<number>): Array<Array<number>>;
+		private static isConcave;
+		private static positiveArea;
+		private static winding;
+	}
+}
+declare namespace sp.spine {
+	interface Updatable {
+		update(): void;
+		isActive(): boolean;
+	}
+}
+declare namespace sp.spine {
+	interface Map<T> {
+		[key: string]: T;
+	}
+	class IntSet {
+		array: number[];
+		add(value: number): boolean;
+		contains(value: number): boolean;
+		remove(value: number): void;
+		clear(): void;
+	}
+	interface Disposable {
+		dispose(): void;
+	}
+	interface Restorable {
+		restore(): void;
+	}
+	class Color {
+		r: number;
+		g: number;
+		b: number;
+		a: number;
+		static WHITE: Color;
+		static RED: Color;
+		static GREEN: Color;
+		static BLUE: Color;
+		static MAGENTA: Color;
+		constructor(r?: number, g?: number, b?: number, a?: number);
+		set(r: number, g: number, b: number, a: number): this;
+		setFromColor(c: Color): this;
+		setFromString(hex: string): this;
+		add(r: number, g: number, b: number, a: number): this;
+		clamp(): this;
+		static rgba8888ToColor(color: Color, value: number): void;
+		static rgb888ToColor(color: Color, value: number): void;
+	}
+	class MathUtils {
+		static PI: number;
+		static PI2: number;
+		static radiansToDegrees: number;
+		static radDeg: number;
+		static degreesToRadians: number;
+		static degRad: number;
+		static clamp(value: number, min: number, max: number): number;
+		static cosDeg(degrees: number): number;
+		static sinDeg(degrees: number): number;
+		static signum(value: number): number;
+		static toInt(x: number): number;
+		static cbrt(x: number): number;
+		static randomTriangular(min: number, max: number): number;
+		static randomTriangularWith(min: number, max: number, mode: number): number;
+	}
+	abstract class Interpolation {
+		protected abstract applyInternal(a: number): number;
+		apply(start: number, end: number, a: number): number;
+	}
+	class Pow extends Interpolation {
+		protected power: number;
+		constructor(power: number);
+		applyInternal(a: number): number;
+	}
+	class PowOut extends Pow {
+		constructor(power: number);
+		applyInternal(a: number): number;
+	}
+	class Utils {
+		static SUPPORTS_TYPED_ARRAYS: boolean;
+		static arrayCopy<T>(source: ArrayLike<T>, sourceStart: number, dest: ArrayLike<T>, destStart: number, numElements: number): void;
+		static setArraySize<T>(array: Array<T>, size: number, value?: any): Array<T>;
+		static ensureArrayCapacity<T>(array: Array<T>, size: number, value?: any): Array<T>;
+		static newArray<T>(size: number, defaultValue: T): Array<T>;
+		static newFloatArray(size: number): ArrayLike<number>;
+		static newShortArray(size: number): ArrayLike<number>;
+		static toFloatArray(array: Array<number>): number[] | Float32Array;
+		static toSinglePrecision(value: number): number;
+		static webkit602BugfixHelper(alpha: number, blend: MixBlend): void;
+		static contains<T>(array: Array<T>, element: T, identity?: boolean): boolean;
+	}
+	class DebugUtils {
+		static logBones(skeleton: Skeleton): void;
+	}
+	class Pool<T> {
+		private items;
+		private instantiator;
+		constructor(instantiator: () => T);
+		obtain(): T;
+		free(item: T): void;
+		freeAll(items: ArrayLike<T>): void;
+		clear(): void;
+	}
+	class Vector2 {
+		x: number;
+		y: number;
+		constructor(x?: number, y?: number);
+		set(x: number, y: number): Vector2;
+		length(): number;
+		normalize(): this;
+	}
+	class TimeKeeper {
+		maxDelta: number;
+		framesPerSecond: number;
+		delta: number;
+		totalTime: number;
+		private lastTime;
+		private frameCount;
+		private frameTime;
+		update(): void;
+	}
+	interface ArrayLike<T> {
+		length: number;
+		[n: number]: T;
+	}
+	class WindowedMean {
+		values: Array<number>;
+		addedValues: number;
+		lastValue: number;
+		mean: number;
+		dirty: boolean;
+		constructor(windowSize?: number);
+		hasEnoughData(): boolean;
+		addValue(value: number): void;
+		getMean(): number;
+	}
+}
+declare namespace sp.spine {
+	interface VertexEffect {
+		begin(skeleton: Skeleton): void;
+		transform(position: Vector2, uv: Vector2, light: Color, dark: Color): void;
+		end(): void;
+	}
+}
+interface Math {
+	fround(n: number): number;
+}
+declare namespace sp.spine {
+	abstract class Attachment {
+		name: string;
+		constructor(name: string);
+		abstract copy(): Attachment;
+	}
+	abstract class VertexAttachment extends Attachment {
+		private static nextID;
+		id: number;
+		bones: Array<number>;
+		vertices: ArrayLike<number>;
+		worldVerticesLength: number;
+		deformAttachment: VertexAttachment;
+		constructor(name: string);
+		computeWorldVertices(slot: Slot, start: number, count: number, worldVertices: ArrayLike<number>, offset: number, stride: number): void;
+		copyTo(attachment: VertexAttachment): void;
+	}
+}
+declare namespace sp.spine {
+	interface AttachmentLoader {
+		newRegionAttachment(skin: Skin, name: string, path: string): RegionAttachment;
+		newMeshAttachment(skin: Skin, name: string, path: string): MeshAttachment;
+		newBoundingBoxAttachment(skin: Skin, name: string): BoundingBoxAttachment;
+		newPathAttachment(skin: Skin, name: string): PathAttachment;
+		newPointAttachment(skin: Skin, name: string): PointAttachment;
+		newClippingAttachment(skin: Skin, name: string): ClippingAttachment;
+	}
+}
+declare namespace sp.spine {
+	enum AttachmentType {
+		Region = 0,
+		BoundingBox = 1,
+		Mesh = 2,
+		LinkedMesh = 3,
+		Path = 4,
+		Point = 5,
+		Clipping = 6
+	}
+}
+declare namespace sp.spine {
+	class BoundingBoxAttachment extends VertexAttachment {
+		color: Color;
+		constructor(name: string);
+		copy(): Attachment;
+	}
+}
+declare namespace sp.spine {
+	class ClippingAttachment extends VertexAttachment {
+		endSlot: SlotData;
+		color: Color;
+		constructor(name: string);
+		copy(): Attachment;
+	}
+}
+declare namespace sp.spine {
+	class MeshAttachment extends VertexAttachment {
+		region: TextureRegion;
+		path: string;
+		regionUVs: ArrayLike<number>;
+		uvs: ArrayLike<number>;
+		triangles: Array<number>;
+		color: Color;
+		width: number;
+		height: number;
+		hullLength: number;
+		edges: Array<number>;
+		private parentMesh;
+		tempColor: Color;
+		constructor(name: string);
+		updateUVs(): void;
+		getParentMesh(): MeshAttachment;
+		setParentMesh(parentMesh: MeshAttachment): void;
+		copy(): Attachment;
+		newLinkedMesh(): MeshAttachment;
+	}
+}
+declare namespace sp.spine {
+	class PathAttachment extends VertexAttachment {
+		lengths: Array<number>;
+		closed: boolean;
+		constantSpeed: boolean;
+		color: Color;
+		constructor(name: string);
+		copy(): Attachment;
+	}
+}
+declare namespace sp.spine {
+	class PointAttachment extends VertexAttachment {
+		x: number;
+		y: number;
+		rotation: number;
+		color: Color;
+		constructor(name: string);
+		computeWorldPosition(bone: Bone, point: Vector2): Vector2;
+		computeWorldRotation(bone: Bone): number;
+		copy(): Attachment;
+	}
+}
+declare namespace sp.spine {
+	class RegionAttachment extends Attachment {
+		static OX1: number;
+		static OY1: number;
+		static OX2: number;
+		static OY2: number;
+		static OX3: number;
+		static OY3: number;
+		static OX4: number;
+		static OY4: number;
+		static X1: number;
+		static Y1: number;
+		static C1R: number;
+		static C1G: number;
+		static C1B: number;
+		static C1A: number;
+		static U1: number;
+		static V1: number;
+		static X2: number;
+		static Y2: number;
+		static C2R: number;
+		static C2G: number;
+		static C2B: number;
+		static C2A: number;
+		static U2: number;
+		static V2: number;
+		static X3: number;
+		static Y3: number;
+		static C3R: number;
+		static C3G: number;
+		static C3B: number;
+		static C3A: number;
+		static U3: number;
+		static V3: number;
+		static X4: number;
+		static Y4: number;
+		static C4R: number;
+		static C4G: number;
+		static C4B: number;
+		static C4A: number;
+		static U4: number;
+		static V4: number;
+		x: number;
+		y: number;
+		scaleX: number;
+		scaleY: number;
+		rotation: number;
+		width: number;
+		height: number;
+		color: Color;
+		path: string;
+		rendererObject: any;
+		region: TextureRegion;
+		offset: ArrayLike<number>;
+		uvs: ArrayLike<number>;
+		tempColor: Color;
+		constructor(name: string);
+		updateOffset(): void;
+		setRegion(region: TextureRegion): void;
+		computeWorldVertices(bone: Bone, worldVertices: ArrayLike<number>, offset: number, stride: number): void;
+		copy(): Attachment;
+	}
+}
+declare namespace sp.spine {
+	class JitterEffect implements VertexEffect {
+		jitterX: number;
+		jitterY: number;
+		constructor(jitterX: number, jitterY: number);
+		begin(skeleton: Skeleton): void;
+		transform(position: Vector2, uv: Vector2, light: Color, dark: Color): void;
+		end(): void;
+	}
+}
+declare namespace sp.spine {
+	class SwirlEffect implements VertexEffect {
+		static interpolation: PowOut;
+		centerX: number;
+		centerY: number;
+		radius: number;
+		angle: number;
+		private worldX;
+		private worldY;
+		constructor(radius: number);
+		begin(skeleton: Skeleton): void;
+		transform(position: Vector2, uv: Vector2, light: Color, dark: Color): void;
+		end(): void;
+	}
+}
+
+/**
+ * API for jsb module
+ * Author: haroel
+ * Homepage: https://github.com/haroel/creatorexDTS
+ */
+declare namespace jsb{
+    export module reflection{
+        /**
+         * https://docs.cocos.com/creator/manual/zh/advanced-topics/java-reflection.html
+         * call OBJC/Java static methods
+         * 
+         * @param className 
+         * @param methodName 
+         * @param methodSignature 
+         * @param parameters 
+         */
+        export function callStaticMethod (className: string, methodName: string, methodSignature: string, ...parameters:any): any;
+    }
+    /**
+     * 下载任务对象
+     */
+    export type DownloaderTask = { requestURL: string, storagePath: string, identifier: string };
+
+    /**
+     * Http file downloader for jsb！
+     */
+    export class Downloader{
+        /**
+         * create a download task
+         * @param requestURL 
+         * @param storagePath 
+         * @param identifier 
+         */
+        createDownloadFileTask (requestURL:string, storagePath:string, identifier?:string): DownloaderTask;
+
+        setOnFileTaskSuccess (onSucceed: (task: DownloaderTask) => void): void;
+
+        setOnTaskProgress (onProgress: (task: DownloaderTask, bytesReceived: number, totalBytesReceived: number, totalBytesExpected: number) => void): void;
+
+        setOnTaskError (onError: (task: DownloaderTask, errorCode: number, errorCodeInternal: number, errorStr: string) => void): void;
+
+    }
+
+    export interface ManifestAsset {
+        md5: string;
+        path: string;
+        compressed: boolean;
+        size: number;
+        downloadState: number;
+    }
+
+    export class Manifest {
+        constructor (manifestUrl: string);
+        constructor (content: string, manifestRoot: string);
+        parseFile (manifestUrl: string): void;
+        parseJSONString (content: string, manifestRoot: string): void;
+
+        getManifestRoot (): string;
+        getManifestFileUrl (): string;
+        getVersionFileUrl (): string;
+        getSearchPaths (): [string];
+        getVersion (): string;
+        getPackageUrl (): boolean;
+
+        setUpdating (isUpdating: boolean): void;
+        isUpdating (): boolean;
+        isVersionLoaded (): boolean;
+        isLoaded (): boolean;
+    }
+
+    export class EventAssetsManager {
+        // EventCode
+        static ERROR_NO_LOCAL_MANIFEST: number;
+        static ERROR_DOWNLOAD_MANIFEST: number;
+        static ERROR_PARSE_MANIFEST: number;
+        static NEW_VERSION_FOUND: number;
+        static ALREADY_UP_TO_DATE: number;
+        static UPDATE_PROGRESSION: number;
+        static ASSET_UPDATED: number;
+        static ERROR_UPDATING: number;
+        static UPDATE_FINISHED: number;
+        static UPDATE_FAILED: number;
+        static ERROR_DECOMPRESS: number;
+
+        constructor (eventName: string, manager: AssetsManager, eventCode: number, 
+                    assetId?: string, message?: string, curleCode?: number, curlmCode?: number);
+        getAssetsManagerEx (): AssetsManager;
+        isResuming (): boolean;
+
+        getDownloadedFiles (): number;
+        getDownloadedBytes (): number;
+        getTotalFiles (): number;
+        getTotalBytes (): number;
+        getPercent (): number;
+        getPercentByFile (): number;
+
+        getEventCode (): number;
+        getMessage (): string;
+        getAssetId (): string;
+        getCURLECode (): number;
+        getCURLMCode (): number;
+    }
+
+    export module AssetsManager {
+        export enum State {
+            UNINITED,
+            UNCHECKED,
+            PREDOWNLOAD_VERSION,
+            DOWNLOADING_VERSION,
+            VERSION_LOADED,
+            PREDOWNLOAD_MANIFEST,
+            DOWNLOADING_MANIFEST,
+            MANIFEST_LOADED,
+            NEED_UPDATE,
+            READY_TO_UPDATE,
+            UPDATING,
+            UNZIPPING,
+            UP_TO_DATE,
+            FAIL_TO_UPDATE,
+        }
+    }
+
+    export class AssetsManager {
+        constructor (manifestUrl: string, storagePath: string, versionCompareHandle?: (versionA: string, versionB: string) => number);
+        static create (manifestUrl: string, storagePath: string): AssetsManager;
+
+        getState (): AssetsManager.State;
+        getStoragePath (): string
+        getMaxConcurrentTask (): number;
+        // setMaxConcurrentTask (max: number): void;  // actually not supported
+
+        checkUpdate (): void;
+        prepareUpdate (): void;
+        update (): void;
+        isResuming (): boolean;
+
+        getDownloadedFiles (): number;
+        getDownloadedBytes (): number;
+        getTotalFiles (): number;
+        getTotalBytes (): number;
+        downloadFailedAssets (): void;
+
+        getLocalManifest (): Manifest;
+        loadLocalManifest (manifestUrl: string): boolean;
+        loadLocalManifest (localManifest: Manifest, storagePath: string): boolean;
+        getRemoteManifest (): Manifest;
+        loadRemoteManifest (remoteManifest: Manifest): boolean;
+
+        /**
+         * Setup your own version compare handler, versionA and B is versions in string.  
+         * if the return value greater than 0, versionA is greater than B,  
+         * if the return value equals 0, versionA equals to B,  
+         * if the return value smaller than 0, versionA is smaller than B.  
+         */
+        setVersionCompareHandle (versionCompareHandle?: (versionA: string, versionB: string) => number): void;
+        /**
+         * Setup the verification callback, Return true if the verification passed, otherwise return false
+         */
+        setVerifyCallback (verifyCallback: (path: string, asset: ManifestAsset) => boolean): void;
+        setEventCallback (eventCallback: (event: EventAssetsManager) => void): void;
+    }
+
+    /**
+     * FileUtils  Helper class to handle file operations.
+     */
+    export module fileUtils{
+        /**
+         *  Checks whether the path is an absolute path.
+         *
+         *  @note On Android, if the parameter passed in is relative to "@assets/", this method will treat it as an absolute path.
+         *        Also on Blackberry, path starts with "app/native/Resources/" is treated as an absolute path.
+         *
+         *  @param path The path that needs to be checked.
+         *  @return True if it's an absolute path, false if not.
+         */
+        export function isAbsolutePath (path:string):boolean;
+        /** Returns the fullpath for a given filename.
+
+        First it will try to get a new filename from the "filenameLookup" dictionary.
+        If a new filename can't be found on the dictionary, it will use the original filename.
+        Then it will try to obtain the full path of the filename using the FileUtils search rules: resolutions, and search paths.
+        The file search is based on the array element order of search paths and resolution directories.
+
+        For instance:
+
+            We set two elements("/mnt/sdcard/", "internal_dir/") to search paths vector by setSearchPaths,
+            and set three elements("resources-ipadhd/", "resources-ipad/", "resources-iphonehd")
+            to resolutions vector by setSearchResolutionsOrder. The "internal_dir" is relative to "Resources/".
+
+            If we have a file named 'sprite.png', the mapping in fileLookup dictionary contains `key: sprite.png -> value: sprite.pvr.gz`.
+            Firstly, it will replace 'sprite.png' with 'sprite.pvr.gz', then searching the file sprite.pvr.gz as follows:
+
+                /mnt/sdcard/resources-ipadhd/sprite.pvr.gz      (if not found, search next)
+                /mnt/sdcard/resources-ipad/sprite.pvr.gz        (if not found, search next)
+                /mnt/sdcard/resources-iphonehd/sprite.pvr.gz    (if not found, search next)
+                /mnt/sdcard/sprite.pvr.gz                       (if not found, search next)
+                internal_dir/resources-ipadhd/sprite.pvr.gz     (if not found, search next)
+                internal_dir/resources-ipad/sprite.pvr.gz       (if not found, search next)
+                internal_dir/resources-iphonehd/sprite.pvr.gz   (if not found, search next)
+                internal_dir/sprite.pvr.gz                      (if not found, return "sprite.png")
+
+            If the filename contains relative path like "gamescene/uilayer/sprite.png",
+            and the mapping in fileLookup dictionary contains `key: gamescene/uilayer/sprite.png -> value: gamescene/uilayer/sprite.pvr.gz`.
+            The file search order will be:
+
+                /mnt/sdcard/gamescene/uilayer/resources-ipadhd/sprite.pvr.gz      (if not found, search next)
+                /mnt/sdcard/gamescene/uilayer/resources-ipad/sprite.pvr.gz        (if not found, search next)
+                /mnt/sdcard/gamescene/uilayer/resources-iphonehd/sprite.pvr.gz    (if not found, search next)
+                /mnt/sdcard/gamescene/uilayer/sprite.pvr.gz                       (if not found, search next)
+                internal_dir/gamescene/uilayer/resources-ipadhd/sprite.pvr.gz     (if not found, search next)
+                internal_dir/gamescene/uilayer/resources-ipad/sprite.pvr.gz       (if not found, search next)
+                internal_dir/gamescene/uilayer/resources-iphonehd/sprite.pvr.gz   (if not found, search next)
+                internal_dir/gamescene/uilayer/sprite.pvr.gz                      (if not found, return "gamescene/uilayer/sprite.png")
+
+        If the new file can't be found on the file system, it will return the parameter filename directly.
+
+        This method was added to simplify multiplatform support. Whether you are using cocos2d-js or any cross-compilation toolchain like StellaSDK or Apportable,
+        you might need to load different resources for a given file in the different platforms.
+
+        @since v2.1
+        */
+        export function fullPathForFilename (filename:string):string;
+        /**
+         *  Gets string from a file.
+        */
+        export function getStringFromFile (filename:string):string;
+        /**
+         *  Removes a file.
+         *
+         *  @param filepath The full path of the file, it must be an absolute path.
+         *  @return True if the file have been removed successfully, false if not.
+         */
+        export function removeFile (filepath:string):boolean;
+        /**
+         *  Checks whether the path is a directory.
+         *
+         *  @param dirPath The path of the directory, it could be a relative or an absolute path.
+         *  @return True if the directory exists, false if not.
+         */
+        export function isDirectoryExist (dirPath:string):boolean;
+        /**
+         * Normalize: remove . and ..
+         * @param filepath 
+         */
+        export function normalizePath (filepath:string):string;
+        /**
+         * Get default resource root path.
+         */
+        export function getDefaultResourceRootPath ():string;
+        /**
+         * Loads the filenameLookup dictionary from the contents of a filename.
+         *
+         * @note The plist file name should follow the format below:
+         *
+         * @code
+         * <?xml version="1.0" encoding="UTF-8"?>
+         * <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+         * <plist version="1.0">
+         * <dict>
+         *     <key>filenames</key>
+         *     <dict>
+         *         <key>sounds/click.wav</key>
+         *         <string>sounds/click.caf</string>
+         *         <key>sounds/endgame.wav</key>
+         *         <string>sounds/endgame.caf</string>
+         *         <key>sounds/gem-0.wav</key>
+         *         <string>sounds/gem-0.caf</string>
+         *     </dict>
+         *     <key>metadata</key>
+         *     <dict>
+         *         <key>version</key>
+         *         <integer>1</integer>
+         *     </dict>
+         * </dict>
+         * </plist>
+         * @endcode
+         * @param filename The plist file name.
+         *
+         @since v2.1
+        * @js loadFilenameLookup
+        * @lua loadFilenameLookup
+        */
+        export function loadFilenameLookup (filepath:string):void;
+        /** Checks whether to pop up a message box when failed to load an image.
+         *  @return True if pop up a message box when failed to load an image, false if not.
+         */
+        export function isPopupNotify ():boolean;
+        /**
+         *  Sets whether to pop-up a message box when failed to load an image.
+         */
+        export function setPopupNotify (notify:boolean):void;
+
+        // Converts the contents of a file to a ValueVector.
+        // This method is used internally.
+        export function getValueVectorFromFile (filepath:string):Array<any>;
+        /**
+         *  Gets the array of search paths.
+         *
+         *  @return The array of search paths which may contain the prefix of default resource root path. 
+         *  @note In best practise, getter function should return the value of setter function passes in.
+         *        But since we should not break the compatibility, we keep using the old logic. 
+         *        Therefore, If you want to get the original search paths, please call 'getOriginalSearchPaths()' instead.
+         *  @see fullPathForFilename(const char*).
+         *  @lua NA
+         */
+        export function getSearchPaths ():Array<string>;
+        /**
+         * 
+         * @param filepath 
+         */
+        export function getFileDir (filepath:string):string;
+        /**
+        * write a ValueMap into a plist file
+        *
+        *@param dict the ValueMap want to save (key,value)
+        *@param fullPath The full path to the file you want to save a string
+        *@return bool
+        */
+        export function writeToFile ( valueMap:any ):boolean;
+        /**
+         *  Gets the original search path array set by 'setSearchPaths' or 'addSearchPath'.
+         *  @return The array of the original search paths
+         */
+        export function getOriginalSearchPaths ():Array<string>;
+        /**
+         *  List all files in a directory.
+         *
+         *  @param dirPath The path of the directory, it could be a relative or an absolute path.
+         *  @return File paths in a string vector
+         */
+        export function listFiles (filepath:string):Array<string>;
+        /**
+         *  Converts the contents of a file to a ValueMap.
+         *  @param filename The filename of the file to gets content.
+         *  @return ValueMap of the file contents.
+         *  @note This method is used internally.
+         */
+        export function getValueMapFromFile (filepath:string):any;
+        /**
+         *  Retrieve the file size.
+         *
+         *  @note If a relative path was passed in, it will be inserted a default root path at the beginning.
+         *  @param filepath The path of the file, it could be a relative or absolute path.
+         *  @return The file size.
+         */
+        export function getFileSize (filepath:string):number;
+
+        /** Converts the contents of a file to a ValueMap.
+         *  This method is used internally.
+         */
+        export function getValueMapFromData (filedata:string,filesize:number):any;
+        /**
+         *  Removes a directory.
+         *
+         *  @param dirPath  The full path of the directory, it must be an absolute path.
+         *  @return True if the directory have been removed successfully, false if not.
+         */
+        export function removeDirectory (dirPath:string):boolean;
+        /**
+         *  Sets the array of search paths.
+         *
+         *  You can use this array to modify the search path of the resources.
+         *  If you want to use "themes" or search resources in the "cache", you can do it easily by adding new entries in this array.
+         *
+         *  @note This method could access relative path and absolute path.
+         *        If the relative path was passed to the vector, FileUtils will add the default resource directory before the relative path.
+         *        For instance:
+         *            On Android, the default resource root path is "@assets/".
+         *            If "/mnt/sdcard/" and "resources-large" were set to the search paths vector,
+         *            "resources-large" will be converted to "@assets/resources-large" since it was a relative path.
+         *
+         *  @param searchPaths The array contains search paths.
+         *  @see fullPathForFilename(const char*)
+         *  @since v2.1
+         *  In js:var setSearchPaths(var jsval);
+         *  @lua NA
+         */
+        export function setSearchPaths ( searchPath:Array<string>):void;
+        /**
+         *  write a string into a file
+         *
+         * @param dataStr the string want to save
+         * @param fullPath The full path to the file you want to save a string
+         * @return bool True if write success
+         */
+        export function writeStringToFile (dataStr:string,fullPath:string):boolean;
+        /**
+         *  Sets the array that contains the search order of the resources.
+         *
+         *  @param searchResolutionsOrder The source array that contains the search order of the resources.
+         *  @see getSearchResolutionsOrder(), fullPathForFilename(const char*).
+         *  @since v2.1
+         *  In js:var setSearchResolutionsOrder(var jsval)
+         *  @lua NA
+         */
+        export function setSearchResolutionsOrder (searchResolutionsOrder:Array<string>):void;
+        /**
+         * Append search order of the resources.
+         *
+         * @see setSearchResolutionsOrder(), fullPathForFilename().
+         * @since v2.1
+         */
+        export function addSearchResolutionsOrder (order:string,front:boolean):void;
+        /**
+         * Add search path.
+         *
+         * @since v2.1
+         */
+        export function addSearchPath (path:string,front:boolean):void;
+        /**
+        * write ValueVector into a plist file
+        *
+        *@param vecData the ValueVector want to save
+        *@param fullPath The full path to the file you want to save a string
+        *@return bool
+        */
+        export function writeValueVectorToFile (vecData:Array<any>,fullPath:string):boolean;
+        /**
+         *  Checks whether a file exists.
+         *
+         *  @note If a relative path was passed in, it will be inserted a default root path at the beginning.
+         *  @param filename The path of the file, it could be a relative or absolute path.
+         *  @return True if the file exists, false if not.
+         */
+        export function isFileExist (filename:string):boolean;
+        /**©∫
+         *  Purges full path caches.
+         */
+        export function purgeCachedEntries ():void;
+            /**
+         *  Gets full path from a file name and the path of the relative file.
+         *  @param filename The file name.
+         *  @param relativeFile The path of the relative file.
+         *  @return The full path.
+         *          e.g. filename: hello.png, pszRelativeFile: /User/path1/path2/hello.plist
+         *               Return: /User/path1/path2/hello.pvr (If there a a key(hello.png)-value(hello.pvr) in FilenameLookup dictionary. )
+         *
+         */
+        export function fullPathFromRelativeFile (filename:string,relativeFile:string):string;
+        /**
+        * Windows fopen can't support UTF-8 filename
+        * Need convert all parameters fopen and other 3rd-party libs
+        *
+        * @param filenameUtf8 std::string name file for conversion from utf-8
+        * @return std::string ansi filename in current locale
+        */
+        export function getSuitableFOpen (filenameUtf8:string):string;
+        /**
+        * write ValueMap into a plist file
+        *
+        *@param dict the ValueMap want to save
+        *@param fullPath The full path to the file you want to save a string
+        *@return bool
+        */
+        export function writeValueMapToFile (dict:any,fullPath:string):string;
+        /**
+        *  Gets filename extension is a suffix (separated from the base filename by a dot) in lower case.
+        *  Examples of filename extensions are .png, .jpeg, .exe, .dmg and .txt.
+        *  @param filePath The path of the file, it could be a relative or absolute path.
+        *  @return suffix for filename in lower case or empty if a dot not found.
+        */
+        export function getFileExtension (filePath:string):string;
+        /**
+         *  Sets writable path.
+         */
+        export function setWritablePath (writablePath:string):void;
+        /**
+         * Set default resource root path.
+         */
+        export function setDefaultResourceRootPath (filepath:string):void;
+
+        /**
+         *  Gets the array that contains the search order of the resources.
+         *
+         *  @see setSearchResolutionsOrder(const std::vector<std::string>&), fullPathForFilename(const char*).
+         *  @since v2.1
+         *  @lua NA
+         */
+        export function getSearchResolutionsOrder ():Array<string>;
+        /**
+         *  Creates a directory.
+         *
+         *  @param dirPath The path of the directory, it must be an absolute path.
+         *  @return True if the directory have been created successfully, false if not.
+         */
+        export function createDirectory (dirPath:string):string;
+        /**
+         *  List all files recursively in a directory.
+         *
+         *  @param dirPath The path of the directory, it could be a relative or an absolute path.
+         *  @return File paths in a string vector
+         */
+        export function listFilesRecursively (dirPath:string, files:Array<string>):void;
+        /**
+         *  Gets the writable path.
+         *  @return  The path that can be write/read a file in
+         */
+        export function getWritablePath ():string;
+    }
+>>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 }
 
 /** Running in the editor. */
