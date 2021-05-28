@@ -1,6 +1,6 @@
 {
   "ver": "2.3.5",
-  "uuid": "a692a4e9-ef35-445c-809d-4600b3501bf8",
+  "uuid": "755adc0a-19c6-4e89-967a-044119ec224e",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -13,8 +13,8 @@
   "subMetas": {
     "brick2": {
       "ver": "1.0.4",
-      "uuid": "cbf188e7-3dbf-4c35-9511-af560de99275",
-      "rawTextureUuid": "a692a4e9-ef35-445c-809d-4600b3501bf8",
+      "uuid": "2d9f3f15-57ff-4a73-b3d8-059eff913911",
+      "rawTextureUuid": "755adc0a-19c6-4e89-967a-044119ec224e",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
