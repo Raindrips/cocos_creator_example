@@ -38,13 +38,13 @@ export default class NewClass extends cc.Component {
         switch (other.tag) {
             case 0:
                 //球撞到墙
-                cc.audioEngine.playEffect(this.ballAudio,false);
+                cc.audioEngine.play(this.ballAudio,false,0.8);
                 break;
             case 1:
                 //球撞到砖块
                 other.node.destroy();
                 this.game.emit('add');
-                cc.audioEngine.playEffect(this.hitAudio,false);
+                cc.audioEngine.play(this.hitAudio,false,0.5);
                 break;
             case 2:
                 //球撞到底部地面

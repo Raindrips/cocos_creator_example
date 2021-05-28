@@ -839,17 +839,10 @@
     "_angularDamping": 0,
     "_linearVelocity": {
       "__type__": "cc.Vec2",
-<<<<<<< HEAD
       "x": 500,
       "y": 500
     },
     "_angularVelocity": 30,
-=======
-      "x": 600,
-      "y": 600
-    },
-    "_angularVelocity": 0,
->>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
     "_fixedRotation": false,
     "enabledContactListener": true,
     "bullet": true,
@@ -889,16 +882,13 @@
     "game": {
       "__id__": 16
     },
-<<<<<<< HEAD
     "ballAudio": {
       "__uuid__": "0c8ddea3-89f4-40dd-949f-6b1b50a5d079"
     },
     "hitAudio": {
       "__uuid__": "bed517e8-453e-40fa-9603-60567cb26a28"
     },
-    "moveSpeed": 600,
-=======
->>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
+    "moveSpeed": 1000,
     "_id": "30O65sPiBHbamOk3Ye9ruO"
   },
   {
@@ -1063,6 +1053,7 @@
       "__id__": 22
     },
     "_enabled": true,
+    "speed": 1000,
     "_id": "e1IUsajXZHMb8VjIxZyEfX"
   },
   {
