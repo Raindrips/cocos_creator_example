@@ -3,10 +3,6 @@
   "packages": "packages",
   "name": "Make_bricks",
   "id": "3530b9b8-42fd-496b-b049-bc5f892c70f4",
-<<<<<<< HEAD
   "version": "2.4.5",
-=======
-  "version": "2.4.3",
->>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
   "isNew": false
 }

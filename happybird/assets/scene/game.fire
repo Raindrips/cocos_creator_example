@@ -95,7 +95,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 640,
+      "width": 960,
       "height": 640
     },
     "_anchorPoint": {
@@ -107,7 +107,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        320,
+        480,
         320,
         0,
         0,
@@ -787,13 +787,15 @@
       "__id__": 5
     },
     "_enabled": true,
-    "_clip": null,
+    "_clip": {
+      "__uuid__": "9c14c1f0-df76-493b-b065-95b18a8a9499"
+    },
     "_volume": 1,
     "_mute": false,
-    "_loop": false,
+    "_loop": true,
     "_firstlyEnabled": true,
-    "playOnLoad": false,
-    "preload": false,
+    "playOnLoad": true,
+    "preload": true,
     "_id": "a3JKuYogtLXJBeM9t9DZ7K"
   },
   {
@@ -806,7 +808,7 @@
     "_enabled": true,
     "_designResolution": {
       "__type__": "cc.Size",
-      "width": 640,
+      "width": 960,
       "height": 640
     },
     "_fitWidth": true,
