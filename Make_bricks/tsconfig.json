@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "compilerOptions": {
     "module": "commonjs",
@@ -17,24 +16,4 @@
     "build",
     "settings"
   ]
-=======
-{
-  "compilerOptions": {
-    "module": "commonjs",
-    "lib": [ "es2015", "es2017", "dom" ],
-    "target": "es5",
-    "experimentalDecorators": true,
-    "skipLibCheck": true,
-    "outDir": "temp/vscode-dist",
-    "forceConsistentCasingInFileNames": true
-  },
-  "exclude": [
-    "node_modules",
-    "library",
-    "local",
-    "temp",
-    "build",
-    "settings"
-  ]
->>>>>>> cf2eab933d6342aacafc8d23299ddc4c412fbb05
 }
