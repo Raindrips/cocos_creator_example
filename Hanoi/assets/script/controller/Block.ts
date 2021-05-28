@@ -1,5 +1,5 @@
 const { ccclass, property } = cc._decorator;
-import GameHanoi from './GameHanoi'
+import HanoiView from '../view/HanoiView'
 @ccclass
 export default class Block extends cc.Component {
 
@@ -10,10 +10,12 @@ export default class Block extends cc.Component {
 
 	canMove: boolean = false;
 
+	//游戏加载时调用的函数
 	onLoad() {
-		this.hanoi = cc.find('Canvas/han')
+		this.hanoi = cc.find('Canvas/Hanoi')
 	}
 
+	//节点启动时加载的
 	start() {
 		this.node.on(cc.Node.EventType.TOUCH_START, this.touchStart, this);
 		this.node.on(cc.Node.EventType.TOUCH_MOVE, this.touchMove, this);
@@ -30,16 +32,16 @@ export default class Block extends cc.Component {
 			this.node.setContentSize(cc.size(width * (i + 1), width));
 		}
 	}
-	tempPos: cc.Vec3 = cc.v3();
+	tempPos: cc.Vec3 = cc.v3(0, 0);
 	touchStart(e: cc.Event.EventTouch) {
 		this.tempPos = this.node.position;
 
-		let comp = this.hanoi.getComponent('GameHanoi') as GameHanoi;
+		let comp = this.hanoi.getComponent(HanoiView);
 		let index = comp.checkBlock(this.node.position);
-		if (comp.countArr[index][comp.countArr[index].length - 1] == 
-			this.node.width) {
+		let arr = comp.hannio.countArr;
+		if (arr[index][arr[index].length - 1] == this.node.width) {
 			this.canMove = true;
-			this.node.opacity=200;
+			this.node.opacity = 200;
 		}
 
 	}
@@ -53,14 +55,16 @@ export default class Block extends cc.Component {
 	}
 
 	touchEnd(e: cc.Event.EventTouch) {
-
-		let comp = this.hanoi.getComponent('GameHanoi') as GameHanoi;
+		let comp = this.hanoi.getComponent(HanoiView);
 		if (!comp.placeBlock(this.tempPos, this.node)) {
 			this.node.position = this.tempPos;
 		}
-		this.node.opacity=255;
+		this.node.opacity = 255;
 		this.canMove = false;
-		//this->node
+
+		if(comp.hannio.isWinGame()){
+			cc.log('游戏胜利');
+		}
 	}
 
 }

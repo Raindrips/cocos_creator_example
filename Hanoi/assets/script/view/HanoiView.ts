@@ -1,7 +1,9 @@
+import Hanoi from "../model/Hanoi";
+
 const { ccclass, property } = cc._decorator
 
 @ccclass
-export default class GameHanoi extends cc.Component {
+export default class HanoiView extends cc.Component {
 
 	@property(cc.Node)
 	blockLayer: cc.Node = null
@@ -9,39 +11,40 @@ export default class GameHanoi extends cc.Component {
 	@property(cc.Prefab)
 	block: cc.Prefab = null
 
+	@property(cc.AudioClip)
+	hit: cc.AudioClip = null;
+
+
 	@property
 	level: number = 3;
-
-	countArr: Array<Array<number>> = []
+	hannio: Hanoi = null
 
 	onLoad() {
-		this.countArr.length = this.level;
-		for (let i = 0; i < this.countArr.length; i++) {
-			this.countArr[i] = [];
-		}
+		this.level = this.level < 3 ? 3 : this.level;
+		this.hannio = new Hanoi(this.level);
 	}
 
 	start() {
+		
 		this.initBlock(this.level);
 	}
 
 	// update (dt) {}
 
-	initBlock(num) {
+	initBlock(num: number) {
 		for (let i = 0; i < num; i++) {
 			let blockNode = cc.instantiate(this.block)
 			blockNode.x = this.node.children[0].x
 			blockNode.y = this.getY(i)
 			blockNode.getComponent('Block').init(num - i)
-			this.countArr[0].push(blockNode.width)
 			this.blockLayer.addChild(blockNode, 10)
+			this.hannio.countArr[0].push(blockNode.width);
 		}
 	}
 
 	getY(index: number): number {
 		return -270 + 44 * index;
 	}
-
 	checkBlock(pos: cc.Vec3): number {
 		for (let i = 0; i < this.node.children.length; i++) {
 			let node = this.node.children[i];
@@ -51,23 +54,21 @@ export default class GameHanoi extends cc.Component {
 		}
 		return -1;
 	}
-
+	//移动方块
 	placeBlock(startPos: cc.Vec3, node: cc.Node) {
-		let startI = this.checkBlock(startPos);
+		let old = this.checkBlock(startPos);
 		let index = this.checkBlock(node.position);
-		if (index == -1 ||startI == -1) {
+		if (index == -1 || old == -1) {
 			return false
 		}
-		let wid1 = this.countArr[startI][this.countArr[startI].length - 1];
-		let wid2 = this.countArr[index][this.countArr[index].length - 1];
-		if (index == startI ||wid1 > wid2) {
-			return false;
+		let bool = this.hannio.place(old, index);
+		if (!bool) {
+			return false
 		}
 		let baseNode = this.node.children[index]
 		node.x = baseNode.x
-		node.y = this.getY(this.countArr[index].length)
-		let width = this.countArr[startI].pop();
-		this.countArr[index].push(width);
+		node.y = this.getY(this.hannio.countArr[index].length - 1);
+		cc.audioEngine.play(this.hit, false, 1);
 		return true;
 	}
 }
