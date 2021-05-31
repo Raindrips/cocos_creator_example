@@ -3,14 +3,11 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class NewClass extends cc.Component {
 
-    @property
-    grivate: number = -320;
 
 
     onLoad() {
         let physicsMagage = cc.director.getPhysicsManager();
         physicsMagage.enabled = true;
-        physicsMagage.gravity = cc.v2(0, this.grivate);
     }
 
     start() {

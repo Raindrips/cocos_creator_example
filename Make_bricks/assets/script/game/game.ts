@@ -8,8 +8,11 @@ export default class NewClass extends cc.Component {
 
     score: number = 0;
 
+    isGameStart=false;
+
     onLoad () {
         this.node.on('add',this.addScore,this);
+        
     }
 
     start() {

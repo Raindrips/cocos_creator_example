@@ -23,6 +23,6 @@ export default class NewClass extends cc.Component {
     }
 
     startGame(){
-        this.schedule(this.spawnPumple,1.2);
+        this.schedule(this.spawnPumple,1.25);
     }
 }

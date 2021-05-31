@@ -113,7 +113,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 640,
+      "width": 720,
       "height": 1280
     },
     "_anchorPoint": {
@@ -125,7 +125,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        320,
+        360,
         640,
         0,
         0,
@@ -230,7 +230,7 @@
       "a": 255
     },
     "_depth": -1,
-    "_zoomRatio": 1,
+    "_zoomRatio": 1.2,
     "_targetTexture": null,
     "_fov": 60,
     "_orthoSize": 10,
@@ -421,7 +421,7 @@
     "other": {
       "__id__": 9
     },
-    "speed": -300,
+    "speed": -100,
     "_id": "98jsGl3JtOSLulSKfqPz//"
   },
   {
@@ -755,7 +755,7 @@
     "other": {
       "__id__": 16
     },
-    "speed": -300,
+    "speed": -250,
     "_id": "2dJBP3qA9AhIgtKYjWvvgL"
   },
   {
@@ -1062,8 +1062,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 81.6,
-      "height": 57.6
+      "width": 70,
+      "height": 50
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1196,8 +1196,8 @@
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 75,
-      "height": 55
+      "width": 60,
+      "height": 45
     },
     "_id": "0eOyGv+R9AKIwLYsZomAc8"
   },
@@ -1222,7 +1222,7 @@
       "__id__": 39
     },
     "height": 600,
-    "grivate": 1.4,
+    "grivate": 5,
     "_id": "d4lVp0g6xLuIRgaccOfyiR"
   },
   {
@@ -1330,7 +1330,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 421.255656141989,
+      "width": 420,
       "height": 126
     },
     "_anchorPoint": {
@@ -1343,7 +1343,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        0,
+        -741.83,
         0,
         0,
         0,
@@ -1479,7 +1479,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        350,
+        250,
         0,
         0,
         0,
@@ -1676,7 +1676,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        500,
+        400,
         0,
         0,
         0,
@@ -1778,10 +1778,10 @@
     "_enabled": true,
     "_designResolution": {
       "__type__": "cc.Size",
-      "width": 640,
+      "width": 720,
       "height": 1280
     },
-    "_fitWidth": false,
+    "_fitWidth": true,
     "_fitHeight": true,
     "_id": "8fUJ6N0XtOoI5YInqetNwP"
   },
@@ -1820,7 +1820,6 @@
       "__id__": 2
     },
     "_enabled": true,
-    "grivate": -1280,
     "_id": "38j/yUrv1MsKM0sqdS+Og6"
   },
   {

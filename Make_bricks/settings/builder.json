@@ -1,11 +1,11 @@
 {
-  "title": "flappy_bird",
+  "title": "Make_bricks",
   "packageName": "org.cocos2d.demo",
-  "startScene": "eb45bf6f-2985-4010-9f36-b607fc71f551",
+  "startScene": "b264a25c-df45-42c7-a3ea-65d6c8f4320c",
   "excludeScenes": [],
   "orientation": {
-    "landscapeLeft": true,
     "landscapeRight": true,
+    "landscapeLeft": true,
     "portrait": false,
     "upsideDown": false
   },
@@ -18,36 +18,38 @@
   "md5Cache": true,
   "nativeMd5Cache": true,
   "encryptJs": true,
-  "xxteaKey": "65f47411-d30c-48",
+  "xxteaKey": "fc2cc532-3470-4b",
   "zipCompressJs": true,
   "fb-instant-games": {},
   "android": {
-    "REMOTE_SERVER_ROOT": "",
-    "packageName": "org.cocos2d.demo"
+    "packageName": "org.cocos2d.demo",
+    "REMOTE_SERVER_ROOT": ""
   },
   "ios": {
+    "packageName": "org.cocos2d.demo",
     "REMOTE_SERVER_ROOT": "",
-    "packageName": "org.cocos2d.demo"
+    "ios_enable_jit": true
   },
   "mac": {
-    "REMOTE_SERVER_ROOT": "",
-    "height": 720,
     "packageName": "org.cocos2d.demo",
-    "width": 1280
+    "REMOTE_SERVER_ROOT": "",
+    "width": 1280,
+    "height": 720
   },
   "win32": {
     "REMOTE_SERVER_ROOT": "",
-    "height": 720,
-    "width": 1280
+    "width": 1280,
+    "height": 720
   },
   "android-instant": {
-    "REMOTE_SERVER_ROOT": "",
-    "host": "",
     "packageName": "org.cocos2d.demo",
+    "REMOTE_SERVER_ROOT": "",
     "pathPattern": "",
-    "recordPath": "",
     "scheme": "https",
-    "skipRecord": false
+    "host": "",
+    "skipRecord": false,
+    "recordPath": ""
   },
-  "appBundle": false
+  "appBundle": false,
+  "agreements": {}
 }

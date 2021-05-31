@@ -7,11 +7,15 @@ export default class NewClass extends cc.Component {
     @property
     speed:number=1000;
 
+
+    onLoad(){}
+
     start() {
         this.node.parent.on(cc.Node.EventType.TOUCH_MOVE, this.touchStart, this);
 
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
+        
     }
 
     touchStart(e: cc.Event.EventTouch) {
