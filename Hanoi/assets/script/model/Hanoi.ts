@@ -49,4 +49,8 @@ export default class Hanoi {
     }
     return count==1;
   }
+
+  getLast(i:number){
+      return this.countArr[i][this.countArr[i].length-1];
+  }
 }

@@ -12,7 +12,8 @@ export default class Block extends cc.Component {
 
 	//游戏加载时调用的函数
 	onLoad() {
-		this.hanoi = cc.find('Canvas/Hanoi')
+		this.hanoi = cc.find('/Canvas/Hanoi');
+		cc.log(this.hanoi.name)
 	}
 
 	//节点启动时加载的
@@ -35,15 +36,12 @@ export default class Block extends cc.Component {
 	tempPos: cc.Vec3 = cc.v3(0, 0);
 	touchStart(e: cc.Event.EventTouch) {
 		this.tempPos = this.node.position;
-
 		let comp = this.hanoi.getComponent(HanoiView);
 		let index = comp.checkBlock(this.node.position);
-		let arr = comp.hannio.countArr;
-		if (arr[index][arr[index].length - 1] == this.node.width) {
+		if (comp.hannio.getLast(index) == this.node.width) {
 			this.canMove = true;
 			this.node.opacity = 200;
 		}
-
 	}
 
 	touchMove(e: cc.Event.EventTouch) {
@@ -62,7 +60,7 @@ export default class Block extends cc.Component {
 		this.node.opacity = 255;
 		this.canMove = false;
 
-		if(comp.hannio.isWinGame()){
+		if (comp.hannio.isWinGame()) {
 			cc.log('游戏胜利');
 		}
 	}
