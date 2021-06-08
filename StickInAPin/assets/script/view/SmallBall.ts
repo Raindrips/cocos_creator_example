@@ -18,9 +18,9 @@ export default class NewClass extends cc.Component {
 
     // update (dt) {}
 
-    initSmallBall(params) {
-        this.numLabel.string = params.num;
-        this.arrow.active = !!params.showArrow;
+    initSmallBall(num:number,showArrow:boolean) {
+        this.numLabel.string = num.toString();
+        this.arrow.active = showArrow;
     }
 
     /**
@@ -30,8 +30,8 @@ export default class NewClass extends cc.Component {
    */
     onCollisionEnter(other:cc.Collider, self:cc.Collider) {
         
-        //other.node.stopAllActions();
-        //self.node.stopAllActions();
+        other.node.stopAllActions();
+        self.node.stopAllActions();
         //zy.event.emit("gameover");
         cc.log('小球碰撞，游戏失败');
     }

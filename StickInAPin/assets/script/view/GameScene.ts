@@ -1,3 +1,5 @@
+import DataManager from "../model/DataManager";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -18,8 +20,6 @@ class GameScene extends cc.Component {
 	@property(cc.Label)
 	levelLabel: cc.Label = null
 
-
-
 	@property(cc.Node)
 	bgNode: cc.Node = null
 
@@ -28,24 +28,28 @@ class GameScene extends cc.Component {
 	@property
 	bigDir: number = 0
 
+    @property(cc.JsonAsset)
+    jsonData: cc.JsonAsset = null
+
 	smallBalls: cc.Node[] = []
 	tmpBalls: cc.Node[] = []
 	curLevel: number;
 
 	private _gameStart: boolean
 
+	dataManager:DataManager;
+
 	onLoad() {
-		this.init({});
+		this.init();
 	}
 
-	init(pargmas) {
+	init() {
 		this.smallBalls = [];
 		this.tmpBalls = [];         // 发射的尚未添加到大球上的小球
 		this._gameStart = false;
 
-		//this.curLevel = zy.dataMng.userData.curLevel;
-		//this.curLevel = parseInt(this.curLevel);
-		this.curLevel = 1;
+		this.dataManager=new DataManager(this.jsonData.json);
+		this.curLevel = this.dataManager.getUserData().currentLevel;
 	}
 
 	start() {
@@ -55,11 +59,8 @@ class GameScene extends cc.Component {
 
 	startGame() {
 
-		let mng = cc.director.getCollisionManager();
-		mng.enabled = true;
-		// mng.enabledDebugDraw = true;
-		// mng.enabledDrawBoundingBox = true;
 		this.node.on(cc.Node.EventType.TOUCH_START, this.onTouchStart, this);
+		this.node.on('gameover',this.gameover,this);
 		// zy.event.on("gameover", () => {
 		// 	if (this._gameStart) {
 		// 		this._gameStart = false;
@@ -72,12 +73,24 @@ class GameScene extends cc.Component {
 		// }, this);
 	}
 
+	gameover() {
+		if (this._gameStart) {
+			this._gameStart = false;
+			this.bgNode.color = cc.Color.fromHEX(this.bgNode.color, "#7A3341");
+			//zy.ui.tip.show("游戏失败，即将重新开始");
+			this.scheduleOnce(() => {
+				this.loadLevel(this.curLevel);
+			}, 2);
+		}
+	}
+
 	loadLevel(l: number) {
+		this.dataManager.loadLevel(l);
 		//let data = zy.dataMng.levelData.getLevelData(l);
-		//let data=1;
-		//this._bigDir = data.dir == 0 ? (Math.random() < 0.5 ? 1 : -1) : data.dir;
-		//this._bigSpeed = data.speed;
-		this.levelLabel.string = "第 " + l + " 关";
+		let data=this.dataManager.getLevelData();
+		this.bigDir = data.dir == 0 ? (Math.random() < 0.5 ? 1 : -1) : data.dir;
+		this.bigSpeed = data.speed;
+		this.levelLabel.string = "第 " + (l+1) + " 关";
 
 		// 清空数据
 		for (let b of this.tmpBalls) {
@@ -88,7 +101,7 @@ class GameScene extends cc.Component {
 		}
 		this.tmpBalls.splice(0);
 		this.smallBalls.splice(0);
-		let data = { smallNum: 4 }
+		//let data = { smallNum: 4 }
 		for (let i = 0; i < data.smallNum; i++) {
 			let ball = cc.instantiate(this.bulletNode);
 			ball.parent = this.ballPanel;
@@ -99,8 +112,8 @@ class GameScene extends cc.Component {
 
 		this.bgNode.color = cc.Color.fromHEX(this.bgNode.color, "#436770");
 
-		// this.loadBigBall(data.bigNum);
-		this.loadBigBall(4);
+		this.loadBigBall(data.bigNum);
+		// this.loadBigBall(4);
 
 		this.scheduleOnce(() => {
 			this._gameStart = true;
@@ -127,26 +140,29 @@ class GameScene extends cc.Component {
 	}
 
 	onTouchStart(event: cc.Event) {
-
+		//游戏还没开始
 		if (!this._gameStart) {
 			return;
 		}
+		//没有发射的球了
+		if (this.smallBalls.length <= 0) {
+			return;
+		}
+		let bullet = this.smallBalls.shift();
+		let wordPos = bullet.parent.convertToWorldSpaceAR(bullet.position);
 
-		if (this.smallBalls.length > 0) {
+		let ball = cc.instantiate(this.smallBallPF);
+		ball.getComponentInChildren(cc.Label).string = bullet.getComponentInChildren(cc.Label).string;
+		ball.parent = this.bigBall.parent;
+		ball.position = cc.v3(this.bigBall.parent.convertToNodeSpaceAR(wordPos));
+		this.tmpBalls.push(ball);
+		bullet.destroy();
 
-			let bullet = this.smallBalls.shift();
-			let wordPos = bullet.parent.convertToWorldSpaceAR(bullet.getPosition());
-
-			let ball = cc.instantiate(this.smallBallPF);
-			ball.getComponentInChildren(cc.Label).string = bullet.getComponentInChildren(cc.Label).string;
-			ball.parent = this.bigBall.parent;
-			ball.position = cc.v3(this.bigBall.parent.convertToNodeSpaceAR(wordPos));
-			this.tmpBalls.push(ball);
-			bullet.destroy();
-
-			let radius = this.bigBall.height / 2 - 2;
-			let des = cc.v2(0, this.bigBall.y - radius);
-			ball.runAction(cc.sequence(cc.moveTo(0.05, des).easing(cc.easeSineOut()), cc.callFunc(() => {
+		let radius = this.bigBall.height / 2 - 2;
+		let des = cc.v3(0, this.bigBall.y - radius);
+		cc.tween(ball)
+			.to(0.05, { position: des })
+			.call(() => {
 				this.tmpBalls.shift();
 				ball.parent = this.bigBall;
 				let angle = this.bigBall.angle;
@@ -160,26 +176,9 @@ class GameScene extends cc.Component {
 				ball.angle = 180 - angle;
 
 				this.scheduleOnce(this._checkPass.bind(this), 0);
-			})));
-			/* 
-			cc.tween(ball)
-				.to(0.05, { position: des })
-				.call(() => {
-					this.tmpBalls.shift();
-					ball.parent = this.bigBall;
-					let angle = this.bigBall.angle;
-					angle = angle % 360 + 180;
-					let radian = cc.misc.degreesToRadians(angle);
-
-					let x = radius * Math.sin(radian);
-					let y = radius * Math.cos(radian);
-					ball.x = x;
-					ball.y = y;
-					ball.angle = 180 - angle;
-				})
-			*/
-		}
+			}).start();
 	}
+
 
 	_checkPass() {
 		if (this._gameStart && this.smallBalls.length == 0) {
@@ -205,9 +204,5 @@ class GameScene extends cc.Component {
 			return;
 		}
 		this.bigBall.angle += this.bigDir * this.bigSpeed * dt;
-	}
-
-	lateUpdate(dt: number) {
-
 	}
 }

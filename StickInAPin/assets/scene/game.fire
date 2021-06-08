@@ -94,6 +94,9 @@
       },
       {
         "__id__": 16
+      },
+      {
+        "__id__": 17
       }
     ],
     "_prefab": null,
@@ -726,6 +729,16 @@
     "_id": "d39HZ0Jx9BXJVFY43aX7PN"
   },
   {
+    "__type__": "b81a8DOf9RLhZFU5HYmcNS3",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "_id": "3dfY3E2/FCJpztXKGqd7Zc"
+  },
+  {
     "__type__": "2ae03ZTIbxBYZThlCcmZcB8",
     "_name": "",
     "_objFlags": 0,
@@ -753,6 +766,9 @@
     },
     "bigSpeed": 12,
     "bigDir": 10,
+    "jsonData": {
+      "__uuid__": "b6b88d30-814a-42cf-a6ca-4f80f7424da0"
+    },
     "_id": "74/ia8z/tJgawUhQ3j60jp"
   }
 ]
