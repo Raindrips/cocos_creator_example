@@ -24,24 +24,27 @@ export default class NewClass extends cc.Component {
 
     init() {
         let s = cc.winSize;
-        this.node.width = s.width / 4-1;
-        this.node.height = s.height / 5-2;
+        this.node.width = s.width / 4 - 1;
+        this.node.height = s.height / 5 - 2;
 
         this.node.color = cc.Color.WHITE;
         let forge = this.node.getChildByName('forge');
         forge.width = s.width / 4 - 1;
         forge.height = s.height / 5 - 2;
-        forge.color=cc.Color.BLACK;
+        forge.color = cc.Color.BLACK;
     }
 
     // update (dt) {}
 
     touchStart(event: cc.Event.EventTouch) {
+
         this.node.parent.emit('touch', this.node);
+        cc.tween(this.node)
+            .to(0.25, { color: cc.Color.WHITE })
+            .start();
     }
 
     error() {
-
         let tint = cc.tween(this.node)
             .to(0.1, { color: cc.Color.RED })
             .to(0.1, { color: cc.Color.WHITE })

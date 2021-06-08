@@ -10,6 +10,9 @@ export default class Game extends cc.Component {
 	@property(cc.Label)
 	socreLabel:cc.Label=null
 
+	@property(cc.Node)
+	piano:cc.Node=null
+
 	score:number=0;
 
 	onLoad () {
@@ -46,6 +49,7 @@ export default class Game extends cc.Component {
 		if(node.color.equals(cc.Color.BLACK)){
 			this.moveDown();
 			this.addScore();
+			this.piano.emit('playNext');
 		}
 		else if(node.color.equals( cc.Color.WHITE)){
 			node.emit('error');

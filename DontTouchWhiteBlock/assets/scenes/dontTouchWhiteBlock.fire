@@ -76,15 +76,18 @@
       },
       {
         "__id__": 9
+      },
+      {
+        "__id__": 10
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 11
+        "__id__": 13
       },
       {
-        "__id__": 12
+        "__id__": 14
       }
     ],
     "_prefab": null,
@@ -247,7 +250,7 @@
         "__id__": 6
       },
       {
-        "__id__": 10
+        "__id__": 12
       }
     ],
     "_prefab": null,
@@ -312,6 +315,9 @@
     "socreLabel": {
       "__id__": 7
     },
+    "piano": {
+      "__id__": 10
+    },
     "_id": "1d5VyY6BBN+rypSs4IsChv"
   },
   {
@@ -365,9 +371,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 24,
+      "g": 255,
+      "b": 75,
       "a": 255
     },
     "_contentSize": {
@@ -472,6 +478,116 @@
     "_id": "d1I6oWE6NJK6nRmS8wczUd"
   },
   {
+    "__type__": "cc.Node",
+    "_name": "PlayMusic",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 11
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 0,
+      "height": 0
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": "24NGsARgJLhLbAoI7JWMTg"
+  },
+  {
+    "__type__": "7c524N16OhKuLQmZnwPfHGu",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 10
+    },
+    "_enabled": true,
+    "audioClip": [
+      {
+        "__uuid__": "2a658498-3b89-4bc3-b3aa-ba2075defa11"
+      },
+      {
+        "__uuid__": "6daf2f30-1987-43ea-80af-61085884198c"
+      },
+      {
+        "__uuid__": "08511471-420f-4476-8071-854b083b49a5"
+      },
+      {
+        "__uuid__": "071b3ec3-3639-426a-906d-9bf05ef031a9"
+      },
+      {
+        "__uuid__": "d512e696-3044-4c4d-b345-2a5f4a84491e"
+      },
+      {
+        "__uuid__": "72bd1126-ab9b-4d62-b3b4-a2b55062610e"
+      },
+      {
+        "__uuid__": "c42691f8-b7ed-4a54-a462-46ea0b4b5c8f"
+      },
+      {
+        "__uuid__": "2e5e681c-45f7-49f2-b96e-03401a0a4f7c"
+      },
+      {
+        "__uuid__": "9e04f05e-a615-4d19-b44b-def06a54a249"
+      },
+      {
+        "__uuid__": "8876952d-1bbd-4c12-b35d-e0277ab67750"
+      },
+      {
+        "__uuid__": "3acfaf5e-b4db-4a65-931d-5a9ba2efae24"
+      },
+      {
+        "__uuid__": "aca098e3-3b39-4378-aace-04b9bad77fef"
+      }
+    ],
+    "_id": "223cpHplhF5Zf03Yo52ljr"
+  },
+  {
     "__type__": "cc.Widget",
     "_name": "",
     "_objFlags": 0,
@@ -511,7 +627,7 @@
       "width": 720,
       "height": 1280
     },
-    "_fitWidth": false,
+    "_fitWidth": true,
     "_fitHeight": true,
     "_id": "b3ydelB3pE5ossk1qP+9m6"
   },
