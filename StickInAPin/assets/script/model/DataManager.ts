@@ -1,4 +1,4 @@
-import { ILevelData } from "../utils/levelData";
+import { ILevelData } from "../utils/LevelData";
 import { IUserData } from "../utils/UserData";
 
 const { ccclass, property } = cc._decorator;

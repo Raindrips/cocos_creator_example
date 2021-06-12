@@ -14,7 +14,7 @@ export default class KeyMove extends cc.Component {
     }  
     private key:Map<number,boolean>=null;
     onLoad () {
-        this.key=new Map<number,boolean>();
+        this.key=new Map<number,boolean>(); 
     }
 
     start() {
