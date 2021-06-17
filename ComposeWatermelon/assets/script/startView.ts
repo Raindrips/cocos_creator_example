@@ -11,6 +11,7 @@ export default class StartView extends cc.Component {
     
     onLoad() {
         let score:number=cc.sys.localStorage.getItem("score")
+        if(!score) score=0;
         this.label.string=score.toString();
     }
 
