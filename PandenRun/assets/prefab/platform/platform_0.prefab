@@ -78,8 +78,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 1,
-    "groupIndex": 1,
+    "_groupIndex": 2,
+    "groupIndex": 2,
     "_id": ""
   },
   {
@@ -131,12 +131,12 @@
     "_angularDamping": 0,
     "_linearVelocity": {
       "__type__": "cc.Vec2",
-      "x": -300,
+      "x": 0,
       "y": 0
     },
     "_angularVelocity": 0,
     "_fixedRotation": false,
-    "enabledContactListener": true,
+    "enabledContactListener": false,
     "bullet": false,
     "awakeOnLoad": true,
     "_id": ""
@@ -152,7 +152,7 @@
     "tag": 0,
     "_density": 1,
     "_sensor": false,
-    "_friction": 0,
+    "_friction": 0.2,
     "_restitution": 0,
     "body": null,
     "_offset": {
@@ -168,21 +168,13 @@
     "_id": ""
   },
   {
-    "__type__": "ec449ng6lRGUpaZsJP1PtcJ",
+    "__type__": "130dfhoYpNM2Yn0FfVOWTJ5",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "goldGroup": [
-      {
-        "__uuid__": "bfbf9b46-8e14-4d8c-9b3c-1619fe534fe9"
-      },
-      {
-        "__uuid__": "3a84fd22-c303-47df-ab6d-6cf877d3beb8"
-      }
-    ],
     "_id": ""
   },
   {
@@ -191,7 +183,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "b6097efa-3c5b-495a-bc28-913c3e789a99"
+      "__uuid__": "96a1fe48-01b9-404d-8d14-b51508504a73"
     },
     "fileId": "",
     "sync": false

@@ -1,8 +1,8 @@
 {
   "engine": "cocos-creator-js",
   "packages": "packages",
-  "name": "PandenRun",
-  "id": "7879bd9e-c752-4ad7-99fe-37043bc65725",
+  "name": "NewProject_run",
+  "id": "f661f548-ebba-4c4c-b22f-16cefa927c0e",
   "version": "2.4.5",
   "isNew": false
 }

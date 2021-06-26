@@ -3,7 +3,7 @@
   "_name": "pande_jump",
   "_objFlags": 0,
   "_native": "",
-  "_duration": 0.7333333333333333,
+  "_duration": 0.5333333333333333,
   "sample": 15,
   "speed": 1,
   "wrapMode": 1,
@@ -54,7 +54,7 @@
             }
           },
           {
-            "frame": 0.6666666666666666,
+            "frame": 0.4666666666666667,
             "value": {
               "__uuid__": "40e65f47-5c07-4657-be66-c083e7a7777c"
             }
