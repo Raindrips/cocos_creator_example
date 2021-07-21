@@ -27,7 +27,7 @@ export default class CoinController extends cc.Component {
     coinsPool: cc.NodePool;
 
     // +金币数字
-    coin_up: cc.Node;
+    coinUp: cc.Node;
 
     // 获得金币
     oneCoin: cc.Node;
@@ -38,10 +38,9 @@ export default class CoinController extends cc.Component {
         this.coinUpPool = new cc.NodePool();
         this.coinsPool = new cc.NodePool();
         this.setValue(this.currentValue);
-    }
 
-    init() {
-       
+        this.node.on('despawn-coins', this.despawnCoins, this);
+        this.node.on('despawn-coinup', this.despawnCoinup, this);
     }
 
     // 数字固定长度lenght，不够的补0
@@ -73,16 +72,16 @@ export default class CoinController extends cc.Component {
         return false;
     }
 
-     //生成金币动画
+    //生成金币动画
     gainCoins(coinPos: cc.Vec3, coinnum: number) {
         // 上升的数字对象池
         if (this.coinUpPool.size() > 0) {
-            this.coin_up = this.coinUpPool.get();
+            this.coinUp = this.coinUpPool.get();
         } else {
-            this.coin_up = cc.instantiate(this.coinPlusPrefab);
+            this.coinUp = cc.instantiate(this.coinPlusPrefab);
         }
-
-        this.coin_up.getComponent(NumUp).init(coinPos, coinnum, this);
+        this.node.addChild(this.coinUp);
+        this.coinUp.getComponent(NumUp).init(coinPos, coinnum);
 
         // 金币对象池
         if (this.coinsPool.size() > 0) {
@@ -90,18 +89,22 @@ export default class CoinController extends cc.Component {
         } else {
             this.oneCoin = cc.instantiate(this.coinsPrefab);
         }
-        this.oneCoin.getComponent(Coins).init(this);
+        this.node.addChild(this.oneCoin)
+
         // 转为世界坐标
-        let toPos = this.node.convertToWorldSpaceAR(this.number[3].node.position);
-        this.oneCoin.getComponent(Coins).goDown(coinPos, this.number[3].node.position);
+        let world = this.number[3].node.convertToWorldSpaceAR(cc.v3());
+        let pos = this.node.convertToNodeSpaceAR(world);
+        this.oneCoin.getComponent(Coins).goDown(coinPos, pos);
         this.addCoins(coinnum);
     }
 
-    despawnCoins(coin: cc.Node) {
-        this.coinsPool.put(coin);
+    despawnCoins(event: cc.Event) {
+        this.coinsPool.put(event.target)
+        event.stopPropagation();
     }
 
-    despawnCoinup(nup: cc.Node) {
-        this.coinUpPool.put(nup);
+    despawnCoinup(event: cc.Event) {
+        this.coinUpPool.put(event.target)
+        event.stopPropagation();
     }
 }

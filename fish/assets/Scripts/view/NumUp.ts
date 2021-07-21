@@ -17,10 +17,8 @@ export default class NumUp extends cc.Component {
     @property(cc.Sprite)
     onesPlace: cc.Sprite = null;
 
-    cointroller: CoinController;
 
-    init(pos: cc.Vec3, num: number, ctr: CoinController) {
-        this.cointroller = ctr;
+    init(pos: cc.Vec3, num: number) {
         let str = num.toString();
         let nums = str.split('');
         if (nums.length == 1) {
@@ -31,14 +29,12 @@ export default class NumUp extends cc.Component {
             this.tensPlace.spriteFrame = this.numAtlas.getSpriteFrame('goldnum_' + nums[0]);
             this.onesPlace.spriteFrame = this.numAtlas.getSpriteFrame('goldnum_' + nums[1]);
         }
-        this.node.parent = cc.director.getScene();
         this.node.position = pos;
-        let upState = this.anim.play('coin_up');
-        //upState.on('stop', this.despawn, this);
-
+        this.anim.play('coin_up');
+        this.node.on(cc.Animation.EventType.FINISHED, this.despawn, this);
     }
-    
+
     despawn() {
-        this.cointroller.despawnCoinup(this.node);
+        this.node.dispatchEvent(new cc.Event.EventCustom('despawn-coinup', true));
     }
 }
